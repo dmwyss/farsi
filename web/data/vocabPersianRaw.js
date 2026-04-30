@@ -5,7 +5,7 @@ kheili *khoshmaze* ast,     it is very *delicious*
 bebakshid *dir* kardam,     sorry I am *late*
 *dorost*e,                  *correct*-that-is
 kheili *mamnoon*,           *thank you* very much
-man kheili *bahoosh*am,     I am very *smart*
+man kheili *baahoosh*am,     I am very *smart*
 jaaleb,                     interesting
 farsi kheli *aasoon*,       farsi very *easy*-is
 in kif kheili *sangin*e,    this bag is very *heavy*
