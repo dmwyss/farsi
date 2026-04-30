@@ -1,0 +1,31 @@
+* {
+    color: #888;
+    font-family: sans-serif;
+}
+b {
+    color: #EEE;
+    font-weight: 500;
+}
+body {
+    background-color: #234;
+}
+td {
+    padding: 4px 0 4px 7px;
+    border-bottom: 1px solid #0005;
+}
+.colSorter {
+    background-color: #0004;
+    cursor: pointer;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.colSorter.on {
+    background-color: #0008;
+}
+img#heading {
+    position: absolute;
+    top: 30px;
+    left: 890px;
+    opacity: 0.4;
+    width: 130px;
+}
