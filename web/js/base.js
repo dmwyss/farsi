@@ -9,7 +9,7 @@ const vocab = {
     },
     parseRaw: function() {
         let oDictOut = {};
-        let asLines = vocabPersianRaw.split("\n");
+        let asLines = vocabFarsiRaw.split("\n");
         let ixCursor = 0;
         for (let ix = 0; ix < asLines.length; ix++) {
             let oWord = this.toWord(asLines[ix]);
@@ -35,16 +35,21 @@ const vocab = {
         }
     },
     toWord: function(sLine) {
-        let asLine = sLine.split(",");
-        if (asLine[0] == "") {
+        sLine = sLine.trim();
+        if ((sLine == "") || (sLine.startsWith("#"))) {
             return null;
         }
+        let asLine = sLine
+            .replaceAll(/\s+/gi, " ")
+            .replaceAll(/\s*,\s*/gi, ",")
+            .split(",")
+            ;
         return {
             p: this.toMot(asLine[0]),
             e: this.toMot(asLine[1])
         }
     },
-    toMot: function(sMotRaw) {
+    toMot: function(sMotRaw="") {
         sMotRaw = sMotRaw.trim();
         let as = sMotRaw.split("*");
         let oOut = {};
@@ -60,7 +65,7 @@ const vocab = {
     vocabToHtml: function() {
         let sOut = "<table>"
         sOut += "<tr><td id=\"sSortP\" class=\"colSorter\" onclick=\"vocab.clickColSort(this);\">"
-            + "persian</td>"
+            + "farsi</td>"
             + "<td id=\"sSortE\" class=\"colSorter\" onclick=\"vocab.clickColSort(this);\">"
             + "english</td>"
             + "<td id=\"ixOrig\" class=\"colSorter\" onclick=\"vocab.clickColSort(this);\">"
