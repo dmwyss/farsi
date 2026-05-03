@@ -2,3 +2,4 @@
 .bak/**
 **/*.bak.*
 .idea/**
+web/bak
