@@ -33,8 +33,15 @@ khande-daar,                funny
 raast-i,                    by the way
 *mo*-haye kheyli khoshgel-i darad, *hair* very beautiful she-has
 khasteh nabaashee,          dont be tired
+*hichi*,                    nothing
+chizi,                      something
+baashe,                     ok/sure
 
+*haste-i*?,                 *ok-you*?
+*eynak*am ku? Ru saret-e, *glasses*-my where? On head-is
 
+hoselam sar rafte,          I am bored
+daaram *mimiram*,           having *dying*-me
 
 khosh-tip,                  stylish/handsome/classy
 khosh amadin,               welcome (lit happy you came)
