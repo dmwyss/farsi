@@ -41,10 +41,12 @@ khasteh nabaashee,          dont be tired
 *hichi*,                    nothing
 chizi,                      something
 baashe,                     ok/sure
-
+*zood* miresam,             *close* i am (find word for word xlation)
+*moshtaagh*-e didaar,	    i am *eager* to see you.
 *haste-i*?,                 *ok-you*?
-*eynak*am ku? Ru saret-e, *glasses*-my where? On head-is
-
+*eynak*am ku? Ru saret-e,   *glasses*-my where? On head-is
+ghoorbaagheh,               frog
+*zood* mi-ris-am,            *fast/soon/early/quick* definitely-arriving-am
 hoselam sar rafte,          I am bored
 daaram *mimiram*,           having *dying*-me
 
