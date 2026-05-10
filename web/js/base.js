@@ -76,14 +76,17 @@ const vocab = {
         for (let ix = 0; ix < this.list.length; ix++) {
             let oWord = this.list[ix];
             sOut += "<tr>"
-                + "<td>" + oWord.p.key + "</td>"
+                + "<td>" + this.longA(oWord.p.key) + "</td>"
                 + "<td>" + oWord.e.key  + "</td>"
-                + "<td>" + oWord.p.context  + "</td>"
+                + "<td>" + this.longA(oWord.p.context) + "</td>"
                 + "<td>" + oWord.e.context  + "</td>"
                 + "</tr>";
         }
         sOut += "</table>";
         return sOut;
+    },
+    longA: function (sRaw) {
+        return sRaw.split("aa").join("&amacr;")
     },
     clickColSort: function (uiSrc) {
 //        this.list = this.sort(this.sortCompare)

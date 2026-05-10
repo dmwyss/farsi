@@ -1,5 +1,9 @@
 let vocabFarsiRaw = `
 
+*sedaa* aziatet mikone?,     *noise* bothering does?
+een kif kheili *sangin*e,   this bag is very *heavy*
+*daghighan*!,               *correct*!
+een otaagh kheli *boland*,   this room is too *noisy*
 kheili *khoshmaze* ast,     it is very *delicious*
 *moshtaagh*e deedanet hastam, *eager* seeyou I-am
 bebakshid *dir* kardam,     sorry I am *late*
@@ -19,7 +23,8 @@ toh *fardah*,               until *tomorrow*
 *bah bah* che havaaye khubi, *wonderful* what weather good
 man *gha-veh* dost daram,   I *coffee* like
 *khoshbakht*-am,            lucky/fortunate-I-am
-
+Sholeh *doost daram*,       Sholeh *I like*
+*zahmat* nakeshid,          *trouble* dont-pull
 
 bozorg,                     big
 yekam *aroom*tar harf_mizani, a bit *slow*er speaking
