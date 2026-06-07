@@ -1,13 +1,21 @@
+:root {
+    --text-bright: #DDD;
+}
 * {
     color: #888;
     font-family: sans-serif;
+    font-weight: 100;
+}
+a {
+    text-decoration: none;
 }
 b {
-    color: #EEE;
+    color: var(--text-bright);
     font-weight: 500;
 }
 body {
     background-color: #234;
+    padding-left: 20px;
 }
 td {
     padding: 4px 0 4px 7px;
@@ -17,6 +25,20 @@ h1 {
     font-weight: 100;
     font-family: Verdana;
     color: #7b858f;
+}
+table {
+    border-collapse: collapse;
+}
+thead {
+    background-color: #0002;
+}
+thead tr td {
+    color: #AAA;
+}
+td {
+    padding-left: 10px;
+    padding-right: 20px;
+    min-width: 70px;
 }
 .colSorter {
     background-color: #0004;
@@ -33,4 +55,21 @@ img#heading {
     left: 890px;
     opacity: 0.4;
     width: 130px;
+}
+.feint {
+    opacity: 0.4;
+}
+.bracket {
+    min-width: 60px;
+    display: inline-block;
+}
+.bracket::before {
+    content: "(";
+}
+.bracket::after {
+    content: ")";
+}
+.word {
+    color: var(--text-bright);
+    font-weight: 500;
 }
