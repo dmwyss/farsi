@@ -40,8 +40,7 @@ const vocab = {
             return null;
         }
         let asLine = sLine
-            .replaceAll(/\s+/gi, " ")
-            .replaceAll(/\s*,\s*/gi, ",")
+            .replaceAll(/(, {0,}|,? {4,})/gi, ",")
             .split(",")
             ;
         return {
@@ -76,10 +75,10 @@ const vocab = {
         for (let ix = 0; ix < this.list.length; ix++) {
             let oWord = this.list[ix];
             sOut += "<tr>"
-                + "<td>" + this.longA(oWord.p.key) + "</td>"
-                + "<td>" + oWord.e.key  + "</td>"
-                + "<td>" + this.longA(oWord.p.context) + "</td>"
-                + "<td>" + oWord.e.context  + "</td>"
+                + "<td class=\"word\">" + this.longA(oWord.p.key) + "</td>"
+                + "<td class=\"word\">" + oWord.e.key  + "</td>"
+                + "<td class=\"context\">" + this.longA(oWord.p.context) + "</td>"
+                + "<td class=\"context\">" + oWord.e.context  + "</td>"
                 + "</tr>";
         }
         sOut += "</table>";
