@@ -40,7 +40,7 @@ const vocab = {
             return null;
         }
         let asLine = sLine
-            .replaceAll(/(, {0,}|,? {4,})/gi, ",")
+            .replaceAll(/(,[ \t]{0,}|,? {4,})/gi, ",")
             .split(",")
             ;
         return {
@@ -62,7 +62,7 @@ const vocab = {
         return oOut;
     },
     vocabToHtml: function() {
-        let sOut = "<table>"
+        let sOut = "<table id=\"vocab\">"
         sOut += "<tr><td id=\"sSortP\" class=\"colSorter\" onclick=\"vocab.clickColSort(this);\">"
             + "farsi</td>"
             + "<td id=\"sSortE\" class=\"colSorter\" onclick=\"vocab.clickColSort(this);\">"
@@ -74,7 +74,7 @@ const vocab = {
             + "</tr>";
         for (let ix = 0; ix < this.list.length; ix++) {
             let oWord = this.list[ix];
-            sOut += "<tr>"
+            sOut += "<tr onclick='vocab.doRowClick(this);'>" // " + ix + "
                 + "<td class=\"word\">" + this.longA(oWord.p.key) + "</td>"
                 + "<td class=\"word\">" + oWord.e.key  + "</td>"
                 + "<td class=\"context\">" + this.longA(oWord.p.context) + "</td>"
@@ -101,6 +101,22 @@ const vocab = {
     render: function () {
         this.uiVocab = document.querySelector("#vocab");
         this.uiVocab.innerHTML = this.vocabToHtml();
+    },
+    doRowClick: function(oRow) {
+        let tbl = document.querySelector("table#vocab");
+        let atr = tbl.querySelectorAll("tr");
+        let isFound = false;
+        for (let ixTr = 0; ixTr < atr.length; ixTr++) {
+            let td = atr[ixTr].querySelector("td");
+            if (!isFound) {
+                if (atr[ixTr] === oRow) {
+                    isFound = true;
+                }
+                td.style.opacity = "1.0";
+            } else {
+                td.style.opacity = "0.0";
+            }
+        }
     }
 }
 

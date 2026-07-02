@@ -1,5 +1,17 @@
 let vocabFarsiRaw = `
 
+daafid *hast*-am,               david *be*-I
+kaar mi-*kon*-am,               work currently-*do*-I
+*daar*-am miram,                *have*-I go-I (I am going)
+mi-*toon*-am biyaam,            *can*-I come-I
+
+*baayad* beram,                 *must* that-go-I
+
+man daaram Faarsi yaad migiram, I have Farsi remember take-am
+
+faghat yek kami baladam,        I only know a little
+shomaa *Irani* hastid?,         are you Iranian?
+
 kheili *mamnoon*,               *thank you* very much
 *haale* shomaa chetore?         *state-ofyou* you how?
 jaaleb,                         interesting
@@ -13,14 +25,15 @@ bebakshid *dir* kardam,         sorry I am *late*
 in kif kheili *sangin*e,        this bag is very *heavy*
 kheili *mamnoon*,               *thank you* very much
 
+sakht,                          difficult
 hamaan,                         same
+
 bood,                           was
 masalan,                        for-example
 kalameh,                        word
 [word] beh Farsi *chi* misheh,  [word] in Farsi *what* become
 daghighian,                     exactly
 khaahesh mikonam,               yr welcome (request i-do)
-nush-e jaan,                    en guete
 be salamati,                    cheers
 khosh amadin,                   welcome (lit happy you came)
 
@@ -32,7 +45,6 @@ shir,                           lion
 gol*...haa*                          flower*...s*
 
 
-sakht,                          difficult
 aasoon, easy
 sabok,                          light (weight)
 koochik,                        small
@@ -48,16 +60,10 @@ khoshgel,                       beautiful
 sari,                           fast
 tond,                           fast
 aroom,                          slow
-yavaash,                        slow
+mesle halazoon *yavaash*,       like snail *slow*
 
 
-
-
-man daaram Faarsi yâd migiram,  I am learning Farsi
-faghat yek kami baladam,        I only know a little
 tamiz-esh mikonam,              I will clean it
-shomaa *Irani* hastid?,           are you Iranian?
-
 
 een otaagh kheli *boland*e,     this room is too *noisy*
 *moshtaagh*e deedanet hastam,   *eager* seeyou I-am
@@ -112,14 +118,6 @@ neshastan,                      to sit
 bordan,                         to take/win
 avordan,                        to bring
 bastan,                         to close
-
-
-hastam,                         I am
-hasti,                          you are (sing.)
-hast,                           he/she/it is
-hastim,                         we are
-hastid,                         you are (pl.)
-hastand,                        they are
 
 # Ling
 *hal*-et chetore,               *mood/feeling*-you howis?
@@ -186,13 +184,6 @@ khoshgozar,                     having a good time
 khosh-,                         good/pleasant
 kheili *khoshhaal*am dobaare mibinamet, I am *happy* to see you again
 
-budan,                          verb to be
-hastam,                         I am
-hasti,                          you are (sing.)
-hast,                           he/she/it is
-hastim,                         we are
-hastid,                         you are (pl.)
-hastand,                        they are
 # Note: In colloquial speech, the 3rd person singular "ast" becomes "-e" and the 3rd person plural "and" often becomes "-an".
 
 man budam,                      i was
@@ -263,6 +254,61 @@ mee-fah-mam,                    understanding-i-am
 fah-mee-dam,                    understood-i-did
 
 
+yāzdahom,                       11th
+davaazdahom,                    12th
+tabagheh-ye davaazdahom,        floor-of twelfth
 
+havaa daare taarik mishe,       weather/sky become-auxiliary dark becomes
+tāftan,                         to shine
+baaftan,                        to weave
 
-`
+*nim* sa-at dige,               *helf* hour still
+haazeri?                        are you ready?
+ye daghighe vaaysaa,            one minute stop/wait
+man *berenj* mikham,            i *rice* want/would-like
+dari *miaay*?,                  have-you *coming-you*?
+daaram *mimiram* az goshnegi,   have *dying* from hunger
+*hatman*,                       sure
+*begu*,                         *speak!* /go-ahead
+*rishe*-shenaasee,              *root*-knowledge
+ye *kadoo* barat (baraye to) daram,    one *present* for have-I
+age besheh chee meeshe,         think of what could be
+*zabaan*-e Farsi kheili shirine, *language*-of Farsi very sweet
+*safar*e khubi baashte baashi,  *trip* good have will
+mage *kheng*am?,                am I *stupid*?
+*raeis*e bozorg,                *boss* big
+*yekam* laaghar shodi,          *a little* thin become-I
+in *mantagheh* kheyli sholooghe,    this *area* very noisy
+*hame* khaab-an,                *everybody* sleeping-is
+biaa *pish*-am,                 come *near/to*-me
+(khodam) *midoonam*,            (I-myself) *know-I*
+*nemidoonam*,                   *not-know-I*
+*ki* midoone?,                  *who* knows
+az kojaa *midooni*?,            from where *know*-you?
+mi-kon-am,                      currently-do-I
+vaazeh-e,                       obvious/clear-it-is
+dige nemitoonam,                anymore not-can-do-I
+avval/nakhostin,                1st
+dovvom,                         2nd
+sevvom,                         3rd
+chaharom,                       4th
+panjom,                         5th
+sheshom,                        6th
+haftom,                         7th
+hashtom,                        8th
+nohom,                          9th
+dahom,                          10th
+morgh-e daryaaee,               chicken-of sea
+*pedar*-et kojaast,             *father*-yours whereis
+koja *madar*-am,                where *mother*-mine
+risheh-ye kalameh,              root-of word
+ajale nakon - vaght darim,      rush not-do - time have-we
+ajale kon - vaght nadaarim,     rusb do - time not-have-we
+oon *khaanoom* raeise mane,     that *lady* manager me-is
+bebakschid *aaghaa*,            excuse-me *sir*
+mitoonim baa ham doost baashim, can-we with same friend-s be
+*khosh oomadi* be khoonam,      *welcome* to home-my
+be khoone-man khosh oomadi,     at house-my good welcome-you-are
+saa'at chande?,                 time what-is
+doost-e samimi-m,               best friend
+`;

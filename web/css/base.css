@@ -73,3 +73,7 @@ img#heading {
     color: var(--text-bright);
     font-weight: 500;
 }
+table#vocab tr:hover {
+    background-color: #FFF1;
+    cursor: pointer;
+}
