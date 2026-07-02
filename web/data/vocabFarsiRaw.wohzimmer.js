@@ -22,3 +22,4 @@ mitoonim baa ham doost baashim, can-we with same friend-s be
 *khosh oomadi* be khoonam,      *welcome* to home-my
 be khoone-man khosh oomadi,     at house-my good welcome-you-are
 saa'at chande?,                 time what-is
+doost-e samimi-m,               best friend
