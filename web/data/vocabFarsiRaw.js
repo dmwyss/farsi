@@ -1,5 +1,79 @@
 let vocabFarsiRaw = `
 
+movāzeb baash,                  careful be
+sir shodam,                     full became-I
+shaam khoshmaze bood,           dinner yummy was
+komaket konam?,                 help do-I? (can I help)
+kar mikonam,                    work at-the-moment-doing-I
+kelidam ro gom kardam,          keys-my the lost did (past)
+
+baash_,                         to be - stem - present
+bood_,                          to be - stem - past
+kon_,                           to do - stem - present
+kard_,                          to do - stem - past
+shod_,                          to becomme - stem - past
+
+
+
+
+man budam,                      i was
+to budi,                        you were (sing.)
+u bood,                         he/she/it was
+maa budim,                      we were
+shomaa budid,                   you were (pl./formal)
+aanhaa budand,                  they were
+bood,                           was
+
+tokhmatik,                      völlig scheisse
+che tokhmi,                     thats shit
+
+# Present stem kon, past stem kard
+kardan,                         to do
+man mikonam,                    i do
+to mikoni,                      you(singl) do
+u mikonad/mikoneh,              he/she/it does
+maa mikonim,                    we do
+shomaa mikonid/mikonin,         you(plur) do
+aanhaa/ishaan mikonand/mikonan,  they do
+
+man *na-kardam*,                i *did-not-do* (past)
+man *ne-mikonam*,               i *do-not-do* (imperf)
+
+# Compound verbs based on Kardan:
+zendegi kardan,                 to live
+fekr kardan,                    to think
+kār kardan,                     to work
+sohbat kardan,                  to speak
+
+
+
+
+boodan,                         to be
+kardan,                         to do
+daashtan,                       to have
+doost daashtan,                 to like/love
+raftan,                         to go
+omadan,                         to come
+doonestan,                      to know
+goftan,                         to say
+didan,                          to see
+khordan,                        to eat
+khaabidan,                      to sleep
+kharidan,                       to buy
+khoondan,                       to read
+shostan,                        to wash
+fahmidan,                       to understand
+moondan,                        to stay
+gozaashtan,                     to put
+neveshtan,                      to write
+neshastan,                      to sit
+bordan,                         to take/win
+avordan,                        to bring
+bastan,                         to close
+
+
+
+
 daafid *hast*-am,               david *be*-I
 kaar mi-*kon*-am,               work currently-*do*-I
 *daar*-am miram,                *have*-I go-I (I am going)
@@ -28,7 +102,6 @@ kheili *mamnoon*,               *thank you* very much
 sakht,                          difficult
 hamaan,                         same
 
-bood,                           was
 masalan,                        for-example
 kalameh,                        word
 [word] beh Farsi *chi* misheh,  [word] in Farsi *what* become
@@ -96,29 +169,6 @@ kojaa *mir-i*,                  where *go-you*
 *aamaadeii* berim,              *ready-are-you* go-we
 doost daram to ham *biai*,      want you also *come-you*
 
-boodan,                         to be
-kardan,                         to do
-daashtan,                       to have
-doost daashtan,                 to like/love
-raftan,                         to go
-omadan,                         to come
-doonestan,                      to know
-goftan,                         to say
-didan,                          to see
-khordan,                        to eat
-khaabidan,                      to sleep
-kharidan,                       to buy
-khoondan,                       to read
-shostan,                        to wash
-fahmidan,                       to understand
-moondan,                        to stay
-gozaashtan,                     to put
-neveshtan,                      to write
-neshastan,                      to sit
-bordan,                         to take/win
-avordan,                        to bring
-bastan,                         to close
-
 # Ling
 *hal*-et chetore,               *mood/feeling*-you howis?
 mishe *tekraar konid*?,         can-possible *repeat*?
@@ -126,30 +176,6 @@ man nemifahmmam (*fahmidan*),   i not-understand-me *to understand*
 mishe dobare *aarum* begid?,    can-possible again *slow* say?
 hatman,                         sure
 
-man budam,                      i was
-to budi,                        you were (sing.)
-u bud,                          he/she/it was
-maa budim,                      we were: budim
-shomaa budid,                   you were (pl./formal)
-aanhaa budand,                  they were
-
-# Present stem kon, past stem kard
-kardan,                         to do
-man mikonam,                    i do
-to mikoni,                      you(singl) do
-u mikonad/mikoneh,              he/she/it does
-maa mikonim,                    we do
-shomaa mikonid/mikonin,         you(plur) do
-aanhaa/ishaan mikonand/mikonan,  they do
-
-man *na-kardam*,                i *did-not-do* (past)
-man *ne-mikonam*,               i *do-not-do* (imperf)
-
-# Compound verbs based on Kardan:
-zendegi kardan,                 to live
-fekr kardan,                    to think
-kār kardan,                     to work
-sohbat kardan,                  to speak
 
 *sare kaar* chetor bud emrooz?, *at work* how was today?
 
@@ -164,7 +190,7 @@ toofan,                         storm
 *laazem* nist,                  *necessary* is-not
 khande-daar,                    funny
 raast-i,                        by the way
-*mo*-haye kheyli khoshgel-i     darad, *hair* very beautiful she-has
+*mo*-haye kheyli khoshgel-i darad, *hair* very beautiful she-has
 khasteh nabaashee,              dont be tired
 *hichi*,                        nothing
 chizi,                          something
@@ -189,12 +215,11 @@ kheili *khoshhaal*am dobaare mibinamet, I am *happy* to see you again
 man budam,                      i was
 to budi,                        you were (sing.)
 u bud,                          he/she/it was
-maa budim,                      we were: budim
+maa budim,                      we were
 shomaa budid,                   you were (pl./formal)
 aanhaa budand,                  they were
 
 # Present stem kon, past stem kard
-kardan,                         verb to do
 man mikonam,                    i do
 to mikoni,                      you(singl) do
 u mikonad/mikoneh,              he/she/it does
@@ -284,7 +309,7 @@ biaa *pish*-am,                 come *near/to*-me
 (khodam) *midoonam*,            (I-myself) *know-I*
 *nemidoonam*,                   *not-know-I*
 *ki* midoone?,                  *who* knows
-az kojaa *midooni*?,            from where *know*-you?
+az kojaa *midooni*?,            from where *know-you*?
 mi-kon-am,                      currently-do-I
 vaazeh-e,                       obvious/clear-it-is
 dige nemitoonam,                anymore not-can-do-I
@@ -311,4 +336,6 @@ mitoonim baa ham doost baashim, can-we with same friend-s be
 be khoone-man khosh oomadi,     at house-my good welcome-you-are
 saa'at chande?,                 time what-is
 doost-e samimi-m,               best friend
+Farsi baladi,                   Farsi speak-you
+
 `;

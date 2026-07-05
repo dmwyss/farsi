@@ -17,7 +17,13 @@ const vocab = {
                 continue;
             }
             if (oDictOut.hasOwnProperty(oWord.p.key)) {
-                console.error("trying to set " + oWord.p.key + " again.");
+                let iIncrement = 1;
+                let sRoot = oWord.p.key;
+                while (oDictOut.hasOwnProperty(oWord.p.key)) {
+                    oWord.p.key = sRoot + "__" + iIncrement;
+                    console.error("trying to set " + oWord.p.key + " again.");
+                    iIncrement++;
+                }
             }
             oWord.meta = {
                 ixOrig: ixCursor++,
@@ -106,15 +112,16 @@ const vocab = {
         let tbl = document.querySelector("table#vocab");
         let atr = tbl.querySelectorAll("tr");
         let isFound = false;
+        let sOpacity = "1.0";
         for (let ixTr = 0; ixTr < atr.length; ixTr++) {
-            let td = atr[ixTr].querySelector("td");
+            let atd = atr[ixTr].querySelectorAll("td");
+            atd[0].style.opacity = sOpacity;
+            atd[2].style.opacity = sOpacity;
             if (!isFound) {
                 if (atr[ixTr] === oRow) {
                     isFound = true;
+                    sOpacity = "0.0";
                 }
-                td.style.opacity = "1.0";
-            } else {
-                td.style.opacity = "0.0";
             }
         }
     }
