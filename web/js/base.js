@@ -2,6 +2,7 @@ const vocab = {
     dict: null,
     list: null, // Sorted array. Gets resorted a lot.
     sLastSortField: "UNSET",
+    ixVis: -1,
     init: function() {
         this.dict = this.parseRaw();
         this.initList();
@@ -16,12 +17,12 @@ const vocab = {
             if (!oWord) {
                 continue;
             }
+            let sForeignKey = oWord.p.key;
             if (oDictOut.hasOwnProperty(oWord.p.key)) {
                 let iIncrement = 1;
-                let sRoot = oWord.p.key;
-                while (oDictOut.hasOwnProperty(oWord.p.key)) {
-                    oWord.p.key = sRoot + "__" + iIncrement;
-                    console.error("trying to set " + oWord.p.key + " again.");
+                while (oDictOut.hasOwnProperty(sForeignKey)) {
+                    //console.error("trying to set " + oWord.p.key + " again.");
+                    sForeignKey = oWord.p.key + "__" + iIncrement;
                     iIncrement++;
                 }
             }
@@ -30,7 +31,7 @@ const vocab = {
                 sSortP: oWord.p.key.toLowerCase(),
                 sSortE: oWord.e.key.toLowerCase()
             };
-            oDictOut[oWord.p.key] = oWord;
+            oDictOut[sForeignKey] = oWord;
         }
         return oDictOut;
     },
@@ -80,7 +81,7 @@ const vocab = {
             + "</tr>";
         for (let ix = 0; ix < this.list.length; ix++) {
             let oWord = this.list[ix];
-            sOut += "<tr onclick='vocab.doRowClick(this);'>" // " + ix + "
+            sOut += "<tr onclick='vocab.doRowClick(this);' id='tr" + ix + "'>" // " + ix + "
                 + "<td class=\"word\">" + this.longA(oWord.p.key) + "</td>"
                 + "<td class=\"word\">" + oWord.e.key  + "</td>"
                 + "<td class=\"context\">" + this.longA(oWord.p.context) + "</td>"
@@ -94,7 +95,7 @@ const vocab = {
         return sRaw.split("aa").join("&amacr;")
     },
     clickColSort: function (uiSrc) {
-//        this.list = this.sort(this.sortCompare)
+        //        this.list = this.sort(this.sortCompare)
         let sSortField = uiSrc.id; // "sSortE";
         if (sSortField === this.sLastSortField) {
             this.list.reverse();
@@ -113,6 +114,8 @@ const vocab = {
         let atr = tbl.querySelectorAll("tr");
         let isFound = false;
         let sOpacity = "1.0";
+        let ixRowClicked = parseInt(oRow.id.split("tr")[1]);
+        this.ixVis = ixRowClicked;
         for (let ixTr = 0; ixTr < atr.length; ixTr++) {
             let atd = atr[ixTr].querySelectorAll("td");
             atd[0].style.opacity = sOpacity;
@@ -124,8 +127,41 @@ const vocab = {
                 }
             }
         }
+    },
+    next: function(iDist) {
+        this.ixVis += iDist;
+        if ((this.ixVis < 0) || (this.ixVis === vocab.list.length)) {
+            this.ixVis = 0;
+            return;
+        }
+        console.log("ixVis :: " + this.ixVis);
+        let trNext = document.querySelector("#tr" + this.ixVis);
+        this.doRowClick(trNext)
     }
 }
+function keyToDistance(sEventKey) {
+    const fruits = ['ArrowLeft', 'ArrowUp', 'ArrowRight', 'ArrowDown'];
+    let ix = fruits.indexOf(sEventKey);
+    if (ix === -1) {
+        return 0;
+    } else if (ix < 2) {
+        return -1;
+    } else {
+        return 1;
+    }
+}
+window.addEventListener('keydown', (event) => {
+    if (keyToDistance(event.key) != 0) {
+        event.preventDefault();
+    }
+});
+window.addEventListener('keyup', (event) => {
+    let iDist = keyToDistance(event.key);
+    if (iDist !== 0) {
+        event.preventDefault();
+        vocab.next(iDist);
+    }
+});
 
 document.addEventListener('DOMContentLoaded', function () {
     vocab.init();

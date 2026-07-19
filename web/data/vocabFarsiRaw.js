@@ -7,14 +7,22 @@ komaket konam?,                 help do-I? (can I help)
 kar mikonam,                    work at-the-moment-doing-I
 kelidam ro gom kardam,          keys-my the lost did (past)
 
+harchi zoodtar behtar,          everywhat sooner better
+che behtar,                     even better
+dahanam aab oftaad,             my mouth is watering
+
+
 baash_,                         to be - stem - present
 bood_,                          to be - stem - past
 kon_,                           to do - stem - present
 kard_,                          to do - stem - past
 shod_,                          to becomme - stem - past
 
-
-
+vaght daarim,                   time have-we
+raeise bahoosh,                 boss big
+mofid bood,                     helpful was
+dorost migofti,                 correct spoke-you
+doshman nadaaram,               enemies not-have
 
 man budam,                      i was
 to budi,                        you were (sing.)
@@ -23,6 +31,13 @@ maa budim,                      we were
 shomaa budid,                   you were (pl./formal)
 aanhaa budand,                  they were
 bood,                           was
+
+az hichi ke behtar-e,           than nothing ! better-is
+
+aafiyat baashe,                 bless you
+baavar-am nemishe,              believe-I not-become
+baa kamaal-e meyl,              with completeness desire
+eshkaal-i nadaare,              defect-any not-have
 
 tokhmatik,                      völlig scheisse
 che tokhmi,                     thats shit
@@ -34,7 +49,7 @@ to mikoni,                      you(singl) do
 u mikonad/mikoneh,              he/she/it does
 maa mikonim,                    we do
 shomaa mikonid/mikonin,         you(plur) do
-aanhaa/ishaan mikonand/mikonan,  they do
+aanhaa/ishaan mikonand/mikonan, they do
 
 man *na-kardam*,                i *did-not-do* (past)
 man *ne-mikonam*,               i *do-not-do* (imperf)
@@ -115,7 +130,7 @@ sad dar sad                     100 percent
 halazoon,                       snail
 ghoorbaagheh,                   frog
 shir,                           lion
-gol*...haa*                          flower*...s*
+gol*...haa*                     flower*...s*
 
 
 aasoon, easy
@@ -158,6 +173,97 @@ Sholeh *doost daram*,           Sholeh *I like*
 *zahmat* nakeshid,              *trouble* dont-pull
 zan-e man *mishi*,              wife-ofMe you *become*
 
+
+mibinam (didan),                I see (present)
+didam (didan),                  I saw (past)
+mibini (didan),                 you see (present)
+didi (didan),                   you saw (past)
+mishnavam (shenidan),           I hear (present)
+shenidam (shenidan),            I heared (past)
+mishnavi (shenidan),            you hear (present)
+shenidi (shenidan),             you heared (past)
+hastam (budan),                 I be (present)
+budam (budan),                  I was (past)
+hasti (budan),                  you be (present)
+budi (budan),                   you was (past)
+mikonam (kardan),               I do (present)
+kardam (kardan),                I did (past)
+mikoni (kardan),                you do (present)
+kardi (kardan),                 you did (past)
+daaram (dashtan),               I have (present)
+daashtam (dashtan),             I had (past)
+daari (dashtan),                you have (present)
+daashti (dashtan),              you had (past)
+midaham (daadan),               I give (present)
+daadam (daadan),                I gave (past)
+midahi (daadan),                you give (present)
+daadi (daadan),                 you gave (past)
+baaz mikonam (baaz kardan),     I open (present)
+baaz kardam (baaz kardan),      I opened (past)
+baaz mikoni (baaz kardan),      you open (present)
+baaz kardi (baaz kardan),       you opened (past)
+mibandam (bastan),              I close (present)
+bastam (bastan),                I closed (past)
+mibandi (bastan),               you close (present)
+basti (bastan),                 you closed (past)
+miguyam (goftan),               I say (present)
+goftam (goftan),                I sayed (past)
+miguyi (goftan),                you say (present)
+gofti (goftan),                 you sayed (past)
+fekr mikonam (fekr kardan),     I think (present)
+fekr kardam (fekr kardan),      I thought (past)
+fekr mikoni (fekr kardan),      you think (present)
+fekr kardi (fekr kardan),       you thought (past)
+kaar mikonam (kaar kardan),     I work (present)
+kaar kardam (kaar kardan),      I worked (past)
+kaar mikoni (kaar kardan),      you work (present)
+kaar kardi (kaar kardan),       you worked (past)
+miravam (raftan),               I go (present)
+raftam (raftan),                I went (past)
+miravi (raftan),                you go (present)
+rafti (raftan),                 you went (past)
+miyaayam (aamadan),             I come (present)
+aamadam (aamadan),              I came (past)
+miyaayi (aamadan),              you come (present)
+aamadi (aamadan),               you came (past)
+midaanam (daanestan),           I know (present)
+daanestam (daanestan),          I knowed (past)
+midaani (daanestan),            you know (present)
+daanesti (daanestan),           you knowed (past)
+mikhoram (khordan),             I eat (present)
+khordam (khordan),              I ate (past)
+mikhori (khordan),              you eat (present)
+khordi (khordan),               you ate (past)
+mikhaabam (khaabidan),          I sleep (present)
+khaabidam (khaabidan),          I sleped (past)
+mikhaabi (khaabidan),           you sleep (present)
+khaabidi (khaabidan),           you sleped (past)
+mikharam (kharidan),            I buy (present)
+kharidam (kharidan),            I bought (past)
+mikhari (kharidan),             you buy (present)
+kharidi (kharidan),             you bought (past)
+mikhaanam (khaandan),           I read (present)
+khaandam (khaandan),            I read (past)
+mikhaani (khaandan),            you read (present)
+khaandi (khaandan),             you read (past)
+mishuram (shostan),             I wash (present)
+shostam (shostan),              I washed (past)
+mishuri (shostan),              you wash (present)
+shosti (shostan),               you washed (past)
+mifahmam (fahmidan),            I understand (present)
+fahmidam (fahmidan),            I understood (past)
+mifahmi (fahmidan),             you understand (present)
+fahmidi (fahmidan),             you understood (past)
+mimaanam (maandan),             I stay (present)
+maandam (maandan),              I stayed (past)
+mimaani (maandan),              you stay (present)
+maandi (maandan),               you stayed (past)
+migiram (gereftan),             I take (present)
+gereftam (gereftan),            I took (past)
+migiri (gereftan),              you take (present)
+gerefti (gereftan),             you took (past)
+
+dooneh barf,                    flake-of snow
 
 too *raahi*,                    on *path*-you
 man *raaham*,                   on *path*-me
@@ -225,7 +331,7 @@ to mikoni,                      you(singl) do
 u mikonad/mikoneh,              he/she/it does
 maa mikonim,                    we do
 shomaa mikonid/mikonin,         you(plur) do
-aanhaa/ishaan mikonand/mikonan,      they do
+aanhaa/ishaan mikonand/mikonan, they do
 
 man *na-kardam*,                i *did-not-do* (past)
 man *ne-mikonam*,               i *do-not-do* (imperf)
@@ -261,7 +367,7 @@ een,                            that
 mohandes,                       engineer
 peseshk,                        doctor
 mesaad,                         example
-dafeye dige to *hesaab kon*,      next time you *pay-do*
+dafeye dige to *hesaab kon*,    next time you *pay-do*
 
 
 dafeye ba’ad,                   next time

@@ -26,6 +26,11 @@ h1 {
     font-family: Verdana;
     color: #7b858f;
 }
+h2 {
+    font-weight: 100;
+    font-family: Verdana;
+    color: #5d84ac;
+}
 table {
     border-collapse: collapse;
 }
