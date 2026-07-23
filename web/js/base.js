@@ -1,12 +1,28 @@
+const EN = 0;
+const FA = 1;
+const ARROW = {
+    LEFT: 0,
+    UP: 1,
+    RIGHT: 2,
+    DOWN: 3
+}
+const asArrowKeys = ['ArrowLeft', 'ArrowUp', 'ArrowRight', 'ArrowDown'];
 const vocab = {
     dict: null,
     list: null, // Sorted array. Gets resorted a lot.
     sLastSortField: "UNSET",
     ixVis: -1,
+    iLangShown: EN,
+    iLangGuess: FA,
+    userSettings: {lastSort: "sSortP"},
     init: function() {
+        //sakhtBase.setDataFromCookie();
+        sakhtBase.init();
+        this.userSettings = localStorageManager.get("user_settings", this.userSettings);
         this.dict = this.parseRaw();
         this.initList();
         this.render();
+        this.clickColSort(this.userSettings.lastSort);
     },
     parseRaw: function() {
         let oDictOut = {};
@@ -17,20 +33,24 @@ const vocab = {
             if (!oWord) {
                 continue;
             }
-            let sForeignKey = oWord.p.key;
+            let sForeignKey = oWord.p.key.toLowerCase().split("?").join("");
             if (oDictOut.hasOwnProperty(oWord.p.key)) {
                 let iIncrement = 1;
                 while (oDictOut.hasOwnProperty(sForeignKey)) {
                     //console.error("trying to set " + oWord.p.key + " again.");
-                    sForeignKey = oWord.p.key + "__" + iIncrement;
+                    sForeignKey = (oWord.p.key + "__" + iIncrement).toLowerCase();
                     iIncrement++;
                 }
             }
+            let iStrength = sakhtBase.getByKey(sForeignKey);
+//debugger;
             oWord.meta = {
                 ixOrig: ixCursor++,
                 sSortP: oWord.p.key.toLowerCase(),
-                sSortE: oWord.e.key.toLowerCase()
+                sSortE: oWord.e.key.toLowerCase(),
+                sSortSakhti: (iStrength + 20)
             };
+            oWord.key = sForeignKey;
             oDictOut[sForeignKey] = oWord;
         }
         return oDictOut;
@@ -42,7 +62,7 @@ const vocab = {
         }
     },
     toWord: function(sLine) {
-        sLine = sLine.trim();
+        sLine = sLine.trim().split("'").join("~");
         if ((sLine == "") || (sLine.startsWith("#"))) {
             return null;
         }
@@ -61,7 +81,7 @@ const vocab = {
         let oOut = {};
         if (as.length < 3) {
             oOut.key = as[0];
-            oOut.context = "";
+            oOut.context = "<b class=\"context\">" + as[0] + "</b>";
         } else {
             oOut.key = as[1];
             oOut.context = as[0] + "<b class=\"context\">" + as[1] + "</b>" + as[2];
@@ -70,33 +90,32 @@ const vocab = {
     },
     vocabToHtml: function() {
         let sOut = "<table id=\"vocab\">"
-        sOut += "<tr><td id=\"sSortP\" class=\"colSorter\" onclick=\"vocab.clickColSort(this);\">"
-            + "farsi</td>"
-            + "<td id=\"sSortE\" class=\"colSorter\" onclick=\"vocab.clickColSort(this);\">"
-            + "english</td>"
-            + "<td id=\"ixOrig\" class=\"colSorter\" onclick=\"vocab.clickColSort(this);\">"
-            + "context</td>"
-            + "<td id=\"ixOrig\" class=\"colSorter\" onclick=\"vocab.clickColSort(this);\">"
-            + "context</td>"
+        sOut += "<tr>"
+            + "<td id=\"sSortE\" class=\"colSorter\" onclick=\"vocab.clickColSort(this);\">english</td>"
+            + "<td id=\"sSortP\" class=\"colSorter\" onclick=\"vocab.clickColSort(this);\">farsi</td>"
+            + "<td id=\"sSortSakhti\" class=\"colSorter\" onclick=\"vocab.clickColSort(this);\">sakhti</td>"
             + "</tr>";
         for (let ix = 0; ix < this.list.length; ix++) {
             let oWord = this.list[ix];
-            sOut += "<tr onclick='vocab.doRowClick(this);' id='tr" + ix + "'>" // " + ix + "
-                + "<td class=\"word\">" + this.longA(oWord.p.key) + "</td>"
-                + "<td class=\"word\">" + oWord.e.key  + "</td>"
-                + "<td class=\"context\">" + this.longA(oWord.p.context) + "</td>"
+            sOut += "<tr onclick='vocab.doRowClick(this);' id='tr" + ix + "' data-key='" + oWord.key + "'>" // " + ix + "
+                //+ "<td class=\"word\">" + this.longA(oWord.p.key) + "</td>"
+                //+ "<td class=\"word\">" + oWord.e.key  + "</td>"
                 + "<td class=\"context\">" + oWord.e.context  + "</td>"
+                + "<td class=\"context\">" + this.longA(oWord.p.context) + "</td>"
+                + "<td class=\"context\">" + sakhtBase.getIcon(oWord.key) + "</td>"
                 + "</tr>";
         }
         sOut += "</table>";
         return sOut;
     },
     longA: function (sRaw) {
-        return sRaw.split("aa").join("&amacr;")
+        return sRaw.split("aa").join("&amacr;").split("~").join("&apos;");
     },
-    clickColSort: function (uiSrc) {
-        //        this.list = this.sort(this.sortCompare)
-        let sSortField = uiSrc.id; // "sSortE";
+    clickColSort: function (uiSrcOrStringId) {
+        let sSortField = uiSrcOrStringId;
+        if (typeof uiSrcOrStringId !== "string") {
+            sSortField = uiSrcOrStringId.id; // "sSortE";
+        }
         if (sSortField === this.sLastSortField) {
             this.list.reverse();
         } else {
@@ -104,11 +123,14 @@ const vocab = {
         }
         this.sLastSortField = sSortField;
         this.render();
+        this.userSettings.lastSort = sSortField;
+        localStorageManager.set("user_settings", this.userSettings);
     },
     render: function () {
         this.uiVocab = document.querySelector("#vocab");
         this.uiVocab.innerHTML = this.vocabToHtml();
     },
+    rowHighlited: null,
     doRowClick: function(oRow) {
         let tbl = document.querySelector("table#vocab");
         let atr = tbl.querySelectorAll("tr");
@@ -118,10 +140,22 @@ const vocab = {
         this.ixVis = ixRowClicked;
         for (let ixTr = 0; ixTr < atr.length; ixTr++) {
             let atd = atr[ixTr].querySelectorAll("td");
-            atd[0].style.opacity = sOpacity;
-            atd[2].style.opacity = sOpacity;
+            atd[this.iLangGuess].style.opacity = sOpacity;
+            //atd[2].style.opacity = sOpacity;
             if (!isFound) {
                 if (atr[ixTr] === oRow) {
+                    if (this.rowHighlited != null) {
+                        this.rowHighlited.style.backgroundColor = "inherit";
+                    }
+                    oRow.style.backgroundColor = "#FFF1";
+                    if (false) {
+                        setTimeout(
+                            function() {
+                                oRow.style.backgroundColor = "inherit";
+                            }, 500
+                        )
+                    }
+                    this.rowHighlited = oRow;
                     isFound = true;
                     sOpacity = "0.0";
                 }
@@ -137,17 +171,86 @@ const vocab = {
         console.log("ixVis :: " + this.ixVis);
         let trNext = document.querySelector("#tr" + this.ixVis);
         this.doRowClick(trNext)
+    },
+    incrementSakhti: function(iSakht) {
+        if (iSakht === 0) {
+            console.log("increment == 0");
+            return;
+        }
+debugger;
+        let trCurrent = document.querySelector("#tr" + this.ixVis);
+        if (trCurrent === null) {
+            console.log("no current tr");
+            return;
+        }
+        let sKey = trCurrent.getAttribute("data-key");
+        if (!sakhtBase.data.hasOwnProperty(sKey)) {
+            sakhtBase.data[sKey] = iSakht;
+        } else {
+            sakhtBase.data[sKey] += iSakht;
+            iSakht = sakhtBase.data[sKey];
+        }
+        console.log(sKey + " changed by " + iSakht);
+        sakhtBase.save();
+        trCurrent.querySelector("div.sakhti").style = sakhtBase.getCssForStrength(iSakht);
+        trCurrent.querySelector("div.sakhti").innerHTML = sakhtBase.prettyStrength(iSakht);
     }
 }
-function keyToDistance(sEventKey) {
-    const fruits = ['ArrowLeft', 'ArrowUp', 'ArrowRight', 'ArrowDown'];
-    let ix = fruits.indexOf(sEventKey);
+const sakhtBase = {
+    data: {},
+    init: function() {
+        this.data = localStorageManager.get("farsi_cooki_ls", {});
+    },
+    save: function() {
+        localStorageManager.set("farsi_cooki_ls", this.data);
+    },
+    getByKey: function(sKey) {
+        if (!this.data.hasOwnProperty(sKey)) {
+            return 0;
+        }
+        return this.data[sKey];
+    },
+    //    setDataFromCookie: function() {
+    //        this.data = utilCookieJson.get("farsi_cooki");
+    //    },
+    getIcon: function(sKey) {
+        let iStrength = sakhtBase.getByKey(sKey);
+        let sCss = this.getCssForStrength(iStrength);
+        let sStrength = this.prettyStrength(iStrength);
+        return "<div class=\"sakhti\" style=\"" + sCss + "\">" + sStrength + "</div>";
+    },
+    prettyStrength: function(iStrength) {
+        return (iStrength < 0 ? "<i>--</i>" : "") + Math.abs(iStrength) + (iStrength < 0 ? "&nbsp; &nbsp;" : "");
+    },
+    getCssForStrength: function(iStrength) {
+        iStrength *= 3; // Make colors change faster;
+        let sStrength = Math.min(Math.abs(iStrength), 15).toString(16);
+        let sColorBg = "#" + (iStrength >= 0 ? "0fa" : "000") + sStrength;
+        let sColorTxt = "#" + (iStrength >= 5 ? "000" : "fff");
+        return "color:" + sColorTxt + ";background-color:" + sColorBg + ";";
+    }
+}
+function keyToSakhti(sEventKey) {
+    let ix = asArrowKeys.indexOf(sEventKey);
     if (ix === -1) {
         return 0;
-    } else if (ix < 2) {
-        return -1;
-    } else {
+    } else if (ix === ARROW.RIGHT) {
         return 1;
+    } else if (ix === ARROW.LEFT) {
+        return -1;
+    }
+    return 0;
+}
+function keyToDistance(sEventKey) {
+    let ix = asArrowKeys.indexOf(sEventKey);
+    if (ix === -1) {
+        return 0;
+    } else if (ix === ARROW.UP) {
+        return -1;
+    } else if (ix === ARROW.DOWN) {
+        return 1;
+    } else {
+        return 0;
     }
 }
 window.addEventListener('keydown', (event) => {
@@ -157,6 +260,7 @@ window.addEventListener('keydown', (event) => {
 });
 window.addEventListener('keyup', (event) => {
     let iDist = keyToDistance(event.key);
+    vocab.incrementSakhti(keyToSakhti(event.key)); // Before increment.
     if (iDist !== 0) {
         event.preventDefault();
         vocab.next(iDist);

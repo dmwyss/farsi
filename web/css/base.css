@@ -2,7 +2,7 @@
     --text-bright: #DDD;
 }
 * {
-    color: #888;
+    color: #CCC;
     font-family: sans-serif;
     font-weight: 100;
 }
@@ -20,6 +20,7 @@ body {
 td {
     padding: 4px 0 4px 7px;
     border-bottom: 1px solid #0005;
+    transition: background-color 1s;
 }
 h1 {
     font-weight: 100;
@@ -81,4 +82,12 @@ img#heading {
 table#vocab tr:hover {
     background-color: #FFF1;
     cursor: pointer;
+}
+.sakhti {
+    border-radius: 8px;
+    text-align: center;
+    width: 50px;
+}
+.sakhti i {
+    opacity: 0.6;
 }
