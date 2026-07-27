@@ -10,7 +10,7 @@ kelidam ro gom kardam,                  keys-my the lost did (past)
 kodoom rooza sherkati?,                 which days office-you?
 In hafte seshanbe o chaharshanbe miam sherkat, this week Tuesday and Wednesday going office
 Shoma chetor?                           How about you?
-doshanbehaa ro doost nadaram,           mondays them not like
+doshanbehaa ro doost nadaaram,          mondays them not like
 
 harchi zoodtar behtar,                  everywhat sooner better
 che behtar,                             even better
@@ -111,7 +111,7 @@ hame oomadan,                           everyone came
 hichi injaa nist,                       nothing is here
 yek chizi kharidam,                     I bought something
 har chizi bekhay daaram,                I have anything you want
-hich pooli nadaram,                     I have no money
+hich pooli nadaaram,                    I have no money
 hich kasi ro nadidam,                   I saw nobody
 kasi dar zad?,                          did anyone knock on the door?
 har kasi injaast,                       everyone is here
@@ -183,7 +183,6 @@ mesle halazoon *yavaash*,               like snail *slow*
 tamiz-esh mikonam,                      I will clean it
 tamiz-esh kardi?,                       did you clean it?
 een otaagh kheli *boland*e,             this room is too *noisy*
-*moshtaagh*e deedanet hastam,           *eager* seeyou I-am
 man kheili *baahoosh*am,                I am very *smart*
 jaaleb,                                 interesting
 farsi kheli *aasoon*e,                  farsi very *easy*-is
@@ -195,9 +194,9 @@ khoshgel-am,                            *darling* (lit beautiful-mine)
 kheyli *khoshgel* hasti,                very *beautiful/handsome* you-are (lit good shaped)
 toh *fardah*,                           until *tomorrow*
 vaay che havaaye khubi,                 *wonderful* what weather good
-man *gha-veh* doost daram,              I *coffee* like
+man *gha-veh* doost daaram,             I *coffee* like
 *khoshbakht*-am,                        lucky/fortunate-I-am
-Sholeh *doost daram*,                   Sholeh *I like*
+Sholeh *doost daaram*,                  Sholeh *I like*
 *zahmat* nakeshid,                      *trouble* dont-pull
 zan-e man *mishi*,                      wife-of me you *become*
 
@@ -219,11 +218,15 @@ mikoni (kardan),                        you do (present)
 kardi (kardan),                         you did (past)
 ye dar daaram,                          I have a door (present)
 man do taa cheshm daaram (dashtan),     I had two eyes (past)
-al'aan se taa gooshi daari,             now you have three phones
-to haft tā gooshi daashti (dashtan),    you had (past)
+ye so~al daashtam,                      I had a question
+ye rah-e-hal daaram,                    i have a solution
+ye fekr-e aali daaram,                  i have a great idea
+al~aan se taa gooshi daari,             now you have three phones
+to haft taa gooshi daashti (dashtan),   you had seven phones (past)
 midaham (daadan),                       I give (present)
 daadam (daadan),                        I gave (past)
 midahi (daadan),                        you give (present)
+ye ideh-ye aali daaram,                 i have a great idea
 daadi (daadan),                         you gave (past)
 baaz mikonam (baaz kardan),             I open (present)
 baaz kardam (baaz kardan),              I opened (past)
@@ -297,22 +300,21 @@ man *raaham*,                           on *path*-me
 piad mir-i ye *baa* tram,               walk go-you or *with* tram
 kojaa *mir-i*,                          where *go-you*
 *key* mi-ris-i,                         *when* will-arrive-you
-*kodoom* ro mikhaai,                    *which* the-definite-thing want-you
+*kodoom* ro mikhaai,                    *which* thing want-you
 *az* koja kharidi,                      *from* where buy-you
 *aamaadeii* berim,                      *ready-are-you* go-we
-doost daram to ham *biai*,              want you also *come-you*
+doost daaram to ham *biai*,             want you also *come-you*
 
 *hal*-et chetore,                       *mood/feeling*-you howis?
 mishe *tekraar konid*?,                 can-possible *repeat*?
 man nemifahmmam,                        i not-understand-me
-mishe dobare *aarum* begid?,            can-possible again *slow* say?
 hatman,                                 sure
 
 *sare kaar* chetor bud emrooz?,         *at work* how was today?
 
 *movafagh* beshi,                       *success*ful be-you
-#yavash tar harf bezan,                  speak more slowly
-yavash tar begoo,                       speak slower
+#yavash tar harf bezan,                 speak more slowly
+yavash-tar begoo,                       speak slower
 *sir* shodam,                           *full* i am
 kheili *mohem* nist,                    it is not very *important*
 Sholeh kheili *zerang*e,                Sholeh is very *hardworking*
@@ -326,10 +328,9 @@ khasteh nabaashee,                      dont be tired
 *hichi*,                                nothing
 chizi,                                  something
 baashe,                                 ok/sure
-*zood* miresam,                         *close* i am (find word for word xlation)
+*zood* miresam,                         soon arrive-I
 *haste-i*?,                             *ok-you*?
 *eynak*am ku? Ru saret-e,               *glasses*-my where? On head-is
-*zood* mi-ris-am,                       *fast/soon/early/quick* definitely-arriving-am
 hoselam sar rafte,                      I am bored
 daaram *mimiram*,                       having *dying*-me
 
@@ -341,25 +342,29 @@ kheili *khoshhaal*am dobaare mibinamet, I am *happy* to see you again
 
 # Note: In colloquial speech,           the 3rd person singular "ast" becomes "-e" and the 3rd person plural "and" often becomes "-an".
 
-# Present stem kon,         past stem kard
+# Present stem kon, past stem kard
 man mikonam,                            i do
 to mikoni,                              you(singl) do
-u mikonad/mikoneh,                      he/she/it does
+u mikone,                               he does
 maa mikonim,                            we do
-shomaa mikonid/mikonin,                 you(plur) do
-aanhaa/ishaan mikonand/mikonan,         they do
+shomaa mikonid,                         you(plur) do
+oonhaa mikonan,                         they do
 
 # Compound verbs based on Kardan:
-zendegi kardan,        		            to live
-fekr kardan,        			        to think
-kaar kardan,        			        to work
-sohbat kardan,        		            to speak
+man inja zendegi mikonam,               I live-do here
+to koja zendegi mikoni?,                where you live-do?
+man daram fekr mikonam,                 I am think-doing
+to chi fekr mikoni?,                    what you think-do?
+man emruz kaar mikonam,                 I work-do today
+to koja kaar mikoni?,                   where you work-do?
+man baa ali sohbat mikonam,             I am talk-doing to ali
+to baa ki sohbat mikoni?,               who are you talk-doing to?
 
 bah bah,        			    	    oh wow beautiful
 nush-e jaan,        			        en guete
 azizam,        				            my darling.
 mobaarake,        			            congratulations
-khaste nabaashin,        	            means dont be tired
+khaste nabaashin,        	            tired dont-be (thanks for effort)
 *moshtaagh*-e didaar,        	        i am *eager* to see you.
 felan,         				            *for now* meaning see you soon
 zibaa,                                  beautiful
@@ -385,7 +390,8 @@ dafeye aval,                            the first time
 hamisheh ye bar-e avvalam hast,         there is always a first time
 dafeye akhar,                           the last time
 
-negah kon,                              look do
+bebin,                                  see!
+vaay - negaah kon!                      wow - look do!
 goush kon,                              listen / ear do
 sokout kon,                             be quiet / silence do
 booye khoob mideh,                      smell good gives
@@ -399,28 +405,28 @@ davaazdahom,                            12th
 tabagheh-ye davaazdahom,                floor-of twelfth
 
 havaa daare taarik mishe,               weather/sky become-auxiliary dark becomes
-taaftan,                                 to shine
+taaftan,                                to shine
 baaftan,                                to weave
 
-*nim* sa-at dige,                       *helf* hour still
+*nim* sa~at dige,                       *half* hour still
 yek daghigeh sabr kon,                  wait one minute
 man *berenj* mikham,                    i *rice* want/would-like
 dari *miaay*?,                          have-you *coming-you*?
 daaram *mimiram* az goshnegi,           have *dying* from hunger
 *hatman*,                               sure
-*begu*,                                 *speak!* /go-ahead
+*begoo*,                                *speak!* /go-ahead
 *rishe*-shenaasee,                      *root*-knowledge
-ye *kadoo* barat (baraye to) daram,            one *present* for have-I
+ye *kadoo* baraye to daaram,            one *present* for have-I
 age besheh chee meeshe,                 think of what could be
-*zabaan*-e Farsi kheili shirine,         *language*-of Farsi very sweet
+*zabaan*-e Farsi kheili shirine,        *language*-of Farsi very sweet
 *safar*e khubi baashte baashi,          *trip* good have will
 mage *kheng*am?,                        am I *stupid*?
 *raeis*e bozorg,                        *boss* big
 *yekam* laaghar shodi,                  *a little* thin become-I
-in *mantagheh* kheyli sholooghe,            this *area* very noisy
+in *mantagheh* kheyli sholooghe,        this *area* very busy/noisy
 *hame* khaab-an,                        *everybody* sleeping-is
 biaa *pish*-am,                         come *near/to*-me
-(khodam) *midoonam*,                    (I-myself) *know-I*
+*midoonam* (khodam),                    *know-I*
 *nemidoonam*,                           *not-know-I*
 *ki* midoone?,                          *who* knows
 az kojaa *midooni*?,                    from where *know-you*?
@@ -437,5 +443,34 @@ haftom,                                 7th
 hashtom,                                8th
 nohom,                                  9th
 dahom,                                  10th
+
+ye daastaan daaram ke mikham begam,     i have a story i would like to tell
+kalameye "tulip" az faarsiye baastaan miayad,      the word tulip comes from ancient farsi
+vali na az kalameye laleh,              but not from the word laleh
+tooye iraane baastaan,                  in ancient persia
+oonaa fekr mikardan,                    they thought
+ke in gol shabihe ye ammameye koocholooe,      that the flower looked like a little turban
+oonaa az kalameye ghadimie faarsiye "dulband" estefaade mikardan,      they used the old persian word "dulband"
+tooye torkiye in kalame shod "tülbent", in turkie the word became "tülbent"
+tooye aalmaan in kalame shod "tülpe",   in germany the word became "tülpe"
+pas be engelisi mishe "tulip",          then in English became "tulip"
+pas esme khiaaboonetoon az ye kalameye faarsi miaad,      so your street name comes from a persian word
+
+az medaad estefadeh mikardan,           they used to use pencils
+mikham az dokhtaretan khastegari konam, i would like to ask your daughter to marry me
+
+maagam roo mize,                        my mug is on the table
+fenjoonam roo mize,                     my cup is on the table
+kelidet gom shode,                      your key is lost
+televizionesh bozorge,                  her tv is big
+khoonemoon garme,                       our house is warm
+yakhchaaletoon khaal-lie,               your(plural) fridge is empty
+lebasshooyeeshoon sedaa mide,           their washing machine is making noise
+
+farsi yaad migiram,                     farsi learning-am
+bastani baastaan,                       ancient icecream
+tahdig bereshteye,                        Tahdig is crispy
+
+
 
 `;

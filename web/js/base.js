@@ -14,6 +14,7 @@ const vocab = {
     ixVis: -1,
     iLangShown: EN,
     iLangGuess: FA,
+    iColHiddenForGuess: 2,
     userSettings: {lastSort: "sSortP"},
     init: function() {
         //sakhtBase.setDataFromCookie();
@@ -91,7 +92,8 @@ const vocab = {
     vocabToHtml: function() {
         let sOut = "<table id=\"vocab\">"
         sOut += "<tr>"
-            + "<td id=\"sSortE\" class=\"colSorter\" onclick=\"vocab.clickColSort(this);\">english</td>"
+            + "<td id=\"sNum\" class=\"colSorter colNarrow\">#</td>"
+            + "<td id=\"sSortE\" class=\"colSorter\" onclick=\"vocab.clickColSort(this);\">engelisi</td>"
             + "<td id=\"sSortP\" class=\"colSorter\" onclick=\"vocab.clickColSort(this);\">farsi</td>"
             + "<td id=\"sSortSakhti\" class=\"colSorter\" onclick=\"vocab.clickColSort(this);\">sakhti</td>"
             + "</tr>";
@@ -100,7 +102,8 @@ const vocab = {
             sOut += "<tr onclick='vocab.doRowClick(this);' id='tr" + ix + "' data-key='" + oWord.key + "'>" // " + ix + "
                 //+ "<td class=\"word\">" + this.longA(oWord.p.key) + "</td>"
                 //+ "<td class=\"word\">" + oWord.e.key  + "</td>"
-                + "<td class=\"context\">" + oWord.e.context  + "</td>"
+                + "<td class=\"context colNarrow\">" + (ix + 1) + "</td>"
+                + "<td class=\"context\">" + oWord.e.context + "</td>"
                 + "<td class=\"context\">" + this.longA(oWord.p.context) + "</td>"
                 + "<td class=\"context\">" + sakhtBase.getIcon(oWord.key) + "</td>"
                 + "</tr>";
@@ -140,7 +143,7 @@ const vocab = {
         this.ixVis = ixRowClicked;
         for (let ixTr = 0; ixTr < atr.length; ixTr++) {
             let atd = atr[ixTr].querySelectorAll("td");
-            atd[this.iLangGuess].style.opacity = sOpacity;
+            atd[this.iColHiddenForGuess].style.opacity = sOpacity;
             //atd[2].style.opacity = sOpacity;
             if (!isFound) {
                 if (atr[ixTr] === oRow) {
@@ -224,9 +227,13 @@ const sakhtBase = {
     },
     getCssForStrength: function(iStrength) {
         iStrength *= 3; // Make colors change faster;
-        let sStrength = Math.min(Math.abs(iStrength), 15).toString(16);
-        let sColorBg = "#" + (iStrength >= 0 ? "0fa" : "000") + sStrength;
-        let sColorTxt = "#" + (iStrength >= 5 ? "000" : "fff");
+        let sColorBg = "#F50";
+        let sColorTxt = "#fff";
+        if (iStrength !== 0) {
+            let sStrength = Math.min(Math.abs(iStrength), 15).toString(16);
+            sColorBg = "#" + (iStrength >= 0 ? "0fa" : "000") + sStrength;
+            sColorTxt = "#" + (iStrength >= 5 ? "000" : "fff");
+        }
         return "color:" + sColorTxt + ";background-color:" + sColorBg + ";";
     }
 }

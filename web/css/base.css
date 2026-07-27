@@ -5,6 +5,7 @@
     color: #CCC;
     font-family: sans-serif;
     font-weight: 100;
+    font-size: 13pt
 }
 a {
     text-decoration: none;
@@ -26,6 +27,7 @@ h1 {
     font-weight: 100;
     font-family: Verdana;
     color: #7b858f;
+    font-size: 27pt;
 }
 h2 {
     font-weight: 100;
@@ -46,6 +48,9 @@ td {
     padding-right: 20px;
     min-width: 70px;
 }
+td:last-child {
+    padding: 0 5px 0 0px;
+}
 .colSorter {
     background-color: #0004;
     cursor: pointer;
@@ -54,6 +59,13 @@ td {
 }
 .colSorter.on {
     background-color: #0008;
+}
+td.colNarrow {
+    max-width: 30px;
+    padding-left: 5px;
+    padding-right: 5px;
+    min-width: 13px;
+    color: #778088;
 }
 img#heading {
     position: absolute;
@@ -86,7 +98,7 @@ table#vocab tr:hover {
 .sakhti {
     border-radius: 8px;
     text-align: center;
-    width: 50px;
+    width: 70px;
 }
 .sakhti i {
     opacity: 0.6;
