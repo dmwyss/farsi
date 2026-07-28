@@ -64,7 +64,7 @@ td.colNarrow {
     max-width: 30px;
     padding-left: 5px;
     padding-right: 5px;
-    min-width: 13px;
+    min-width: 35px;
     color: #778088;
 }
 img#heading {
@@ -102,4 +102,7 @@ table#vocab tr:hover {
 }
 .sakhti i {
     opacity: 0.6;
+}
+.off {
+    opacity: 0.3;
 }

@@ -34,7 +34,7 @@ const vocab = {
             if (!oWord) {
                 continue;
             }
-            let sForeignKey = oWord.p.key.toLowerCase().split("?").join("");
+            let sForeignKey = oWord.p.key.toLowerCase().split("?").join("").split("\"").join("&quot;");
             if (oDictOut.hasOwnProperty(oWord.p.key)) {
                 let iIncrement = 1;
                 while (oDictOut.hasOwnProperty(sForeignKey)) {
@@ -43,13 +43,14 @@ const vocab = {
                     iIncrement++;
                 }
             }
-            let iStrength = sakhtBase.getByKey(sForeignKey);
+            let oO_ = sakhtBase.getByKeyOo(sForeignKey);
 //debugger;
             oWord.meta = {
                 ixOrig: ixCursor++,
                 sSortP: oWord.p.key.toLowerCase(),
                 sSortE: oWord.e.key.toLowerCase(),
-                sSortSakhti: (iStrength + 20)
+                sSortStar: (oWord.hasOwnProperty("star") && (oWord.star == 1) ?  1 : 0),
+                sSortSakhti: (oO_.sakhti + 20)
             };
             oWord.key = sForeignKey;
             oDictOut[sForeignKey] = oWord;
@@ -95,17 +96,20 @@ const vocab = {
             + "<td id=\"sNum\" class=\"colSorter colNarrow\">#</td>"
             + "<td id=\"sSortE\" class=\"colSorter\" onclick=\"vocab.clickColSort(this);\">engelisi</td>"
             + "<td id=\"sSortP\" class=\"colSorter\" onclick=\"vocab.clickColSort(this);\">farsi</td>"
+            + "<td id=\"sSortStar\" class=\"colSorter colNarrow\" onclick=\"vocab.clickColSort(this);\">&star;</td>"
             + "<td id=\"sSortSakhti\" class=\"colSorter\" onclick=\"vocab.clickColSort(this);\">sakhti</td>"
             + "</tr>";
         for (let ix = 0; ix < this.list.length; ix++) {
             let oWord = this.list[ix];
+            let oO = sakhtBase.getByKeyOo(oWord.key);
             sOut += "<tr onclick='vocab.doRowClick(this);' id='tr" + ix + "' data-key='" + oWord.key + "'>" // " + ix + "
                 //+ "<td class=\"word\">" + this.longA(oWord.p.key) + "</td>"
                 //+ "<td class=\"word\">" + oWord.e.key  + "</td>"
                 + "<td class=\"context colNarrow\">" + (ix + 1) + "</td>"
                 + "<td class=\"context\">" + oWord.e.context + "</td>"
                 + "<td class=\"context\">" + this.longA(oWord.p.context) + "</td>"
-                + "<td class=\"context\">" + sakhtBase.getIcon(oWord.key) + "</td>"
+                + "<td class=\"context colNarrow\">" + sakhtBase.getStarOo(oWord.key, oO) + "</td>"
+                + "<td class=\"context\">" + sakhtBase.getIconOo(oO) + "</td>"
                 + "</tr>";
         }
         sOut += "</table>";
@@ -201,11 +205,19 @@ debugger;
 }
 const sakhtBase = {
     data: {},
+    dataOo: {},
     init: function() {
         this.data = localStorageManager.get("farsi_cooki_ls", {});
+        this.dataOo = localStorageManager.get("farsi_cooki_oo", {});
+        /*
+        for (sKey in this.data) {
+            this.dataOo[sKey] = {sakhti: this.data[sKey]};
+        }
+        */
     },
     save: function() {
         localStorageManager.set("farsi_cooki_ls", this.data);
+        localStorageManager.set("farsi_cooki_oo", this.dataOo);
     },
     getByKey: function(sKey) {
         if (!this.data.hasOwnProperty(sKey)) {
@@ -213,11 +225,53 @@ const sakhtBase = {
         }
         return this.data[sKey];
     },
-    //    setDataFromCookie: function() {
-    //        this.data = utilCookieJson.get("farsi_cooki");
-    //    },
+    getByKeyOo: function(sKey) {
+        if (!this.dataOo.hasOwnProperty(sKey)) {
+            return {sakhti: 0};
+        }
+        return this.dataOo[sKey];
+    },
+    getStar: function(sKey) {
+        return "&star;";
+    },
+    getStarOo: function(sKey, oO) {
+        let sStar = "&star;";
+        let sCss = "off";
+        if ((oO.hasOwnProperty("star")) && (oO.star === 1)) {
+            sStar = "&starf;";
+            sCss = "on";
+        }
+
+        let sOut = "<div onclick=\"sakhtBase.doStarClick(\'" + sKey + "\', this);\" class=\"" + sCss + "\">";
+        sOut += sStar + "</div>";
+        return sOut;
+    },
+    doStarClick: function(sKey, uiStar) {
+
+
+        //let uiStar = document.querySelector('[data-key=\"' + sKey + '\"]').querySelector(".star");
+
+        let oO_ = this.getByKeyOo(sKey);
+        if ((oO_.hasOwnProperty("star")) && (oO_.star === 1)) {
+            // Currently turned on.
+            delete oO_.star;
+            uiStar.innerHTML = "&star;";
+            uiStar.className = "off";
+        } else {
+            oO_.star = 1;
+            uiStar.innerHTML = "&starf;";
+            uiStar.className = "on";
+        }
+        this.save();
+    },
     getIcon: function(sKey) {
         let iStrength = sakhtBase.getByKey(sKey);
+        let sCss = this.getCssForStrength(iStrength);
+        let sStrength = this.prettyStrength(iStrength);
+        return "<div class=\"sakhti\" style=\"" + sCss + "\">" + sStrength + "</div>";
+    },
+    getIconOo: function(oO) {
+        let iStrength = oO.sakhti;
         let sCss = this.getCssForStrength(iStrength);
         let sStrength = this.prettyStrength(iStrength);
         return "<div class=\"sakhti\" style=\"" + sCss + "\">" + sStrength + "</div>";

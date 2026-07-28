@@ -36,7 +36,7 @@ baavar-am nemishe,                      believe-I not-become
 baa kamaal-e meyl,                      with completeness desire (with pleasure)
 eshkaal-i nadaare,                      defect-any not-have (no problem)
 
-man mikonam,                            i do
+man maachin raa tamiz mikonam,          i car clean do
 to mikoni,                              you (singl) do
 u mikoneh,                              he/she/it does
 maa mikonim,                            we do
@@ -447,9 +447,9 @@ dahom,                                  10th
 ye daastaan daaram ke mikham begam,     i have a story i would like to tell
 kalameye "tulip" az faarsiye baastaan miayad,      the word tulip comes from ancient farsi
 vali na az kalameye laleh,              but not from the word laleh
-tooye iraane baastaan,                  in ancient persia
+tooye iraane baastaan,                  in ancient Iran
 oonaa fekr mikardan,                    they thought
-ke in gol shabihe ye ammameye koocholooe,      that the flower looked like a little turban
+ke in gol shabihe ye ammameye koocholooe,      that the flower resembled a little turban
 oonaa az kalameye ghadimie faarsiye "dulband" estefaade mikardan,      they used the old persian word "dulband"
 tooye torkiye in kalame shod "tülbent", in turkie the word became "tülbent"
 tooye aalmaan in kalame shod "tülpe",   in germany the word became "tülpe"
