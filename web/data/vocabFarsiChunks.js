@@ -203,7 +203,7 @@ zan-e man *mishi*,                      wife-of me you *become*
 mibinam (didan),                        I see (present)
 didam (didan),                          I saw (past)
 mibini (didan),                         you see (present)
-didi (didan),                           you saw (past)
+didi - cheghadr aasoone (didan),        you saw (past) how easy that is
 mishnavam (shenidan),                   I hear (present)
 shenidam (shenidan),                    I heard (past)
 mishnavi (shenidan),                    you hear (present)
@@ -469,8 +469,8 @@ lebasshooyeeshoon sedaa mide,           their washing machine is making noise
 
 farsi yaad migiram,                     farsi learning-am
 bastani baastaan,                       ancient icecream
-tahdig bereshteye,                        Tahdig is crispy
+tahdig bereshteye,                      tahdig is crispy
 
-
+sanieh daghigheh sa-at ruz mah sal,      second minute hour day month year
 
 `;
