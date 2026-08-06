@@ -115,7 +115,7 @@ hich pooli nadaaram,                    I have no money
 hich kasi ro nadidam,                   I saw nobody
 kasi dar zad?,                          did anyone knock on the door?
 har kasi injaast,                       everyone is here
-ba'ziyaa raftand,                       some people left
+ba'ziyaa raftand,                       some people went
 meghdari aab mikham,                    I want some water
 yek kam aab,                            one little-bit water
 ba'zi roozhaa,                          some days
@@ -184,7 +184,6 @@ tamiz-esh mikonam,                      I will clean it
 tamiz-esh kardi?,                       did you clean it?
 een otaagh kheli *boland*e,             this room is too *noisy*
 man kheili *baahoosh*am,                I am very *smart*
-jaaleb,                                 interesting
 farsi kheli *aasoon*e,                  farsi very *easy*-is
 in kif kheili *sangin*e,                this bag is very *heavy*
 emrooz havaa *aali*e,                   today weather *great*is
@@ -200,98 +199,98 @@ Sholeh *doost daaram*,                  Sholeh *I like*
 *zahmat* nakeshid,                      *trouble* dont-pull
 zan-e man *mishi*,                      wife-of me you *become*
 
-mibinam (didan),                        I see (present)
-didam (didan),                          I saw (past)
-mibini (didan),                         you see (present)
+man mibinam (didan),                    I see (present)
+man didam (didan),                      I saw (past)
+to mibini (didan),                      you see (present)
 didi - cheghadr aasoone (didan),        you saw (past) how easy that is
-mishnavam (shenidan),                   I hear (present)
-shenidam (shenidan),                    I heard (past)
-mishnavi (shenidan),                    you hear (present)
-shenidi (shenidan),                     you heard (past)
-hastam (budan),                         I am (present)
-budam (budan),                          I was (past)
-hasti (budan),                          you be (present)
-budi (budan),                           you were (past)
-mikonam (kardan),                       I do (present)
-kardam (kardan),                        I did (past)
-mikoni (kardan),                        you do (present)
-kardi (kardan),                         you did (past)
-ye dar daaram,                          I have a door (present)
-man do taa cheshm daaram (dashtan),     I had two eyes (past)
-ye so~al daashtam,                      I had a question
-ye rah-e-hal daaram,                    i have a solution
-ye fekr-e aali daaram,                  i have a great idea
+man mishnavam (shenidan),               I hear (present)
+man shenidam (shenidan),                I heard (past)
+to mishnavi (shenidan),                 you hear (present)
+to shenidi (shenidan),                  you heard (past)
+man hastam (budan),                     I am (present)
+man budam (budan),                      I was (past)
+to hasti (budan),                       you be (present)
+to budi (budan),                        you were (past)
+man mikonam (kardan),                   I do (present)
+man kardam (kardan),                    I did (past)
+to mikoni (kardan),                     you do (present)
+to kardi (kardan),                      you did (past)
+man ye dar daaram,                      I have a door (present)
+man do taa cheshm daaram (dashtan), I had two eyes (past)
+man ye so~al daashtam,                  I had a question
+man ye rah-e-hal daaram,                I have a solution
+man ye fekr-e aali daaram,              I have a great idea
 al~aan se taa gooshi daari,             now you have three phones
 to haft taa gooshi daashti (dashtan),   you had seven phones (past)
-midaham (daadan),                       I give (present)
-daadam (daadan),                        I gave (past)
-midahi (daadan),                        you give (present)
-ye ideh-ye aali daaram,                 i have a great idea
-daadi (daadan),                         you gave (past)
-baaz mikonam (baaz kardan),             I open (present)
-baaz kardam (baaz kardan),              I opened (past)
-baaz mikoni (baaz kardan),              you open (present)
-baaz kardi (baaz kardan),               you opened (past)
-mibandam (bastan),                      I close (present)
-bastam (bastan),                        I closed (past)
-mibandi (bastan),                       you close (present)
-basti (bastan),                         you closed (past)
-miguyam (goftan),                       I say (present)
-goftam (goftan),                        I said (past)
-miguyi (goftan),                        you say (present)
-gofti (goftan),                         you said (past)
-fekr mikonam (fekr kardan),             I think (present)
-fekr kardam (fekr kardan),              I thought (past)
-fekr mikoni (fekr kardan),              you think (present)
-fekr kardi (fekr kardan),               you thought (past)
-kaar mikonam (kaar kardan),             I work (present)
-kaar kardam (kaar kardan),              I worked (past)
-kaar mikoni (kaar kardan),              you work (present)
-kaar kardi (kaar kardan),               you worked (past)
-miravam (raftan),                       I go (present)
-raftam (raftan),                        I went (past)
-miravi (raftan),                        you go (present)
-rafti (raftan),                         you went (past)
-miyaayam (aamadan),                     I come (present)
-aamadam (aamadan),                      I came (past)
-miyaayi (aamadan),                      you come (present)
-aamadi (aamadan),                       you came (past)
-midaanam (daanestan),                   I know (present)
-daanestam (daanestan),                  I knew (past)
-midaani (daanestan),                    you know (present)
-daanesti (daanestan),                   you knew (past)
-mikhoram (khordan),                     I eat (present)
-khordam (khordan),                      I ate (past)
-mikhori (khordan),                      you eat (present)
-khordi (khordan),                       you ate (past)
-mikhaabam (khaabidan),                  I sleep (present)
-khaabidam (khaabidan),                  I slept (past)
-mikhaabi (khaabidan),                   you sleep (present)
-khaabidi (khaabidan),                   you slept (past)
-mikharam (kharidan),                    I buy (present)
-kharidam (kharidan),                    I bought (past)
-mikhari (kharidan),                     you buy (present)
-kharidi (kharidan),                     you bought (past)
-mikhaanam (khaandan),                   I read (present)
-khaandam (khaandan),                    I read (past)
-mikhaani (khaandan),                    you read (present)
-khaandi (khaandan),                     you read (past)
-mishuram (shostan),                     I wash (present)
-shostam (shostan),                      I washed (past)
-mishuri (shostan),                      you wash (present)
-shosti (shostan),                       you washed (past)
-mifahmam (fahmidan),                    I understand (present)
-fahmidam (fahmidan),                    I understood (past)
-mifahmi (fahmidan),                     you understand (present)
-fahmidi (fahmidan),                     you understood (past)
-mimaanam (maandan),                     I stay (present)
-maandam (maandan),                      I stayed (past)
-mimaani (maandan),                      you stay (present)
-maandi (maandan),                       you stayed (past)
-migiram (gereftan),                     I take (present)
-gereftam (gereftan),                    I took (past)
-migiri (gereftan),                      you take (present)
-gerefti (gereftan),                     you took (past)
+man midaham (daadan),                   I give (present)
+man daadam (daadan),                    I gave (past)
+to midahi (daadan),                     you give (present)
+man ye ideh-ye aali daaram,             I have a great idea
+to daadi (daadan),                      you gave (past)
+man baaz mikonam (baaz kardan),         I open (present)
+man baaz kardam (baaz kardan),          I opened (past)
+to baaz mikoni (baaz kardan),           you open (present)
+to baaz kardi (baaz kardan),            you opened (past)
+man mibandam (bastan),                  I close (present)
+man bastam (bastan),                    I closed (past)
+to mibandi (bastan),                    you close (present)
+to basti (bastan),                      you closed (past)
+man miguyam (goftan),                   I say (present)
+man goftam (goftan),                    I said (past)
+to miguyi (goftan),                     you say (present)
+to gofti (goftan),                      you said (past)
+man fekr mikonam (fekr kardan),         I think (present)
+man fekr kardam (fekr kardan),          I thought (past)
+to fekr mikoni (fekr kardan),           you think (present)
+to fekr kardi (fekr kardan),            you thought (past)
+man kaar mikonam (kaar kardan),         I work (present)
+man kaar kardam (kaar kardan),          I worked (past)
+to kaar mikoni (kaar kardan),           you work (present)
+to kaar kardi (kaar kardan),            you worked (past)
+man miravam (raftan),                   I go (present)
+man raftam (raftan),                    I went (past)
+to miravi (raftan),                     you go (present)
+to rafti (raftan),                      you went (past)
+man miyaayam (aamadan),                 I come (present)
+man aamadam (aamadan),                  I came (past)
+to miyaayi (aamadan),                   you come (present)
+to aamadi (aamadan),                    you came (past)
+man midaanam (daanestan),               I know (present)
+man daanestam (daanestan),              I knew (past)
+to midaani (daanestan),                 you know (present)
+to daanesti (daanestan),                you knew (past)
+man mikhoram (khordan),                 I eat (present)
+man khordam (khordan),                  I ate (past)
+to mikhori (khordan),                   you eat (present)
+to khordi (khordan),                    you ate (past)
+man mikhaabam (khaabidan),              I sleep (present)
+man khaabidam (khaabidan),              I slept (past)
+to mikhaabi (khaabidan),                you sleep (present)
+to khaabidi (khaabidan),                you slept (past)
+man mikharam (kharidan),                I buy (present)
+man kharidam (kharidan),                I bought (past)
+to mikhari (kharidan),                  you buy (present)
+to kharidi (kharidan),                  you bought (past)
+man mikhaanam (khaandan),               I read (present)
+man khaandam (khaandan),                I read (past)
+to mikhaani (khaandan),                 you read (present)
+to khaandi (khaandan),                  you read (past)
+man mishuram (shostan),                 I wash (present)
+man shostam (shostan),                  I washed (past)
+to mishuri (shostan),                   you wash (present)
+to shosti (shostan),                    you washed (past)
+man mifahmam (fahmidan),                I understand (present)
+man fahmidam (fahmidan),                I understood (past)
+to mifahmi (fahmidan),                  you understand (present)
+to fahmidi (fahmidan),                  you understood (past)
+man mimaanam (maandan),                 I stay (present)
+man maandam (maandan),                  I stayed (past)
+to mimaani (maandan),                   you stay (present)
+to maandi (maandan),                    you stayed (past)
+man migiram (gereftan),                 I take (present)
+man gereftam (gereftan),                I took (past)
+to migiri (gereftan),                   you take (present)
+to gerefti (gereftan),                  you took (past)
 
 dooneh barf,                            flake-of snow
 
@@ -351,7 +350,7 @@ shomaa mikonid,                         you(plur) do
 oonhaa mikonan,                         they do
 
 # Compound verbs based on Kardan:
-man inja zendegi mikonam,               I live-do here
+man inja zendegi mikonam,               I here live-do
 to koja zendegi mikoni?,                where you live-do?
 man daram fekr mikonam,                 I am think-doing
 to chi fekr mikoni?,                    what you think-do?
@@ -473,4 +472,33 @@ tahdig bereshteye,                      tahdig is crispy
 
 sanieh daghigheh sa-at ruz mah sal,      second minute hour day month year
 
+khar to khar,                           donkey in donkey
+boosam kon,                             kiss me
+ozâgh kheyli khar to khare!,            this situation is a shamozzle
+khoshhâlam mikoni,                      you make me happy
+
+shaayad,                                maybe
+ghati paati,                            kompletes durcheinander (mix shmix)
+
+
 `;
+
+/*
+
+ghoor-baa-ghe
+halazoon
+morgh-e daryaayi
+chisi
+shotor morgh
+begoo
+ezhdehaa
+khar to khar
+chahaar
+
+morgh-e daryaayi,                       chicken of the sea
+morgh-e teshne,                         thirst bird - flamingo
+morgh-e kaaftaar,                       hyena bird
+morgh-e toofaan,                        storm bird
+morgh-e aameshgh,                       love bird
+
+*/

@@ -38,7 +38,7 @@ const vocab = {
             if (oDictOut.hasOwnProperty(oWord.p.key)) {
                 let iIncrement = 1;
                 while (oDictOut.hasOwnProperty(sForeignKey)) {
-                    //console.error("trying to set " + oWord.p.key + " again.");
+                    //c onsole.error("trying to set " + oWord.p.key + " again.");
                     sForeignKey = (oWord.p.key + "__" + iIncrement).toLowerCase();
                     iIncrement++;
                 }
@@ -64,7 +64,7 @@ const vocab = {
         }
     },
     toWord: function(sLine) {
-        sLine = sLine.trim().split("'").join("~");
+        sLine = sLine.trim().split("'").join("~").split("\"").join("^");
         if ((sLine == "") || (sLine.startsWith("#"))) {
             return null;
         }
@@ -106,8 +106,8 @@ const vocab = {
                 //+ "<td class=\"word\">" + this.longA(oWord.p.key) + "</td>"
                 //+ "<td class=\"word\">" + oWord.e.key  + "</td>"
                 + "<td class=\"context colNarrow\">" + (ix + 1) + "</td>"
-                + "<td class=\"context\">" + oWord.e.context + "</td>"
-                + "<td class=\"context\">" + this.longA(oWord.p.context) + "</td>"
+                + "<td class=\"context\">" + this.showQuote(oWord.e.context) + "</td>"
+                + "<td class=\"context\">" + this.showQuote(this.longA(oWord.p.context)) + "</td>"
                 + "<td class=\"context colNarrow\">" + sakhtBase.getStarOo(oWord.key, oO) + "</td>"
                 + "<td class=\"context\">" + sakhtBase.getIconOo(oO) + "</td>"
                 + "</tr>";
@@ -117,6 +117,9 @@ const vocab = {
     },
     longA: function (sRaw) {
         return sRaw.split("aa").join("&amacr;").split("~").join("&apos;");
+    },
+    showQuote: function (sRaw) {
+        return sRaw.split("^").join("&quot;");
     },
     clickColSort: function (uiSrcOrStringId) {
         let sSortField = uiSrcOrStringId;
@@ -175,29 +178,59 @@ const vocab = {
             this.ixVis = 0;
             return;
         }
-        console.log("ixVis :: " + this.ixVis);
+        //c onsole.log("ixVis :: " + this.ixVis);
         let trNext = document.querySelector("#tr" + this.ixVis);
+
+        this.scrollToWindowY(trNext);
+
         this.doRowClick(trNext)
+    },
+    scrollToWindowY: function(trNext) {
+        let iPosY = this.howFarIsElementScrolledOffScreen(trNext);
+        if (iPosY === 0) {
+            return;
+        }
+        window.scrollTo({
+            top: iPosY + window.scrollY,
+            left: 0,
+            behavior: 'smooth'
+        });
+    },
+    howFarIsElementScrolledOffScreen: function(element) {
+        if (!element) {
+            return 0;
+        }
+        const rect = element.getBoundingClientRect();
+
+        // Check if the element is completely outside the viewport bounds
+        const isOffTop = rect.top < 20;
+        const isOffBottom = (rect.bottom + 20) > window.innerHeight;
+        if (isOffTop) {
+            return -40; //rect.bottom;
+//            return window.scrollY - rect.top; //rect.bottom;
+        } else if (isOffBottom) {
+            return 40; //rect.top;
+        }
+        return 0;
     },
     incrementSakhti: function(iSakht) {
         if (iSakht === 0) {
-            console.log("increment == 0");
+            //c onsole.log("increment == 0");
             return;
         }
-debugger;
         let trCurrent = document.querySelector("#tr" + this.ixVis);
         if (trCurrent === null) {
             console.log("no current tr");
             return;
         }
         let sKey = trCurrent.getAttribute("data-key");
-        if (!sakhtBase.data.hasOwnProperty(sKey)) {
-            sakhtBase.data[sKey] = iSakht;
+        if (!sakhtBase.dataOo.hasOwnProperty(sKey)) {
+            sakhtBase.dataOo[sKey] = {sakhti: iSakht};
         } else {
-            sakhtBase.data[sKey] += iSakht;
-            iSakht = sakhtBase.data[sKey];
+            sakhtBase.dataOo[sKey].sakhti += iSakht;
+            iSakht = sakhtBase.dataOo[sKey].sakhti;
         }
-        console.log(sKey + " changed by " + iSakht);
+        //c onsole.log(sKey + " changed by " + iSakht);
         sakhtBase.save();
         trCurrent.querySelector("div.sakhti").style = sakhtBase.getCssForStrength(iSakht);
         trCurrent.querySelector("div.sakhti").innerHTML = sakhtBase.prettyStrength(iSakht);
@@ -220,6 +253,7 @@ const sakhtBase = {
         localStorageManager.set("farsi_cooki_oo", this.dataOo);
     },
     getByKey: function(sKey) {
+//c onsole.error("ood ldaadfda ta");
         if (!this.data.hasOwnProperty(sKey)) {
             return 0;
         }
@@ -232,6 +266,7 @@ const sakhtBase = {
         return this.dataOo[sKey];
     },
     getStar: function(sKey) {
+//c onsole.error("ood ldaadfda ta");
         return "&star;";
     },
     getStarOo: function(sKey, oO) {
@@ -277,15 +312,15 @@ const sakhtBase = {
         return "<div class=\"sakhti\" style=\"" + sCss + "\">" + sStrength + "</div>";
     },
     prettyStrength: function(iStrength) {
-        return (iStrength < 0 ? "<i>--</i>" : "") + Math.abs(iStrength) + (iStrength < 0 ? "&nbsp; &nbsp;" : "");
+        return (iStrength < 0 ? "<i>&ndash;</i>" : "") + Math.abs(iStrength) + (iStrength < 0 ? "&nbsp; &nbsp;" : "");
     },
     getCssForStrength: function(iStrength) {
-        iStrength *= 3; // Make colors change faster;
+        iStrength *= 1; // Make colors change faster;
         let sColorBg = "#F50";
         let sColorTxt = "#fff";
         if (iStrength !== 0) {
             let sStrength = Math.min(Math.abs(iStrength), 15).toString(16);
-            sColorBg = "#" + (iStrength >= 0 ? "0fa" : "000") + sStrength;
+            sColorBg = "#" + (iStrength >= 0 ? "0fa" : "F08") + sStrength;
             sColorTxt = "#" + (iStrength >= 5 ? "000" : "fff");
         }
         return "color:" + sColorTxt + ";background-color:" + sColorBg + ";";
