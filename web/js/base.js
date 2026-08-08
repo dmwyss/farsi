@@ -103,11 +103,11 @@ const vocab = {
             let oWord = this.list[ix];
             let oO = sakhtBase.getByKeyOo(oWord.key);
             sOut += "<tr onclick='vocab.doRowClick(this);' id='tr" + ix + "' data-key='" + oWord.key + "'>" // " + ix + "
-                //+ "<td class=\"word\">" + this.longA(oWord.p.key) + "</td>"
+                //+ "<td class=\"word\">" + this.tameSpecialChars(oWord.p.key) + "</td>"
                 //+ "<td class=\"word\">" + oWord.e.key  + "</td>"
                 + "<td class=\"context colNarrow\">" + (ix + 1) + "</td>"
                 + "<td class=\"context\">" + this.showQuote(oWord.e.context) + "</td>"
-                + "<td class=\"context\">" + this.showQuote(this.longA(oWord.p.context)) + "</td>"
+                + "<td class=\"context\">" + this.showQuote(this.tameSpecialChars(oWord.p.context)) + "</td>"
                 + "<td class=\"context colNarrow\">" + sakhtBase.getStarOo(oWord.key, oO) + "</td>"
                 + "<td class=\"context\">" + sakhtBase.getIconOo(oO) + "</td>"
                 + "</tr>";
@@ -115,8 +115,9 @@ const vocab = {
         sOut += "</table>";
         return sOut;
     },
-    longA: function (sRaw) {
-        return sRaw.split("aa").join("&amacr;").split("~").join("&apos;");
+    tameSpecialChars: function (sRaw) {
+//        return sRaw.split("aa").join("&amacr;").split("~").join("&apos;");
+        return sRaw.split("ā").join("aa").split("~").join("&apos;");
     },
     showQuote: function (sRaw) {
         return sRaw.split("^").join("&quot;");

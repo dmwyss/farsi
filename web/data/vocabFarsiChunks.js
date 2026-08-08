@@ -18,7 +18,7 @@ dahanam aab oftaad,                     my mouth is watering
 
 vaght daarim,                           time have-we
 raeise bahoosh,                         boss big
-mofid bood,                             useful was
+raahnamaayi-t mofid bood,               your advice useful was
 dorost migofti,                         correct spoke-you
 doshman nadaaram,                       enemies not-have
 
@@ -37,7 +37,7 @@ baa kamaal-e meyl,                      with completeness desire (with pleasure)
 eshkaal-i nadaare,                      defect-any not-have (no problem)
 
 man maachin raa tamiz mikonam,          i car clean do
-to mikoni,                              you (singl) do
+to chi kaar mikoni?,                    what you (single) doing?
 u mikoneh,                              he/she/it does
 maa mikonim,                            we do
 shomaa mikonin,                         you (plur) do
@@ -54,7 +54,7 @@ Anha ba moallem sohbat mikonand,        They talk with the teacher
 oo dar khaane ast,                      he is at home
 oo dar khaane bood,                     he was at home
 man kaaram ro mikonam,                  I do my work
-man kaaram ro kardam,                   I did my work
+dirooz - man kaaram ro kardam,          yesterday - I did my work
 ma maashin daarim,                      we have a car
 ma maashin daashtim,                    we had a car
 man injaa ro doost daaram,              I like this place
@@ -186,7 +186,7 @@ een otaagh kheli *boland*e,             this room is too *noisy*
 man kheili *baahoosh*am,                I am very *smart*
 farsi kheli *aasoon*e,                  farsi very *easy*-is
 in kif kheili *sangin*e,                this bag is very *heavy*
-emrooz havaa *aali*e,                   today weather *great*is
+emrooz havaa *aali*e,                   today weather *great*-is
 havaa-to *daaram*,                      weather-yours *I-have*
 *havaa* chetore,                        *weather* howis
 khoshgel-am,                            *darling* (lit beautiful-mine)
@@ -207,7 +207,7 @@ man mishnavam (shenidan),               I hear (present)
 man shenidam (shenidan),                I heard (past)
 to mishnavi (shenidan),                 you hear (present)
 to shenidi (shenidan),                  you heard (past)
-man hastam (budan),                     I am (present)
+man superman hastam (budan),            I Superman am (present)
 man budam (budan),                      I was (past)
 to hasti (budan),                       you be (present)
 to budi (budan),                        you were (past)
@@ -279,7 +279,8 @@ man mishuram (shostan),                 I wash (present)
 man shostam (shostan),                  I washed (past)
 to mishuri (shostan),                   you wash (present)
 to shosti (shostan),                    you washed (past)
-man mifahmam (fahmidan),                I understand (present)
+man yeki do taa kalameh dar faarsi mifahmam,  I understand one or two words in Farsi (fahmidan present)
+
 man fahmidam (fahmidan),                I understood (past)
 to mifahmi (fahmidan),                  you understand (present)
 to fahmidi (fahmidan),                  you understood (past)
@@ -326,8 +327,8 @@ raast-i,                                by the way
 khasteh nabaashee,                      dont be tired
 *hichi*,                                nothing
 chizi,                                  something
-baashe,                                 ok/sure
-*zood* miresam,                         soon arrive-I
+baasheh - in kaar ro mikonam,           sure - that job will-do-I
+negaraah nabash - *zood* miresam,       worry dont - soon arrive-I
 *haste-i*?,                             *ok-you*?
 *eynak*am ku? Ru saret-e,               *glasses*-my where? On head-is
 hoselam sar rafte,                      I am bored
@@ -343,10 +344,10 @@ kheili *khoshhaal*am dobaare mibinamet, I am *happy* to see you again
 
 # Present stem kon, past stem kard
 man mikonam,                            i do
-to mikoni,                              you(singl) do
+to varzesh mikoni,                      you (singl) sport do
 u mikone,                               he does
 maa mikonim,                            we do
-shomaa mikonid,                         you(plur) do
+shomaa mikonid,                         you (plur) do
 oonhaa mikonan,                         they do
 
 # Compound verbs based on Kardan:
@@ -389,9 +390,9 @@ dafeye aval,                            the first time
 hamisheh ye bar-e avvalam hast,         there is always a first time
 dafeye akhar,                           the last time
 
-bebin,                                  see!
+bebin! kheyli asooneh,                  see! it is easy
 vaay - negaah kon!                      wow - look do!
-goush kon,                              listen / ear do
+goush kon - mohemmeh,                   listen do - it is important
 sokout kon,                             be quiet / silence do
 booye khoob mideh,                      smell good gives
 sabr kon,                               patience do
@@ -450,6 +451,11 @@ tooye iraane baastaan,                  in ancient Iran
 oonaa fekr mikardan,                    they thought
 ke in gol shabihe ye ammameye koocholooe,      that the flower resembled a little turban
 oonaa az kalameye ghadimie faarsiye "dulband" estefaade mikardan,      they used the old persian word "dulband"
+
+oonaa ye kalameh-ye ghadimi-ye Faarsi ro estefaadeh kardan, they used an old Persian word
+ke az raah-e abrisham taa torkiyeh raft,                    that on the silk road travelled to Turkie
+
+
 tooye torkiye in kalame shod "tülbent", in turkie the word became "tülbent"
 tooye aalmaan in kalame shod "tülpe",   in germany the word became "tülpe"
 pas be engelisi mishe "tulip",          then in English became "tulip"
@@ -463,7 +469,7 @@ fenjoonam roo mize,                     my cup is on the table
 kelidet gom shode,                      your key is lost
 televizionesh bozorge,                  her tv is big
 khoonemoon garme,                       our house is warm
-yakhchaaletoon khaal-lie,               your(plural) fridge is empty
+yakhchaaletoon khaal-lie,               your (plural) fridge is empty
 lebasshooyeeshoon sedaa mide,           their washing machine is making noise
 
 farsi yaad migiram,                     farsi learning-am
@@ -474,11 +480,22 @@ sanieh daghigheh sa-at ruz mah sal,      second minute hour day month year
 
 khar to khar,                           donkey in donkey
 boosam kon,                             kiss me
-ozâgh kheyli khar to khare!,            this situation is a shamozzle
-khoshhâlam mikoni,                      you make me happy
+ozaagh kheyli khar to khare!,            this situation is a shamozzle
+khoshhaalam mikoni,                      you make me happy
 
 shaayad,                                maybe
 ghati paati,                            kompletes durcheinander (mix shmix)
+emrooz az khoone kar mikoni?,           are you working from home today?
+shomaa faarsi harf mizanid?,            do you speak persian?
+eyval,                                  well done
+felan khodaahaafez,                     for now, goodbye
+havaa do nararas,                       the weather is for two people
+del be del raah daare,                  heart to heart path has
+shaazdeh khaanom Sholeh,                princess Sholeh (king-child lady)
+daastaanesh deraaze,                    story long
+dam-e aasaansor vaas-mistaam,           I will wait near the lift
+aafarin! to aasaansor-e A ro gerefti,   bravo! you lift-A got
+ey baba - be ghaataar narasidam,        oh man - to train not-arrive
 
 
 `;
