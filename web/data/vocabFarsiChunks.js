@@ -450,16 +450,16 @@ vali na az kalameye laleh,              but not from the word laleh
 tooye iraane baastaan,                  in ancient Iran
 oonaa fekr mikardan,                    they thought
 ke in gol shabihe ye ammameye koocholooe,      that the flower resembled a little turban
-oonaa az kalameye ghadimie faarsiye "dulband" estefaade mikardan,      they used the old persian word "dulband"
+oonaa az kalameye ghadimie faarsiye "dulband" estefaade mikardan,      they used the old Farsi word "dulband"
 
-oonaa ye kalameh-ye ghadimi-ye Faarsi ro estefaadeh kardan, they used an old Persian word
+oonaa ye kalameh-ye ghadimi-ye Faarsi ro estefaadeh kardan, they a word old Farsi ro use did
 ke az raah-e abrisham taa torkiyeh raft,                    that on the silk road travelled to Turkie
 
 
 tooye torkiye in kalame shod "tülbent", in turkie the word became "tülbent"
 tooye aalmaan in kalame shod "tülpe",   in germany the word became "tülpe"
 pas be engelisi mishe "tulip",          then in English became "tulip"
-pas esme khiaaboonetoon az ye kalameye faarsi miaad,      so your street name comes from a persian word
+pas esme khiaaboonetoon az ye kalameye faarsi miaad,      so your street name comes from a Farsi word
 
 az medaad estefadeh mikardan,           they used to use pencils
 mikham az dokhtaretan khastegari konam, i would like to ask your daughter to marry me
@@ -486,7 +486,7 @@ khoshhaalam mikoni,                      you make me happy
 shaayad,                                maybe
 ghati paati,                            kompletes durcheinander (mix shmix)
 emrooz az khoone kar mikoni?,           are you working from home today?
-shomaa faarsi harf mizanid?,            do you speak persian?
+shomaa faarsi harf mizanid?,            do you speak Farsi?
 eyval,                                  well done
 felan khodaahaafez,                     for now, goodbye
 havaa do nararas,                       the weather is for two people
@@ -496,7 +496,9 @@ daastaanesh deraaze,                    story long
 dam-e aasaansor vaas-mistaam,           I will wait near the lift
 aafarin! to aasaansor-e A ro gerefti,   bravo! you lift-A got
 ey baba - be ghaataar narasidam,        oh man - to train not-arrive
-
+narm mesl-e abrisham,                   smooth like silk
+istgaah-e ghaataar-e ba-adi Sandringham-eh,     stop/station train next Sandy-is
+forooshgaah-e istgaah ta-atil ast,      shop at station closed is.
 
 `;
 

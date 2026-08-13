@@ -116,7 +116,7 @@ const vocab = {
         return sOut;
     },
     tameSpecialChars: function (sRaw) {
-//        return sRaw.split("aa").join("&amacr;").split("~").join("&apos;");
+        //        return sRaw.split("aa").join("&amacr;").split("~").join("&apos;");
         return sRaw.split("ā").join("aa").split("~").join("&apos;");
     },
     showQuote: function (sRaw) {
