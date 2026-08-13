@@ -476,19 +476,19 @@ farsi yaad migiram,                     farsi learning-am
 bastani baastaan,                       ancient icecream
 tahdig bereshteye,                      tahdig is crispy
 
-sanieh daghigheh sa-at ruz mah sal,      second minute hour day month year
+sanieh daghigheh sa-at ruz mah sal,     second minute hour day month year
 
 khar to khar,                           donkey in donkey
 boosam kon,                             kiss me
-ozaagh kheyli khar to khare!,            this situation is a shamozzle
-khoshhaalam mikoni,                      you make me happy
+ozaagh kheyli khar to khare!,           this situation is a shamozzle
+khoshhaalam mikoni,                     you make me happy
 
 shaayad,                                maybe
 ghati paati,                            kompletes durcheinander (mix shmix)
 emrooz az khoone kar mikoni?,           are you working from home today?
 shomaa faarsi harf mizanid?,            do you speak Farsi?
 eyval,                                  well done
-felan khodaahaafez,                     for now, goodbye
+felan khodaahaafez,                     for now - goodbye
 havaa do nararas,                       the weather is for two people
 del be del raah daare,                  heart to heart path has
 shaazdeh khaanom Sholeh,                princess Sholeh (king-child lady)
@@ -499,6 +499,9 @@ ey baba - be ghaataar narasidam,        oh man - to train not-arrive
 narm mesl-e abrisham,                   smooth like silk
 istgaah-e ghaataar-e ba-adi Sandringham-eh,     stop/station train next Sandy-is
 forooshgaah-e istgaah ta-atil ast,      shop at station closed is.
+
+gol-haa roo farshe,                     the flowers are on the carpet
+ye kam azash fahmidam,                  i understood a bit of that
 
 `;
 

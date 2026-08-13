@@ -15,7 +15,7 @@ const vocab = {
     iLangShown: EN,
     iLangGuess: FA,
     iColHiddenForGuess: 2,
-    userSettings: {lastSort: "sSortP"},
+    userSettings: {lastSort: "sSortSakhti"},
     init: function() {
         //sakhtBase.setDataFromCookie();
         sakhtBase.init();
@@ -238,6 +238,7 @@ const vocab = {
     }
 }
 const sakhtBase = {
+    debounceTimeoutId: null,
     data: {},
     dataOo: {},
     init: function() {
@@ -250,8 +251,34 @@ const sakhtBase = {
         */
     },
     save: function() {
+        // If the user makes a change, keep buffering until
+        // user pauses for more than 800 milliseconds.
+        clearTimeout(sakhtBase.debounceTimeoutId);
+        sakhtBase.debounceTimeoutId = setTimeout(() => {
+            sakhtBase.save_debounced()
+        }, 800);
+    },
+    save_debounced: function() {
         localStorageManager.set("farsi_cooki_ls", this.data);
         localStorageManager.set("farsi_cooki_oo", this.dataOo);
+
+        ////////////
+        let sFileName = "data/sakhtiData.js"
+        let sBody = JSON.stringify(this.dataOo); //, null, 1);
+        sBody = sBody
+            .split("},\"").join("},\n\"")
+            .split(" = {").join(" = {\n")
+            ;
+        sBody = "let sakhtiData = " + sBody;
+        sBody += ";";
+        sBody = sBody.split(" = {").join(" = {\n")
+        sBody = sBody.split("}};").join("}\n};\n")
+        pywriter.save("farsiVocab", sFileName, sBody, sakhtBase.callbackMethod());
+
+        ////////////
+    },
+    callbackMethod: function() {
+        // For future use.
     },
     getByKey: function(sKey) {
 //c onsole.error("ood ldaadfda ta");
