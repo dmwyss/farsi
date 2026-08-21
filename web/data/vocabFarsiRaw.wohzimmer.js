@@ -71,29 +71,40 @@ soaal-e saadeh,                         easy question
 soaal saal saa^at saadeh saak,          question year time easy bag
 sar sad sag sabz sard,                  head/end hundred dog green cold
 shir pir zir dir gir,                   milk/tap/lion old under late blockade/get/stuck
+seh soot oonjaam,                       three whistles there-am
 
-
-
+PUT INTO CHUNKS
+noore in otaagh keili *kame*,           light this room very *low/lacking/few/hardly*
+in *raah* ghalat-e,                     this *path/road/way/method* wrong-is
+che khabar?,                            what's the news?
+dast o *paa* bezan,                     thrash your hands and feet (try your best)
+safar safari boro,                      go on a safari trip
+taareekh e taareek ro bekhun,           read the dark history.
+un tu taareekh e taareek sharik shod,   he participated in the dark history
+jaade ye jaaduyi,                       road of magic
+estakhr por az ashk-e,                  the pool is full of tears
+tasmim gereftam tasme bekhuram,         i decided to eat a leather belt
+Vaghean vaz-eeat khar to khar boode,    really situation donkey in donkey has-been
 
 
 Not learned
-estebaah                                mistake
-
+shomaare                                number
 donyaa                                  world
-khaanoom                                lady
-heyvoon                                 animal
-dalil                                   reason
+saahel                                  beach
+estebaah                                mistake
 soaal                                   question
+heyvoon                                 animal
+
+khoonevaade                             family
 keshvar                                 country
 javaab                                  answer
-shomaare                                number
-khaanevaade                             family
+khaanoom                                lady
+dalil                                   reason
+gheymat                                 price
 
-saahel                                  beach
 hafte                                   week
 barnaame                                plan/schedule
 jashn                                   party
-gheymat                                 price
 shoghl                                  job
 aatish                                  fire
 fasl                                    season
@@ -101,10 +112,43 @@ saal                                    year
 mardom                                  people
 
 
+NOUNS 2
+not learned
+hadaf,                                   goal
+alaaghe,                                 interest/ed
+jamiat,                                  population
+emtehaan,                                exam
+dolat,                                   government
+estakhr,                                 pool
+tasmim,                                  decision
+jaade,                                   road
+raanande,                                driver (drive/steer/push-person)
+edaare,                                  office
+naghshe,                                 map/plan
+pishnehaad,                              suggestion (in-front-put)
+dorough,                                 lie
+saakhtemoon,                             building
+natije,                                  result
+nazar,                                   idea/opinion
+raaz,                                    secret
+hedie,                                   gift
+parvaaz,                                 flight
+safhe,                                   page
+paayaan,                                 end/ending
+taarikh,                                 history
+hamsaaye,                                neighbour
+vagheiat,                                fact/reality
+daaneshgaah,                             uni (knowledge-place)
+hamkaar,                                 colleague
 
 
-
-
+mangaghe,                                area
+noor,                                    light
+dast,                                    hand
+ghazaa,                                  food
+rang,                                    color
+sar o sedaa,                             noise
+paa,                                     foot
 
 
 
@@ -174,4 +218,8 @@ window.addEventListener('keydown', function(event) {
 
 
 
+https://www.google.com/search?q=always+give+me+farsi+translations+in+informal+farsi+in+lower+case+with+the+alef+character+written+as+aa&rlz=1C5OZZY_enAU1189AU1189&gs_lcrp=EgZjaHJvbWUyBggAEEUYOdIBCTEyMzMxajBqN6gCALACAA&sourceid=chrome&ie=UTF-8&fbs=ABfTbFUyxjQn9bne4DuflY2dNqqKupTsDwp6RXwpQFJxPysO9IZ-OcP6xq64A4yNP8lBdpYM0PhsNQS_QTugUjGGuEBBGQuHFZfvefJPVv9g1nfTk_G_a9BqrykRaAq8VikeIEE_oc6QfVVsmlmULiqKvj2vBgRVlQYoUlI50uq4qpLqY9d23hnNXmiEmKGWGgSm2jik7ERBzISNEqg58Ha_-e194Ml3Vg&aep=10&ntc=1&sxsrf=APpeQnvDCAW-cq6HA6utz8SOFBbR5gxhtQ%3A1786789186359&mstk=AUtExfD2-5tEWvjCSBinAG71GlbxfgfwxAxW7l70408DryZHnMzmo8vXJpu_zJMReTBQWAMAJZG7s2MzAXRszFDQRXbhxNvHKc6j6RphlsTQTXVGGgPS_5q4Ookueh1zt367pIsBil-HxJ_7---dEjqSPHUeSxSY9Q78aQnCtdCdoJLIOwc2aJ9w-2jSIKpjkOde5TJsANMDkD6iE51eDXytzBPJuLy6XevyRlDvV8ZWytRZ_3kfzkrdaRycMenIGoYlpRUEH3THR2hFEw&aioh=3&csuir=1&atvm=2&mtid=rkGAaojKGMnQwcsP9afWiQs&udm=50
 
+always+give+me+farsi+translations+in+informal+farsi+in+lower+case+with+the+alef+character+written+as+aa
+
+always give me farsi translations in informal farsi in lower case with the alef character written as aa
