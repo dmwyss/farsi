@@ -11,21 +11,21 @@ var aoTemplates = [
   "always give me farsi translations in informal farsi in lower case with the alef character written as aa"
 ]
 function selectQuoteContent(myField) {
-    myField.focus();
-    myField.focus();
-    if (myField.value.split("\"").length < 3) {
-      return;
-    }
-    let iQuotePosStart = myField.value.indexOf("\"") + 1;
-    // Next line changed:
-    // Was:
-    //   let iQuotePosEnd = myField.value.lastIndexOf("\"");
-    let iQuotePosEnd = myField.value.indexOf("\"", iQuotePosStart);
-    setTimeout(
-      function(){
-        myField.setSelectionRange(iQuotePosStart, iQuotePosEnd);
-      }, 100
-    )
+  myField.focus();
+  myField.focus();
+  if (myField.value.split("\"").length < 3) {
+    return;
+  }
+  let iQuotePosStart = myField.value.indexOf("\"") + 1;
+  // Next line changed:
+  // Was:
+  //   let iQuotePosEnd = myField.value.lastIndexOf("\"");
+  let iQuotePosEnd = myField.value.indexOf("\"", iQuotePosStart);
+  setTimeout(
+    function(){
+      myField.setSelectionRange(iQuotePosStart, iQuotePosEnd);
+    }, 100
+  )
 }
 window.addEventListener('keydown', function(event) {
   let ata = document.querySelectorAll("textarea");
@@ -57,4 +57,4 @@ window.addEventListener('keydown', function(event) {
       g_ixTemplate = 0;
     }
 });
-console.log("User_JS_CSS :: user script loaded. V0.0");
+console.log("User_JS_CSS :: user script loaded. V0.1");
