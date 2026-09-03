@@ -8,7 +8,12 @@
 
 <script type="text/javascript" src="js/pywriter5000.js"></script>
 <script type="text/javascript" src="js/pywriterImpl.farsiVocab.js"></script>
-<script type="text/javascript" src="data/sakhtiData.js"></script>
+<!-- s cript type="text/javascript" src="data/sakhtiData.js"></script -->
+<script>
+let sVolatileOut = "<" + "script type=\'text/javascript\' src=\'data/sakhtiData.js?refresh=";
+sVolatileOut += (Math.round(Math.random() * 10000)) + "\'>" + "<" + "/" + "script>";
+document.write(sVolatileOut);
+</script>
 
 <script type="text/javascript" src="data/vocabFarsiChunks.js"></script>
 <script type="text/javascript" src="js/util.localStore.js"></script>

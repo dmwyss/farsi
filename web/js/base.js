@@ -50,7 +50,7 @@ const vocab = {
                 sSortP: oWord.p.key.toLowerCase(),
                 sSortE: oWord.e.key.toLowerCase(),
                 sSortStar: (oWord.hasOwnProperty("star") && (oWord.star == 1) ?  1 : 0),
-                sSortSakhti: (oO_.sakhti + 20)
+                sSortSakhti: ((oO_.sakhti === 0 ? 1 : (oO_.sakhti + 100)) * 10000) + ix
             };
             oWord.key = sForeignKey;
             oDictOut[sForeignKey] = oWord;
@@ -60,6 +60,7 @@ const vocab = {
     initList: function() {
         this.list = [];
         for (let sKey in this.dict) {
+            this.dict[sKey].meta.ixInList = this.list.length;
             this.list.push(this.dict[sKey]);
         }
     },
@@ -96,7 +97,8 @@ const vocab = {
             + "<td id=\"sNum\" class=\"colSorter colNarrow\">#</td>"
             + "<td id=\"sSortE\" class=\"colSorter\" onclick=\"vocab.clickColSort(this);\">engelisi</td>"
             + "<td id=\"sSortP\" class=\"colSorter\" onclick=\"vocab.clickColSort(this);\">farsi</td>"
-            + "<td id=\"sSortStar\" class=\"colSorter colNarrow\" onclick=\"vocab.clickColSort(this);\">&star;</td>"
+            + "<td id=\"sSortResearch\" class=\"colSorter colNarrow\">&nbsp;</td>"
+            + "<td id=\"sSortStar\" class=\"colSorter colNarrow\">&star;</td>"
             + "<td id=\"sSortSakhti\" class=\"colSorter\" onclick=\"vocab.clickColSort(this);\">sakhti</td>"
             + "</tr>";
         for (let ix = 0; ix < this.list.length; ix++) {
@@ -105,9 +107,11 @@ const vocab = {
             sOut += "<tr onclick='vocab.doRowClick(this);' id='tr" + ix + "' data-key='" + oWord.key + "'>" // " + ix + "
                 //+ "<td class=\"word\">" + this.tameSpecialChars(oWord.p.key) + "</td>"
                 //+ "<td class=\"word\">" + oWord.e.key  + "</td>"
+                // Do not delete: use to see sakhti: oWord.meta.sSortSakhti
                 + "<td class=\"context colNarrow\">" + (ix + 1) + "</td>"
                 + "<td class=\"context\">" + this.showQuote(oWord.e.context) + "</td>"
                 + "<td class=\"context\">" + this.showQuote(this.tameSpecialChars(oWord.p.context)) + "</td>"
+                + "<td class=\"context colNarrow\">" + sakhtBase.getResearchLink(oWord.key, oO) + "</td>"
                 + "<td class=\"context colNarrow\">" + sakhtBase.getStarOo(oWord.key, oO) + "</td>"
                 + "<td class=\"context\">" + sakhtBase.getIconOo(oO) + "</td>"
                 + "</tr>";
@@ -239,16 +243,9 @@ const vocab = {
 }
 const sakhtBase = {
     debounceTimeoutId: null,
-    data: {},
     dataOo: {},
     init: function() {
-        this.data = localStorageManager.get("farsi_cooki_ls", {});
-        this.dataOo = localStorageManager.get("farsi_cooki_oo", {});
-        /*
-        for (sKey in this.data) {
-            this.dataOo[sKey] = {sakhti: this.data[sKey]};
-        }
-        */
+        this.dataOo = sakhtiData;
     },
     save: function() {
         // If the user makes a change, keep buffering until
@@ -259,9 +256,6 @@ const sakhtBase = {
         }, 800);
     },
     save_debounced: function() {
-        localStorageManager.set("farsi_cooki_ls", this.data);
-        localStorageManager.set("farsi_cooki_oo", this.dataOo);
-
         ////////////
         let sFileName = "data/sakhtiData.js"
         let sBody = JSON.stringify(this.dataOo); //, null, 1);
@@ -280,13 +274,6 @@ const sakhtBase = {
     callbackMethod: function() {
         // For future use.
     },
-    getByKey: function(sKey) {
-//c onsole.error("ood ldaadfda ta");
-        if (!this.data.hasOwnProperty(sKey)) {
-            return 0;
-        }
-        return this.data[sKey];
-    },
     getByKeyOo: function(sKey) {
         if (!this.dataOo.hasOwnProperty(sKey)) {
             return {sakhti: 0};
@@ -296,6 +283,14 @@ const sakhtBase = {
     getStar: function(sKey) {
 //c onsole.error("ood ldaadfda ta");
         return "&star;";
+    },
+    getResearchLink: function(sKey, oO) {
+        let sKeyPretty = sKey.split(" ").join("+");
+        let sOut = "<a href=\"https://www.google.com/search?q=literal+translation+of+" + sKeyPretty + "+in+farsi\"";
+        sOut += " target=\"farsiResearch\" class=\"tableCellLinkIcon\">";
+        sOut += "<img src=\"img/icnLupe.svg\" style=\"width:17px;\">";
+        sOut += "</a>"
+        return sOut;
     },
     getStarOo: function(sKey, oO) {
         let sStar = "&star;";
@@ -310,10 +305,6 @@ const sakhtBase = {
         return sOut;
     },
     doStarClick: function(sKey, uiStar) {
-
-
-        //let uiStar = document.querySelector('[data-key=\"' + sKey + '\"]').querySelector(".star");
-
         let oO_ = this.getByKeyOo(sKey);
         if ((oO_.hasOwnProperty("star")) && (oO_.star === 1)) {
             // Currently turned on.
@@ -326,12 +317,6 @@ const sakhtBase = {
             uiStar.className = "on";
         }
         this.save();
-    },
-    getIcon: function(sKey) {
-        let iStrength = sakhtBase.getByKey(sKey);
-        let sCss = this.getCssForStrength(iStrength);
-        let sStrength = this.prettyStrength(iStrength);
-        return "<div class=\"sakhti\" style=\"" + sCss + "\">" + sStrength + "</div>";
     },
     getIconOo: function(oO) {
         let iStrength = oO.sakhti;
@@ -384,10 +369,15 @@ window.addEventListener('keydown', (event) => {
 });
 window.addEventListener('keyup', (event) => {
     let iDist = keyToDistance(event.key);
-    vocab.incrementSakhti(keyToSakhti(event.key)); // Before increment.
+    let iSakhtiChange = keyToSakhti(event.key);
+    iSakhtiChange *= event.altKey ? 10 : 1;
+    vocab.incrementSakhti(iSakhtiChange); // Before increment.
     if (iDist !== 0) {
         event.preventDefault();
         vocab.next(iDist);
+    } else if (event.key === "Escape") {
+        vocab.ixVis = -1;
+        vocab.doRowClick({id:"tr0000"});
     }
 });
 

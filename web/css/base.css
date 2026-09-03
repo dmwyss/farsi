@@ -106,3 +106,17 @@ table#vocab tr:hover {
 .off {
     opacity: 0.3;
 }
+a.tableCellLinkIcon {
+    background-color: transparent;
+    border-radius: 11px;
+    padding: 3px;
+}
+a.tableCellLinkIcon img {
+    opacity: 0.3;
+}
+a.tableCellLinkIcon:hover {
+    background-color: black;
+}
+a.tableCellLinkIcon:hover img {
+    opacity: 1.0;
+}
