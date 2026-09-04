@@ -16,6 +16,8 @@ const vocab = {
     iLangGuess: FA,
     iColHiddenForGuess: 2,
     userSettings: {lastSort: "sSortSakhti"},
+    testMode: "test",
+    testModeButton: null,
     init: function() {
         //sakhtBase.setDataFromCookie();
         sakhtBase.init();
@@ -24,6 +26,7 @@ const vocab = {
         this.initList();
         this.render();
         this.clickColSort(this.userSettings.lastSort);
+        this.testModeButton = document.querySelector("#toggleTestMode");
     },
     parseRaw: function() {
         let oDictOut = {};
@@ -92,6 +95,9 @@ const vocab = {
         return oOut;
     },
     vocabToHtml: function() {
+        let sButtons = "<div id=\"buttonRibbon\">"
+            + "<button id=\"toggleTestMode\" onclick=\"vocab.toggleTestMode();\">test</button>"
+            + "</div>";
         let sOut = "<table id=\"vocab\">"
         sOut += "<tr>"
             + "<td id=\"sNum\" class=\"colSorter colNarrow\">#</td>"
@@ -117,7 +123,7 @@ const vocab = {
                 + "</tr>";
         }
         sOut += "</table>";
-        return sOut;
+        return sButtons + sOut;
     },
     tameSpecialChars: function (sRaw) {
         //        return sRaw.split("aa").join("&amacr;").split("~").join("&apos;");
@@ -142,7 +148,7 @@ const vocab = {
         localStorageManager.set("user_settings", this.userSettings);
     },
     render: function () {
-        this.uiVocab = document.querySelector("#vocab");
+        this.uiVocab = document.querySelector("#vocabWrapper");
         this.uiVocab.innerHTML = this.vocabToHtml();
     },
     rowHighlited: null,
@@ -151,6 +157,7 @@ const vocab = {
         let atr = tbl.querySelectorAll("tr");
         let isFound = false;
         let sOpacity = "1.0";
+        let sOpacityAfterCurrent = (this.testMode === "test") ? "0.0" : "1.0";
         let ixRowClicked = parseInt(oRow.id.split("tr")[1]);
         this.ixVis = ixRowClicked;
         for (let ixTr = 0; ixTr < atr.length; ixTr++) {
@@ -162,7 +169,7 @@ const vocab = {
                     if (this.rowHighlited != null) {
                         this.rowHighlited.style.backgroundColor = "inherit";
                     }
-                    oRow.style.backgroundColor = "#FFF1";
+                    oRow.style.backgroundColor = "#FFF2";
                     if (false) {
                         setTimeout(
                             function() {
@@ -172,7 +179,7 @@ const vocab = {
                     }
                     this.rowHighlited = oRow;
                     isFound = true;
-                    sOpacity = "0.0";
+                    sOpacity = sOpacityAfterCurrent;
                 }
             }
         }
@@ -239,6 +246,11 @@ const vocab = {
         sakhtBase.save();
         trCurrent.querySelector("div.sakhti").style = sakhtBase.getCssForStrength(iSakht);
         trCurrent.querySelector("div.sakhti").innerHTML = sakhtBase.prettyStrength(iSakht);
+    },
+    toggleTestMode: function() {
+        this.testMode = (this.testMode === "test") ? "read" : "test";
+        this.testModeButton.innerHTML = this.testMode;
+        this.next(0);
     }
 }
 const sakhtBase = {

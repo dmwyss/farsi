@@ -28,6 +28,7 @@ h1 {
     font-family: Verdana;
     color: #7b858f;
     font-size: 27pt;
+    margin: -5px 0 0 0;
 }
 h2 {
     font-weight: 100;
@@ -67,12 +68,25 @@ td.colNarrow {
     min-width: 35px;
     color: #778088;
 }
+/*
+only visible in verbs.htm
+*/
 img#heading {
     position: absolute;
-    top: 30px;
-    left: 890px;
+    top: 2px;
+    left: 350px;
     opacity: 0.4;
     width: 130px;
+}
+div#buttonRibbon {
+    margin: 15px 0;
+    height: 37px;
+}
+div#vocabWrapper {
+    width: fit-content;
+}
+div#buttonRibbon {
+    text-align: right;
 }
 .feint {
     opacity: 0.4;
@@ -119,4 +133,13 @@ a.tableCellLinkIcon:hover {
 }
 a.tableCellLinkIcon:hover img {
     opacity: 1.0;
+}
+#buttonRibbon button {
+    border: none;
+    background-color: #1c2128;
+    color: #dddddd;
+    border-radius: 3px;
+    padding: 5px;
+    min-width: 90px;
+    margin: 10px 0 0 0;
 }

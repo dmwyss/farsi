@@ -525,7 +525,7 @@ let sakhtiData = {
 "javaab-e jaaleb":{"sakhti":-30},
 "soaal-e saadeh":{"sakhti":-30},
 "soaal saal saa^at saadeh saak":{"sakhti":-30},
-"sar sad sag sabz sard":{"sakhti":-60},
+"sar sad sag sabz sard":{"sakhti":-57},
 "shir pir zir dir gir tir":{"sakhti":-60},
 "khabare marg-eshun":{"sakhti":-1},
 "khorshid":{"sakhti":-30},
