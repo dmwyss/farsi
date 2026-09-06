@@ -5,15 +5,28 @@
 <link rel="icon" type="image/x-icon" href="../img/favicon.png">
 <title>Farsi AudioPlayer</title>
 <link rel="stylesheet" type="text/css" href="base.css" />
+<script type="text/javascript" src="../js/util.localStore.js"></script>
 <script type="text/javascript" src="base.js"></script>
 </head>
 <body onload="doOnLoad();">
 
 
 
-<div class="audioPlayer glowOn">
+<div class="audioPlayer XXXglowOn">
   <!-- Verstecktes Audio-Element -->
   <audio id="custom-audio" src="../../../web/audio/vocab_01.mp3"></audio>
+
+  <div id="loopButton" onclick="audioPlayer.doClickLoopButton(this);">
+    <svg xmlns="http://w3.org" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <!-- Top arrow/path moving right -->
+      <polyline points="17 1 21 5 17 9" />
+      <path d="M3 11V9a4 4 0 0 1 4-4h14" />
+
+      <!-- Bottom arrow/path moving left -->
+      <polyline points="7 23 3 19 7 15" />
+      <path d="M21 13v2a4 4 0 0 1-4 4H3" />
+    </svg>
+  </div>
 
   <!-- 1. Track-Titel (Jetzt oben) -->
   <div class="track-info">
@@ -47,10 +60,6 @@
   </div>
 
 </div><!-- end audioPlayer -->
-
-<!--
-<img src="palette.png" style="width:600px;margin-top:40px;"/>
--->
 
 </body>
 </html>

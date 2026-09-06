@@ -7,12 +7,13 @@ let timeline = null;
 let currentTimeDisplay = null;
 let durationTimeDisplay = null;
 let trackTitle = null;
+let loopButton = null;
 const iTimeJumpSec = 8;
 
 let trackListData = [
-    {id: "vocab_01.mp3", secs: 150},
-    {id: "vocab_04_top60_0727.mp3", secs: 821},
-    {id: "vocab_05_top100_0808.m4a", secs: 821}
+    {file: "vocab_01.mp3", secs: 150},
+    {file: "vocab_04_top60_0727.mp3", secs: 821},
+    {file: "vocab_05_top100_0808.m4a", secs: 821}
 ];
 
 function doOnLoad() {
@@ -25,6 +26,7 @@ function doOnLoad() {
     currentTimeDisplay = document.getElementById('current-time');
     durationTimeDisplay = document.getElementById('duration-time');
     trackTitle = document.getElementById('track-title');
+    loopButton = document.getElementById('loopButton');
 
     playPauseBtn.addEventListener('click', togglePlay);
 
@@ -72,6 +74,7 @@ function doOnLoad() {
             break;
         }
     });
+    userPrefs.init();
     trackList.init().drawTable();
     audioPlayer.init();
 }
@@ -86,7 +89,7 @@ function formatTime(seconds) {
 
 function togglePlay() {
     if (customAudio.paused) {
-        customAudio.loop = audioPlayer.isLoop;
+        customAudio.loop = userPrefs.data.isLoop;
         customAudio.play();
         playIcon.innerHTML = '<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>';
     } else {
@@ -94,7 +97,7 @@ function togglePlay() {
         playIcon.innerHTML = '<path d="M8 5v14l11-7z"/>';
     }
     timeline.style.backgroundColor = "#FFF";
-    setTimeout(function(){timeline.style.backgroundColor = "#404040";}, 100);
+    setTimeout(function(){timeline.style.backgroundColor = "#49525c";}, 100);
 }
 const audioPlayer = {
     sFileUrlBase: "../audio/",
@@ -104,11 +107,11 @@ const audioPlayer = {
         this.setTrack(sIdZero);
         */
         let trPrevious = null;
-        if (trackList.sPreviousId === null) {
+        if (userPrefs.data.sPreviousId === null) {
             trPrevious = document.querySelectorAll("#trackList table tr")[0];
             trackList.setPreviousId(trPrevious.id);
         } else {
-            trPrevious = document.querySelectorAll("#" + trackList.sPreviousId);
+            trPrevious = document.querySelector("#" + userPrefs.data.sPreviousId);
         }
         trPrevious.click();
         return this;
@@ -118,15 +121,26 @@ const audioPlayer = {
             togglePlay();
         }
         trackCurr = trackList.dict[sId];
-        trackTitle.innerHTML = trackCurr.id;
-        customAudio.src = this.sFileUrlBase + trackCurr.id;
+        trackTitle.innerHTML = trackCurr.name;
+        customAudio.src = this.sFileUrlBase + trackCurr.file;
+    },
+    doClickLoopButton: function(uiSrc) {
+        userPrefs.set("isLoop", !userPrefs.data.isLoop);
+        customAudio.loop = userPrefs.data.isLoop;
+        this.updateLoopButtonUi();
+    },
+    updateLoopButtonUi: function() {
+        let sColor = "#49525c";
+        if (userPrefs.data.isLoop) {
+            sColor = "var(--text-muted)";
+        }
+        loopButton.style.color = sColor;
     }
 }
 const trackList = {
     uiWrapper: null,
-    sPreviousId: null,
     setPreviousId: function(sId) {
-        this.sPreviousId = sId;
+        userPrefs.set("sPreviousId", sId);
         //TODO: Store in localstorage.
     },
     init: function() {
@@ -134,6 +148,8 @@ const trackList = {
         this.uiWrapper = document.querySelector("#trackList");
         for (let ixAF = 0; ixAF < this.data.length; ixAF++) {
             let oAF = this.data[ixAF];
+            oAF.id = oAF.file.split(".").join("_")
+            oAF.name = oAF.file.substring(0, oAF.file.lastIndexOf(".")).replace(/[_\-\.]/g, ' ');
             this.dict[oAF.id] = oAF;
         }
         return this;
@@ -142,7 +158,8 @@ const trackList = {
         let sOut = "<table>";
         for (let ixAF = 0; ixAF < this.data.length; ixAF++) {
             let oAF = this.data[ixAF];
-            sOut += "<tr onclick=\"trackList.doRowClick(this);\" ondblclick=\"trackList.doRowClick(this);togglePlay();\" id=\"" + oAF.id + "\"><td>" + oAF.id + "</td><td>" + formatTime(oAF.secs) + "</td></tr>"
+            let sFlat = oAF.id;
+            sOut += "<tr onclick=\"trackList.doRowClick(this);\" ondblclick=\"trackList.doRowClick(this);togglePlay();\" id=\"" + sFlat + "\"><td>" + oAF.name + "</td><td>" + formatTime(oAF.secs) + "</td></tr>"
         }
         sOut += "</table>";
         this.uiWrapper.innerHTML = sOut;
@@ -150,7 +167,7 @@ const trackList = {
     state: {
         uiTrCurr: null
     },
-    dict: { /* built during init() from data */},
+    dict: { /* built during init() from data */ },
     data: [],
     doRowClick: function(uiTrClicked) {
         if (this.state.uiTrCurr === uiTrClicked) {
@@ -163,5 +180,23 @@ const trackList = {
         uiTrClicked.className = "on";
         this.state.uiTrCurr = uiTrClicked;
         audioPlayer.setTrack(uiTrClicked.id);
+        userPrefs.set("sPreviousId", uiTrClicked.id);
     }
+}
+const userPrefs = {
+    data: {
+        isLoop: false,
+        sPreviousId: null
+    },
+    init: function() {
+        //TODO load data from localstore.
+        this.data = localStorageManager.get("localStoreAudioImpl", this.data);
+        audioPlayer.updateLoopButtonUi();
+    },
+    set: function(sAttr, vSetting) {
+        this.data[sAttr] = vSetting;
+        localStorageManager.set("localStoreAudioImpl", this.data);
+    }
+
+
 }
