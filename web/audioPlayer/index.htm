@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="../img/favicon.png">
+<title>Farsi AudioPlayer</title>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<script type="text/javascript" src="base.js"></script>
+</head>
+<body onload="doOnLoad();">
+
+
+
+<div class="audioPlayer glowOn">
+  <!-- Verstecktes Audio-Element -->
+  <audio id="custom-audio" src="../../../web/audio/vocab_01.mp3"></audio>
+
+  <!-- 1. Track-Titel (Jetzt oben) -->
+  <div class="track-info">
+    <h3 id="track-title" class="track-title">vocab_01.mp3</h3>
+  </div>
+
+  <!-- 2. Zeitleiste & Zeitanzeige (Mittig) -->
+  <div class="timeline-container">
+    <input type="range" id="timeline" value="0" min="0" step="0.1">
+    <div class="time-display">
+      <span id="current-time">00:00</span>
+      <!-- span>/</span -->
+      <span id="duration-time">00:00</span>
+    </div>
+  </div>
+
+  <!-- 3. Steuerungs-Buttons (Jetzt unten) -->
+  <div class="controls">
+    <button id="btn-back" class="control-btn" title="10s zurück (Pfeiltaste links)">
+      <svg viewBox="0 0 24 24"><path d="M12.5 19.5l-8.5-7.5 8.5-7.5v15zm8.5 0l-8.5-7.5 8.5-7.5v15z"/></svg>
+    </button>
+    <button id="btn-play-pause" class="control-btn play-main" title="Wiedergabe / Pause (Leertaste)">
+      <svg id="play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+    </button>
+    <button id="btn-forward" class="control-btn" title="10s vor (Pfeiltaste rechts)">
+      <svg viewBox="0 0 24 24"><path d="M11.5 4.5l8.5 7.5-8.5 7.5v-15zm-8.5 0l8.5 7.5-8.5 7.5v-15z"/></svg>
+    </button>
+  </div>
+
+  <div id="trackList">
+  </div>
+
+</div><!-- end audioPlayer -->
+
+<!--
+<img src="palette.png" style="width:600px;margin-top:40px;"/>
+-->
+
+</body>
+</html>
