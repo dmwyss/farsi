@@ -1,11 +1,13 @@
 let vocabFarsiRaw = `
 
-anjeer-aa khordam o shodam seer,        figs eaten and became full
-
+*anjeer*-aa khordam o shodam seer,      *fig*s eaten and became full
+behtarine *khormah*a az shiraz miyan,   the best dates come from shiraz
+kargara ye *sachtemoon* sakhtan,        builders built the building (past tense)
+pol-e *tabiaat* ro mohandesaa saakhtan, nature bridge was made by engineers
 movaazeb baash,                         careful be
 shaam khoshmaze bood,                   dinner yummy was
 komaket konam?,                         help do-I? (can I help)
-kar mikonam,                            work at-the-moment-doing-I
+kaar mikonam,                            work at-the-moment-doing-I
 kelidam ro gom kardam,                  keys-my the lost did (past)
 
 kodoom rooza sherkati?,                 which days office-you?

@@ -139,7 +139,33 @@ a.tableCellLinkIcon:hover img {
     background-color: #1c2128;
     color: #dddddd;
     border-radius: 3px;
-    padding: 5px;
-    min-width: 90px;
+    padding: 5px 15px;
+    min-width: 120px;
     margin: 10px 0 0 0;
+}
+
+@media print {
+    body {
+        padding: 0 0 0 0;
+    }
+    * {
+        color: #000000 !important;         /* Text für besseren Druck rein schwarz machen */
+        font-size: 13pt !important;        /* Punkt (pt) ist die beste Einheit für gedruckten Text */
+        background: transparent !important; /* Hintergrundfarben entfernen, um Tinte zu sparen */
+        line-height: 0.85;       /* Lesbarkeit auf Papier erhöhen */
+        font-weight: 150 !important;
+    }
+    tr:first-child ,
+    #headAndLink,
+    tr td:nth-child(4) ,
+    tr td:nth-child(5) ,
+    tr td:nth-child(6)  {
+        display: none;
+    }
+    tr:nth-child(2)  {
+        border-top: 1px solid #0005;;
+    }
+    div#buttonRibbon {
+       display: none;
+    }
 }

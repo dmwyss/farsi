@@ -15,18 +15,24 @@ const vocab = {
     iLangShown: EN,
     iLangGuess: FA,
     iColHiddenForGuess: 2,
-    userSettings: {lastSort: "sSortSakhti"},
-    testMode: "test",
+    userSettings: {
+        lastSort: "sSortSakhti",
+        testMode: "read"
+    },
     testModeButton: null,
     init: function() {
         //sakhtBase.setDataFromCookie();
         sakhtBase.init();
         this.userSettings = localStorageManager.get("user_settings", this.userSettings);
+
+        console.log(this.userSettings);
+
         this.dict = this.parseRaw();
         this.initList();
         this.render();
         this.clickColSort(this.userSettings.lastSort);
         this.testModeButton = document.querySelector("#toggleTestMode");
+        this.testModeButton.innerHTML = "mode:" + this.userSettings.testMode;
     },
     parseRaw: function() {
         let oDictOut = {};
@@ -157,7 +163,7 @@ const vocab = {
         let atr = tbl.querySelectorAll("tr");
         let isFound = false;
         let sOpacity = "1.0";
-        let sOpacityAfterCurrent = (this.testMode === "test") ? "0.0" : "1.0";
+        let sOpacityAfterCurrent = (this.userSettings.testMode === "test") ? "0.0" : "1.0";
         let ixRowClicked = parseInt(oRow.id.split("tr")[1]);
         this.ixVis = ixRowClicked;
         for (let ixTr = 0; ixTr < atr.length; ixTr++) {
@@ -248,8 +254,9 @@ const vocab = {
         trCurrent.querySelector("div.sakhti").innerHTML = sakhtBase.prettyStrength(iSakht);
     },
     toggleTestMode: function() {
-        this.testMode = (this.testMode === "test") ? "read" : "test";
-        this.testModeButton.innerHTML = this.testMode;
+        this.userSettings.testMode = (this.userSettings.testMode === "test") ? "read" : "test";
+        this.testModeButton.innerHTML = "mode:" + this.userSettings.testMode;
+        localStorageManager.set("user_settings", this.userSettings);
         this.next(0);
     }
 }
@@ -351,6 +358,7 @@ const sakhtBase = {
         return "color:" + sColorTxt + ";background-color:" + sColorBg + ";";
     }
 }
+
 function keyToSakhti(sEventKey) {
     let ix = asArrowKeys.indexOf(sEventKey);
     if (ix === -1) {
