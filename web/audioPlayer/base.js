@@ -11,9 +11,9 @@ let loopButton = null;
 const iTimeJumpSec = 8;
 
 let trackListData = [
-    {file: "Vocab_01.mp3", secs: 150},
-    {file: "Vocab_04_-_Top_60.mp3", secs: 513},
-    {file: "Vocab_05_-_Top_100.m4a", secs: 821}
+    {file: "Vocab_01_-_First_basics.mp3", secs: 150},
+    {file: "Vocab_04_-_Essential_60.mp3", secs: 513},
+    {file: "Vocab_05_-_Essential_100.m4a", secs: 821}
 ];
 
 function doOnLoad() {
