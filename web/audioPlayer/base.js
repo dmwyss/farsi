@@ -11,9 +11,9 @@ let loopButton = null;
 const iTimeJumpSec = 8;
 
 let trackListData = [
-    {file: "vocab_01.mp3", secs: 150},
-    {file: "vocab_04_top60_0727.mp3", secs: 821},
-    {file: "vocab_05_top100_0808.m4a", secs: 821}
+    {file: "Vocab_01.mp3", secs: 150},
+    {file: "Vocab_04_-_Top_60.mp3", secs: 513},
+    {file: "Vocab_05_-_Top_100.m4a", secs: 821}
 ];
 
 function doOnLoad() {
@@ -92,12 +92,16 @@ function togglePlay() {
         customAudio.loop = userPrefs.data.isLoop;
         customAudio.play();
         playIcon.innerHTML = '<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>';
+        playPauseBtn.classList.add('stop-main');
+        console.log("seconds: " + Math.round(customAudio.duration));
+        timeline.style.backgroundColor = "var(--color-accent)";
     } else {
         customAudio.pause();
         playIcon.innerHTML = '<path d="M8 5v14l11-7z"/>';
+        playPauseBtn.classList.remove('stop-main');
+        timeline.style.backgroundColor = "var(--color-bad)";
     }
-    timeline.style.backgroundColor = "#FFF";
-    setTimeout(function(){timeline.style.backgroundColor = "#49525c";}, 100);
+    setTimeout(function(){timeline.style.backgroundColor = "var(--color-grey-muted-full)";}, 100);
 }
 const audioPlayer = {
     sFileUrlBase: "../audio/",
@@ -130,9 +134,9 @@ const audioPlayer = {
         this.updateLoopButtonUi();
     },
     updateLoopButtonUi: function() {
-        let sColor = "#49525c";
+        let sColor = "var(--color-grey-muted-full)";
         if (userPrefs.data.isLoop) {
-            sColor = "var(--text-muted)";
+            sColor = "var(--color-text-muted)";
         }
         loopButton.style.color = sColor;
     }
@@ -159,7 +163,11 @@ const trackList = {
         for (let ixAF = 0; ixAF < this.data.length; ixAF++) {
             let oAF = this.data[ixAF];
             let sFlat = oAF.id;
-            sOut += "<tr onclick=\"trackList.doRowClick(this);\" ondblclick=\"trackList.doRowClick(this);togglePlay();\" id=\"" + sFlat + "\"><td>" + oAF.name + "</td><td>" + formatTime(oAF.secs) + "</td></tr>"
+            let sTimePretty = "&nbsp;";
+            if (oAF.secs !== null) {
+                sTimePretty = formatTime(oAF.secs);
+            }
+            sOut += "<tr onclick=\"trackList.doRowClick(this);\" ondblclick=\"trackList.doRowClick(this);togglePlay();\" id=\"" + sFlat + "\"><td>" + oAF.name + "</td><td>" + sTimePretty + "</td></tr>"
         }
         sOut += "</table>";
         this.uiWrapper.innerHTML = sOut;

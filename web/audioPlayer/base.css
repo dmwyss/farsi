@@ -1,26 +1,28 @@
 :root {
-    --bg-color: #262d36;
-    --card-bg: #1c2128;
-    --accent-color: #1db954;
-    --text-color: #ffffff;
-    --text-muted: #b3b3b3;
-    --audioPlayer-width: 400px;
-    --XXXaudioPlayer-inner: 380px;
+    --color-bg: #262d36;
+    --color-bg-card: #1c2128;
+    --color-accent: #00bcd4;
+    --color-text: #ffffff;
+    --color-hilite: #FFF1;
+    --color-text-muted: #b3b3b3;
+    --width-audioPlayer: 400px;
+    --color-bad: #F08;
+    --color-grey-muted-full: #49525c;
 }
 body {
-    background-color: var(--bg-color);
+    background-color: var(--color-bg);
 }
 * {
   outline: none;
 }
 .audioPlayer {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background: var(--card-bg);
+    background: var(--color-bg-card);
     padding: 24px;
     border-radius: 12px;
-    max-width: var(--audioPlayer-width);
+    max-width: var(--width-audioPlayer);
     XXXbox-shadow: 0 10px 30px rgba(0,0,0,0.4);
-    color: var(--text-color);
+    color: var(--color-text);
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -37,13 +39,12 @@ body {
 .track-title {
     margin: 0 0 -5px 0;
     font-size: 18px;
-    XXXfont-weight: 300;
-    XXXletter-spacing: -0.5px;
+    font-weight: 400;
 }
 .track-artist {
     margin: 0;
     font-size: 14px;
-    color: var(--text-muted);
+    color: var(--color-text-muted);
 }
 /* Zeitleiste */
 .timeline-container {
@@ -55,7 +56,7 @@ body {
     -webkit-appearance: none;
     width: 100%;
     height: 6px;
-    background: #49525c;
+    background: var(--color-grey-muted-full);
     border-radius: 3px;
     outline: none;
     cursor: pointer;
@@ -66,20 +67,20 @@ body {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: var(--text-color);
+    background: var(--color-text);
     cursor: pointer;
     box-shadow: 0 2px 4px rgba(0,0,0,0.3);
     transition: transform 0.1s ease;
 }
 #timeline:hover::-webkit-slider-thumb {
-    background: var(--accent-color);
+    background: var(--color-accent);
     transform: scale(1.2);
 }
 .time-display {
     display: flex;
     justify-content: space-between; /* Zeiten links und rechts ausrichten */
     font-size: 17px;
-    color: var(--text-muted);
+    color: var(--color-text-muted);
     font-variant-numeric: tabular-nums;
 }
 /* Controls (Unten zentriert) */
@@ -103,23 +104,18 @@ body {
     transition: all 0.2s ease;
 }
 .control-btn:hover {
-    background-color: #678C;
+    background-color: var(--color-grey-muted-full);
 }
 .control-btn svg {
     width: 35px;
     height: 35px;
-    fill: var(--text-muted);
+    fill: var(--color-text-muted);
 }
 .control-btn:hover svg {
-    fill: var(--text-color);
+    fill: var(--color-text);
 }
 .control-btn.play-main {
-    background: var(--text-color);
-/*
-    width: 40px;
-    height: 40px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-*/
+    background: var(--color-text);
 }
 .control-btn.play-main svg {
     width: 24px;
@@ -128,16 +124,19 @@ body {
 }
 .control-btn.play-main:hover {
     transform: scale(1.06);
-    background: var(--accent-color);
+    background: var(--color-accent);
+}
+.control-btn.play-main.stop-main:hover {
+    background-color: var(--color-bad);
 }
 div#trackList {
-    background-color: #262d36;
+    background-color: var(--color-bg);
 }
 table {
     border-collapse: collapse;
 }
 tr {
-    border-bottom: 1px solid var(--card-bg);
+    border-bottom: 1px solid var(--color-bg-card);
 }
 #trackList table {
     width: 100%;
@@ -156,7 +155,7 @@ tr {
     font-size: 110%;
 }
 tr.on {
-    background-color: #FFF1;
+    background-color: var(--color-hilite);
 }
 div#loopButton {
     position: absolute;
