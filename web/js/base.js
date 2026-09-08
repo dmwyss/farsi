@@ -1,10 +1,10 @@
 const EN = 0;
 const FA = 1;
 const ARROW = {
-    LEFT: 0,
-    UP: 1,
+    LEFT:  0,
+    UP:    1,
     RIGHT: 2,
-    DOWN: 3
+    DOWN:  3
 }
 const asArrowKeys = ['ArrowLeft', 'ArrowUp', 'ArrowRight', 'ArrowDown'];
 const vocab = {
@@ -33,6 +33,7 @@ const vocab = {
         this.clickColSort(this.userSettings.lastSort);
         this.testModeButton = document.querySelector("#toggleTestMode");
         this.testModeButton.innerHTML = "mode:" + this.userSettings.testMode;
+        sakhtBase.collectGarbage();
     },
     parseRaw: function() {
         let oDictOut = {};
@@ -53,7 +54,6 @@ const vocab = {
                 }
             }
             let oO_ = sakhtBase.getByKeyOo(sForeignKey);
-//debugger;
             oWord.meta = {
                 ixOrig: ixCursor++,
                 sSortP: oWord.p.key.toLowerCase(),
@@ -74,7 +74,7 @@ const vocab = {
         }
     },
     toWord: function(sLine) {
-        sLine = sLine.trim().split("'").join("~").split("\"").join("^");
+        sLine = charTamer.toNice(sLine); // sLine.trim().split("'").join("~").split("\"").join("#");
         if ((sLine == "") || (sLine.startsWith("#"))) {
             return null;
         }
@@ -93,50 +93,48 @@ const vocab = {
         let oOut = {};
         if (as.length < 3) {
             oOut.key = as[0];
-            oOut.context = "<b class=\"context\">" + as[0] + "</b>";
+            oOut.context = "<b class=\"context\">" + charTamer.toNaughty(as[0]) + "</b>";
         } else {
             oOut.key = as[1];
-            oOut.context = as[0] + "<b class=\"context\">" + as[1] + "</b>" + as[2];
+            oOut.context = as[0] + "<b class=\"context\">" + charTamer.toNaughty(as[1]) + "</b>" + charTamer.toNaughty(as[2]);
         }
         return oOut;
     },
+    filter: null, // currently only works on star. Later filter like this: {object:"sakhtBase", fieldName: "title", find:"xxx"},
     vocabToHtml: function() {
         let sButtons = "<div id=\"buttonRibbon\">"
             + "<button id=\"toggleTestMode\" onclick=\"vocab.toggleTestMode();\">test</button>"
             + "</div>";
-        let sOut = "<table id=\"vocab\">"
+        let sOut = "<table id=\"vocab\">";
+        let sStarIcon = this.filter === null ? "&star;" : "&starf;";
         sOut += "<tr>"
             + "<td id=\"sNum\" class=\"colSorter colNarrow\">#</td>"
             + "<td id=\"sSortE\" class=\"colSorter\" onclick=\"vocab.clickColSort(this);\">engelisi</td>"
             + "<td id=\"sSortP\" class=\"colSorter\" onclick=\"vocab.clickColSort(this);\">farsi</td>"
             + "<td id=\"sSortResearch\" class=\"colSorter colNarrow\">&nbsp;</td>"
-            + "<td id=\"sSortStar\" class=\"colSorter colNarrow\">&star;</td>"
+            + "<td id=\"sSortStar\" class=\"colSorter colNarrow\" onclick=\"vocab.toggleStarFilter(this);\">" + sStarIcon + "</td>"
             + "<td id=\"sSortSakhti\" class=\"colSorter\" onclick=\"vocab.clickColSort(this);\">sakhti</td>"
             + "</tr>";
+        let iShownRows = 1;
         for (let ix = 0; ix < this.list.length; ix++) {
             let oWord = this.list[ix];
-            let oO = sakhtBase.getByKeyOo(oWord.key);
+            let oSakht = sakhtBase.getByKeyOo(oWord.key);
+            if (this.filter !== null) {
+                if (!oSakht.hasOwnProperty("star")) {
+                    continue;
+                }
+            }
             sOut += "<tr onclick='vocab.doRowClick(this);' id='tr" + ix + "' data-key='" + oWord.key + "'>" // " + ix + "
-                //+ "<td class=\"word\">" + this.tameSpecialChars(oWord.p.key) + "</td>"
-                //+ "<td class=\"word\">" + oWord.e.key  + "</td>"
-                // Do not delete: use to see sakhti: oWord.meta.sSortSakhti
-                + "<td class=\"context colNarrow\">" + (ix + 1) + "</td>"
-                + "<td class=\"context\">" + this.showQuote(oWord.e.context) + "</td>"
-                + "<td class=\"context\">" + this.showQuote(this.tameSpecialChars(oWord.p.context)) + "</td>"
-                + "<td class=\"context colNarrow\">" + sakhtBase.getResearchLink(oWord.key, oO) + "</td>"
-                + "<td class=\"context colNarrow\">" + sakhtBase.getStarOo(oWord.key, oO) + "</td>"
-                + "<td class=\"context\">" + sakhtBase.getIconOo(oO) + "</td>"
+                + "<td class=\"context colNarrow\">" + iShownRows++ + "</td>"
+                + "<td class=\"context\">" + charTamer.toNaughty(oWord.e.context) + "</td>"
+                + "<td class=\"context\">" + charTamer.toNaughty(oWord.p.context) + "</td>"
+                + "<td class=\"context colNarrow\">" + sakhtBase.getResearchLink(oWord.key, oSakht) + "</td>"
+                + "<td class=\"context colNarrow\">" + sakhtBase.getStarOo(oWord.key, oSakht) + "</td>"
+                + "<td class=\"context\">" + sakhtBase.getIconOo(oSakht) + "</td>"
                 + "</tr>";
         }
         sOut += "</table>";
         return sButtons + sOut;
-    },
-    tameSpecialChars: function (sRaw) {
-        //        return sRaw.split("aa").join("&amacr;").split("~").join("&apos;");
-        return sRaw.split("ā").join("aa").split("~").join("&apos;");
-    },
-    showQuote: function (sRaw) {
-        return sRaw.split("^").join("&quot;");
     },
     clickColSort: function (uiSrcOrStringId) {
         let sSortField = uiSrcOrStringId;
@@ -196,11 +194,8 @@ const vocab = {
             this.ixVis = 0;
             return;
         }
-        //c onsole.log("ixVis :: " + this.ixVis);
         let trNext = document.querySelector("#tr" + this.ixVis);
-
         this.scrollToWindowY(trNext);
-
         this.doRowClick(trNext)
     },
     scrollToWindowY: function(trNext) {
@@ -219,21 +214,18 @@ const vocab = {
             return 0;
         }
         const rect = element.getBoundingClientRect();
-
         // Check if the element is completely outside the viewport bounds
         const isOffTop = rect.top < 20;
         const isOffBottom = (rect.bottom + 20) > window.innerHeight;
         if (isOffTop) {
-            return -40; //rect.bottom;
-//            return window.scrollY - rect.top; //rect.bottom;
+            return -40;
         } else if (isOffBottom) {
-            return 40; //rect.top;
+            return 40;
         }
         return 0;
     },
     incrementSakhti: function(iSakht) {
         if (iSakht === 0) {
-            //c onsole.log("increment == 0");
             return;
         }
         let trCurrent = document.querySelector("#tr" + this.ixVis);
@@ -248,7 +240,6 @@ const vocab = {
             sakhtBase.dataOo[sKey].sakhti += iSakht;
             iSakht = sakhtBase.dataOo[sKey].sakhti;
         }
-        //c onsole.log(sKey + " changed by " + iSakht);
         sakhtBase.save();
         trCurrent.querySelector("div.sakhti").style = sakhtBase.getCssForStrength(iSakht);
         trCurrent.querySelector("div.sakhti").innerHTML = sakhtBase.prettyStrength(iSakht);
@@ -258,6 +249,17 @@ const vocab = {
         this.testModeButton.innerHTML = "mode:" + this.userSettings.testMode;
         localStorageManager.set("user_settings", this.userSettings);
         this.next(0);
+    },
+    toggleStarFilter: function(uiSrc) {
+        //let sIcon = "&star;";
+        if (vocab.filter === null) {
+            vocab.filter = {};
+            //sIcon = "&starf;";
+        } else {
+            vocab.filter = null;
+        }
+        //uiSrc.innerHTML = sIcon;
+        vocab.render();
     }
 }
 const sakhtBase = {
@@ -275,7 +277,6 @@ const sakhtBase = {
         }, 800);
     },
     save_debounced: function() {
-        ////////////
         let sFileName = "data/sakhtiData.js"
         let sBody = JSON.stringify(this.dataOo); //, null, 1);
         sBody = sBody
@@ -287,8 +288,6 @@ const sakhtBase = {
         sBody = sBody.split(" = {").join(" = {\n")
         sBody = sBody.split("}};").join("}\n};\n")
         pywriter.save("farsiVocab", sFileName, sBody, sakhtBase.callbackMethod());
-
-        ////////////
     },
     callbackMethod: function() {
         // For future use.
@@ -300,7 +299,6 @@ const sakhtBase = {
         return this.dataOo[sKey];
     },
     getStar: function(sKey) {
-//c onsole.error("ood ldaadfda ta");
         return "&star;";
     },
     getResearchLink: function(sKey, oO) {
@@ -318,10 +316,18 @@ const sakhtBase = {
             sStar = "&starf;";
             sCss = "on";
         }
-
-        let sOut = "<div onclick=\"sakhtBase.doStarClick(\'" + sKey + "\', this);\" class=\"" + sCss + "\">";
+        let sOut = "<div role=\"star\" onclick=\"sakhtBase.doStarClick(\'" + sKey + "\', this);\" class=\"" + sCss + "\">";
         sOut += sStar + "</div>";
         return sOut;
+    },
+    doStarClickFromKeyEvent: function() {
+        if (vocab.rowHighlited === null) {
+            return;
+        }
+        let trCurr = vocab.rowHighlited;
+        let sDataKey = trCurr.getAttribute("data-key");
+        let uiStar = trCurr.querySelector("[role=star]");
+        this.doStarClick(sDataKey, uiStar);
     },
     doStarClick: function(sKey, uiStar) {
         let oO_ = this.getByKeyOo(sKey);
@@ -353,12 +359,24 @@ const sakhtBase = {
         if (iStrength !== 0) {
             let sStrength = Math.min(Math.abs(iStrength), 15).toString(16);
             sColorBg = "#" + (iStrength >= 0 ? "0fa" : "F08") + sStrength;
-            sColorTxt = "#" + (iStrength >= 5 ? "000" : "fff");
+            sColorTxt = "#FFF"; // + (iStrength >= 5 ? "000" : "fff");
         }
         return "color:" + sColorTxt + ";background-color:" + sColorBg + ";";
+    },
+    collectGarbage: function() {
+        /*
+        Keys are based on the farsi text.
+        If the FA (farsi) text gets changed, a new key is created,
+        and an EN orphan is left without a FA. This function looks for
+        orphaned sakht items and removes them.
+        */
+        for (let sKey in this.dataOo) {
+            if (!vocab.dict.hasOwnProperty(sKey)) {
+                delete this.dataOo[sKey];
+            }
+        }
     }
 }
-
 function keyToSakhti(sEventKey) {
     let ix = asArrowKeys.indexOf(sEventKey);
     if (ix === -1) {
@@ -382,8 +400,30 @@ function keyToDistance(sEventKey) {
         return 0;
     }
 }
+const charTamer = {
+    data: [
+    /* naughty, nice */
+        ["\"",  "^"],
+        ["\'",  "~"],
+    ],
+    toNice: function(sIn, isNice=true) {
+        for (const [findText, replaceText] of this.data) {
+            if (isNice) {
+                sIn = sIn.replaceAll(findText, replaceText);
+            } else {
+                sIn = sIn.replaceAll(replaceText, findText);
+            }
+        }
+        return sIn;
+    },
+    toNaughty: function(sIn) {
+        return this.toNice(sIn, false);
+    }
+}
 window.addEventListener('keydown', (event) => {
     if (keyToDistance(event.key) != 0) {
+        event.preventDefault();
+    } else if (event.key === " ") {
         event.preventDefault();
     }
 });
@@ -398,6 +438,9 @@ window.addEventListener('keyup', (event) => {
     } else if (event.key === "Escape") {
         vocab.ixVis = -1;
         vocab.doRowClick({id:"tr0000"});
+    } else if (event.key === " ") {
+        event.preventDefault();
+        sakhtBase.doStarClickFromKeyEvent();
     }
 });
 
