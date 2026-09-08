@@ -2,7 +2,7 @@
     --color-bg: #262d36;
     --color-bg-card: #1c2128;
     --color-accent: #00bcd4;
-    --color-text: #ffffff;
+    --color-text: #FFF;
     --color-hilite: #FFF1;
     --color-text-muted: #b3b3b3;
     --width-audioPlayer: 400px;
@@ -147,15 +147,22 @@ tr {
 #trackList td {
     padding: 5px 2px 8px 10px;
     cursor: pointer;
+    color: var(--color-text-muted);
 }
 #trackList td:last-child {
     text-align: right;
     padding-right: 10px;
+    /*
     font-family: monospace;
     font-size: 110%;
+    */
+    font-variant-numeric: tabular-nums;
 }
 tr.on {
     background-color: var(--color-hilite);
+}
+#trackList tr.on td {
+    color: var(--color-text);
 }
 div#loopButton {
     position: absolute;

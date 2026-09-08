@@ -10,7 +10,7 @@ komaket konam?,                         help do-I? (can I help)
 kaar mikonam,                            work at-the-moment-doing-I
 kelidam ro gom kardam,                  keys-my the lost did (past)
 
-kodoom rooza sherkati?,                 which days office-you?
+in hafteh - kodoom rooza sherkati?,     this week - which days office-you?
 In hafte seshanbe o chaharshanbe miam sherkat, this week Tuesday and Wednesday going office
 Shoma chetor?                           How about you?
 doshanbehaa ro doost nadaaram,          mondays them not like
@@ -52,8 +52,8 @@ Man dar Tehran zendegi mikonam,         I live in Tehran
 oo be ayande fekr mikonad,              she thinks about the future
 Ma dar yek daftar kaar mikonim,         We work in an office
 oona ba moallem sohbat mikonand,        They talk with the teacher
-[english-word] beh Farsi *chi* misheh?, how do you say [word] (in Farsi *what* become)
-[farsi-word] *yani* chi?,               what does [word] *mean*?
+/white/ beh Farsi *chi* misheh?,        /white/ in Farsi is *what*
+/siaah/ *yani* chi?,                    /siaah/ *mean*s what?
 
 sefr yek do se chahaar panj shesh haft hasht noh dah, count from 0 to ten
 
@@ -121,11 +121,11 @@ hich pooli nadaaram,                    I have no money
 hich kasi ro nadidam,                   I saw nobody
 kasi dar zad?,                          did anyone knock on the door?
 har kasi injaast,                       everyone is here
-*ba'ziyaa* raftan peeyadeh-ravee,       some people went for a walk
+*ba~ziyaa* raftan peeyadeh-ravee,       some people went for a walk
 
 *meghdari* aab mikham lotfan,           I want *some* water please
 yek-kam aab,                            one little-bit water
-ba'zi roozhaa,                          some days
+ba~zi roozhaa,                          some days
 baayad zood beram,                      i must go soon
 
 morgh-e daryaaee,                       chicken-of sea
@@ -139,7 +139,7 @@ bebakschid *aaghaa*,                    excuse-me *sir*
 mitoonim baa ham doost baashim,         can-we with each-other friend-s be
 *khosh oomadi* be khoonam,              *welcome* to home-my
 be khoone-man khosh oomadi,             at house-my good welcome-you-are
-saa'at chande?,                         time what-is
+saa~at chande?,                         time what-is
 doost-e samimi,                         best friend
 
 *haale* shomaa chetore?,                *state-ofyou* you how?
@@ -284,7 +284,7 @@ azizam,        				            my darling.
 mobaarake,        			            congratulations
 khaste nabaashin,        	            tired dont-be (thanks for effort)
 *moshtaagh*-e didaar,        	        i am *eager* to see you.
-*felan*,      				            *for now* / see you soon
+*felan*,      				            *for now* (see you soon)
 zibaa,                                  beautiful
 
 hameesheh *shaad* baash,                always be *happy*
@@ -415,7 +415,7 @@ ey baba - be ghaataar narasidam,        oh man - to train not-arrive
 narm mesl-e abrisham,                   smooth like silk
 istgaah-e ghaataar-e ba-adi Sandringham-eh,                         stop/station train next Sandy-is
 forooshgaah-e istgaah ta-atil ast,      shop at station closed is.
-toot farangiaa *ghermez*an baa doonehaaye koochike siaah,           straberries are *red* with little black seeds
+toot farangiaa *ghermez*an baa doonehaaye koochike siaah,           strawberries are *red* with little black seeds
 daa-ye-rey-e kalamaate en-gel-is-im bozorge,                        I have a large english vocabulary
 
 gol-haa roo farshe,                     the flowers are on the carpet
@@ -426,7 +426,7 @@ az ye ghabile be esme "Angl-ha",                                    From a tribe
 romi-ha viking-ha va faransavi-ha be England hamleh kardan,         England was invaded by the Romans the Vikings and the French.
 har hamleh zabon ro ye kam taghiir dad,                             Each invasion changed the language a little bit.
 
-saa'at chand az sare kaar miri?,        What time will you be leaving work?
+saa~at chand az sare kaar miri?,        What time will you be leaving work?
 kheili khoshgeli,                       you are very beautiful
 
 # PUT THESE INTO SENTENCES
@@ -460,11 +460,11 @@ har rooz ye chize jadid yaad migiri,    each day one thing new thought take
 rooze khoobi daashti?,                  day good-one had?
 jashn chetor bood?,                     party good was?
 kelid-aa-m ro peydaa nemikonam,         I cant find my keys
-istgaahe badi piaade misham,            I get off at the next stop
+*istgaa*he ba'di piaade misham,         I get off at the next *stop/station*
 
 
-aftab az khorshid miad,                 sunshine comes from the sun
-too ye maah chahaar hafte hast,         there are 4 weeks in a month
+aftab az *khorshid* miad,               sunshine comes from the sun
+too-ye *maah* chahaar hafte hast,       there are 4 weeks in a month
 har saal davaazdah maah-e,              each year twelve months-is
 be nazaram har daghigheh shast saanie-se,       i think there are sixty seconds in a minute
 in paaeez the trees looze their leevz,  (EN/Farsi) in autumn the trees loose their leaves
@@ -482,7 +482,7 @@ lotfan javaab-e soaal ro bede,          please answer-of question give
 ye zare kare behem bede,                one tiny-bit butter give
 ye heyvoon too daamoone-shoon-e,        an animal in forrest-theirs-is
 koodoom khanoom too khooneh-moon-e,     which lady in house-ours-is
-setaare-ye shomaare-ye yek,             star number one
+setaareh shomaareh *yaazda*,            star number *eleven*
 setaare-haa bi-shomaar-an,              stars are inumerable
 doost *yaa* doshman,                    friend *or* enemy
 aghab-oftaadeh-ye khaanevaade,          retard (back-fallen) of the family
@@ -490,19 +490,17 @@ in-jaa oon-jaa hame-jaa too donyaa,     here there everywhere in (the) world
 hame-jaa-ye donyaa,                     everywhere in the world
 javaab-e jaaleb,                        intersting answer
 soaal-e saadeh,                         easy question (for Sady the cleaning lady)
-soaal saal saa^at saadeh saak,          question year time easy bag
+soaal saal saa~at saadeh saak,          question year time easy bag
 sar sad sag sabz sard,                  head/end hundred dog green cold
 shir pir zir dir gir tir,               milk/tap/lion old under late blockade/get/stuck arrow/bullet
 khabare marg-eshun,                     news death-of-them
-khorshid,                               sun - physical star
-aaftaab,                                sunshine or sunlight.
 tahdig nazdeeg-e tah-e dig-e,           crispy-rice near bottom-of pot-is
 khodamo boridam vaghte reeshamo mizadam, i cut myself shaving
 natije chi shod?,                       what was the result?
 natije nadare,                          result has not (it is useless)
 moosh bokhortet,                        mouse eat-you
 sholoogh poloogh,                       busy mixed-up (chaotic business)
-morgh-e hamsaayeh ghaaz-e               chicken neighbour^s goose-is (grass greener)
+morgh-e hamsaayeh ghaaz-e               chicken neighbour's goose-is (grass greener)
 doosti ye khaal-e kherseh,              friendship an aunt bear (verbesserschlimmerung)
 baa ye tir do taa neshon zadan,         mit einem pfeil zwei ziele treffen
 gorbeh dashteh baash - moosh magheer,   cat have - mouse catch (use right tool for the job)
@@ -511,7 +509,7 @@ halazoon-vaahr,                         snail-like (shy)
 halaal zaadeh,                          kosher birth (speak of the devil)
 haazer javaab,                          ready answer (quick-witted)
 kachalam kardan,                        bald-me makes (stresses me out)
-ghaataar-e ba'di ro mighiram,           train next that catch-I
+ghaataar-e ba~di ro mighiram,           train next that catch-I
 mikhaam azamoon aks bighiram,           want-i of-us photo take-I
 sandali o miiz ziir-e derakhtan,        chair and table under the-tree-are
 to ye zan-e fowgholaadeh hasti,         du bist eine wunderbare frau
@@ -523,15 +521,7 @@ gheymat-esh monaaseb-e,                 preis ist angemessen / günstig
 lebaas-e monaaseb,                      passende kleidung
 vagh-te monaaseb,                       die richtige/passende zeit
 
-fe-l-e "kardan" too faarsi yani "to do",    verb-of kardan in farsi means "to do"
-bon-e haal-esh hast "kon",              stem current is "kon"
-masalan "i do" mishe "mikonam",         example "i do" is "....."
-va "i did"" mishe "mikardam",           and "i did" is "......
 
-
-
-
-                                                
 baraaye tooye kuche raqsidan,                   for inside alley dancing
 baraaye tarsidan be vaqte boosidan,             for fearing at time of kissing
 baraaye khaaharam khaaharet khaaharaamoon,      for my sister your sister our sisters
