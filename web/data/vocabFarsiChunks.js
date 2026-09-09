@@ -520,36 +520,12 @@ ye fenjoon ghahve baa sheer mikhaam lotfan,     one cup coffee would-like please
 gheymat-esh monaaseb-e,                 preis ist angemessen / günstig
 lebaas-e monaaseb,                      passende kleidung
 vagh-te monaaseb,                       die richtige/passende zeit
+ziaadesh kon,                           turn it up
+ziaade - man dige siram,                too-much - I already full-am
+kamesh kon - kheyli bolande,            turn-it down - very loud-is
+bedesh be man lotfan,        give it to me please
 
 
-baraaye tooye kuche raqsidan,                   for inside alley dancing
-baraaye tarsidan be vaqte boosidan,             for fearing at time of kissing
-baraaye khaaharam khaaharet khaaharaamoon,      for my sister your sister our sisters
-baraaye taqir-e maqzhaa ke poosidan,            for change of brains that rotted
-baraaye sharmandegi baraaye bi-pooli,           for shame for without money
-baraaye hasrat-e yek zendegi-e ma’muli,         for regret of one life ordinary
-baraaye kudak-e zobaale-gard o aaruzuhaash,     for child of garbage-turner and dreams his
-baraaye in eqtesaad-e dastoori,                 for this economy command
-baraaye in havaa-ye aaloode,                    for this air polluted
-baraaye valiasr o derakhtaa-ye farsude,         for valiasr and trees worn-out
-baraaye pirooz o ehtemaal-e enqeraazesh,        for pirouz and probability extinction his
-baraaye sag-haa-ye bi gonaah-e mamnoo’e,        for dogs sinless forbidden
-baraaye gerye-haa-ye bi vaqfe,                  for cryings without pause
-baraaye tasvir-e tekraar-e in lahze,            for image repetition this moment
-baraaye chehre’i ke mi-khande,                  for face that laughs
-baraaye daaneshaamuza baraaye aayande,          for students for future
-baraaye in behesht-e ejbaari,                   for this paradise forced
-baraaye nokhbe-haa-ye zendaani,                 for elites imprisoned
-baraaye koodakaan-e afghaani,                   for children afghan
-baraaye in hame baraaye qeyr-e tekraari,        for this all  for non-repetitive
-baraaye in hame sho’aar-haa-ye tukhaali,        for this all slogans empty
-baraaye aavaar-e khoone-haa-ye pooshaali,       for collapse houses straw-like
-baraaye ehsaas-e aaraamesh,                     for feeling peace
-baraaye khorshid pas az shabaa-ye toolaani,     for sun after nights long
-baraaye qors-haa-ye asaab o bi-khaabi,          for pills nerves and sleeplessness
-baraaye mard mihan aabaadi,                     for man homeland prosperity
-baraaye dokhtari ke aaruzoo daasht pesar bood,  for girl who wish had boy was
-baraaye zan zendegi aazaadi,                    for woman life freedom
 
 
 
@@ -587,11 +563,34 @@ Plural Possessive Suffixes
 
 
 
-
-
-Here are my Ubank account details:
-BSB 670864
-Account number 40917390
+baraaye tooye kuche raqsidan,                   for inside alley dancing
+baraaye tarsidan be vaqte boosidan,             for fearing at time of kissing
+baraaye khaaharam khaaharet khaaharaamoon,      for my sister your sister our sisters
+baraaye taqir-e maqzhaa ke poosidan,            for change of brains that rotted
+baraaye sharmandegi baraaye bi-pooli,           for shame for without money
+baraaye hasrat-e yek zendegi-e ma’muli,         for regret of one life ordinary
+baraaye kudak-e zobaale-gard o aaruzuhaash,     for child of garbage-turner and dreams his
+baraaye in eqtesaad-e dastoori,                 for this economy command
+baraaye in havaa-ye aaloode,                    for this air polluted
+baraaye valiasr o derakhtaa-ye farsude,         for valiasr and trees worn-out
+baraaye pirooz o ehtemaal-e enqeraazesh,        for pirouz and probability extinction his
+baraaye sag-haa-ye bi gonaah-e mamnoo’e,        for dogs sinless forbidden
+baraaye gerye-haa-ye bi vaqfe,                  for cryings without pause
+baraaye tasvir-e tekraar-e in lahze,            for image repetition this moment
+baraaye chehre’i ke mi-khande,                  for face that laughs
+baraaye daaneshaamuza baraaye aayande,          for students for future
+baraaye in behesht-e ejbaari,                   for this paradise forced
+baraaye nokhbe-haa-ye zendaani,                 for elites imprisoned
+baraaye koodakaan-e afghaani,                   for children afghan
+baraaye in hame baraaye qeyr-e tekraari,        for this all  for non-repetitive
+baraaye in hame sho’aar-haa-ye tukhaali,        for this all slogans empty
+baraaye aavaar-e khoone-haa-ye pooshaali,       for collapse houses straw-like
+baraaye ehsaas-e aaraamesh,                     for feeling peace
+baraaye khorshid pas az shabaa-ye toolaani,     for sun after nights long
+baraaye qors-haa-ye asaab o bi-khaabi,          for pills nerves and sleeplessness
+baraaye mard mihan aabaadi,                     for man homeland prosperity
+baraaye dokhtari ke aaruzoo daasht pesar bood,  for girl who wish had boy was
+baraaye zan zendegi aazaadi,                    for woman life freedom
 
 
 

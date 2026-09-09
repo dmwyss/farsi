@@ -2,7 +2,6 @@
  * Use up and down arrows to choose between
  * search templates and previous searches.
  */
-
 var g_sSearchLast = "";
 var g_asSearches = [];
 var g_ixCursor = 0;
@@ -14,7 +13,7 @@ var aoTemplates = [
   "etymology of the farsi word \"\"",
   "conjugate the verb \"\" in informal farsi",
   "give me a short, informal, rhyming sentence using the farsi word \"\"",
-  "always give me farsi translations in informal farsi in lower case with the alef character written as aa"
+  "Always give me farsi translations in informal farsi in lower case with the alef character written as aa. Use - with a space before and after instead of commas."
 ]
 function selectQuoteContent(myField) {
   myField.focus();
