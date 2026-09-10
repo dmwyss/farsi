@@ -103,7 +103,7 @@ const vocab = {
     filter: null, // currently only works on star. Later filter like this: {object:"sakhtBase", fieldName: "title", find:"xxx"},
     vocabToHtml: function() {
         let sButtons = "<div id=\"buttonRibbon\">"
-            + "<button id=\"toggleTestMode\" onclick=\"vocab.toggleTestMode();\">test</button>"
+            + "<button id=\"toggleTestMode\" onclick=\"vocab.toggleTestMode();\">mode:" + vocab.userSettings.testMode + "</button>"
             + "</div>";
         let sOut = "<table id=\"vocab\">";
         let sStarIcon = this.filter === null ? "&star;" : "&starf;";

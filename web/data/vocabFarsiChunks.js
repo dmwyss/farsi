@@ -20,7 +20,6 @@ che behtar,                             even better
 dahanam aab oftaad,                     my mouth is watering
 
 vaght daarim,                           time have-we
-raeise bahoosh,                         boss big
 raahnamaayi-t mofid bood,               your advice useful was
 dorost migofti,                         correct spoke-you
 doshman nadaaram,                       enemies not-have
@@ -337,7 +336,7 @@ age besheh chee meeshe,                 think of what could be
 *zabaan*-e Farsi kheili shirine,        *language*-of Farsi very sweet
 *safar*e khubi baashte baashi,          *trip* good have will
 mage *kheng*am?,                        am I *stupid*?
-man *raeis*e bozorg hastam,             I *boss* big am
+man *rayees*e bozorg hastam,            I *boss* big am
 *yekam* laaghar shodi,                  *a little* thin become-I
 in *mantagheh* kheyli sholooghe,        this *area* very busy/noisy
 *hame* khaab-an,                        *everybody* sleeping-is
@@ -407,7 +406,7 @@ eyval,                                  well done
 felan khodaahaafez,                     for now - goodbye
 havaa do nararas,                       the weather is for two people
 del be del raah daare,                  heart to heart path has
-shaazdeh khaanom Sholeh,                princess Sholeh (king-child lady)
+*shaa-zdeh* khaanom Sholeh,             *princess* Sholeh (king-child lady)
 daastaanesh deraaze,                    story long
 dam-e aasaansor vaas-mistaam,           I will wait near the lift
 aafarin! to aasaansor-e A ro gerefti,   bravo! you lift-A got
@@ -455,10 +454,10 @@ cheraagh ro roshan kon,                 light thatone turn-on do
 badan behem zang bezan,                 call me later
 badan behem peyam bezan,                text me later
 shookhi mikoni vali mifahmam,           joking you but I understand
-yekkam bolandtar sobhat kon,            little-bit louder speak-do
+yekkam bolandtar *sobhat kon*,          little-bit louder *speak do*
 har rooz ye chize jadid yaad migiri,    each day one thing new thought take
 rooze khoobi daashti?,                  day good-one had?
-jashn chetor bood?,                     party good was?
+*jashn* chetor bood?,                   *party* how was?
 kelid-aa-m ro peydaa nemikonam,         I cant find my keys
 *istgaa*he ba'di piaade misham,         I get off at the next *stop/station*
 
@@ -499,7 +498,7 @@ khodamo boridam vaghte reeshamo mizadam, i cut myself shaving
 natije chi shod?,                       what was the result?
 natije nadare,                          result has not (it is useless)
 moosh bokhortet,                        mouse eat-you
-sholoogh poloogh,                       busy mixed-up (chaotic business)
+sholoogh poloogh,                       busy mixed-up cray-cray
 morgh-e hamsaayeh ghaaz-e               chicken neighbour's goose-is (grass greener)
 doosti ye khaal-e kherseh,              friendship an aunt bear (verbesserschlimmerung)
 baa ye tir do taa neshon zadan,         mit einem pfeil zwei ziele treffen
@@ -523,10 +522,10 @@ vagh-te monaaseb,                       die richtige/passende zeit
 ziaadesh kon,                           turn it up
 ziaade - man dige siram,                too-much - I already full-am
 kamesh kon - kheyli bolande,            turn-it down - very loud-is
-bedesh be man lotfan,        give it to me please
-
-
-
+bedesh be man lotfan,                   give it to me please
+kami shir mikhaam,                      little-bit milk please
+emtehaanesh kon,                        try it
+tamoom,                                 finish
 
 
 `;

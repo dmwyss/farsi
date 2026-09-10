@@ -33,7 +33,8 @@ function selectQuoteContent(myField) {
   )
 }
 window.addEventListener('keydown', function(event) {
-  let ata = document.querySelectorAll("textarea");
+  // recently removed because messes up normal google search: let ata = document.querySelectorAll("textarea");
+  let ata = document.querySelectorAll("textarea[autocomplete=off]");
   let myField = ata[ata.length - 1];
     if (myField === document.activeElement) {
   	  isArrow = false;

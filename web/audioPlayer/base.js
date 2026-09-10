@@ -9,12 +9,9 @@ let durationTimeDisplay = null;
 let trackTitle = null;
 let loopButton = null;
 const iTimeJumpSec = 8;
-
-let trackListData = [
-    {file: "Vocab_01_-_First_basics.mp3", secs: 150},
-    {file: "Vocab_04_-_Essential_60.mp3", secs: 513},
-    {file: "Vocab_05_-_Essential_100.m4a", secs: 821}
-];
+const LOOP_NONE = 0;
+const LOOP_ONCE = 1;
+const LOOP_ALL = 2;
 
 function doOnLoad() {
     customAudio = document.getElementById('custom-audio');
@@ -39,25 +36,39 @@ function doOnLoad() {
         timeline.max = customAudio.duration;
         durationTimeDisplay.textContent = formatTime(customAudio.duration);
     }
-
+    // Update timeline as the audio plays. If it has ended, play the ting.
     customAudio.addEventListener('timeupdate', () => {
         timeline.value = customAudio.currentTime;
         currentTimeDisplay.textContent = formatTime(customAudio.currentTime);
+        if (Math.floor(customAudio.duration) === Math.floor(customAudio.currentTime)) {
+            // Not 100% sure about this. The test above runs hundreds of times.
+            ting();
+        }
     });
-
+    // Do next thing after playing. Depends on loop mode setting.
+    customAudio.addEventListener('ended', () => {
+        // Create and configure the new audio instance
+        ting();
+        console.log(audioPlayer.sFileUrlBase + "oof.mov ");
+        if (userPrefs.data.iLoopMode === LOOP_ALL) {
+            trackList.doGoNextRow();
+            playPauseBtn.click();
+        }
+    }),
+    // Show current time.
     timeline.addEventListener('input', () => {
         customAudio.currentTime = timeline.value;
         currentTimeDisplay.textContent = formatTime(timeline.value);
     });
-
+    // React to back button click.
     backBtn.addEventListener('click', () => {
         customAudio.currentTime = Math.max(0, customAudio.currentTime - 10);
     });
-
+    // React to forward button click.
     forwardBtn.addEventListener('click', () => {
         customAudio.currentTime = Math.min(customAudio.duration, customAudio.currentTime + 10);
     });
-
+    // Set up keyboard controls.
     window.addEventListener('keydown', (event) => {
         if ([' ', 'ArrowLeft', 'ArrowRight'].includes(event.key)) {
             event.preventDefault();
@@ -72,11 +83,26 @@ function doOnLoad() {
         case 'ArrowRight':
             customAudio.currentTime = Math.min(customAudio.duration, customAudio.currentTime + iTimeJumpSec);
             break;
+        case 'ArrowDown':
+            trackList.doGoNextRow(1);
+            break;
+        case 'ArrowUp':
+            trackList.doGoNextRow(-1);
+            break;
         }
     });
     userPrefs.init();
     trackList.init().drawTable();
     audioPlayer.init();
+}
+function ting() {
+    if (window.isBeepPlayed) {
+        return;
+    }
+    const completionSound = new Audio(audioPlayer.sFileUrlBase + "ting.mp3");
+    completionSound.play();
+    window.isBeepPlayed = true;
+    setTimeout(function() {window.isBeepPlayed = false}, 2000);
 }
 function formatTime(seconds) {
     if (isNaN(seconds)) return '00:00';
@@ -86,7 +112,7 @@ function formatTime(seconds) {
 }
 function togglePlay() {
     if (customAudio.paused) {
-        customAudio.loop = userPrefs.data.isLoop;
+        customAudio.loop = userPrefs.data.iLoopMode === LOOP_ONCE;
         customAudio.play();
         playIcon.innerHTML = '<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>';
         playPauseBtn.classList.add('stop-main');
@@ -103,18 +129,22 @@ function togglePlay() {
 const audioPlayer = {
     sFileUrlBase: "../audio/",
     init: function() {
-        /*
-        const sIdZero = trackList.data[0].id;
-        this.setTrack(sIdZero);
-        */
-        let trPrevious = null;
-        if (userPrefs.data.sPreviousId === null) {
-            trPrevious = document.querySelectorAll("#trackList table tr")[0];
-            trackList.setPreviousId(trPrevious.id);
-        } else {
-            trPrevious = document.querySelector("#" + userPrefs.data.sPreviousId);
+        let trCurrent = null;
+        if ((typeof userPrefs.data.iLoopMode === "undefined") || (userPrefs.data.iLoopMode === null)) {
+            userPrefs.set("iLoopMode", 0);
         }
-        trPrevious.click();
+        // Assume you can find the target tr. It may not exist...
+        trCurrent = document.querySelector("#" + userPrefs.data.sCurrentId);
+        if (
+        (typeof userPrefs.data.sCurrentId === "undefined")
+        || (userPrefs.data.sCurrentId === null)
+        || (trCurrent === null)
+        ) {
+            trCurrent = document.querySelectorAll("#trackList table tr")[0];
+            trackList.setCurrentId(trCurrent.id);
+        //} else {
+        }
+        trCurrent.click(); // Change to go direct from trackList.doRowClick();
         return this;
     },
     setTrack: function(sId) {
@@ -126,24 +156,19 @@ const audioPlayer = {
         customAudio.src = this.sFileUrlBase + trackCurr.file;
     },
     doClickLoopButton: function(uiSrc) {
-        userPrefs.set("isLoop", !userPrefs.data.isLoop);
-        customAudio.loop = userPrefs.data.isLoop;
+debugger;
+        userPrefs.set("iLoopMode", (++userPrefs.data.iLoopMode % 3));
+        customAudio.loop = (userPrefs.data.iLoopMode === LOOP_ONCE);
         this.updateLoopButtonUi();
     },
     updateLoopButtonUi: function() {
-        let sColor = "var(--color-grey-muted-full)";
-        if (userPrefs.data.isLoop) {
-            sColor = "var(--color-text-muted)";
-        }
-        loopButton.style.color = sColor;
+        loopButton.className = "loopMode" + userPrefs.data.iLoopMode;
     }
 }
 const trackList = {
     uiWrapper: null,
-    setPreviousId: function(sId) {
-        userPrefs.set("sPreviousId", sId);
-        //TODO: Store in localstorage.
-    },
+    dict: { /* built during init() from data */ },
+    data: [],
     init: function() {
         this.data = trackListData;
         this.uiWrapper = document.querySelector("#trackList");
@@ -151,6 +176,7 @@ const trackList = {
             let oAF = this.data[ixAF];
             oAF.id = oAF.file.split(".").join("_")
             oAF.name = oAF.file.substring(0, oAF.file.lastIndexOf(".")).replace(/[_\-\.]/g, ' ');
+            oAF.ix = ixAF;
             this.dict[oAF.id] = oAF;
         }
         return this;
@@ -172,11 +198,17 @@ const trackList = {
     state: {
         uiTrCurr: null
     },
-    dict: { /* built during init() from data */ },
-    data: [],
+    setCurrentId: function(sId) {
+        userPrefs.set("sCurrentId", sId);
+    },
+    getCurrentId: function() {
+        if (!userPrefs.data.hasOwnProperty("sCurrentId")) {
+            return null;
+        }
+        return userPrefs.data.sCurrentId;
+    },
     doRowClick: function(uiTrClicked) {
         if (this.state.uiTrCurr === uiTrClicked) {
-            // customAudio.play(); // Does not work. Probably timing issue.
             return;
         }
         if (this.state.uiTrCurr != null) {
@@ -185,13 +217,33 @@ const trackList = {
         uiTrClicked.className = "on";
         this.state.uiTrCurr = uiTrClicked;
         audioPlayer.setTrack(uiTrClicked.id);
-        userPrefs.set("sPreviousId", uiTrClicked.id);
+        this.setCurrentId(uiTrClicked.id);
+    },
+    doGoNextRow: function(iDirection=1) {
+        let oTrackNext = null;
+        if (userPrefs.data.sCurrentId === null) {
+            oTrackNext = trackListData[0];
+        } else {
+            try {
+                let ixTrackNext = ((this.dict[userPrefs.data.sCurrentId].ix + iDirection) % trackListData.length);
+                oTrackNext = trackListData[ixTrackNext];
+            } catch (e) {
+                oTrackNext = trackListData[0];
+            }
+        }
+        // Get the new one.
+        let isWasPlaying = !customAudio.paused;
+        uiNext = document.querySelector("#" + oTrackNext.id)
+        this.doRowClick(uiNext);
+        if (isWasPlaying) {
+            togglePlay(); // Will only start play. Newly set track is always stopped when selected.
+        }
     }
 }
 const userPrefs = {
     data: {
-        isLoop: false,
-        sPreviousId: null
+        iLoopMode: 0,
+        sCurrentId: null
     },
     init: function() {
         //TODO load data from localstore.

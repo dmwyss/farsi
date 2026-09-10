@@ -168,4 +168,24 @@ div#loopButton {
     position: absolute;
     right: 27px;
     top: 25px;
+    color: var(--color-grey-muted-full);
+    cursor: pointer;
+}
+div#loopButton.loopMode1 ,
+div#loopButton.loopMode2 {
+    /* Either LOOP_ONCE or LOOP_ALL tracks */
+    color: var(--color-text-muted);
+}
+div#loopButton .cardinality {
+    position: absolute;
+    top: 5px;
+    width: 100%;
+    font-weight: 700;
+    text-align: center;
+    font-size: 12px;
+}
+div#loopButton.loopMode0 .cardinality ,
+div#loopButton.loopMode2 .cardinality {
+    /* Either LOOP_NONE or LOOP_ALL tracks */
+    display: none;
 }
