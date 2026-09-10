@@ -72,7 +72,6 @@ td.colNarrow {
 only visible in verbs.htm
 */
 img#heading {
-    position: absolute;
     top: 2px;
     left: 350px;
     opacity: 0.4;
