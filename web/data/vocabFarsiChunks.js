@@ -509,7 +509,7 @@ halaal zaadeh,                          kosher birth (speak of the devil)
 haazer javaab,                          ready answer (quick-witted)
 kachalam kardan,                        bald-me makes (stresses me out)
 ghaataar-e ba~di ro mighiram,           train next that catch-I
-mikhaam azamoon aks bighiram,           want-i of-us photo take-I
+mikhaam azamoon *aks* begiram,           want-i of-us *photo* take-I
 sandali o miiz ziir-e derakhtan,        chair and table under the-tree-are
 to ye zan-e fowgholaadeh hasti,         du bist eine wunderbare frau
 in mive kal-e na reside na pooside,     the fruit unripe-is then ripe then rotten
@@ -519,7 +519,7 @@ ye fenjoon ghahve baa sheer mikhaam lotfan,     one cup coffee would-like please
 gheymat-esh monaaseb-e,                 preis ist angemessen / günstig
 lebaas-e monaaseb,                      passende kleidung
 vagh-te monaaseb,                       die richtige/passende zeit
-ziaadesh kon,                           turn it up
+*ziaad*esh kon,                         turn it up (*much*-of-it make)
 ziaade - man dige siram,                too-much - I already full-am
 kamesh kon - kheyli bolande,            turn-it down - very loud-is
 bedesh be man lotfan,                   give it to me please

@@ -424,14 +424,13 @@ let sakhtiData = {
 "halaal zaadeh":{"sakhti":-50,"star":1},
 "haazer javaab":{"sakhti":-1},
 "kachalam kardan":{"sakhti":-1},
-"oon khoone ast":{"sakhti":-40},
+"oon khoone ast":{"sakhti":-40,"star":1},
 "oon khoone bood":{"sakhti":-40,"star":1},
 "befarma bokhor!":{"sakhti":-60,"star":1},
 "shookhi mikoni vali mifahmam":{"sakhti":-1},
 "kelid-aa-m ro peydaa nemikonam":{"sakhti":-60,"star":1},
 "morgh-e hamsaayeh ghaaz-e":{"sakhti":-1},
 "ghaataar-e ba~di ro mighiram":{"sakhti":-50,"star":1},
-"mikhaam azamoon aks bighiram":{"sakhti":-50,"star":1},
 "sandali o miiz ziir-e derakhtan":{"sakhti":-1},
 "to ye zan-e fowgholaadeh hasti":{"sakhti":-1},
 "in mive kal-e na reside na pooside":{"sakhti":-10},
@@ -460,5 +459,6 @@ let sakhtiData = {
 "rayees":{"sakhti":-10},
 "sobhat kon":{"sakhti":-60,"star":1},
 "jashn":{"sakhti":-50,"star":1},
-"tamoom":{"sakhti":-40,"star":1}
+"tamoom":{"sakhti":-40,"star":1},
+"aks":{"sakhti":-50,"star":1}
 };
