@@ -13,7 +13,10 @@ var aoTemplates = [
   "etymology of the farsi word \"\"",
   "conjugate the verb \"\" in informal farsi",
   "give me a short, informal, rhyming sentence using the farsi word \"\"",
-  "Always give me farsi translations in informal farsi in lower case with the alef character written as aa. Use - with a space before and after instead of commas."
+  "Always give me farsi translations in informal farsi"
+    + " in lower case with the alef character written as aa."
+    + " Use - with a space before and after instead of commas in translations."
+    + " Always give me the farsi followed by a comma then a new line with the english on it,"
 ]
 function selectQuoteContent(myField) {
   myField.focus();

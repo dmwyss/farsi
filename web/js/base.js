@@ -6,6 +6,11 @@ const ARROW = {
     RIGHT: 2,
     DOWN:  3
 }
+// These are necessary because sometimes some rows are hidden, and if you go
+// to the previous row in the global order it might not exist in the DOM.
+let iGetNextTrAttempts = 0; // How many trs above or below skipped to find next,
+let iGetNextTrAttemptsMax = 1000; // More than in list. Stop infinite loop.
+
 const asArrowKeys = ['ArrowLeft', 'ArrowUp', 'ArrowRight', 'ArrowDown'];
 const vocab = {
     dict: null,
@@ -38,8 +43,8 @@ const vocab = {
     parseRaw: function() {
         let oDictOut = {};
         let asLines = vocabFarsiRaw.split("\n");
-        let ixCursor = 0;
         for (let ix = 0; ix < asLines.length; ix++) {
+            console.log(asLines[ix]);
             let oWord = this.toWord(asLines[ix]);
             if (!oWord) {
                 continue;
@@ -55,9 +60,9 @@ const vocab = {
             }
             let oO_ = sakhtBase.getByKeyOo(sForeignKey);
             oWord.meta = {
-                ixOrig: ixCursor++,
-                sSortP: oWord.p.key.toLowerCase(),
-                sSortE: oWord.e.key.toLowerCase(),
+                ixOrig: ix,
+                sSortP: charTamer.plainAlpha(oWord.p.contextText).toLowerCase(),
+                sSortE: charTamer.plainAlpha(oWord.e.contextText).toLowerCase(),
                 sSortStar: (oWord.hasOwnProperty("star") && (oWord.star == 1) ?  1 : 0),
                 sSortSakhti: ((oO_.sakhti === 0 ? 1 : (oO_.sakhti + 100)) * 10000) + ix
             };
@@ -88,15 +93,16 @@ const vocab = {
         }
     },
     toMot: function(sMotRaw="") {
+        let oOut = {};
+        oOut.contextText = sMotRaw;
         sMotRaw = sMotRaw.trim();
         let as = sMotRaw.split("*");
-        let oOut = {};
         if (as.length < 3) {
             oOut.key = as[0];
-            oOut.context = "<b class=\"context\">" + charTamer.toNaughty(as[0]) + "</b>";
+            oOut.contextHtml = "<b class=\"context\">" + charTamer.toNaughty(as[0]) + "</b>";
         } else {
             oOut.key = as[1];
-            oOut.context = as[0] + "<b class=\"context\">" + charTamer.toNaughty(as[1]) + "</b>" + charTamer.toNaughty(as[2]);
+            oOut.contextHtml = as[0] + "<b class=\"context\">" + charTamer.toNaughty(as[1]) + "</b>" + charTamer.toNaughty(as[2]);
         }
         return oOut;
     },
@@ -108,7 +114,7 @@ const vocab = {
         let sOut = "<table id=\"vocab\">";
         let sStarIcon = this.filter === null ? "&star;" : "&starf;";
         sOut += "<tr>"
-            + "<td id=\"sNum\" class=\"colSorter colNarrow\">#</td>"
+            + "<td id=\"ixOrig\" class=\"colSorter colNarrow\" onclick=\"vocab.clickColSort(this);\">#</td>"
             + "<td id=\"sSortE\" class=\"colSorter\" onclick=\"vocab.clickColSort(this);\">engelisi</td>"
             + "<td id=\"sSortP\" class=\"colSorter\" onclick=\"vocab.clickColSort(this);\">farsi</td>"
             + "<td id=\"sSortResearch\" class=\"colSorter colNarrow\">&nbsp;</td>"
@@ -126,9 +132,9 @@ const vocab = {
             }
             sOut += "<tr onclick='vocab.doRowClick(this);' id='tr" + ix + "' data-key='" + oWord.key + "'>" // " + ix + "
                 + "<td class=\"context colNarrow\">" + iShownRows++ + "</td>"
-                + "<td class=\"context\">" + charTamer.toNaughty(oWord.e.context) + "</td>"
-                + "<td class=\"context\">" + charTamer.toNaughty(oWord.p.context) + "</td>"
-                + "<td class=\"context colNarrow\">" + sakhtBase.getResearchLink(oWord.key, oSakht) + "</td>"
+                + "<td class=\"context\">" + charTamer.toNaughty(oWord.e.contextHtml) + "</td>"
+                + "<td class=\"context\">" + charTamer.toNaughty(oWord.p.contextHtml) + "</td>"
+                + "<td class=\"context colNarrow\">" + sakhtBase.getResearchLink(oWord) + "</td>"
                 + "<td class=\"context colNarrow\">" + sakhtBase.getStarOo(oWord.key, oSakht) + "</td>"
                 + "<td class=\"context\">" + sakhtBase.getIconOo(oSakht) + "</td>"
                 + "</tr>";
@@ -139,7 +145,7 @@ const vocab = {
     clickColSort: function (uiSrcOrStringId) {
         let sSortField = uiSrcOrStringId;
         if (typeof uiSrcOrStringId !== "string") {
-            sSortField = uiSrcOrStringId.id; // "sSortE";
+            sSortField = uiSrcOrStringId.id;
         }
         if (sSortField === this.sLastSortField) {
             this.list.reverse();
@@ -190,13 +196,21 @@ const vocab = {
     },
     next: function(iDist) {
         this.ixVis += iDist;
-        if ((this.ixVis < 0) || (this.ixVis === vocab.list.length)) {
+        if ((this.ixVis < 0) || (this.ixVis === vocab.list.length) || iGetNextTrAttempts >= iGetNextTrAttemptsMax) {
             this.ixVis = 0;
+            iGetNextTrAttempts = 0;
             return;
         }
         let trNext = document.querySelector("#tr" + this.ixVis);
-        this.scrollToWindowY(trNext);
-        this.doRowClick(trNext)
+        if (trNext === null) {
+            console.log("could not find #tr" + this.ixVis + " attempt " + iGetNextTrAttempts);
+            iGetNextTrAttempts++;
+            vocab.next(iDist);
+        } else {
+            this.scrollToWindowY(trNext);
+            this.doRowClick(trNext)
+            iGetNextTrAttempts = 0;
+        }
     },
     scrollToWindowY: function(trNext) {
         let iPosY = this.howFarIsElementScrolledOffScreen(trNext);
@@ -301,9 +315,10 @@ const sakhtBase = {
     getStar: function(sKey) {
         return "&star;";
     },
-    getResearchLink: function(sKey, oO) {
-        let sKeyPretty = sKey.split(" ").join("+");
-        let sOut = "<a href=\"https://www.google.com/search?q=literal+translation+of+" + sKeyPretty + "+in+farsi\"";
+    getResearchLink: function(oWord) {
+        //let sTerm = oWord.p.contextText.split(" ").join("+");
+        let sTerm = charTamer.urlEncode(oWord.p.contextText);
+        let sOut = "<a href=\"https://www.google.com/search?q=literal+translation+of+%22" + sTerm + "%22+in+farsi\"";
         sOut += " target=\"farsiResearch\" class=\"tableCellLinkIcon\">";
         sOut += "<img src=\"img/icnLupe.svg\" style=\"width:17px;\">";
         sOut += "</a>"
@@ -358,7 +373,7 @@ const sakhtBase = {
         let sColorTxt = "#fff";
         if (iStrength !== 0) {
             let sStrength = Math.min(Math.abs(iStrength), 15).toString(16);
-            sColorBg = "#" + (iStrength >= 0 ? "0fa" : "F08") + sStrength;
+            sColorBg = "#" + (iStrength >= 0 ? "0bd" : "F08") + sStrength;
             sColorTxt = "#FFF"; // + (iStrength >= 5 ? "000" : "fff");
         }
         return "color:" + sColorTxt + ";background-color:" + sColorBg + ";";
@@ -418,6 +433,12 @@ const charTamer = {
     },
     toNaughty: function(sIn) {
         return this.toNice(sIn, false);
+    },
+    urlEncode: function(sIn) {
+        return sIn.replaceAll(/\*/gi, "").replaceAll(/ {2,}/gi, " ").trim();
+    },
+    plainAlpha: function(sIn) {
+        return sIn.replace(/[^a-zA-Z0-9]/g, '').trim();
     }
 }
 window.addEventListener('keydown', (event) => {

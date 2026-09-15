@@ -40,7 +40,7 @@ eshkaal-i nadaare,                      defect-any not-have (no problem)
 
 man maachin raa tamiz mikonam,          i car clean do
 to chi kaar mikoni?,                    what you (single) doing?
-u mikoneh,                              he/she/it does
+u mikone,                               he/she/it does
 maa mikonim,                            we do
 shomaa mikonin,                         you (plur) do
 
@@ -52,7 +52,7 @@ oo be ayande fekr mikonad,              she thinks about the future
 Ma dar yek daftar kaar mikonim,         We work in an office
 oona ba moallem sohbat mikonand,        They talk with the teacher
 /white/ beh Farsi *chi* misheh?,        /white/ in Farsi is *what*
-/siaah/ *yani* chi?,                    /siaah/ *mean*s what?
+/sefid/ *yani* chi?,                    /sefid/ *mean*s what?
 
 sefr yek do se chahaar panj shesh haft hasht noh dah, count from 0 to ten
 
@@ -153,7 +153,7 @@ bebakshid *dir* kardam,                 sorry I am *late*
 in kif kheili *sangin*e,                this bag is very *heavy*
 kheili *mamnoon*,                       *thank you* very much
 
-iin dars sakht ast,                     this difficult lesson is
+iin *dars* sakht ast,                   this difficult *lesson* is
 zire hamaan aasmaan hastim,             under same sky-we
 
 baraaye mesaal,                         for example
@@ -420,11 +420,6 @@ daa-ye-rey-e kalamaate en-gel-is-im bozorge,                        I have a lar
 gol-haa roo farshe,                     the flowers are on the carpet
 ye kam azash fahmidam,                  i understood a bit of that
 
-zabone engelisi az shomal gharbe alman - nazdike danmark miad,      English comes from north western Germany near Denmark
-az ye ghabile be esme "Angl-ha",                                    From a tribe called the "Angles".
-romi-ha viking-ha va faransavi-ha be England hamleh kardan,         England was invaded by the Romans the Vikings and the French.
-har hamleh zabon ro ye kam taghiir dad,                             Each invasion changed the language a little bit.
-
 saa~at chand az sare kaar miri?,        What time will you be leaving work?
 kheili khoshgeli,                       you are very beautiful
 
@@ -449,10 +444,11 @@ nabyaayad zood tasmim begiri,           not-must early decision take
 hamine ke hast,                         it is what it is
 che khabare?,                           what is going on?
 mesele aabe khordane,                   its easy (like drinking water)
-yek saanie vaastaa - begu chi khaastaa, one second stop - tell what wanted-you
-cheraagh ro roshan kon,                 light thatone turn-on do
+yek *saanie* vaastaa,                   one second stop
+begu chi *khaastaa*,                    tell what wanted-you
+cheraagh ro roshan kon,                 light that-one turn-on do
 badan behem zang bezan,                 call me later
-badan behem peyam bezan,                text me later
+bah-dan behem *peyam bezan*,            *text message* me later
 shookhi mikoni vali mifahmam,           joking you but I understand
 yekkam bolandtar *sobhat kon*,          little-bit louder *speak do*
 har rooz ye chize jadid yaad migiri,    each day one thing new thought take
@@ -514,8 +510,8 @@ sandali o miiz ziir-e derakhtan,        chair and table under the-tree-are
 to ye zan-e fowgholaadeh hasti,         du bist eine wunderbare frau
 in mive kal-e na reside na pooside,     the fruit unripe-is then ripe then rotten
 terkoondi,                              you blew it up (nailed it)
-koja-a-i?,                              where are you?
-ye fenjoon ghahve baa sheer mikhaam lotfan,     one cup coffee would-like please
+kojaa-i?,                               where are you?
+ye fenjoon ghahve baa sheer mikhaam lotfan,     one cup coffee with milk would-like please
 gheymat-esh monaaseb-e,                 preis ist angemessen / günstig
 lebaas-e monaaseb,                      passende kleidung
 vagh-te monaaseb,                       die richtige/passende zeit
@@ -526,6 +522,29 @@ bedesh be man lotfan,                   give it to me please
 kami shir mikhaam,                      little-bit milk please
 emtehaanesh kon,                        try it
 tamoom,                                 finish
+aab khordam - sarmaaye khordam!,        I drank water - I caught a cold!
+
+daaryaa ariz o aamigh-e,                ocean wide and deep is
+roodhaane baareek o kam omghe,          river narrow and shallow-is
+*zardaaloo*-ye khoshk,                  dried apricots
+bishtar az sad goone koose vojood daare,    more than 100 types (of) sharks exist
+havaaa gmarme - pankaaro roshan konam,  it is hot - turn on the fan
+ketri roo ojaagh-e,                     the kettle is on the stove
+peeraahane rang e rooshan,              shirt of color of bright
+gorbe moohe meshki o sefeed daare,      the cat has black and white fur
+meeshe chaaghooro bedi lotfan?,         can knife give please?
+meeshe jaaroo-barghiro rooshan koni,    can you turn on the vacuum cleaner
+in jaaroo-barghiro kheyli bi-sedaa ast, this broom-electric very not-noisy is
+em-saal khoshk-saalie,                  this year is a drought
+
+dah beest see chel panjaah,             count 10 to 50
+shast haftaad hashtaad navad sad,       count 60 to 100
+jaayi ke dood hast aatash ham hast,     place that smoke is - fire also is
+nish-e yek aroos-e daryaayi,            sting/bite-of a bride-of sea
+besyaar dardnaak nabood,                very painful not-was
+neseraani nabaash,                      nervous not-be
+soorat-e khoshgeli daari,               face beautiful have-you
+to mahboob-e mani,                      you favorite me-are
 
 
 `;
@@ -538,9 +557,10 @@ morgh-e daryaayi
 chisi
 shotor morgh
 begoo
-ezhdehaa
 khar to khar
 chahaar
+boolooberi
+ezhdehaa
 
 morgh-e daryaayi,                       chicken of the sea
 morgh-e teshne,                         thirst bird - flamingo
