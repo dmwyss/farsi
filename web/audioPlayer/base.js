@@ -142,7 +142,6 @@ const audioPlayer = {
         ) {
             trCurrent = document.querySelectorAll("#trackList table tr")[0];
             trackList.setCurrentId(trCurrent.id);
-        //} else {
         }
         trCurrent.click(); // Change to go direct from trackList.doRowClick();
         return this;

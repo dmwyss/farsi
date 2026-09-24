@@ -443,7 +443,7 @@ nabyaayad zood tasmim begiri,           not-must early decision take
 
 hamine ke hast,                         it is what it is
 che khabare?,                           what is going on?
-mesele aabe khordane,                   its easy (like drinking water)
+mesele aabe khordane,                   like drinking water (easy)
 yek *saanie* vaastaa,                   one second stop
 begu chi *khaastaa*,                    tell what wanted-you
 cheraagh ro roshan kon,                 light that-one turn-on do
@@ -500,12 +500,11 @@ doosti ye khaal-e kherseh,              friendship an aunt bear (verbesserschlim
 baa ye tir do taa neshon zadan,         mit einem pfeil zwei ziele treffen
 gorbeh dashteh baash - moosh magheer,   cat have - mouse catch (use right tool for the job)
 mesl-e halazoon raah raftan,            to walk like a snail
-halazoon-vaahr,                         snail-like (shy)
 halaal zaadeh,                          kosher birth (speak of the devil)
 haazer javaab,                          ready answer (quick-witted)
 kachalam kardan,                        bald-me makes (stresses me out)
 ghaataar-e ba~di ro mighiram,           train next that catch-I
-mikhaam azamoon *aks* begiram,           want-i of-us *photo* take-I
+mikhaam azamoon *aks* begiram,          want-i of-us *photo* take-I
 sandali o miiz ziir-e derakhtan,        chair and table under the-tree-are
 to ye zan-e fowgholaadeh hasti,         du bist eine wunderbare frau
 in mive kal-e na reside na pooside,     the fruit unripe-is then ripe then rotten
@@ -546,10 +545,33 @@ neseraani nabaash,                      nervous not-be
 soorat-e khoshgeli daari,               face beautiful have-you
 to mahboob-e mani,                      you favorite me-are
 
+biroon daare taarik mishe,              it is getting dark outside
+in maale kiye,                          whose is this
+khoneh mesl-e maah shode,               house like moon has-become (spotless)
+cheraaghaaye shargh bargh mizanan,      lamps-of-the east shine
 
 `;
 
 /*
+
+-am,                                    my
+-et,                                    your
+-esh,                                   his/hers/its
+-emoon,                                 our
+-etoon,                                 your
+-eshoon,                                their
+
+Singular Possessive Suffixes
+-am     My / Mine           khooneh-am      My house
+-et     Your / Yours        khooneh-et      Your house
+-esh    His / Her / Its     khooneh-esh     His/Her house
+
+Plural Possessive Suffixes
+-emoon   Our / Ours          khooneh-moon    Our house
+-etoon   Your / Yours        khooneh-toon    Your house
+-eshoon  Their / Theirs      khooneh-shoon   Their house
+
+
 
 ghoor-baa-ghe
 halazoon
@@ -568,17 +590,6 @@ morgh-e kaaftaar,                       hyena bird
 morgh-e toofaan,                        storm bird
 morgh-e aameshgh,                       love bird
 
-
-
-Singular Possessive Suffixes
--am     My / Mine           khooneh-am      My house
--et     Your / Yours        khooneh-et      Your house
--esh    His / Her / Its     khooneh-esh     His/Her house
-
-Plural Possessive Suffixes
--moon   Our / Ours          khooneh-moon    Our house
--toon   Your / Yours        khooneh-toon    Your house
--shoon  Their / Theirs      khooneh-shoon   Their house
 
 
 

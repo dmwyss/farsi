@@ -142,7 +142,9 @@ a.tableCellLinkIcon:hover img {
     min-width: 120px;
     margin: 10px 0 0 0;
 }
-
+table#vocab tr:nth-child(21) td {
+    border-bottom: 2px solid #576272CC;
+}
 @media print {
     body {
         padding: 0 0 0 0;
