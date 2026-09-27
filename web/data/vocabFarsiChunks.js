@@ -549,6 +549,39 @@ biroon daare taarik mishe,              it is getting dark outside
 in maale kiye,                          whose is this
 khoneh mesl-e maah shode,               house like moon has-become (spotless)
 cheraaghaaye shargh bargh mizanan,      lamps-of-the east shine
+harf-e aakhar,                          the last word
+
+dah beest see chel panjaah,             count 10 to 50
+shast haftaad hashtaad navad sad,       count 60 to 100
+jaayi ke dood hast aatash ham hast,     where there is smoke there is fire
+nish-e yek aroos-e daryaayi,            sting/bite-of a bride-of sea
+besyaar dardnaak nabood,                very painful not-was
+neseraani nabaash,                      nervous not-be
+soorat-e khoshgeli daari,               face beautiful have-you
+to mahboob-e mani,                      you favorite me-are
+pishbiniye havaaye fardaa chiye?,       forecast weather tomorrow how-is?
+biyaa berim sahel,                      come go-we beach
+cheraagh ghermez,                       light red (traffic light)
+istgaah-e ghataah,                      station-of train
+navad-o noh darsad,                     99 percent
+dokhtar-e hayejaan-*zade* ast,          girl excitement-*stricken/hitz* is
+pust-e man aftab-zade shode ast,        skin my sunshine-stricken become ast
+hamey-e *moblemaan* kharaab shode,      all *furniture* broken was
+*roobaah* oomad too baagh,              *fox* came into garden
+*toole sag* kasif shode,                *puppy* got dirty
+*hashtpaa* too daryaa zendegi mikone,   *octopus* lives in the sea
+baayad ashghaal ro *biroon bordan*,     must rubbish *take out*
+*pishbini-e havaa* ro begoo,            *forecast of weather* tell
+in ghazaaye *morede alagheye* mane,     this meal *favourite* mine-is
+*navad o noh* darsad ghaate-am,         *ninety nine* percent sure
+baraaye hamishe dastam ro negah daar,   hold my hand forever
+maa haamisheh baa ham farsi haraf mizaneem,     we always speak farsi together
+chaaghoo - changaal rooye boshghaaban,  knife - fork are on the plate
+ghaashogh too-ye *kaase* ast,           the spoon is in the *bowl*
+too bokhorim yaa *biroon*,              inside eat or *outside*
+cheraagh-e ba~adi ro bepich be raast,   the next light turn to right
+
+
 
 `;
 
