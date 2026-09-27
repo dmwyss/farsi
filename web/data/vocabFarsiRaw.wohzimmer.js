@@ -26,7 +26,8 @@ baraaye hamishe dastam ro negah daar,       hold my hand forever
 maa haamisheh baa ham farsi haraf mizaneem, we always speak farsi together
 chaaghoo - changaal rooye boshghaaban,      knife - fork are on the plate
 ghaashogh too-ye kaase-st,          the spoon is in the bowl
-too bokhorim yaa biroon |Inside shall we eat or outside
+too bokhorim yaa biroon,            inside shall we eat or outside
+cheraagh-e ba'adi ro bepich be raast,       the next light turn to right
 
 
 

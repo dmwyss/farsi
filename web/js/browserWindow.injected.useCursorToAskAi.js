@@ -16,8 +16,10 @@ var aoTemplates = [
   "Always give me farsi translations in informal farsi"
     + " in lower case with the alef character written as aa."
     + " Instead of commas use a space then - then a space."
+    + " Write the farsi letter ayn as an apostrophe, for example baadi must be written as ba'adi."
     + " Give me the farsi transliterated into latin script,"
-    + " then a pipe character then a newline, then the literal english translation."
+    + " then a pipe character then on the same line, then the literal"
+    + " english translation also all in lowercase except for the word I."
 ]
 function selectQuoteContent(myField) {
   myField.focus();
