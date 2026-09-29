@@ -7,7 +7,7 @@ var g_asSearches = [];
 var g_ixCursor = 0;
 
 var aoTemplates = [
-  "literal translation of \"\" in farsi",
+  "literal word for word translation of \"\" in farsi",
   "what does \"\" mean in farsi",
   "how do you say \"\" in informal farsi",
   "etymology of the farsi word \"\"",
