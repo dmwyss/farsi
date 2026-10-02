@@ -22,7 +22,12 @@ const vocab = {
     iColHiddenForGuess: 2,
     userSettings: {
         lastSort: "sSortSakhti",
-        testMode: "read"
+        testMode: "read",
+        iIdStarCurr: 1
+    },
+    updateUserSetting: function(sFieldId, vValue) {
+        this.userSettings[sFieldId] = vValue;
+        localStorageManager.set("user_settings", this.userSettings);
     },
     testModeButton: null,
     init: function() {
@@ -62,7 +67,7 @@ const vocab = {
                 ixOrig: ix,
                 sSortP: charTamer.plainAlpha(oWord.p.contextText).toLowerCase(),
                 sSortE: charTamer.plainAlpha(oWord.e.contextText).toLowerCase(),
-                sSortStar: (oWord.hasOwnProperty("aiStar") && (oWord.aiStar.includes(starControl.idStarCurr) ?  1 : 0)),
+                sSortStar: (oWord.hasOwnProperty("aiStar") && (oWord.aiStar.includes(vocab.userSettings.iIdStarCurr) ?  1 : 0)),
                 sSortSakhti: ((oO_.sakhti === 0 ? 1 : (oO_.sakhti + 100)) * 10000) + ix
             };
             oWord.key = sForeignKey;
@@ -131,7 +136,7 @@ const vocab = {
             let oWord = this.list[ix];
             let oSakht = sakhtBase.getByKeyOo(oWord.key);
             if (this.filter !== null) {
-                if (!oSakht.hasOwnProperty("aiStar") || (!oSakht.aiStar.includes(starControl.idStarCurr))) {
+                if (!oSakht.hasOwnProperty("aiStar") || (!oSakht.aiStar.includes(vocab.userSettings.iIdStarCurr))) {
                     continue;
                 }
             }
@@ -159,8 +164,11 @@ const vocab = {
         }
         this.sLastSortField = sSortField;
         this.render();
+        /*
         this.userSettings.lastSort = sSortField;
         localStorageManager.set("user_settings", this.userSettings);
+        */
+        this.updateUserSetting("lastSort", sSortField);
     },
     render: function () {
         this.uiVocab = document.querySelector("#vocabWrapper");
@@ -283,7 +291,7 @@ const vocab = {
     generateStarPickers: function() {
         // 1. Generiere die einzelnen uiStarPickers HTML-Elemente
         const pickerDivs = this.aoGroops.map(group => {
-            let sActive = (group.iId === starControl.idStarCurr) ? " active" : "";
+            let sActive = (group.iId === vocab.userSettings.iIdStarCurr) ? " active" : "";
             return `<div class="uiStarPicker${sActive}" data-id="${group.iId}" onclick="sakhtBase.doClickPicker(this);">${group.sLabel}</div>`;
         }).join('');
 
@@ -311,7 +319,7 @@ const sakhtBase = {
         // Den angeklickten Picker visuell hervorheben
         uiSrc.classList.add('active');
         console.log(uiSrc.getAttribute("data-id"));
-        starControl.idStarCurr = parseInt(uiSrc.getAttribute("data-id"));
+        vocab.updateUserSetting("iIdStarCurr", parseInt(uiSrc.getAttribute("data-id")));
         vocab.render();
     },
     save: function() {
@@ -359,7 +367,7 @@ const sakhtBase = {
     getStarOo: function(sKey, oO) {
         let sStar = "&star;";
         let sCss = "off";
-        if ((oO.hasOwnProperty("aiStar")) && (oO.aiStar.includes(starControl.idStarCurr))) {
+        if ((oO.hasOwnProperty("aiStar")) && (oO.aiStar.includes(vocab.userSettings.iIdStarCurr))) {
             sStar = "&starf;";
             sCss = "on";
         }
@@ -378,9 +386,9 @@ const sakhtBase = {
     },
     doStarClick: function(sKey, uiStar) {
         let oWord = this.getByKeyOo(sKey);
-        if ((oWord.hasOwnProperty("aiStar")) && (oWord.aiStar.includes(starControl.idStarCurr))) {
+        if ((oWord.hasOwnProperty("aiStar")) && (oWord.aiStar.includes(vocab.userSettings.iIdStarCurr))) {
             // Currently turned on.
-            oWord.aiStar = utilJSON.removeInteger(oWord.aiStar, starControl.idStarCurr);
+            oWord.aiStar = utilJSON.removeInteger(oWord.aiStar, vocab.userSettings.iIdStarCurr);
             if (oWord.aiStar.length === 0) {
                 delete oWord.aiStar;
             }
@@ -388,9 +396,9 @@ const sakhtBase = {
             uiStar.className = "off";
         } else {
             if (oWord.hasOwnProperty("aiStar")) {
-                oWord.aiStar.push(starControl.idStarCurr);
+                oWord.aiStar.push(vocab.userSettings.iIdStarCurr);
             } else {
-                oWord.aiStar = [starControl.idStarCurr];
+                oWord.aiStar = [vocab.userSettings.iIdStarCurr];
             }
             uiStar.innerHTML = "&starf;";
             uiStar.className = "on";
@@ -432,7 +440,6 @@ const sakhtBase = {
     }
 }
 const starControl = {
-    idStarCurr: 2,
     init:  function() {
         return this;
     },
