@@ -1,5 +1,8 @@
 :root {
     --text-bright: #DDD;
+    --color-choiceButtonBorder: #454e59;
+    --color-choiceButtonBgBright: #18A;
+    --color-choiceButtonBg: #1f6486;
 }
 * {
     color: #CCC;
@@ -86,7 +89,13 @@ div#vocabWrapper {
     width: fit-content;
 }
 div#buttonRibbon {
-    text-align: right;
+    XXXXXtext-align: right;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end; /* Aligns all children to the right side */
+    flex-wrap: wrap;           /* Allows children to wrap to the next line like text if space runs out */
+    gap: 8px;                  /* Optional: Adds spacing between the children, like spaces between words */
+    width: 100%;
 }
 .feint {
     opacity: 0.4;
@@ -146,6 +155,45 @@ a.tableCellLinkIcon:hover img {
 table#vocab tr:nth-child(21) td {
     border-bottom: 2px solid #576272CC;
 }
+
+/* star-picker --------------------------- */
+.starPickerRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 0px;
+    margin-top: 10px;
+    width: 100%;
+}
+.uiStarPicker {
+    padding: 6px 20px;
+    background-color: #1c2128;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    user-select: none;
+    font-size: 10pt;
+    border: 1px solid var(--color-choiceButtonBorder);
+    border-left: none;
+}
+/* Hover-Effekt */
+.uiStarPicker:hover {
+    background-color: var(--color-choiceButtonBgBright);
+}
+.starPickerRow div.uiStarPicker:first-child {
+    border-radius: 5px 0 0 5px;
+    border-right: 1px solid var(--color-choiceButtonBorder);
+    border-left: 1px solid var(--color-choiceButtonBorder);
+}
+.starPickerRow div.uiStarPicker:last-child {
+    border-radius: 0 5px 5px 0;
+}
+/* Zustand nach dem Klicken (Hintergrund ändert sich) */
+.uiStarPicker.active {
+    background-color: var(--color-choiceButtonBg);
+    color: white;
+}
+
 @media print {
     body {
         padding: 0 0 0 0;

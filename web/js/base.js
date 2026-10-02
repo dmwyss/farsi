@@ -27,7 +27,6 @@ const vocab = {
     testModeButton: null,
     init: function() {
         //sakhtBase.setDataFromCookie();
-        sakhtBase.init();
         this.userSettings = localStorageManager.get("user_settings", this.userSettings);
 
         console.log(this.userSettings);
@@ -63,7 +62,7 @@ const vocab = {
                 ixOrig: ix,
                 sSortP: charTamer.plainAlpha(oWord.p.contextText).toLowerCase(),
                 sSortE: charTamer.plainAlpha(oWord.e.contextText).toLowerCase(),
-                sSortStar: (oWord.hasOwnProperty("star") && (oWord.star == 1) ?  1 : 0),
+                sSortStar: (oWord.hasOwnProperty("aiStar") && (oWord.aiStar.includes(starControl.idStarCurr) ?  1 : 0)),
                 sSortSakhti: ((oO_.sakhti === 0 ? 1 : (oO_.sakhti + 100)) * 10000) + ix
             };
             oWord.key = sForeignKey;
@@ -107,12 +106,18 @@ const vocab = {
         return oOut;
     },
     filter: null, // currently only works on star. Later filter like this: {object:"sakhtBase", fieldName: "title", find:"xxx"},
+    aoGroops: [
+        {iId: 1, sLabel: "Focus"},
+        {iId: 2, sLabel: "Conjugation"}
+    ],
     vocabToHtml: function() {
         let sButtons = "<div id=\"buttonRibbon\">"
+            + "<div id=\"star-rating-container\">" + this.generateStarPickers() + "</div>"
             + "<button id=\"toggleTestMode\" onclick=\"vocab.toggleTestMode();\">mode:" + vocab.userSettings.testMode + "</button>"
             + "</div>";
         let sOut = "<table id=\"vocab\">";
-        let sStarIcon = this.filter === null ? "&star;" : "&starf;";
+        let sStarIcon = starControl.getColHeaderStar();
+
         sOut += "<tr>"
             + "<td id=\"ixOrig\" class=\"colSorter colNarrow\" onclick=\"vocab.clickColSort(this);\">#</td>"
             + "<td id=\"sSortE\" class=\"colSorter\" onclick=\"vocab.clickColSort(this);\">engelisi</td>"
@@ -126,7 +131,7 @@ const vocab = {
             let oWord = this.list[ix];
             let oSakht = sakhtBase.getByKeyOo(oWord.key);
             if (this.filter !== null) {
-                if (!oSakht.hasOwnProperty("star")) {
+                if (!oSakht.hasOwnProperty("aiStar") || (!oSakht.aiStar.includes(starControl.idStarCurr))) {
                     continue;
                 }
             }
@@ -265,15 +270,25 @@ const vocab = {
         this.next(0);
     },
     toggleStarFilter: function(uiSrc) {
-        //let sIcon = "&star;";
+        let sWidth = "auto";
         if (vocab.filter === null) {
+            sWidth = utilDOM.getUiElementWidth("table#vocab") + "px";
             vocab.filter = {};
-            //sIcon = "&starf;";
         } else {
             vocab.filter = null;
         }
-        //uiSrc.innerHTML = sIcon;
         vocab.render();
+        document.querySelector("table#vocab").style.width = sWidth;
+    },
+    generateStarPickers: function() {
+        // 1. Generiere die einzelnen uiStarPickers HTML-Elemente
+        const pickerDivs = this.aoGroops.map(group => {
+            let sActive = (group.iId === starControl.idStarCurr) ? " active" : "";
+            return `<div class="uiStarPicker${sActive}" data-id="${group.iId}" onclick="sakhtBase.doClickPicker(this);">${group.sLabel}</div>`;
+        }).join('');
+
+        // 2. Erzeuge den Container für die horizontale Reihe
+        return `<div class="starPickerRow">${pickerDivs}</div>`;
     }
 }
 const sakhtBase = {
@@ -281,6 +296,23 @@ const sakhtBase = {
     dataOo: {},
     init: function() {
         this.dataOo = sakhtiData;
+        for (let sKey in this.dataOo) {
+            if (this.dataOo[sKey].hasOwnProperty("star")) {
+                this.dataOo[sKey].aiStar = [this.dataOo[sKey].star];
+                delete this.dataOo[sKey].star;
+            }
+        }
+    },
+    doClickPicker: function(uiSrc) {
+        const row = uiSrc.parentElement;
+        row.querySelectorAll('.uiStarPicker').forEach(picker => {
+            picker.classList.remove('active');
+        });
+        // Den angeklickten Picker visuell hervorheben
+        uiSrc.classList.add('active');
+        console.log(uiSrc.getAttribute("data-id"));
+        starControl.idStarCurr = parseInt(uiSrc.getAttribute("data-id"));
+        vocab.render();
     },
     save: function() {
         // If the user makes a change, keep buffering until
@@ -327,7 +359,7 @@ const sakhtBase = {
     getStarOo: function(sKey, oO) {
         let sStar = "&star;";
         let sCss = "off";
-        if ((oO.hasOwnProperty("star")) && (oO.star === 1)) {
+        if ((oO.hasOwnProperty("aiStar")) && (oO.aiStar.includes(starControl.idStarCurr))) {
             sStar = "&starf;";
             sCss = "on";
         }
@@ -345,14 +377,21 @@ const sakhtBase = {
         this.doStarClick(sDataKey, uiStar);
     },
     doStarClick: function(sKey, uiStar) {
-        let oO_ = this.getByKeyOo(sKey);
-        if ((oO_.hasOwnProperty("star")) && (oO_.star === 1)) {
+        let oWord = this.getByKeyOo(sKey);
+        if ((oWord.hasOwnProperty("aiStar")) && (oWord.aiStar.includes(starControl.idStarCurr))) {
             // Currently turned on.
-            delete oO_.star;
+            oWord.aiStar = utilJSON.removeInteger(oWord.aiStar, starControl.idStarCurr);
+            if (oWord.aiStar.length === 0) {
+                delete oWord.aiStar;
+            }
             uiStar.innerHTML = "&star;";
             uiStar.className = "off";
         } else {
-            oO_.star = 1;
+            if (oWord.hasOwnProperty("aiStar")) {
+                oWord.aiStar.push(starControl.idStarCurr);
+            } else {
+                oWord.aiStar = [starControl.idStarCurr];
+            }
             uiStar.innerHTML = "&starf;";
             uiStar.className = "on";
         }
@@ -390,6 +429,18 @@ const sakhtBase = {
                 delete this.dataOo[sKey];
             }
         }
+    }
+}
+const starControl = {
+    idStarCurr: 2,
+    init:  function() {
+        return this;
+    },
+    getColHeaderStar: function() {
+        return (vocab.filter === null) ? "&star;" : "&starf;"
+    },
+    getStarIcon: function() {
+        return "&starf;";
     }
 }
 function keyToSakhti(sEventKey) {
@@ -464,7 +515,21 @@ window.addEventListener('keyup', (event) => {
         sakhtBase.doStarClickFromKeyEvent();
     }
 });
+const utilJSON = {
+    removeInteger: function(aiIn, iTarget) {
+        return aiIn.filter(iCurr => iCurr !== iTarget);
+    }
+}
+const utilDOM = {
+    getUiElementWidth: function(sXPath) {
+        const table = document.querySelector(sXPath);
+        // Returns the exact layout width in pixels (e.g., 450.75)
+        return Math.round(table.getBoundingClientRect().width);
+    }
+}
 
 document.addEventListener('DOMContentLoaded', function () {
+    sakhtBase.init();
     vocab.init();
+    starControl.init();
 });

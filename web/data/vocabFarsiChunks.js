@@ -581,6 +581,24 @@ soorat-hesaaba ro man midam,                            i will give the bill
 man mehmoon mikonam,                                    I make you a guest (my treat)
 daaram kaar mikonam,                                    I am working right now
 
+man sa'at haft bidaar misham,                               I wake up at 0haft:00
+
+man saat haft bidaar misham,                            I wake up at seven
+man saat se bidaar shodam,                              I woke up at three
+tu saat hasht bidaar mishi,                             you wake up at eight
+oun saat davaazdah bidaar mishe,                        he wakes up at twelve
+oun saat noh bidaar shod,                               he woke up at nine
+maa saat haft bidaar mishim,                            we wake up at seven
+shomaa saat doh bidaar mishin,                          you-s wake up at two
+ounaa saat shesh bidaar mishan,                         they wake up at six
+
+man dastam ro mishoram,                                 I am washing my hands
+tu dastet ro mishori,                                   you are washing your hands
+oun dastesh ro mishore,                                 he is washing his hands
+maa dastemoon ro mishorim,                              we are washing our hands
+shomaa dastetoon ro mishorin,                           you-s are washing you-s-es hands
+ounaa dasteshoon ro mishoran,                           they are washing their hands
+
 `;
 
 /*
