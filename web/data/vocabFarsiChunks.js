@@ -583,21 +583,21 @@ daaram kaar mikonam,                                    I am working right now
 
 man sa'at haft bidaar misham,                               I wake up at 0haft:00
 
-man saat haft bidaar misham,                            I wake up at seven
-man saat se bidaar shodam,                              I woke up at three
-tu saat hasht bidaar mishi,                             you wake up at eight
-oun saat davaazdah bidaar mishe,                        he wakes up at twelve
+shomaa dastetoon ro mishorin,                           you-s are washing you-s-es hands
 oun saat noh bidaar shod,                               he woke up at nine
+man saat haft bidaar misham,                            I wake up at seven
+oun dastesh ro mishore,                                 he is washing his hands
+oun saat davaazdah bidaar mishe,                        he wakes up at twelve
+tu dastet ro mishori,                                   you are washing your hands
+man saat se bidaar shodam,                              I woke up at three
+ounaa dasteshoon ro mishoran,                           they are washing their hands
+man dastam ro mishoram,                                 I am washing my hands
 maa saat haft bidaar mishim,                            we wake up at seven
+maa dastemoon ro mishorim,                              we are washing our hands
+tu saat hasht bidaar mishi,                             you wake up at eight
 shomaa saat doh bidaar mishin,                          you-s wake up at two
 ounaa saat shesh bidaar mishan,                         they wake up at six
 
-man dastam ro mishoram,                                 I am washing my hands
-tu dastet ro mishori,                                   you are washing your hands
-oun dastesh ro mishore,                                 he is washing his hands
-maa dastemoon ro mishorim,                              we are washing our hands
-shomaa dastetoon ro mishorin,                           you-s are washing you-s-es hands
-ounaa dasteshoon ro mishoran,                           they are washing their hands
 
 `;
 
