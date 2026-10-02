@@ -20,6 +20,13 @@ const vocab = {
     iLangShown: EN,
     iLangGuess: FA,
     iColHiddenForGuess: 2,
+    /*
+    aoGroops: [
+        {iId: 1, sLabel: "Focus"},
+        {iId: 2, sLabel: "Prep1"}
+    ],
+    */
+    aoGroops: null,
     userSettings: {
         lastSort: "sSortSakhti",
         testMode: "read",
@@ -32,13 +39,15 @@ const vocab = {
     testModeButton: null,
     init: function() {
         //sakhtBase.setDataFromCookie();
+        this.aoGroops = groopData;
         this.userSettings = localStorageManager.get("user_settings", this.userSettings);
 
         console.log(this.userSettings);
 
         this.dict = this.parseRaw();
         this.initList();
-        this.render();
+        this.renderButtonRibbon();
+        this.renderVocabTable();
         this.clickColSort(this.userSettings.lastSort);
         this.testModeButton = document.querySelector("#toggleTestMode");
         this.testModeButton.innerHTML = "mode:" + this.userSettings.testMode;
@@ -111,15 +120,7 @@ const vocab = {
         return oOut;
     },
     filter: null, // currently only works on star. Later filter like this: {object:"sakhtBase", fieldName: "title", find:"xxx"},
-    aoGroops: [
-        {iId: 1, sLabel: "Focus"},
-        {iId: 2, sLabel: "Conjugation"}
-    ],
     vocabToHtml: function() {
-        let sButtons = "<div id=\"buttonRibbon\">"
-            + "<div id=\"star-rating-container\">" + this.generateStarPickers() + "</div>"
-            + "<button id=\"toggleTestMode\" onclick=\"vocab.toggleTestMode();\">mode:" + vocab.userSettings.testMode + "</button>"
-            + "</div>";
         let sOut = "<table id=\"vocab\">";
         let sStarIcon = starControl.getColHeaderStar();
 
@@ -132,9 +133,28 @@ const vocab = {
             + "<td id=\"sSortSakhti\" class=\"colSorter\" onclick=\"vocab.clickColSort(this);\">sakhti</td>"
             + "</tr>";
         let iShownRows = 1;
+        //let sOutWidth = "";
+        let sWidestE = "";
+        let sWidestP = "";
         for (let ix = 0; ix < this.list.length; ix++) {
             let oWord = this.list[ix];
             let oSakht = sakhtBase.getByKeyOo(oWord.key);
+            /*
+            sOutWidth += "<tr class='silent'>" // " + ix + "
+                + "<td class=\"context colNarrow\">" + iShownRows++ + "</td>"
+                + "<td class=\"context\">" + charTamer.toNaughty(oWord.e.contextHtml) + "</td>"
+                + "<td class=\"context\">" + charTamer.toNaughty(oWord.p.contextHtml) + "</td>"
+                + "<td class=\"context colNarrow\">" + sakhtBase.getResearchLink(oWord) + "</td>"
+                + "<td class=\"context colNarrow\">" + sakhtBase.getStarOo(oWord.key, oSakht) + "</td>"
+                + "<td class=\"context\">" + sakhtBase.getIconOo(oSakht) + "</td>"
+                + "</tr>";
+            */
+            if (oWord.e.contextText.length > sWidestE.length) {
+                sWidestE = oWord.e.contextText;
+            }
+            if (oWord.p.contextText.length > sWidestP.length) {
+                sWidestP = oWord.p.contextText;
+            }
             if (this.filter !== null) {
                 if (!oSakht.hasOwnProperty("aiStar") || (!oSakht.aiStar.includes(vocab.userSettings.iIdStarCurr))) {
                     continue;
@@ -149,8 +169,11 @@ const vocab = {
                 + "<td class=\"context\">" + sakhtBase.getIconOo(oSakht) + "</td>"
                 + "</tr>";
         }
+        sOut += "<tr class='silent'><td class=\"context colNarrow\">&nbsp;</td><td>"
+            + sWidestE + "</td><td>"
+            + sWidestP + "</td><td class=\"context colNarrow\">&nbsp;</td><td class=\"context colNarrow\">&nbsp;</td><td class=\"context colNarrow\">&nbsp;</td></tr>";
         sOut += "</table>";
-        return sButtons + sOut;
+        return sOut;
     },
     clickColSort: function (uiSrcOrStringId) {
         let sSortField = uiSrcOrStringId;
@@ -163,14 +186,18 @@ const vocab = {
             this.list.sort((a, b) => (a.meta[sSortField] > b.meta[sSortField] ? 1 : -1));
         }
         this.sLastSortField = sSortField;
-        this.render();
-        /*
-        this.userSettings.lastSort = sSortField;
-        localStorageManager.set("user_settings", this.userSettings);
-        */
+        this.renderVocabTable();
         this.updateUserSetting("lastSort", sSortField);
     },
-    render: function () {
+    renderButtonRibbon: function () {
+        this.uiButtonRibbon = document.querySelector("#buttonRibbon");
+        let sButtons = "" //"<div id=\"buttonRibbon\">"
+            + "<div id=\"star-rating-container\">" + this.generateStarPickers() + "</div>"
+            + "<button id=\"toggleTestMode\" onclick=\"vocab.toggleTestMode();\">mode:" + vocab.userSettings.testMode + "</button>"
+            + ""; //"</div>";
+        this.uiButtonRibbon.innerHTML = sButtons;
+    },
+    renderVocabTable: function () {
         this.uiVocab = document.querySelector("#vocabWrapper");
         this.uiVocab.innerHTML = this.vocabToHtml();
     },
@@ -220,7 +247,10 @@ const vocab = {
             iGetNextTrAttempts++;
             vocab.next(iDist);
         } else {
-            this.scrollToWindowY(trNext);
+            if (iDist > 0) {
+                // To refresh, iDist = 0 is used. Do not scroll.
+                this.scrollToWindowY(trNext);
+            }
             this.doRowClick(trNext)
             iGetNextTrAttempts = 0;
         }
@@ -272,21 +302,34 @@ const vocab = {
         trCurrent.querySelector("div.sakhti").innerHTML = sakhtBase.prettyStrength(iSakht);
     },
     toggleTestMode: function() {
+        /*
         this.userSettings.testMode = (this.userSettings.testMode === "test") ? "read" : "test";
         this.testModeButton.innerHTML = "mode:" + this.userSettings.testMode;
         localStorageManager.set("user_settings", this.userSettings);
-        this.next(0);
+        */
+        let sValueNew = (this.userSettings.testMode === "test") ? "read" : "test";
+        this.updateUserSetting("testMode", sValueNew);
+        this.testModeButton.innerHTML = "mode:" + sValueNew;
+        console.log("wwddsfdfk to " + sValueNew);
+        this.next(0); // Just triggers refresh. No navigation because val is 0.
     },
     toggleStarFilter: function(uiSrc) {
+        /*
         let sWidth = "auto";
         if (vocab.filter === null) {
-            sWidth = utilDOM.getUiElementWidth("table#vocab") + "px";
+            sWidth = utilDom.getUiElementWidth("table#vocab") + "px";
             vocab.filter = {};
         } else {
             vocab.filter = null;
         }
-        vocab.render();
         document.querySelector("table#vocab").style.width = sWidth;
+        */
+        if (vocab.filter === null) {
+            vocab.filter = {};
+        } else {
+            vocab.filter = null;
+        }
+        vocab.renderVocabTable();
     },
     generateStarPickers: function() {
         // 1. Generiere die einzelnen uiStarPickers HTML-Elemente
@@ -320,7 +363,7 @@ const sakhtBase = {
         uiSrc.classList.add('active');
         console.log(uiSrc.getAttribute("data-id"));
         vocab.updateUserSetting("iIdStarCurr", parseInt(uiSrc.getAttribute("data-id")));
-        vocab.render();
+        vocab.renderVocabTable();
     },
     save: function() {
         // If the user makes a change, keep buffering until
@@ -388,7 +431,7 @@ const sakhtBase = {
         let oWord = this.getByKeyOo(sKey);
         if ((oWord.hasOwnProperty("aiStar")) && (oWord.aiStar.includes(vocab.userSettings.iIdStarCurr))) {
             // Currently turned on.
-            oWord.aiStar = utilJSON.removeInteger(oWord.aiStar, vocab.userSettings.iIdStarCurr);
+            oWord.aiStar = utilJson.removeInteger(oWord.aiStar, vocab.userSettings.iIdStarCurr);
             if (oWord.aiStar.length === 0) {
                 delete oWord.aiStar;
             }
@@ -420,7 +463,7 @@ const sakhtBase = {
         let sColorTxt = "#fff";
         if (iStrength !== 0) {
             let sStrength = Math.min(Math.abs(iStrength), 15).toString(16);
-            sColorBg = "#" + (iStrength >= 0 ? "0bd" : "F08") + sStrength;
+            sColorBg = "#" + (iStrength < 0 ? "0bd" : "F08") + sStrength;
             sColorTxt = "#FFF"; // + (iStrength >= 5 ? "000" : "fff");
         }
         return "color:" + sColorTxt + ";background-color:" + sColorBg + ";";
@@ -522,19 +565,20 @@ window.addEventListener('keyup', (event) => {
         sakhtBase.doStarClickFromKeyEvent();
     }
 });
-const utilJSON = {
+const utilJson = {
     removeInteger: function(aiIn, iTarget) {
         return aiIn.filter(iCurr => iCurr !== iTarget);
     }
 }
-const utilDOM = {
+/*
+const utilDom = {
     getUiElementWidth: function(sXPath) {
         const table = document.querySelector(sXPath);
         // Returns the exact layout width in pixels (e.g., 450.75)
         return Math.round(table.getBoundingClientRect().width);
     }
 }
-
+*/
 document.addEventListener('DOMContentLoaded', function () {
     sakhtBase.init();
     vocab.init();

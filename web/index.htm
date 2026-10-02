@@ -10,9 +10,13 @@
 <script type="text/javascript" src="js/pywriterImpl.farsiVocab.js"></script>
 <!-- s cript type="text/javascript" src="data/sakhtiData.js"></script -->
 <script>
-let sVolatileOut = "<" + "script type=\'text/javascript\' src=\'data/sakhtiData.js?refresh=";
-sVolatileOut += (Math.round(Math.random() * 10000)) + "\'>" + "<" + "/" + "script>";
-document.write(sVolatileOut);
+let sVolatileOutNew = "";
+let asPages = ["data/sakhtiData.js", "data/groopData.js"];
+for (let ix = 0; ix < asPages.length; ix++) {
+    sVolatileOutNew += "<" + "script type=\'text/javascript\' src=\'" + asPages[ix] + "?refresh=";
+    sVolatileOutNew += (Math.round(Math.random() * 10000)) + "\'>" + "<" + "/" + "script>\n";
+}
+document.write(sVolatileOutNew);
 </script>
 
 <script type="text/javascript" src="data/vocabFarsiChunks.js"></script>
@@ -24,7 +28,10 @@ document.write(sVolatileOut);
 <body>
 
 <a id="headAndLink" style="position: absolute;" href="verbs.htm"><h1><img src="img/textFarsiHeading.png" id="heading" alt="heading image." /></h1></a>
+<div id="mainContentWrapper" style="width: fit-content">
+<div id="buttonRibbon"></div>
 <div id="vocabWrapper"></div>
+</div>
 <br/>
 <br/>
 </body>

@@ -155,7 +155,6 @@ const audioPlayer = {
         customAudio.src = this.sFileUrlBase + trackCurr.file;
     },
     doClickLoopButton: function(uiSrc) {
-debugger;
         userPrefs.set("iLoopMode", (++userPrefs.data.iLoopMode % 3));
         customAudio.loop = (userPrefs.data.iLoopMode === LOOP_ONCE);
         this.updateLoopButtonUi();

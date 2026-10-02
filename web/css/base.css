@@ -72,6 +72,9 @@ td.colNarrow {
     min-width: 35px;
     color: #778088;
 }
+tr.silent {
+    visibility: collapse;
+}
 /*
 only visible in verbs.htm
 */
