@@ -1,8 +1,8 @@
 :root {
     --text-bright: #DDD;
-    --color-choiceButtonBorder: #454e59;
-    --color-choiceButtonBgBright: #18A;
-    --color-choiceButtonBg: #1f6486;
+    --color-mainButtonBorder: #454e59;
+    --color-mainButtonBgBright: #18A;
+    --color-mainButtonBg: #1f6486;
 }
 * {
     color: #CCC;
@@ -155,45 +155,47 @@ a.tableCellLinkIcon:hover img {
     min-width: 120px;
     margin: 10px 0 0 0;
 }
+#buttonRibbon button {
+    border: 1px solid var(--color-mainButtonBorder);
+}
 table#vocab tr:nth-child(21) td {
     border-bottom: 2px solid #576272CC;
 }
 
-/* star-picker --------------------------- */
-.starPickerRow {
+/* OptionBar --------------------------- */
+.optionBarRow {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     flex-wrap: wrap;
     gap: 0px;
     margin-top: 10px;
-    width: 100%;
 }
-.uiStarPicker {
+.uiOptionBar {
     padding: 6px 20px;
     background-color: #1c2128;
     cursor: pointer;
     transition: background-color 0.2s ease;
     user-select: none;
     font-size: 10pt;
-    border: 1px solid var(--color-choiceButtonBorder);
+    border: 1px solid var(--color-mainButtonBorder);
     border-left: none;
 }
 /* Hover-Effekt */
-.uiStarPicker:hover {
-    background-color: var(--color-choiceButtonBgBright);
+.uiOptionBar:hover {
+    background-color: var(--color-mainButtonBgBright);
 }
-.starPickerRow div.uiStarPicker:first-child {
+.optionBarRow div.uiOptionBar:first-child {
     border-radius: 5px 0 0 5px;
-    border-right: 1px solid var(--color-choiceButtonBorder);
-    border-left: 1px solid var(--color-choiceButtonBorder);
+    border-right: 1px solid var(--color-mainButtonBorder);
+    border-left: 1px solid var(--color-mainButtonBorder);
 }
-.starPickerRow div.uiStarPicker:last-child {
+.optionBarRow div.uiOptionBar:last-child {
     border-radius: 0 5px 5px 0;
 }
 /* Zustand nach dem Klicken (Hintergrund ändert sich) */
-.uiStarPicker.active {
-    background-color: var(--color-choiceButtonBg);
+.uiOptionBar.active {
+    background-color: var(--color-mainButtonBg);
     color: white;
 }
 

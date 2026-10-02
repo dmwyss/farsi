@@ -360,9 +360,9 @@ vali na az kalameye laleh,                              but not from the word la
 tooye iraane baastaan,                                  in ancient Iran
 oonaa fekr mikardan,                                    they thought
 ke in gol shabihe ye ammameye koocholooe,               that the flower resembled a little turban
-oonaa az kalameye ghadimie faarsiye "dulband" estefaade mikardan,        they used the old Farsi word "dulband"
+estefaade mikardan,                                     they used
 
-oonaa ye kalameh-ye ghadimi-ye Faarsi ro estefaadeh kardan,              they a word old Farsi ro use did
+kalameh-ye ghadimi-ye Faarsi,                           an old Farsi word
 ke az raah-e abrisham taa torkiyeh raft,                that on the silk road travelled to Turkie
 
 
@@ -409,7 +409,8 @@ ey baba - be ghaataar narasidam,                        oh man - to train not-ar
 narm mesl-e abrisham,                                   smooth like silk
 istgaah-e ghaataar-e ba-adi Sandringham-eh,             stop/station train next Sandy-is
 forooshgaah-e istgaah ta-atil ast,                      shop at station closed is.
-toot farangiaa *ghermez*an baa doonehaaye koochike siaah,       strawberries are *red* with little black seeds
+toot farangiaa *ghermez*an,                             strawberries are *red*
+doonehaaye koochike *siaah*,                            little *black* seeds
 daa-ye-rey-e kalamaate en-gel-is-im bozorge,            I have a large english vocabulary
 
 gol-haa roo farshe,                                     the flowers are on the carpet
@@ -581,20 +582,28 @@ soorat-hesaaba ro man midam,                            i will give the bill
 man mehmoon mikonam,                                    I make you a guest (my treat)
 daaram kaar mikonam,                                    I am working right now
 
-shomaa dastetoon ro mishorin,                           you-s are washing you-s-es hands
-oun saat noh bidaar shod,                               he woke up at nine
+shomaa *dast-etoon* ro mishor-in,                       you-s are washing you-s-es hands
+oon saat noh bidaar shod,                               he woke up at nine (past)
 man saat haft bidaar misham,                            I wake up at seven
-oun dastesh ro mishore,                                 he is washing his hands
-oun saat davaazdah bidaar mishe,                        he wakes up at twelve
-tu dastet ro mishori,                                   you are washing your hands
+oon *dast-esh* ro mishor-e,                             he is washing his hands
+oon saat davaazdah bidaar mishe,                        he wakes up at twelve
+tu *dast-et* ro mishor-i,                               you are washing your hands
 man saat se bidaar shodam,                              I woke up at three
-ounaa dasteshoon ro mishoran,                           they are washing their hands
-man dastam ro mishoram,                                 I am washing my hands
+oonaa *dast-eshoon* ro mishor-an,                       they are washing their hands
+man *dast-am* ro mishor-am,                             I am washing my hands
 maa saat haft bidaar mishim,                            we wake up at seven
-maa dastemoon ro mishorim,                              we are washing our hands
+maa *dast-emoon* ro mishor-im,                          we are washing our hands
 tu saat hasht bidaar mishi,                             you wake up at eight
 shomaa saat do bidaar mishin,                           you-s wake up at two
-ounaa saat shesh bidaar mishan,                         they wake up at six
+oonaa saat shesh bidaar mishan,                         they wake up at six
+
+man daar-am baa maadaram sohbat mi-kon-am,              I am doing conversation with my mother
+to daar-i baa baraadar-et sohbat mi-kon-i,              you are doing conversation with your brother
+oon daar-e baa raiis-esh sohbat mi-kon-e,               he/she is doing conversation with his/her boss
+maa daar-im baa duust-emuun sohbat mi-kon-im,           we are doing conversation with our friend
+shomaa daar-id baa pedar-etuun sohbat mi-kon-id,        you are doing conversation with your father
+oonaa daar-an baa hamsaaye-shuun sohbat mi-kon-an       they are doing conversation with their neighbor
+
 
 
 `;
@@ -614,9 +623,9 @@ Singular Possessive Suffixes
 -esh    His / Her / Its     khooneh-esh     His/Her house
 
 Plural Possessive Suffixes
--emoon   Our / Ours          khooneh-moon    Our house
--etoon   Your / Yours        khooneh-toon    Your house
--eshoon  Their / Theirs      khooneh-shoon   Their house
+-emoon   Our / Ours         khooneh-moon    Our house
+-etoon   Your / Yours       khooneh-toon    Your house
+-eshoon  Their / Theirs     khooneh-shoon   Their house
 
 
 

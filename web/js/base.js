@@ -20,12 +20,6 @@ const vocab = {
     iLangShown: EN,
     iLangGuess: FA,
     iColHiddenForGuess: 2,
-    /*
-    aoGroops: [
-        {iId: 1, sLabel: "Focus"},
-        {iId: 2, sLabel: "Prep1"}
-    ],
-    */
     aoGroops: null,
     userSettings: {
         lastSort: "sSortSakhti",
@@ -122,8 +116,7 @@ const vocab = {
     filter: null, // currently only works on star. Later filter like this: {object:"sakhtBase", fieldName: "title", find:"xxx"},
     vocabToHtml: function() {
         let sOut = "<table id=\"vocab\">";
-        let sStarIcon = starControl.getColHeaderStar();
-
+        let sStarIcon = (this.filter === null) ? "&star;" : "&starf;";
         sOut += "<tr>"
             + "<td id=\"ixOrig\" class=\"colSorter colNarrow\" onclick=\"vocab.clickColSort(this);\">#</td>"
             + "<td id=\"sSortE\" class=\"colSorter\" onclick=\"vocab.clickColSort(this);\">engelisi</td>"
@@ -191,10 +184,10 @@ const vocab = {
     },
     renderButtonRibbon: function () {
         this.uiButtonRibbon = document.querySelector("#buttonRibbon");
-        let sButtons = "" //"<div id=\"buttonRibbon\">"
-            + "<div id=\"star-rating-container\">" + this.generateStarPickers() + "</div>"
-            + "<button id=\"toggleTestMode\" onclick=\"vocab.toggleTestMode();\">mode:" + vocab.userSettings.testMode + "</button>"
-            + ""; //"</div>";
+        let sButtons = ""
+            //+ "<div id=\"star-rating-container\">" + this.generateOptionBar() + "</div>"
+            + this.generateOptionBar()
+            + "<button id=\"toggleTestMode\" onclick=\"vocab.toggleTestMode();\">mode:" + vocab.userSettings.testMode + "</button>";
         this.uiButtonRibbon.innerHTML = sButtons;
     },
     renderVocabTable: function () {
@@ -331,15 +324,14 @@ const vocab = {
         }
         vocab.renderVocabTable();
     },
-    generateStarPickers: function() {
-        // 1. Generiere die einzelnen uiStarPickers HTML-Elemente
-        const pickerDivs = this.aoGroops.map(group => {
-            let sActive = (group.iId === vocab.userSettings.iIdStarCurr) ? " active" : "";
-            return `<div class="uiStarPicker${sActive}" data-id="${group.iId}" onclick="sakhtBase.doClickPicker(this);">${group.sLabel}</div>`;
+    generateOptionBar: function() {
+        // 1. Generiere die einzelnen uiOptionBar HTML-Elemente
+        const optionBarDivs = this.aoGroops.map(oGroop => {
+            let sActive = (oGroop.iId === vocab.userSettings.iIdStarCurr) ? " active" : "";
+            return `<div class="uiOptionBar${sActive}" data-id="${oGroop.iId}" onclick="sakhtBase.doClickOptionBar(this);">${oGroop.sLabel}</div>`;
         }).join('');
-
         // 2. Erzeuge den Container für die horizontale Reihe
-        return `<div class="starPickerRow">${pickerDivs}</div>`;
+        return `<div class="optionBarRow">${optionBarDivs}</div>`;
     }
 }
 const sakhtBase = {
@@ -354,12 +346,12 @@ const sakhtBase = {
             }
         }
     },
-    doClickPicker: function(uiSrc) {
+    doClickOptionBar: function(uiSrc) {
         const row = uiSrc.parentElement;
-        row.querySelectorAll('.uiStarPicker').forEach(picker => {
-            picker.classList.remove('active');
+        row.querySelectorAll('.uiOptionBar').forEach(optionBar => {
+            optionBar.classList.remove('active');
         });
-        // Den angeklickten Picker visuell hervorheben
+        // Den angeklickten OptionBar visuell hervorheben
         uiSrc.classList.add('active');
         console.log(uiSrc.getAttribute("data-id"));
         vocab.updateUserSetting("iIdStarCurr", parseInt(uiSrc.getAttribute("data-id")));
@@ -389,9 +381,14 @@ const sakhtBase = {
     callbackMethod: function() {
         // For future use.
     },
-    getByKeyOo: function(sKey) {
+    getByKeyOo: function(sKey, vDefault) {
         if (!this.dataOo.hasOwnProperty(sKey)) {
-            return {sakhti: 0};
+            //if (vDefault != null) {
+            if (typeof vDefault === "undefined") {
+                return {sakhti: 0};
+            } else {
+                return vDefault;
+            }
         }
         return this.dataOo[sKey];
     },
@@ -428,7 +425,14 @@ const sakhtBase = {
         this.doStarClick(sDataKey, uiStar);
     },
     doStarClick: function(sKey, uiStar) {
-        let oWord = this.getByKeyOo(sKey);
+        let oWord = this.getByKeyOo(sKey, null);
+        if (oWord === null) {
+            // Do that again, but get a blank object.
+            oWord = this.getByKeyOo(sKey);
+            this.dataOo[sKey] = oWord;
+            // Get it from the dict.
+            oWord = this.getByKeyOo(sKey);
+        }
         if ((oWord.hasOwnProperty("aiStar")) && (oWord.aiStar.includes(vocab.userSettings.iIdStarCurr))) {
             // Currently turned on.
             oWord.aiStar = utilJson.removeInteger(oWord.aiStar, vocab.userSettings.iIdStarCurr);
@@ -482,6 +486,7 @@ const sakhtBase = {
         }
     }
 }
+/*
 const starControl = {
     init:  function() {
         return this;
@@ -493,6 +498,7 @@ const starControl = {
         return "&starf;";
     }
 }
+*/
 function keyToSakhti(sEventKey) {
     let ix = asArrowKeys.indexOf(sEventKey);
     if (ix === -1) {
@@ -582,5 +588,5 @@ const utilDom = {
 document.addEventListener('DOMContentLoaded', function () {
     sakhtBase.init();
     vocab.init();
-    starControl.init();
+    //starControl.init();
 });
