@@ -232,12 +232,15 @@ const vocab = {
                 if (atr[ixTr] === oRow) {
                     if (this.rowFocus != null) {
                         this.rowFocus.style.backgroundColor = "inherit";
+                        // hideAnswer ::: this.rowFocus.classList.remove("rowFocus");
                     }
                     oRow.style.backgroundColor = "#FFF2";
+                    // hideAnswer ::: oRow.classList.add("rowFocus");
                     if (false) {
                         setTimeout(
                             function() {
                                 oRow.style.backgroundColor = "inherit";
+                                // hideAnswer ::: oRow.classList.remove("rowFocus");
                             }, 500
                         )
                     }

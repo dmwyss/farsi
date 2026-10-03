@@ -219,6 +219,16 @@ table.simpleGrid th {
     background-color: #0004;
 }
 
+/*
+// hideAnswer :::
+.rowFocus {
+    background-color: #FFF2;
+}
+.rowFocus td:nth-child(3), .rowFocus td:nth-child(3) b {
+    color: #FFF0;
+}
+*/
+
 @media print {
     body {
         padding: 0 0 0 0;

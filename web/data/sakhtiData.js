@@ -472,7 +472,7 @@ let sakhtiData = {
 "dast-etoon":{"sakhti":-34,"aiStar":[2]},
 "dast-esh":{"sakhti":-33,"aiStar":[2]},
 "dast-et":{"sakhti":-30,"aiStar":[2]},
-"dast-eshoon":{"sakhti":-35,"aiStar":[2]},
+"dast-eshoon":{"sakhti":-38,"aiStar":[2]},
 "dast-am":{"sakhti":-27,"aiStar":[2]},
 "dast-emoon":{"sakhti":-32,"aiStar":[2]},
 "estefaade mikardan":{"sakhti":-30},
@@ -487,5 +487,6 @@ let sakhtiData = {
 "maa saat haft bidaar mish-im":{"sakhti":-24,"aiStar":[2]},
 "tu saat hasht bidaar mish-i":{"sakhti":-20,"aiStar":[2]},
 "shomaa saat do bidaar mish-in":{"sakhti":-28,"aiStar":[2]},
-"oonaa saat shesh bidaar mish-an":{"sakhti":-36,"aiStar":[2]}
+"oonaa saat shesh bidaar mish-an":{"sakhti":-36,"aiStar":[2]},
+"aroos-e daryaa-i maahi nist":{"sakhti":-40}
 };

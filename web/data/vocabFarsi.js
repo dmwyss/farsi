@@ -556,7 +556,7 @@ tu saat hasht bidaar mish-i,                            you wake up at eight
 shomaa saat do bidaar mish-in,                          you-s wake up at two
 oonaa saat shesh bidaar mish-an,                        they wake up at six
 
-
+aroos-e daryaa-i maahi nist                             sea bride fish is not
 
 
 `;
@@ -584,7 +584,7 @@ Plural Possessive Suffixes
 
 ghoor-baa-ghe
 halazoon
-morgh-e daryaayi
+morgh-e daryaa-i
 chisi
 shotor morgh
 begoo
@@ -593,7 +593,7 @@ chahaar
 boolooberi
 ezhdehaa
 
-morgh-e daryaayi,                                       chicken of the sea
+morgh-e daryaa-i,                                       chicken of the sea
 morgh-e teshne,                                         thirst bird - flamingo
 morgh-e kaaftaar,                                       hyena bird
 morgh-e toofaan,                                        storm bird
