@@ -640,7 +640,4 @@ baraaye mard mihan aabaadi,                             for man homeland prosper
 baraaye dokhtari ke aaruzoo daasht pesar bood,          for girl who wish had boy was
 baraaye zan zendegi aazaadi,                            for woman life freedom
 
-
-
-
 */
