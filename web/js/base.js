@@ -21,30 +21,33 @@ const vocab = {
     iLangGuess: FA,
     iColHiddenForGuess: 2,
     aoGroops: null,
+    filter: null, // currently only works on star. Later filter like this: {object:"sakhtBase", fieldName: "title", find:"xxx"},
+    rowFocus: null,
     userSettings: {
         lastSort: "sSortSakhti",
         testMode: "read",
         iIdStarCurr: 1
+        // oFilter: null // Sometimes set.
     },
     updateUserSetting: function(sFieldId, vValue) {
         this.userSettings[sFieldId] = vValue;
         localStorageManager.set("user_settings", this.userSettings);
     },
-    testModeButton: null,
     init: function() {
         //sakhtBase.setDataFromCookie();
         this.aoGroops = groopData;
         this.userSettings = localStorageManager.get("user_settings", this.userSettings);
 
         console.log(this.userSettings);
-
+        if (this.userSettings.hasOwnProperty("oFilter")) {
+            // Set filter on load of the page, originally from localStore.
+            this.filter = this.userSettings.oFilter;
+        }
         this.dict = this.parseRaw();
         this.initList();
         this.renderButtonRibbon();
         this.renderVocabTable();
         this.clickColSort(this.userSettings.lastSort);
-        this.testModeButton = document.querySelector("#toggleTestMode");
-        this.testModeButton.innerHTML = "mode:" + this.userSettings.testMode;
         sakhtBase.collectGarbage();
     },
     parseRaw: function() {
@@ -113,7 +116,6 @@ const vocab = {
         }
         return oOut;
     },
-    filter: null, // currently only works on star. Later filter like this: {object:"sakhtBase", fieldName: "title", find:"xxx"},
     vocabToHtml: function() {
         let sOut = "<table id=\"vocab\">";
         let sStarIcon = (this.filter === null) ? "&star;" : "&starf;";
@@ -184,17 +186,36 @@ const vocab = {
     },
     renderButtonRibbon: function () {
         this.uiButtonRibbon = document.querySelector("#buttonRibbon");
+        let oOptionBarSettingsGroop = {
+            sOptionBarId: "uiOptBarGroop",
+            aoOptions: this.aoGroops,
+            sFieldToUseAsValue: "iId",
+            //sFieldToUseAsId: "iId",
+            sFieldToUseAsLabel: "sLabel",
+            vValueDefault: vocab.userSettings.iIdStarCurr,
+            sOnClick: "sakhtBase.doClickOptionBarGroop(this);"
+        };
+        let oOptionBarSettingsTestMode = {
+            sOptionBarId: "uiOptBarTestMode",
+            aoOptions: [{sId: "test", sLabel:"Test"}, {sId: "read", sLabel:"Read"}],
+            sFieldToUseAsValue: "sId",
+            //sFieldToUseAsId: "sId",
+            sFieldToUseAsLabel: "sLabel",
+            vValueDefault: vocab.userSettings.testMode,
+            sOnClick: "vocab.setTestMode(this);"
+        };
         let sButtons = ""
-            //+ "<div id=\"star-rating-container\">" + this.generateOptionBar() + "</div>"
-            + this.generateOptionBar()
-            + "<button id=\"toggleTestMode\" onclick=\"vocab.toggleTestMode();\">mode:" + vocab.userSettings.testMode + "</button>";
+            //+ this.generateOptionBarOLD()
+            + utilCustomGuiElements.generateOptionBar(oOptionBarSettingsGroop)
+            + utilCustomGuiElements.generateOptionBar(oOptionBarSettingsTestMode)
+            ;
+            //+ "<button id=\"toggleTestMode\" onclick=\"vocab.toggleTestMode();\">mode:" + vocab.userSettings.testMode + "</button>";
         this.uiButtonRibbon.innerHTML = sButtons;
     },
     renderVocabTable: function () {
         this.uiVocab = document.querySelector("#vocabWrapper");
         this.uiVocab.innerHTML = this.vocabToHtml();
     },
-    rowHighlited: null,
     doRowClick: function(oRow) {
         let tbl = document.querySelector("table#vocab");
         let atr = tbl.querySelectorAll("tr");
@@ -209,8 +230,8 @@ const vocab = {
             //atd[2].style.opacity = sOpacity;
             if (!isFound) {
                 if (atr[ixTr] === oRow) {
-                    if (this.rowHighlited != null) {
-                        this.rowHighlited.style.backgroundColor = "inherit";
+                    if (this.rowFocus != null) {
+                        this.rowFocus.style.backgroundColor = "inherit";
                     }
                     oRow.style.backgroundColor = "#FFF2";
                     if (false) {
@@ -220,7 +241,7 @@ const vocab = {
                             }, 500
                         )
                     }
-                    this.rowHighlited = oRow;
+                    this.rowFocus = oRow;
                     isFound = true;
                     sOpacity = sOpacityAfterCurrent;
                 }
@@ -293,46 +314,50 @@ const vocab = {
         sakhtBase.save();
         trCurrent.querySelector("div.sakhti").style = sakhtBase.getCssForStrength(iSakht);
         trCurrent.querySelector("div.sakhti").innerHTML = sakhtBase.prettyStrength(iSakht);
+        trCurrent.querySelector("div.sakhti").style.outlineWidth = "3px";
+        setTimeout(() => {
+            trCurrent.querySelector("div.sakhti").style.outlineWidth = "0px";
+        }, 100)
     },
+    setTestMode: function(uiSrc) {
+        let sValueNew = uiSrc.getAttribute("data-value");
+        this.updateUserSetting("testMode", sValueNew);
+        this.next(0); // Just triggers refresh. No navigation because val is 0.
+    },
+    /*
     toggleTestMode: function() {
-        /*
+        *//*
         this.userSettings.testMode = (this.userSettings.testMode === "test") ? "read" : "test";
         this.testModeButton.innerHTML = "mode:" + this.userSettings.testMode;
         localStorageManager.set("user_settings", this.userSettings);
-        */
+        *//*
         let sValueNew = (this.userSettings.testMode === "test") ? "read" : "test";
         this.updateUserSetting("testMode", sValueNew);
         this.testModeButton.innerHTML = "mode:" + sValueNew;
         console.log("wwddsfdfk to " + sValueNew);
         this.next(0); // Just triggers refresh. No navigation because val is 0.
     },
+    */
     toggleStarFilter: function(uiSrc) {
-        /*
-        let sWidth = "auto";
-        if (vocab.filter === null) {
-            sWidth = utilDom.getUiElementWidth("table#vocab") + "px";
-            vocab.filter = {};
-        } else {
-            vocab.filter = null;
-        }
-        document.querySelector("table#vocab").style.width = sWidth;
-        */
         if (vocab.filter === null) {
             vocab.filter = {};
         } else {
             vocab.filter = null;
         }
+        this.updateUserSetting("oFilter", vocab.filter);
         vocab.renderVocabTable();
     },
-    generateOptionBar: function() {
-        // 1. Generiere die einzelnen uiOptionBar HTML-Elemente
+    /*
+    generateOptionBarOLD: function() {
+        // 1. Generiere die einzelnen optionBarTile HTML-Elemente
         const optionBarDivs = this.aoGroops.map(oGroop => {
             let sActive = (oGroop.iId === vocab.userSettings.iIdStarCurr) ? " active" : "";
-            return `<div class="uiOptionBar${sActive}" data-id="${oGroop.iId}" onclick="sakhtBase.doClickOptionBar(this);">${oGroop.sLabel}</div>`;
+            return `<div class="optionBarTile${sActive}" data-id="${oGroop.iId}" onclick="sakhtBase.doClickOptionBarGroop(this);">${oGroop.sLabel}</div>`;
         }).join('');
         // 2. Erzeuge den Container für die horizontale Reihe
         return `<div class="optionBarRow">${optionBarDivs}</div>`;
     }
+    */
 }
 const sakhtBase = {
     debounceTimeoutId: null,
@@ -346,13 +371,14 @@ const sakhtBase = {
             }
         }
     },
-    doClickOptionBar: function(uiSrc) {
+    doClickOptionBarGroop: function(uiSrc) {
+        /*
         const row = uiSrc.parentElement;
-        row.querySelectorAll('.uiOptionBar').forEach(optionBar => {
+        row.querySelectorAll('.optionBarTile').forEach(optionBar => {
             optionBar.classList.remove('active');
         });
-        // Den angeklickten OptionBar visuell hervorheben
         uiSrc.classList.add('active');
+        */
         console.log(uiSrc.getAttribute("data-id"));
         vocab.updateUserSetting("iIdStarCurr", parseInt(uiSrc.getAttribute("data-id")));
         vocab.renderVocabTable();
@@ -416,10 +442,10 @@ const sakhtBase = {
         return sOut;
     },
     doStarClickFromKeyEvent: function() {
-        if (vocab.rowHighlited === null) {
+        if (vocab.rowFocus === null) {
             return;
         }
-        let trCurr = vocab.rowHighlited;
+        let trCurr = vocab.rowFocus;
         let sDataKey = trCurr.getAttribute("data-key");
         let uiStar = trCurr.querySelector("[role=star]");
         this.doStarClick(sDataKey, uiStar);
@@ -470,7 +496,7 @@ const sakhtBase = {
             sColorBg = "#" + (iStrength < 0 ? "0bd" : "F08") + sStrength;
             sColorTxt = "#FFF"; // + (iStrength >= 5 ? "000" : "fff");
         }
-        return "color:" + sColorTxt + ";background-color:" + sColorBg + ";";
+        return "color:" + sColorTxt + ";background-color:" + sColorBg + ";outline: 0px solid " + sColorBg + ";";
     },
     collectGarbage: function() {
         /*
@@ -574,6 +600,50 @@ window.addEventListener('keyup', (event) => {
 const utilJson = {
     removeInteger: function(aiIn, iTarget) {
         return aiIn.filter(iCurr => iCurr !== iTarget);
+    }
+}
+const utilCustomGuiElements = {
+    ixId: 0,
+    generateOptionBar: function(oSettings) {
+        /*
+        / Needs data like this: M = Mandatory, O = Optional.
+        {
+        sOptionBarId: "uiOptBarTestMode",                    M   Id of the ui element.       Make optional.
+        aoOptions: [{sId: "one"}, {sId: "two"}],    M   List of options.
+                                                        Can be any data, but must supply a field for
+                                                        value, id, label.
+        sFieldToUseAsValue: "sId",                  M   aoOptions.<field> for option.data-id.
+                                                        If an id or label is not supplied, this is used.
+        sFieldToUseAsId: "sId",                     O   aoOptions.<field> for option.data-id.
+        sFieldToUseAsLabel: "sId",                  O   aoOptions.<field> for option's text.
+        vValueDefault: vAnyValue,                   M   Value to set when page loads.           Make optional.
+        sOnClick: "vocab.setTestMode(this);"        M   Function when clicked. Ui update is automatic.
+        };
+        /
+        */
+        // 1. Generiere die einzelnen optionBarTile HTML-Elemente
+        // You must supply the sFieldToUseAsValue.
+        if (!oSettings.hasOwnProperty("sFieldToUseAsLabel")) {
+            oSettings.sFieldToUseAsLabel = oSettings.sFieldToUseAsValue;
+        }
+        if (!oSettings.hasOwnProperty("sFieldToUseAsId")) {
+            oSettings.sFieldToUseAsId = oSettings.sFieldToUseAsValue;
+        }
+        const optionBarDivs = oSettings.aoOptions.map(oOption => {
+            let sActive = (oOption[oSettings.sFieldToUseAsValue] === oSettings.vValueDefault) ? " active" : "";
+            return `<div class="optionBarTile${sActive}" data-id="${oOption[oSettings.sFieldToUseAsId]}" data-value="${oOption[oSettings.sFieldToUseAsValue]}" onclick="utilCustomGuiElements.setOption(this);${oSettings.sOnClick}">${oOption[oSettings.sFieldToUseAsLabel]}</div>`;
+        }).join('');
+        // 2. Erzeuge den Container für die horizontale Reihe
+        return `<div id="${oSettings.sOptionBarId}" class="optionBarRow">${optionBarDivs}</div>`;
+    },
+    setOption: function(uiSrc) {
+        // turn all the other ones off etc.
+        const row = uiSrc.parentElement;
+        row.querySelectorAll('.optionBarTile').forEach(optionBar => {
+            optionBar.classList.remove('active');
+        });
+        // Den angeklickten OptionBar visuell hervorheben
+        uiSrc.classList.add('active');
     }
 }
 /*

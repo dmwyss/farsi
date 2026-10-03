@@ -122,7 +122,7 @@ table#vocab tr:hover {
     cursor: pointer;
 }
 .sakhti {
-    border-radius: 8px;
+    border-radius: 4px;
     text-align: center;
     width: 70px;
 }
@@ -161,6 +161,11 @@ a.tableCellLinkIcon:hover img {
 table#vocab tr:nth-child(21) td {
     border-bottom: 2px solid #576272CC;
 }
+table#vocab tr.silent td {
+    /* Heavier dark line at the bottom of the table. */
+    /* Fixes rare case that the silent spacer is the 21th row. */
+    border-bottom: 2px solid #1c2128;
+}
 
 /* OptionBar --------------------------- */
 .optionBarRow {
@@ -171,7 +176,7 @@ table#vocab tr:nth-child(21) td {
     gap: 0px;
     margin-top: 10px;
 }
-.uiOptionBar {
+.optionBarTile {
     padding: 6px 20px;
     background-color: #1c2128;
     cursor: pointer;
@@ -180,23 +185,38 @@ table#vocab tr:nth-child(21) td {
     font-size: 10pt;
     border: 1px solid var(--color-mainButtonBorder);
     border-left: none;
+    min-width: 40px;
+    text-align: center;
 }
 /* Hover-Effekt */
-.uiOptionBar:hover {
+.optionBarTile:hover {
     background-color: var(--color-mainButtonBgBright);
 }
-.optionBarRow div.uiOptionBar:first-child {
+.optionBarRow div.optionBarTile:first-child {
     border-radius: 5px 0 0 5px;
     border-right: 1px solid var(--color-mainButtonBorder);
     border-left: 1px solid var(--color-mainButtonBorder);
 }
-.optionBarRow div.uiOptionBar:last-child {
+.optionBarRow div.optionBarTile:last-child {
     border-radius: 0 5px 5px 0;
 }
 /* Zustand nach dem Klicken (Hintergrund ändert sich) */
-.uiOptionBar.active {
+.optionBarTile.active {
     background-color: var(--color-mainButtonBg);
     color: white;
+}
+
+/* simpleGrid --------------------------- */
+.simpleGrid th, .simpleGrid td {
+    text-align: left;
+    padding: 4px;
+    min-width: 90px;
+}
+.simpleGrid th:first-child, .simpleGrid td:first-child {
+    padding-left: 15px;
+}
+table.simpleGrid th {
+    background-color: #0004;
 }
 
 @media print {

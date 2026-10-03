@@ -27,7 +27,7 @@ man budam,                                              i was
 to budi,                                                you were (sing.)
 u bood,                                                 he/she/it was
 maa aali boodim,                                        we were awesome
-shomaa budid,                                           you were (pl./formal)
+shomaa budin,                                           you were (pl./formal)
 aanhaa budand,                                          they were
 
 az hichi ke behtar-e,                                   than nothing better-is
@@ -47,9 +47,9 @@ man *na-kardam*,                                        i *did-not-do* (past)
 man *ne-mikonam*,                                       i *do-not-do* (imperf)
 
 Man dar Tehran zendegi mikonam,                         I live in Tehran
-oo be ayande fekr mikonad,                              she thinks about the future
+oon be ayande fekr mikonad,                             she thinks about the future
 Ma dar yek daftar kaar mikonim,                         We work in an office
-oona ba moallem sohbat mikonand,                        They talk with the teacher
+oona ba moallem sohbat mikonan,                         They talk with the teacher
 /white/ beh Farsi *chi* misheh?,                        /white/ in Farsi is *what*
 /sefid/ *yani* chi?,                                    /sefid/ *mean*s what?
 
@@ -58,47 +58,6 @@ sefr yek do se chahaar panj shesh haft hasht noh dah,   count from 0 to ten
 oon khoone ast,                                         he is at home
 oon khoone bood,                                        he was at home
 man kaaram ro mikonam,                                  I do my work
-dirooz - man kaaram ro kardam,                          yesterday - I did my work
-ma maashin daarim,                                      we have a car
-ma maashin daashtim,                                    we had a car
-man injaa ro doost daaram,                              I like this place
-man injaa ro doost daashtam,                            I liked this place
-oona be baazaar miravant,                               they go to the market
-oona be baazaar raftand,                                they went to the market
-oo be madrese miyaayad,                                 she comes to school
-oo be madrese aamad,                                    she came to school
-to raaz ro midooni,                                     you know the secret
-to raaz ro doonesti,                                    you knew the secret
-ma raast migooeem,                                      we say the truth
-ma raast goftim,                                        we said the truth
-man maah ro mibinam,                                    I see the moon
-man maah ro didam,                                      I saw the moon
-shoma sobhaane mikhordid,                               you eat breakfast
-shoma sobhaane khordid,                                 you ate breakfast
-bache mikhaabad,                                        the child sleeps
-bache khaabid,                                          the child slept
-oona khaane mikharand,                                  they buy a house
-oona khaane kharidand,                                  they bought a house
-oo ketaab mikhaanad,                                    she reads the book
-oo ketaab khaand,                                       she read the book
-man dasthaayam ro mishooyam,                            I wash my hands
-man dasthaayam ro shostam,                              I washed my hands
-ma dars ro mifahmim,                                    we understand the lesson
-ma dars ro fahmidim,                                    we understood the lesson
-oona injaa mimaandand,                                  they stay here
-oona injaa moondand,                                    they stayed here
-oo keleed ro injaa migozaarad,                          he puts the key here
-oo keleed ro injaa gozaasht,                            he put the key here
-man naame minevisam,                                    I write a letter
-man naame neveshtam,                                    I wrote a letter
-oo rooye sandali mineshinad,                            she sits on the chair
-oo rooye sandali neshast,                               she sat on the chair
-teame ma mibarad,                                       our team wins
-teame ma bord,                                          our team won
-oona ghazaa miyaavarand,                                they bring food
-oona ghazaa aavordand,                                  they brought food
-man dar ro mibandam,                                    I close the door
-man dar ro bastam,                                      I closed the door
 
 daafid *hast*-am,                                       david *be*-I
 kaar mi-*kon*-am,                                       work currently-*do*-I
@@ -173,7 +132,7 @@ in dars aasoon ast,                                     this lesson is easy
 in keef sabok ast,                                      this bag is light
 khaaneeye ma koochik ast,                               our house is small
 aan pesar tanbal ast,                                   that boy is lazy
-oo yek marde javoon ast,                                he is a young man
+oon yek marde javoon ast,                               he is a young man
 maashine jadid khoob ast,                               the new car is good
 do taa *peerhan*-e jadeed khareedam,                    I bought two new *shirt*s
 in ketaab ghadimi ast,                                  this book is old
@@ -181,7 +140,7 @@ aan dokhtar laaghar ast,                                that girl is thin
 in gorbe chaagh ast,                                    this cat is fat
 in baagh ghashang ast,                                  this garden is beautiful
 koodak khoshgel ast,                                    the baby is cute
-oo sari midoozad,                                       she sews quickly
+oon sari midoozad,                                      she sews quickly
 ghazaa tond ast,                                        the food is spicy
 ghazaa tond nabood,                                     the food was not spicy
 aroom sohbat kon,                                       speak quietly
@@ -366,8 +325,8 @@ kalameh-ye ghadimi-ye Faarsi,                           an old Farsi word
 ke az raah-e abrisham taa torkiyeh raft,                that on the silk road travelled to Turkie
 
 
-tooye torkiye in kalame shod "tülbent",                 in turkie the word became "tülbent"
-tooye aalmaan in kalame shod "tülpe",                   in germany the word became "tülpe"
+tooye torkiye in kalame shod "tuelbent",                in turkie the word became "tülbent"
+tooye aalmaan in kalame shod "tuelpe",                  in germany the word became "tülpe"
 pas be engelisi mishe "tulip",                          then in English became "tulip"
 pas esme khiaaboonetoon az ye kalameye faarsi miaad,    so your street name comes from a Farsi word
 
@@ -583,26 +542,20 @@ man mehmoon mikonam,                                    I make you a guest (my t
 daaram kaar mikonam,                                    I am working right now
 
 shomaa *dast-etoon* ro mishor-in,                       you-s are washing you-s-es hands
-oon saat noh bidaar shod,                               he woke up at nine (past)
-man saat haft bidaar misham,                            I wake up at seven
+oon saat noh bidaar shod,                               he woke (past) up at nine
+man saat haft bidaar mish-am,                           I wake up at seven
 oon *dast-esh* ro mishor-e,                             he is washing his hands
-oon saat davaazdah bidaar mishe,                        he wakes up at twelve
+oon saat davaazdah bidaar mish-e,                       he wakes up at twelve
 tu *dast-et* ro mishor-i,                               you are washing your hands
-man saat se bidaar shodam,                              I woke up at three
+man saat se bidaar shod-am,                              I woke (past) up at three
 oonaa *dast-eshoon* ro mishor-an,                       they are washing their hands
 man *dast-am* ro mishor-am,                             I am washing my hands
-maa saat haft bidaar mishim,                            we wake up at seven
+maa saat haft bidaar mish-im,                           we wake up at seven
 maa *dast-emoon* ro mishor-im,                          we are washing our hands
-tu saat hasht bidaar mishi,                             you wake up at eight
-shomaa saat do bidaar mishin,                           you-s wake up at two
-oonaa saat shesh bidaar mishan,                         they wake up at six
+tu saat hasht bidaar mish-i,                            you wake up at eight
+shomaa saat do bidaar mish-in,                          you-s wake up at two
+oonaa saat shesh bidaar mish-an,                        they wake up at six
 
-man daar-am baa maadaram sohbat mi-kon-am,              I am doing conversation with my mother
-to daar-i baa baraadar-et sohbat mi-kon-i,              you are doing conversation with your brother
-oon daar-e baa raiis-esh sohbat mi-kon-e,               he/she is doing conversation with his/her boss
-maa daar-im baa duust-emuun sohbat mi-kon-im,           we are doing conversation with our friend
-shomaa daar-id baa pedar-etuun sohbat mi-kon-id,        you are doing conversation with your father
-oonaa daar-an baa hamsaaye-shuun sohbat mi-kon-an       they are doing conversation with their neighbor
 
 
 
@@ -648,6 +601,15 @@ morgh-e aameshgh,                                       love bird
 
 
 
+man daar-am baa maadaram sohbat mi-kon-am,              I am doing conversation with my mother
+to daar-i baa baraadar-et sohbat mi-kon-i,              you are doing conversation with your brother
+oon daar-e baa raiis-esh sohbat mi-kon-e,               he/she is doing conversation with his/her boss
+maa daar-im baa duust-emoon sohbat mi-kon-im,           we are doing conversation with our friend
+shomaa daar-id baa pedar-etuun sohbat mi-kon-in,        you are doing conversation with your father
+oonaa daar-an baa hamsaaye-shuun sohbat mi-kon-an       they are doing conversation with their neighbor
+
+
+
 
 baraaye tooye kuche raqsidan,                           for inside alley dancing
 baraaye tarsidan be vaqte boosidan,                     for fearing at time of kissing
@@ -668,8 +630,8 @@ baraaye daaneshaamuza baraaye aayande,                  for students for future
 baraaye in behesht-e ejbaari,                           for this paradise forced
 baraaye nokhbe-haa-ye zendaani,                         for elites imprisoned
 baraaye koodakaan-e afghaani,                           for children afghan
-baraaye in hame baraaye qeyr-e tekraari,                for this all  for non-repetitive
-baraaye in hame sho’aar-haa-ye tukhaali,                        for this all slogans empty
+baraaye in hame baraaye qeyr-e tekraari,                for this all for non-repetitive
+baraaye in hame sho’aar-haa-ye tukhaali,                for this all slogans empty
 baraaye aavaar-e khoone-haa-ye pooshaali,               for collapse houses straw-like
 baraaye ehsaas-e aaraamesh,                             for feeling peace
 baraaye khorshid pas az shabaa-ye toolaani,             for sun after nights long
