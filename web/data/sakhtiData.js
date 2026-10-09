@@ -316,7 +316,7 @@ let sakhtiData = {
 "baayad ajale konim":{"sakhti":-10},
 "fahmidam chi gofti":{"sakhti":-60,"aiStar":[1]},
 "baayad kheili movazeb baashi":{"sakhti":-20},
-"kelidam gom shode baayad peydaash konam":{"sakhti":-79,"aiStar":[1]},
+"kelidam gom shode baayad peydaash konam":{"sakhti":-78,"aiStar":[1]},
 "mikhaam too sandringham ye khoone bekharam":{"sakhti":-10},
 "nabyaayad zood tasmim begiri":{"sakhti":-10},
 "hamine ke hast":{"sakhti":-10},
