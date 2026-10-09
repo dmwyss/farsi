@@ -33,8 +33,45 @@ const vocab = {
         this.userSettings[sFieldId] = vValue;
         localStorageManager.set("user_settings", this.userSettings);
     },
+    testState: {
+        phase: "tell", // Can be "ask or "tell"
+        isEnterKeyMessageAlreadyShown: false,
+        next: function() {
+            console.log("testState.next");
+            if (vocab.userSettings.testMode !== "test") {
+                console.log("invalid testState.next call. not in test mode");
+                return;
+            }
+            if (this.phase === "ask") {
+                // ask
+                // Currently hiding the answer.
+                this.phase = "tell";
+                this.showHideAnswer();
+            } else {
+                // tell
+                // Currently showing the answer.
+                vocab.next(1); // Go next.
+                // Hide the answer.
+                this.phase = "ask";
+                this.showHideAnswer();
+            }
+            return this;
+        },
+        showHideAnswer: function() {
+            console.log("vocab.testState.showHideAnswer(" + (this.phase === "ask" ? "true" : "false") + ")");
+            console.log("vocab.ixVis = " + vocab.ixVis + ")");
+            let uiTrTd = vocab.uiVocab.querySelector("#tr" + vocab.ixVis + " td:nth-child(3)");
+            if (uiTrTd) {
+                uiTrTd.style.opacity = this.phase === "ask" ? "0.0" : "1.0";
+            }
+            return this;
+        },
+        reset: function() {
+            console.log("vocab.testState.reset()");
+            return this;
+        }
+    },
     init: function() {
-        //sakhtBase.setDataFromCookie();
         this.aoGroops = groopData;
         this.userSettings = localStorageManager.get("user_settings", this.userSettings);
 
@@ -54,7 +91,7 @@ const vocab = {
         let oDictOut = {};
         let asLines = vocabFarsiRaw.split("\n");
         for (let ix = 0; ix < asLines.length; ix++) {
-            console.log(asLines[ix]);
+            //console.log(asLines[ix]);
             let oWord = this.toWord(asLines[ix]);
             if (!oWord) {
                 continue;
@@ -228,39 +265,49 @@ const vocab = {
             let atd = atr[ixTr].querySelectorAll("td");
             atd[this.iColHiddenForGuess].style.opacity = sOpacity;
             //atd[2].style.opacity = sOpacity;
+
+
+            if (this.userSettings.testMode === "test") {
+                this.testState.showHideAnswer();
+                this.testState.reset();
+            }
+
+
             if (!isFound) {
                 if (atr[ixTr] === oRow) {
                     if (this.rowFocus != null) {
                         this.rowFocus.style.backgroundColor = "inherit";
-                        // hideAnswer ::: this.rowFocus.classList.remove("rowFocus");
                     }
                     oRow.style.backgroundColor = "#FFF2";
-                    // hideAnswer ::: oRow.classList.add("rowFocus");
-                    if (false) {
-                        setTimeout(
-                            function() {
-                                oRow.style.backgroundColor = "inherit";
-                                // hideAnswer ::: oRow.classList.remove("rowFocus");
-                            }, 500
-                        )
-                    }
                     this.rowFocus = oRow;
                     isFound = true;
                     sOpacity = sOpacityAfterCurrent;
+
+
+
+
+
+
+
                 }
             }
         }
     },
     next: function(iDist) {
+        //console.log("vocab.next(iDist:" + iDist + ")");
         this.ixVis += iDist;
         if ((this.ixVis < 0) || (this.ixVis === vocab.list.length) || iGetNextTrAttempts >= iGetNextTrAttemptsMax) {
             this.ixVis = 0;
             iGetNextTrAttempts = 0;
+            if (vocab.userSettings.testMode === "test") {
+                this.testState.phase = "tell";
+                this.testState.next();
+            }
             return;
         }
         let trNext = document.querySelector("#tr" + this.ixVis);
         if (trNext === null) {
-            console.log("could not find #tr" + this.ixVis + " attempt " + iGetNextTrAttempts);
+            //DO NOT DELETE: console.log("could not find #tr" + this.ixVis + " attempt " + iGetNextTrAttempts);
             iGetNextTrAttempts++;
             vocab.next(iDist);
         } else {
@@ -326,6 +373,15 @@ const vocab = {
         let sValueNew = uiSrc.getAttribute("data-value");
         this.updateUserSetting("testMode", sValueNew);
         this.next(0); // Just triggers refresh. No navigation because val is 0.
+        console.log("setTestMode -> " + sValueNew);
+        if (sValueNew === "test") {
+            this.ixVis = 0;
+            this.testState.phase = "tell";
+            this.testState.next();
+            topPeepMessage.show();
+        } else {
+            this.testState.reset();
+        }
     },
     /*
     toggleTestMode: function() {
@@ -598,6 +654,9 @@ window.addEventListener('keyup', (event) => {
     } else if (event.key === " ") {
         event.preventDefault();
         sakhtBase.doStarClickFromKeyEvent();
+    } else if (event.key === "Enter") {
+        event.preventDefault();
+        vocab.testState.next(event.altKey);
     }
 });
 const utilJson = {
@@ -658,8 +717,23 @@ const utilDom = {
     }
 }
 */
+const topPeepMessage = {
+    ui: null,
+    init: function() {
+        this.ui = document.querySelector('aside#prompt');
+    },
+    show: function() {
+        if (!vocab.testState.isEnterKeyMessageAlreadyShown) {
+            topPeepMessage.ui.classList.add('onScreen');
+            setTimeout(() => {
+                topPeepMessage.ui.classList.remove('onScreen');
+            }, 1500);
+            vocab.testState.isEnterKeyMessageAlreadyShown = true;
+        }
+    }
+};
 document.addEventListener('DOMContentLoaded', function () {
     sakhtBase.init();
     vocab.init();
-    //starControl.init();
+    topPeepMessage.init();
 });

@@ -229,6 +229,31 @@ table.simpleGrid th {
 }
 */
 
+
+aside#prompt {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 300px;
+    min-height: 60px;
+    background-color: #1f6486;
+    border-radius: 5px;
+    border: 1px solid #454e59;
+    z-index: 1000;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    opacity: 0;
+    visibility: hidden;
+}
+aside#prompt > div {
+    padding: 25px;
+}
+
+/* The class JavaScript will add to hide the element */
+aside#prompt.onScreen {
+    opacity: 1;
+    visibility: visible;
+}
+
 @media print {
     body {
         padding: 0 0 0 0;

@@ -338,7 +338,7 @@ fenjoonam roo mize,                                     my cup is on the table
 kelidet gom shode,                                      your key is lost
 televizionesh bozorge,                                  her tv is big
 khoonemoon garme,                                       our house is warm
-yakhchaaletoon khaal-lie,                               your (plural) fridge is empty
+yakhchaaletoon khaal-lie,                               your-all fridge is empty
 lebasshooyeeshoon sedaa mide,                           their washing machine is making noise
 
 farsi yaad migiram,                                     farsi learning-am
@@ -409,7 +409,7 @@ yekkam bolandtar *sobhat kon*,                          little-bit louder *speak
 har rooz ye chize jadid yaad migiri,                    each day one thing new thought take
 rooze khoobi daashti?,                                  day good-one had?
 *jashn* chetor bood?,                                   *party* how was?
-kelid-aa-m ro peydaa nemikonam,                         I cant find my keys
+kelid-am ro peydaa nemikonam,                           I cant find my keys
 *istgaa*he ba'di piaade misham,                         I get off at the next *stop/station*
 
 
@@ -541,7 +541,7 @@ soorat-hesaaba ro man midam,                            i will give the bill
 man mehmoon mikonam,                                    I make you a guest (my treat)
 daaram kaar mikonam,                                    I am working right now
 
-shomaa *dast-etoon* ro mishor-in,                       you-s are washing you-s-es hands
+shomaa *dast-etoon* ro mishor-in,                       you-all are washing you-all-es hands
 oon saat noh bidaar shod,                               he woke (past) up at nine
 man saat haft bidaar mish-am,                           I wake up at seven
 oon *dast-esh* ro mishor-e,                             he is washing his hands
@@ -553,10 +553,61 @@ man *dast-am* ro mishor-am,                             I am washing my hands
 maa saat haft bidaar mish-im,                           we wake up at seven
 maa *dast-emoon* ro mishor-im,                          we are washing our hands
 tu saat hasht bidaar mish-i,                            you wake up at eight
-shomaa saat do bidaar mish-in,                          you-s wake up at two
+shomaa saat do bidaar mish-in,                          you-all wake up at two
 oonaa saat shesh bidaar mish-an,                        they wake up at six
 
+man *kaar-am* ro mikon-am                               I do my work
+to *kaar-et* ro mikon-i                                 you do your work
+oon *kaar-esh* ro mikon-e                               he does his work
+ma *kaar-emoon* ro mikon-im                             we do our work
+shomaa *kaar-etoon* ro mikon-in                         you-all do your work
+oonaa *kaar-eshoon* ro mikon-an                         they do their work
+
 aroos-e daryaa-i maahi nist                             sea bride fish is not
+kherse daar-e asabaani mish-e                           the bear is becoming angry
+hamkaaraa daaran khaste mishan                          the coworkers are becoming tired
+
+shotormorgh                                             ostrich
+tokme morgh                                             egg
+morgh-eshoon ye paa daare                               they are stubborn (chicken has one leg)
+kharkhune                                               nerd (donkey studying)
+kharam az pol gozasht                                   I got what I wanted (my donkey crossed the bridge)
+shaanse kharki                                          extreme luck
+
+
+
+# Barfi Story #######################################################
+norohat                                                 sad / upset / uncomfortable
+norohat bood                                            he/she/it was sad
+raft                                                    he/she/it went
+khobide                                                 he/she/it is asleep
+cherange                                                what color is it?
+chand                                                   how many / how much
+jalotar                                                 further ahead / earlier
+khoob                                                   good / well / ok
+chi shod                                                what happened?
+injuri shod                                             it turned out like this / this is how it happened
+duur                                                    far / distant
+ba'di                                                   next / the next one
+salaam dad                                              he/she greeted / said hello
+dad zad                                                 he/she shouted / yelled
+mamuli                                                  ordinary / normal / average
+bomaze                                                  funny / cute / tasty
+surati                                                  pink
+tajob kaard                                             he/she was surprised / wondered
+aslan                                                   at all / not at all / ever
+baazi mikard                                            he/she was playing / used to play
+gharaar                                                 (romantic) date / plan / arrangement
+alaan                                                   now / right now
+paydaa                                                  found / visible / apparent
+
+khargooshe kaahoo mikhore                               the rabbit eats lettuce
+
+ra'is-e man aazaar dahande ast                          my boss is annoying
+
+
+
+
 
 
 `;
@@ -581,17 +632,18 @@ Plural Possessive Suffixes
 -eshoon  Their / Theirs     khooneh-shoon   Their house
 
 
-
-ghoor-baa-ghe
-halazoon
-morgh-e daryaa-i
-chisi
-shotor morgh
-begoo
-khar to khar
-chahaar
-boolooberi
-ezhdehaa
+01 kharmoosh
+02 khargoosh
+03 ghoorbaaghe
+04 halazoon
+05 morgh-e daryaa-i
+06 chisi
+07 shotor morgh
+08 begoo
+09 chahaar
+10 boolooberi
+11 ezhdehaa
+12
 
 morgh-e daryaa-i,                                       chicken of the sea
 morgh-e teshne,                                         thirst bird - flamingo

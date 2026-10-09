@@ -5,111 +5,122 @@
 var g_sSearchLast = "";
 var g_asSearches = [];
 var g_ixCursor = 0;
+var g_isMuted = false;
 
 var aoTemplates = [
-  "literal word for word translation of \"\" in farsi",
-  "what does \"\" mean in farsi",
-  "how do you say \"\" in informal farsi",
-  "etymology of the farsi word \"\"",
-  "conjugate the verb \"\" in informal farsi",
-  "give me a short, informal, rhyming sentence using the farsi word \"\"",
-  "Always give me farsi translations in informal farsi"
-    + " in lower case with the alef character written as aa."
-    + " Instead of commas use a space then - then a space."
-    + " Write the farsi letter ayn as an apostrophe, for example baadi must be written as ba'adi."
-    + " Give me the farsi transliterated into latin script,"
-    + " then a pipe character then on the same line, then the literal"
-    + " english translation also all in lowercase except for the word I."
+    "literal word for word translation of \"\" in farsi",
+    "what does \"\" mean in farsi",
+    "how do you say \"\" in informal farsi",
+    "etymology of the farsi word \"\"",
+    "conjugate the verb \"\" in informal farsi",
+    "give me a short, informal, rhyming sentence using the farsi word \"\"",
+    "Always give me farsi translations in informal farsi"
+        + " in lower case with the alef character written as aa."
+        + " Instead of commas use a space then - then a space."
+        + " Write the farsi letter ayn as an apostrophe, for example baadi must be written as ba'adi."
+        + " Give me the farsi transliterated into latin script,"
+        + " then a pipe character then on the same line, then the literal"
+        + " english translation also all in lowercase except for the word I."
 ]
 function selectQuoteContent(myField) {
-  myField.focus();
-  myField.focus();
-  if (myField.value.split("\"").length < 3) {
-    return;
-  }
-  let iQuotePosStart = myField.value.indexOf("\"") + 1;
-  // Next line changed:
-  // Was:
-  //   let iQuotePosEnd = myField.value.lastIndexOf("\"");
-  let iQuotePosEnd = myField.value.indexOf("\"", iQuotePosStart);
-  setTimeout(
-    function(){
-      myField.setSelectionRange(iQuotePosStart, iQuotePosEnd);
-    }, 100
-  )
+    myField.focus();
+    myField.focus();
+    if (myField.value.split("\"").length < 3) {
+        return;
+    }
+    let iQuotePosStart = myField.value.indexOf("\"") + 1;
+    // Next line changed:
+    // Was:
+    //   let iQuotePosEnd = myField.value.lastIndexOf("\"");
+    let iQuotePosEnd = myField.value.indexOf("\"", iQuotePosStart);
+    setTimeout(
+        function(){
+            myField.setSelectionRange(iQuotePosStart, iQuotePosEnd);
+        }, 100
+    )
 }
 window.addEventListener('keydown', function(event) {
-  // recently removed because messes up normal google search: let ata = document.querySelectorAll("textarea");
-  let ata = document.querySelectorAll("textarea[autocomplete=off]");
-  let myField = ata[ata.length - 1];
+    console.log(event.key);
+    // recently removed because messes up normal google search: let ata = document.querySelectorAll("textarea");
+    let ata = document.querySelectorAll("textarea[autocomplete=off]");
+    let myField = ata[ata.length - 1];
     if (myField === document.activeElement) {
-      isArrow = false;
-      sQueryText = "";
-      if (event.key === 'ArrowUp') {
-        g_ixCursor--;
-        isArrow = true;
-      } else if (event.key === 'ArrowDown') {
-        g_ixCursor++;
-        isArrow = true;
-      }
-      console.log("ix :: " + g_ixCursor);
-      if (isArrow) {
-        // User is going up/down in history.
-        sQueryText = ""; // Assume ix is 0 - no text.
-        if (g_ixCursor < 0) {
-          // We are in the previous search list.
-          // if it is -1 it will be the last one.
-          if (g_asSearches.length == 0) {
-            // There are no previous searches. Reset cursor.
-            g_ixCursor = 0;
-          } else {
-            if (Math.abs(g_ixCursor) > g_asSearches.length) {
-              // We have gone outside the available list.
-              // for example looking for item[-1].
-              // Undo the curor action upwards, by adding 1 back in.
-              console.log(Math.abs(g_ixCursor) + " > " + g_asSearches.length);
-              g_ixCursor++;
+        isArrow = false;
+        sQueryText = "";
+        if (event.key === 'ArrowUp') {
+            if (!g_isMuted) {
+                g_ixCursor--;
             }
-            // Set the index within the searhes list.
-            // For example, if there are searches [aaa, bbb, ccc]
-            // we add the (always negative) g_ixCursor to the length.
-            // For example: length 3 + -1 will select element [2].
-            // For example: length 3 + -2 will select element [1].
-            let ixSearch = Math.max(0, g_asSearches.length + g_ixCursor);
-            sQueryText = g_asSearches[ixSearch];
-            // LEAVE:: console.log(g_asSearches[ixSearch] + " [" + g_asSearches.join(",") + "]";
-          }
-        } else if (g_ixCursor > 0) {
-          // We are in the template list.
-          g_ixCursor = Math.min(g_ixCursor, (aoTemplates.length)); // No overflow.
-          sQueryText = aoTemplates[g_ixCursor - 1];
+            isArrow = true;
+        } else if (event.key === 'ArrowDown') {
+            if (!g_isMuted) {
+                g_ixCursor++;
+            }
+            isArrow = true;
         }
-        /*
-        */
-        myField.value = sQueryText;
-        selectQuoteContent(myField);
-      } else {
-        setTimeout(
-          function() {
-            g_sSearchLast = myField.value;
-          },
-          100
-        )
-      }
-    } else {
-    // Check if the pressed key is the slash key
-      if (event.key === '/') {
-        // Prevent the default behavior (like opening browser search or typing "/")
+        console.log("ix :: " + g_ixCursor);
+        if (isArrow) {
+            if (g_isMuted) {
+                return;
+            }
+            // User is going up/down in history.
+            sQueryText = ""; // Assume ix is 0 - no text.
+            if (g_ixCursor < 0) {
+                // We are in the previous search list.
+                // if it is -1 it will be the last one.
+                if (g_asSearches.length == 0) {
+                    // There are no previous searches. Reset cursor.
+                    g_ixCursor = 0;
+                } else {
+                    if (Math.abs(g_ixCursor) > g_asSearches.length) {
+                        // We have gone outside the available list.
+                        // for example looking for item[-1].
+                        // Undo the curor action upwards, by adding 1 back in.
+                        console.log(Math.abs(g_ixCursor) + " > " + g_asSearches.length);
+                        g_ixCursor++;
+                    }
+                    // Set the index within the searhes list.
+                    // For example, if there are searches [aaa, bbb, ccc]
+                    // we add the (always negative) g_ixCursor to the length.
+                    // For example: length 3 + -1 will select element [2].
+                    // For example: length 3 + -2 will select element [1].
+                    let ixSearch = Math.max(0, g_asSearches.length + g_ixCursor);
+                    sQueryText = g_asSearches[ixSearch];
+                    // LEAVE:: console.log(g_asSearches[ixSearch] + " [" + g_asSearches.join(",") + "]";
+                }
+            } else if (g_ixCursor > 0) {
+                // We are in the template list.
+                g_ixCursor = Math.min(g_ixCursor, (aoTemplates.length)); // No overflow.
+                sQueryText = aoTemplates[g_ixCursor - 1];
+            }
+            myField.value = sQueryText;
+            selectQuoteContent(myField);
+        } else {
+            setTimeout(
+                function() { g_sSearchLast = myField.value; },
+                100
+            )
+        }
+    } else if (event.key === 'Escape') {
         event.preventDefault();
-        myField.focus();
-        myField.select();
-      }
+        event.stopPropagation();
+        g_isMuted = !g_isMuted;
+        document.title = g_isMuted ? "#MUTED#" : "berim!";
+        console.log("mute swwitched");
+    } else {
+        // Check if the pressed key is the slash key
+        if (event.key === '/') {
+            // Prevent the default behavior (like opening browser search or typing "/")
+            event.preventDefault();
+            myField.focus();
+            myField.select();
+        }
     }
     if (event.key === 'Enter') {
-      // If a search is run, reset the index to first.
-      console.log("" + g_ixCursor + "");
-      g_asSearches.push(g_sSearchLast);
-      g_ixCursor = 0;
+        // If a search is run, reset the index to first.
+        console.log("" + g_ixCursor + "");
+        g_asSearches.push(g_sSearchLast);
+        g_ixCursor = 0;
     }
 });
 document.title = "berim!";
