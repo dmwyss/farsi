@@ -30,7 +30,7 @@ let pywriterImpl = {
 //        aaReplace.push(this.replacers.nlBetweenKeyValueElements);
 //        aaReplace.push(this.replacers.nlBeforeLastCurlyBracket);
         if (iObjType == this.CLICK_DATA) {
-            sFileName += "sakhtiData.js"
+            sFileName += "sakhtiData." + g_sIxSet + ".js"
             sPre = sPre + "sakhtiData = ";
         } else if (iObjType == this.VOTE_DATA) {
             sFileName += "voteData.js"

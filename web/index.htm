@@ -11,15 +11,20 @@
 <!-- s cript type="text/javascript" src="data/sakhtiData.js"></script -->
 <script>
 let sVolatileOutNew = "";
-let asPages = ["data/sakhtiData.js", "data/groopData.js"];
+
+
+const urlParams = new URLSearchParams(window.location.search);
+const g_sIxSet = urlParams.get('sIxSet') ?? "0";
+console.log("g_sIxSet::" + g_sIxSet);
+let asPages = ["data/sakhtiData", "data/groopData", "data/vocabFarsi"];
 for (let ix = 0; ix < asPages.length; ix++) {
-    sVolatileOutNew += "<" + "script type=\'text/javascript\' src=\'" + asPages[ix] + "?refresh=";
+    sVolatileOutNew += "<" + "script type=\'text/javascript\' src=\'" + asPages[ix] + "." + g_sIxSet + ".js?refresh=";
     sVolatileOutNew += (Math.round(Math.random() * 10000)) + "\'>" + "<" + "/" + "script>\n";
 }
 document.write(sVolatileOutNew);
 </script>
 
-<script type="text/javascript" src="data/vocabFarsi.js"></script>
+<!-- script type="text/javascript" src="data/vocabFarsi.js"></script -->
 <script type="text/javascript" src="js/util.localStore.js"></script>
 <script type="text/javascript" src="js/util.Cookie.1.1.js"></script>
 <script type="text/javascript" src="js/util.cookieJson.js"></script>
@@ -35,6 +40,7 @@ document.write(sVolatileOutNew);
 <br/>
 <br/>
 
+<h3>Informal</h3>
 <table class="simpleGrid">
   <thead>
     <tr>
@@ -53,6 +59,30 @@ document.write(sVolatileOutNew);
     </tr>
   </tbody>
 </table>
+
+<br/>
+<h3>Formal</h3>
+
+<table class="simpleGrid">
+  <thead>
+    <tr>
+      <th>Pronoun</th><th>Nomin.</th><th>Genit.</th><th>Plural</th><th>Nomin.</th><th>Genit.</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>man</td><td>-am</td><td>-am</td><td>maa</td><td>-im</td><td>-emaan</td>
+    </tr>
+    <tr>
+      <td>to</td><td>-i</td><td>-at</td><td>shomaa</td><td>-id</td><td>-ataan</td>
+    </tr>
+    <tr>
+      <td>oo</td><td>-ast</td><td>-ash</td><td>aanhaa</td><td>-and</td><td>-ashaan</td>
+    </tr>
+  </tbody>
+</table>
+
+
 
 
 <aside id="prompt">

@@ -39,6 +39,11 @@ h2 {
     font-family: Verdana;
     color: #5d84ac;
 }
+h3 {
+    color: #FFF5;
+    font-weight: 100;
+    margin: 0px;
+}
 table {
     border-collapse: collapse;
 }

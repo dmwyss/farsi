@@ -108,6 +108,7 @@ const vocab = {
             let oO_ = sakhtBase.getByKeyOo(sForeignKey);
             oWord.meta = {
                 ixOrig: ix,
+                sSortIxOrig: "" + (ix / 10000),
                 sSortP: charTamer.plainAlpha(oWord.p.contextText).toLowerCase(),
                 sSortE: charTamer.plainAlpha(oWord.e.contextText).toLowerCase(),
                 sSortStar: (oWord.hasOwnProperty("aiStar") && (oWord.aiStar.includes(vocab.userSettings.iIdStarCurr) ?  1 : 0)),
@@ -157,7 +158,7 @@ const vocab = {
         let sOut = "<table id=\"vocab\">";
         let sStarIcon = (this.filter === null) ? "&star;" : "&starf;";
         sOut += "<tr>"
-            + "<td id=\"ixOrig\" class=\"colSorter colNarrow\" onclick=\"vocab.clickColSort(this);\">#</td>"
+            + "<td id=\"sSortIxOrig\" class=\"colSorter colNarrow\" onclick=\"vocab.clickColSort(this);\">#</td>"
             + "<td id=\"sSortE\" class=\"colSorter\" onclick=\"vocab.clickColSort(this);\">engelisi</td>"
             + "<td id=\"sSortP\" class=\"colSorter\" onclick=\"vocab.clickColSort(this);\">farsi</td>"
             + "<td id=\"sSortResearch\" class=\"colSorter colNarrow\">&nbsp;</td>"
@@ -451,7 +452,7 @@ const sakhtBase = {
         }, 800);
     },
     save_debounced: function() {
-        let sFileName = "data/sakhtiData.js"
+        let sFileName = "data/sakhtiData." + g_sIxSet + ".js"
         let sBody = JSON.stringify(this.dataOo); //, null, 1);
         sBody = sBody
             .split("},\"").join("},\n\"")

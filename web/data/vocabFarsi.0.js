@@ -541,18 +541,19 @@ soorat-hesaaba ro man midam,                            i will give the bill
 man mehmoon mikonam,                                    I make you a guest (my treat)
 daaram kaar mikonam,                                    I am working right now
 
-shomaa *dast-etoon* ro mishor-in,                       you-all are washing you-all-es hands
-oon saat noh bidaar shod,                               he woke (past) up at nine
-man saat haft bidaar mish-am,                           I wake up at seven
-oon *dast-esh* ro mishor-e,                             he is washing his hands
-oon saat davaazdah bidaar mish-e,                       he wakes up at twelve
-tu *dast-et* ro mishor-i,                               you are washing your hands
-man saat se bidaar shod-am,                              I woke (past) up at three
-oonaa *dast-eshoon* ro mishor-an,                       they are washing their hands
 man *dast-am* ro mishor-am,                             I am washing my hands
-maa saat haft bidaar mish-im,                           we wake up at seven
+tu *dast-et* ro mishor-i,                               you are washing your hands
+oon *dast-esh* ro mishor-e,                             he is washing his hands
 maa *dast-emoon* ro mishor-im,                          we are washing our hands
+shomaa *dast-etoon* ro mishor-in,                       you-all are washing you-all-es hands
+oonaa *dast-eshoon* ro mishor-an,                       they are washing their hands
+
+man saat chahaar bidaar mish-am,                        I wake up at four
+man saat se bidaar shod-am,                             I woke (past) up at three
 tu saat hasht bidaar mish-i,                            you wake up at eight
+oon saat noh bidaar shod,                               he woke (past) up at nine
+oon saat davaazdah bidaar mish-e,                       he wakes up at twelve
+maa saat haft bidaar mish-im,                           we wake up at seven
 shomaa saat do bidaar mish-in,                          you-all wake up at two
 oonaa saat shesh bidaar mish-an,                        they wake up at six
 
@@ -604,10 +605,131 @@ paydaa                                                  found / visible / appare
 khargooshe kaahoo mikhore                               the rabbit eats lettuce
 
 ra'is-e man aazaar dahande ast                          my boss is annoying
+Nazdik-tarin istgah behet kodume?                       nearest station to you which-is?
 
 
 
+man khoshhaal hast-am                                   I happy -am
+man dirooz bimaar bood-am                               I yesterday sick was
+man vaqti varzesh mikon-am - garm mishav-am             I when exercise I do - hot I become
+man saal - e gozashteh mo'allem shod-am                 I year - of past teacher I bec-ame
+man har rooz varzesh mikon-am                           I every day exercise I do
+man dishab takaaliif-am raa kard-am                     I last night homework my I did
 
+
+# 2 Hours of Daily Persian Conversations - Persian Practice for ALL Learners
+# https://www.youtube.com/watch?v=eEckaODaFqs
+hamchenin man sobh raa kollan motaale'e kardam          also I morning (object marker) completely studying did
+man chetor mitavaanam be shomaa komak konam             I how can to you help do
+man emrooz ba'd az zohr baraaye shenaa be estakhr raftam  I today after from noon for swimming to pool went
+va asr be sinamaa raftam                                and evening to cinema went
+vali lotfan ghabl az 5:30 biyaaied                      but please before from 5:30 come
+
+pasheh to ro nish zad                                   mosquito you sting hit
+
+inhaa robaathaayi ke shomaa donbaalash hastid nistand   these are not the droids you are looking for
+sedaa aziyat-et mikone?                                 noise annoying you it does?
+
+ketab-aa roo-ye miz-an                                  the books are on the table
+in ghaza kheyli khoshmaze-st                            this food is very delicious
+aab-e khonak mikhwaam                                   I want cold water
+noon kharid-i?                                          did you buy bread?
+khune-ye maa injaa-st                                   our house is here
+shahr kheyli sholoogh-e                                 the city is very crowded
+miz ro pak kon                                          clean the table
+sandali ro biar                                         bring the chair
+in dar baste-st                                         this door is closed
+panjere ro baaz kon                                     open the window
+mishi roo takht bekhwaabi                               you can sleep on the bed
+otogh-e man koochik-e                                   my room is small
+in kooche kheyli khofnaak-e                             this alley is very scary
+khiabaan sholoogh-e                                     the street is crowded
+baa mashin miram                                        I go by car
+ghataar key mirese?                                     when does the train arrive?
+havaapeyma boland shod                                  the airplane took off
+neveshtam roo kaaghaz                                   I wrote on the paper
+khodnevis ro gom kardam                                 I lost the fountain pen
+medaad nadari?                                          don't you have a pencil?
+goushi-t roo miz-e                                      your phone is on the table
+pool nadaaram                                           I don't have money
+lebaas-e jadid kharid-am                                I bought new clothes
+kafsh-am tang-e                                         my shoe is tight
+shaloar-et ghashang-e                                   your pants are beautiful
+pirahan-esh sefid-e                                     his shirt is white
+in zan ro mishnasi?                                     do you know this woman?
+oon mard koo?                                           where is that man?
+bache-haa daaran baazi mikonan                          the children are playing
+dokhtar-et kojast?                                      where is your daughter?
+pesar-esh miad                                          his son is coming
+pedar-am raft                                           my father left
+maadar-am injast                                        my mother is here
+baradar-et ro didam                                     I saw your brother
+khaahar-am daaneshjoo-e                                 my sister is a university student
+doost-am omad                                           my friend came
+shof-e khune kharaab-e                                  the house ceiling is broken
+diwaar ro rang kardam                                   I painted the wall
+aazaadi kheyli ghashang-e                               freedom is very beautiful
+zendegi sakht-e                                         life is hard
+javaab ro nemidoonam                                    I don't know the answer
+so'al daari?                                            do you have a question?
+dars-et tamoom shod?                                    is your lesson finished?
+baa raashte-ye khodet bejof                             look for your own major
+madrese tatile                                          the school is closed
+daaneshgaah door-e                                      the university is far
+man ketabkhaane miram                                   I am going to the library
+bazaar kheyli sholoogh-e                                the bazaar is very crowded
+maghaze baaz-e                                          the shop is open
+pol-e Tabi'at ghashang-e                                the Tabi'at bridge is beautiful
+daryaa aroom-e                                          the sea is calm
+kooh-e Damaavand boland-e                               mount Damavand is tall
+derakht saaye daare                                     the tree has shade
+gol ro boo kon                                          smell the flower
+khorshid miderakhshe                                    the sun is shining
+maah tu asemoon-e                                       the moon is in the sky
+setare-haa ghashang-an                                  the stars are beautiful
+asemoon aabi-e                                          the sky is blue
+baraan miad                                             rain is coming
+barf mibaare                                            snow is falling
+hava garm-e                                             the weather is hot
+sa'at chand-e?                                          what time is it?
+rooz-e khoobi daashte baashi                            have a good day
+shab be kheyr                                           good night
+haafeze-m za'eef-e                                      my memory is weak
+fekr-et kojast?                                         where is your thought?
+del-am barat tang shode                                 my heart has become tight for you
+sar-am dard mikone                                      my head hurts
+chashm-esh aabi-e                                       her eye is blue
+dast-et ro bede                                         give your hand
+paa-m dard mikone                                       my foot hurts
+moohaa-sh boland-e                                      her hair is long
+del-esh naazok-e                                        his stomach is sensitive
+shoor-e zendegi daare                                   he has excitement for life
+sedaa-t nemiad                                          your voice is not coming
+neghaa-sh ghashang-e                                    his look is beautiful
+naame ro ferestadam                                     I sent the letter
+daastaan kheyli toolani-e                               the story is very long
+film ro didi?                                           did you see the movie?
+ahang-e khoobi-e                                        it is a good song
+aks-et ghashang-e                                       your photo is beautiful
+sholaam kheyli sakht-e                                  my job is very difficult
+raees-e karkhaane raft                                  the factory boss left
+kaarmand-e khoobi-e                                     he is a good employee
+ostad-e maa omad                                        our professor came
+mo'allem ro didi?                                       did you see the teacher?
+dr ketab minevise                                       the doctor writes books
+parstaar injast                                         the nurse is here
+bimaar-e jadid koo?                                     where is the new patient?
+bimaarestaan door-e                                     the hospital is far
+daaru ro khordi?                                        did you take the medicine?
+safare khoobi daashte baashi                            have a good trip
+havaapeymaa neshast                                     the airplane landed
+hotel kheyli geran-e                                    the hotel is very expensive
+shahr-e Tehran bozorg-e                                 the city of Tehran is big
+keshvar-e maa Iran-e                                    our country is Iran
+zabaan-e farsi ro doost daaram                          I love the farsi language
+harf-et ro bezan                                        speak your word
+esm-et chie?                                            what is your name?
+fazaaye baaz ro doost daaram                            I like the open space
 
 
 `;
@@ -668,16 +790,16 @@ baraaye tarsidan be vaqte boosidan,                     for fearing at time of k
 baraaye khaaharam khaaharet khaaharaamoon,              for my sister your sister our sisters
 baraaye taqir-e maqzhaa ke poosidan,                    for change of brains that rotted
 baraaye sharmandegi baraaye bi-pooli,                   for shame for without money
-baraaye hasrat-e yek zendegi-e ma’muli,                         for regret of one life ordinary
+baraaye hasrat-e yek zendegi-e ma’muli,                 for regret of one life ordinary
 baraaye kudak-e zobaale-gard o aaruzuhaash,             for child of garbage-turner and dreams his
 baraaye in eqtesaad-e dastoori,                         for this economy command
 baraaye in havaa-ye aaloode,                            for this air polluted
 baraaye valiasr o derakhtaa-ye farsude,                 for valiasr and trees worn-out
 baraaye pirooz o ehtemaal-e enqeraazesh,                for pirouz and probability extinction his
-baraaye sag-haa-ye bi gonaah-e mamnoo’e,                        for dogs sinless forbidden
+baraaye sag-haa-ye bi gonaah-e mamnoo’e,                for dogs sinless forbidden
 baraaye gerye-haa-ye bi vaqfe,                          for cryings without pause
 baraaye tasvir-e tekraar-e in lahze,                    for image repetition this moment
-baraaye chehre’i ke mi-khande,                                  for face that laughs
+baraaye chehre’i ke mi-khande,                          for face that laughs
 baraaye daaneshaamuza baraaye aayande,                  for students for future
 baraaye in behesht-e ejbaari,                           for this paradise forced
 baraaye nokhbe-haa-ye zendaani,                         for elites imprisoned
