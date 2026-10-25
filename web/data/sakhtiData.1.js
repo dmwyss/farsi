@@ -337,5 +337,11 @@ let sakhtiData = {
 "man miram":{"sakhti":-10},
 "to miri":{"sakhti":-10},
 "maaa mirim":{"sakhti":-1},
-"oon mireh":{"sakhti":-1}
+"oon mireh":{"sakhti":-1},
+"shomaaa mirin":{"sakhti":-11},
+"oonaaa miran":{"sakhti":-10},
+"man raftam":{"sakhti":-10},
+"to rafti":{"sakhti":-10},
+"oon raft":{"sakhti":-10},
+"shomaa mikhorin":{"sakhti":0}
 };
