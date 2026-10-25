@@ -120,7 +120,7 @@ kalameh,                                                word
 daghighian,                                             exactly
 khaahesh mikonam,                                       yr welcome (request i-do)
 be salamati,                                            cheers
-khosh amadin,                                           welcome (lit happy you came)
+khosh omadin,                                           welcome (lit happy you came)
 sad dar sad                                             100 percent
 
 halazoon,                                               snail
@@ -206,7 +206,7 @@ hoselam sar rafte,                                      I am bored
 daaram *mimiram*,                                       having *dying*-me
 
 khosh-tip,                                              stylish/handsome/classy
-khosh amadin,                                           welcome (lit happy you came)
+khosh omadin,                                           welcome (lit happy you came)
 beham khosh *gozasht*,                                  I had a *good time*
 khosh-,                                                 good/pleasant
 kheili *khoshhaal*am dobaare mibinamet,                 I am *happy* to see you again
@@ -488,7 +488,7 @@ peeraahane rang e rooshan,                              shirt of color of bright
 gorbe moohe meshki o sefeed daare,                      the cat has black and white fur
 meeshe chaaghooro bedi lotfan?,                         can knife give please?
 meeshe jaaroo-barghiro rooshan koni,                    can you turn on the vacuum cleaner
-in jaaroo-barghiro kheyli bi-sedaa ast,                 this broom-electric very not-noisy is
+injaaroo-barghiro kheyli bi-sedaa ast,                 this broom-electric very not-noisy is
 em-saal khoshk-saalie,                                  this year is a drought
 
 dah beest see chel panjaah,                             count 10 to 50
@@ -610,7 +610,7 @@ Nazdik-tarin istgah behet kodume?                       nearest station to you w
 
 
 man khoshhaal hast-am                                   I happy -am
-man dirooz bimaar bood-am                               I yesterday sick was
+dirooz mariz bood-am                                    I yesterday sick was
 man vaqti varzesh mikon-am - garm mishav-am             I when exercise I do - hot I become
 man saal - e gozashteh mo'allem shod-am                 I year - of past teacher I bec-ame
 man har rooz varzesh mikon-am                           I every day exercise I do
@@ -621,13 +621,13 @@ man dishab takaaliif-am raa kard-am                     I last night homework my
 # https://www.youtube.com/watch?v=eEckaODaFqs
 hamchenin man sobh raa kollan motaale'e kardam          also I morning (object marker) completely studying did
 man chetor mitavaanam be shomaa komak konam             I how can to you help do
-man emrooz ba'd az zohr baraaye shenaa be estakhr raftam  I today after from noon for swimming to pool went
+man emrooz ba'd az zohr baraaye shenaa be estakhr raftam    I today after from noon for swimming to pool went
 va asr be sinamaa raftam                                and evening to cinema went
 vali lotfan ghabl az 5:30 biyaaied                      but please before from 5:30 come
 
 pasheh to ro nish zad                                   mosquito you sting hit
 
-inhaa robaathaayi ke shomaa donbaalash hastid nistand   these are not the droids you are looking for
+inhaa robaathaayi ke shomaa donbaalash hastid nistand    these are not the droids you are looking for
 sedaa aziyat-et mikone?                                 noise annoying you it does?
 
 ketab-aa roo-ye miz-an                                  the books are on the table
@@ -730,6 +730,11 @@ zabaan-e farsi ro doost daaram                          I love the farsi languag
 harf-et ro bezan                                        speak your word
 esm-et chie?                                            what is your name?
 fazaaye baaz ro doost daaram                            I like the open space
+
+dahan-ghorbaghe-ee-e khaki                              mouth-frog-of earth-colored
+biyaa berim                                             lets go
+berim?                                                  shall we go?
+joje ordake zasht ye ghoo-ye khoshgel shod              the ugly duckling became a beautiful swan
 
 
 `;

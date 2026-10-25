@@ -9,24 +9,24 @@ var g_isMuted = false;
 
 var aoTemplates = [
     "literal word for word translation of \"\" in farsi",
-    "how do you say \"\" in informal farsi",
+    "how do you say \"\" in informal farsi like friends talking in tehran",
     "etymology of the farsi word \"\"",
     /* "what does \"\" mean in farsi", */
     /* "conjugate the verb \"\" in informal farsi", */
     /* "give me a short, informal, rhyming sentence using the farsi word \"\"", */
     "translate some farsi words, if i spelled it wrong correct my farsi word or"
-        + " phrase. Translate to finglish with the \"ā\" \"â\" or alef character"
-        + " written as \"aa\" then a pipe character then the english literal word"
+        + " phrase. Translate to finglish with the \'ā\' \'â\' or alef character"
+        + " written as \'aa\' then a pipe character then the english literal word"
         + " for word translation. Each time I give you a new word give me all the"
         + " previous words listed above in alphabetical order.",
-    "Always give me farsi translations in informal farsi"
-        + " in lower case with the\"ā\" \"â\" or alef character written as aa."
+    "Always give me farsi translations in informal tehran farsi as if "
+        + " friends were talking with the\'ā\' \'â\' or alef character written as aa."
         + " Instead of commas use a space then - then a space."
         + " Write the farsi letter ayn as an apostrophe, for example"
         + " baadi must be written as ba'adi."
         + " Give me the farsi transliterated into latin script,"
-        + " then a pipe character then on the same line, then the literal"
-        + " english translation also all in lowercase except for the word I."
+        + " then a pipe character then on the same line the literal"
+        + " english translation. Write everything in lowercase except for proper nouns."
 ]
 function selectQuoteContent(myField) {
     myField.focus();
