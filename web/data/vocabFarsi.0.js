@@ -735,6 +735,7 @@ dahan-ghorbaghe-ee-e khaki                              mouth-frog-of earth-colo
 biyaa berim                                             lets go
 berim?                                                  shall we go?
 joje ordake zasht ye ghoo-ye khoshgel shod              the ugly duckling became a beautiful swan
+khoone-ye jenni                                         house of ghosts
 
 
 `;
