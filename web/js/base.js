@@ -243,11 +243,9 @@ const vocab = {
             sOnClick: "vocab.setTestMode(this);"
         };
         let sButtons = ""
-            //+ this.generateOptionBarOLD()
+            + timeBar.getHtml()
             + utilCustomGuiElements.generateOptionBar(oOptionBarSettingsGroop)
-            + utilCustomGuiElements.generateOptionBar(oOptionBarSettingsTestMode)
-            ;
-            //+ "<button id=\"toggleTestMode\" onclick=\"vocab.toggleTestMode();\">mode:" + vocab.userSettings.testMode + "</button>";
+            + utilCustomGuiElements.generateOptionBar(oOptionBarSettingsTestMode);
         this.uiButtonRibbon.innerHTML = sButtons;
     },
     renderVocabTable: function () {
@@ -493,9 +491,16 @@ const sakhtBase = {
     getStarOo: function(sKey, oO) {
         let sStar = "&star;";
         let sCss = "off";
-        if ((oO.hasOwnProperty("aiStar")) && (oO.aiStar.includes(vocab.userSettings.iIdStarCurr))) {
-            sStar = "&starf;";
-            sCss = "on";
+        if (oO.hasOwnProperty("aiStar")) {
+            if (oO.aiStar.includes(vocab.userSettings.iIdStarCurr)) {
+                // In the current list.
+                sStar = "&starf;";
+                sCss = "on";
+            } else {
+                // This is in a list, but not the current list.
+                // Fill the star, but greyed out.
+                sStar = "&starf;";
+            }
         }
         let sOut = "<div role=\"star\" onclick=\"sakhtBase.doStarClick(\'" + sKey + "\', this);\" class=\"" + sCss + "\">";
         sOut += sStar + "</div>";

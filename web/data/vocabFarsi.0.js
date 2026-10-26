@@ -632,7 +632,6 @@ sedaa aziyat-et mikone?                                 noise annoying you it do
 
 ketab-aa roo-ye miz-an                                  the books are on the table
 in ghaza kheyli khoshmaze-st                            this food is very delicious
-aab-e khonak mikhwaam                                   I want cold water
 noon kharid-i?                                          did you buy bread?
 khune-ye maa injaa-st                                   our house is here
 shahr kheyli sholoogh-e                                 the city is very crowded
@@ -640,10 +639,9 @@ miz ro pak kon                                          clean the table
 sandali ro biar                                         bring the chair
 in dar baste-st                                         this door is closed
 panjere ro baaz kon                                     open the window
-mishi roo takht bekhwaabi                               you can sleep on the bed
 otogh-e man koochik-e                                   my room is small
 in kooche kheyli khofnaak-e                             this alley is very scary
-khiabaan sholoogh-e                                     the street is crowded
+khiaboon sholoogh-e                                     the street is crowded
 baa mashin miram                                        I go by car
 ghataar key mirese?                                     when does the train arrive?
 havaapeyma boland shod                                  the airplane took off
@@ -667,13 +665,12 @@ baradar-et ro didam                                     I saw your brother
 khaahar-am daaneshjoo-e                                 my sister is a university student
 doost-am omad                                           my friend came
 shof-e khune kharaab-e                                  the house ceiling is broken
-diwaar ro rang kardam                                   I painted the wall
+divaar ro rang kardam                                   I painted the wall
 aazaadi kheyli ghashang-e                               freedom is very beautiful
 zendegi sakht-e                                         life is hard
 javaab ro nemidoonam                                    I don't know the answer
 so'al daari?                                            do you have a question?
 dars-et tamoom shod?                                    is your lesson finished?
-baa raashte-ye khodet bejof                             look for your own major
 madrese tatile                                          the school is closed
 daaneshgaah door-e                                      the university is far
 man ketabkhaane miram                                   I am going to the library
@@ -711,19 +708,18 @@ daastaan kheyli toolani-e                               the story is very long
 film ro didi?                                           did you see the movie?
 ahang-e khoobi-e                                        it is a good song
 aks-et ghashang-e                                       your photo is beautiful
-sholaam kheyli sakht-e                                  my job is very difficult
+shoghl-am kheyli sakht-e                                my job is very difficult
 raees-e karkhaane raft                                  the factory boss left
 kaarmand-e khoobi-e                                     he is a good employee
 ostad-e maa omad                                        our professor came
 mo'allem ro didi?                                       did you see the teacher?
-dr ketab minevise                                       the doctor writes books
 parstaar injast                                         the nurse is here
 bimaar-e jadid koo?                                     where is the new patient?
-bimaarestaan door-e                                     the hospital is far
+bimaarestaan-e Sandringham door nist                    the hospital is far
 daaru ro khordi?                                        did you take the medicine?
 safare khoobi daashte baashi                            have a good trip
 havaapeymaa neshast                                     the airplane landed
-hotel kheyli geran-e                                    the hotel is very expensive
+hotel kheyli geroon-e                                   the hotel is very expensive
 shahr-e Tehran bozorg-e                                 the city of Tehran is big
 keshvar-e maa Iran-e                                    our country is Iran
 zabaan-e farsi ro doost daaram                          I love the farsi language
@@ -737,6 +733,7 @@ berim?                                                  shall we go?
 joje ordake zasht ye ghoo-ye khoshgel shod              the ugly duckling became a beautiful swan
 khoone-ye jenni                                         house of ghosts
 
+morgh-e hamsaayeh ghaaz-e                                 the neighbor's chicken is a goose
 
 `;
 
@@ -767,11 +764,12 @@ Plural Possessive Suffixes
 05 morgh-e daryaa-i
 06 chisi
 07 shotor morgh
-08 begoo
-09 chahaar
-10 boolooberi
-11 ezhdehaa
-12
+08 hamsāyeh
+09 begoo
+10 chahaar
+11 boolooberi
+12 ezhdehaa
+
 
 morgh-e daryaa-i,                                       chicken of the sea
 morgh-e teshne,                                         thirst bird - flamingo
