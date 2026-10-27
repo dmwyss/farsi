@@ -733,8 +733,8 @@ berim?                                                  shall we go?
 joje ordake zasht ye ghoo-ye khoshgel shod              the ugly duckling became a beautiful swan
 khoone-ye jenni                                         house of ghosts
 
-morgh-e hamsaayeh ghaaz-e                                 the neighbor's chicken is a goose
-
+morgh-e hamsaayeh ghaaz-e                               the neighbor's chicken is a goose
+khune-ye lulu                                           house-of monsters
 `;
 
 /*

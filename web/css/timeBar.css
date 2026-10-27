@@ -1,0 +1,200 @@
+
+#timeBar {
+    position: relative;
+        margin-top: 10px;
+
+}
+#timeBar .timer-card {
+    border: 1px solid var(--color-mainButtonBorder);
+    background-color: #1c2128;
+    XXXborder: 1px solid #444c56;
+    border-radius: 5px;
+    XXXmax-width: 125px;
+    padding: 7px 0px 0px 0px;
+    position: absolute;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    top: 0px;
+    right: 0px;
+}
+#timeBar .header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0;
+    transition: margin-bottom 0.3s ease;
+    cursor:pointer;
+}
+#timeBar .timer-card:not(.contracted) .header-row {
+}
+#timeBar .time-left {
+    font-size: 12pt;
+    font-weight: 100;
+    color: #5d6a78;
+    line-height: 1;
+    transition: color 0.3s ease;
+    width: 140px;
+    text-align: center;
+}
+#timeBar .running .time-left {
+    color: #03a9f4;
+}
+#buttonRibbon #timeBar .toggle-btn {
+    background: #444c5666;
+    border: 1px solid #444c5655;
+    color: #adbac7;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 4px 8px;
+    font-size: 12px;
+    height: fit-content;
+    transition: all 0.2s ease;
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    min-width: 20px;
+    margin: 0;
+}
+#buttonRibbon #timeBar .toggle-btn:hover {
+    background: #444c56;
+    border: 1px solid #444c56;
+}
+#timeBar .toggle-btn:hover {
+    background-color: #22272e;
+    color: #f0f6fc;
+    border-color: #58a6ff;
+}
+#timeBar .collapsible-content {
+    max-height: 500px;
+    opacity: 1;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out, opacity 0.25s ease-in-out, margin-top 0.3s ease;
+}
+#timeBar .timer-card.contracted .collapsible-content {
+    max-height: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+#timeBar .inputs-inline {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 0px;
+    margin-top: 10px;
+    padding: 0 8px;
+}
+#timeBar .input-group {
+    display: flex;
+    flex-direction: column;
+}
+#timeBar label {
+    font-size: 12px;
+    color: #adbac7;
+    margin-bottom: 4px;
+    font-weight: 500;
+}
+#timeBar input[type="text"], input[type="number"] {
+    width: 60px;
+    padding: 6px;
+    background-color: #22272e;
+    border: 1px solid #444c56;
+    color: #9AB;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: monospace;
+    text-align: center;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+#timeBar input:focus {
+    outline: none;
+    border-color: #58a6ff;
+    box-shadow: 0 0 0 2px rgba(88, 166, 255, 0.15);
+}
+#timeBar .action-btn {
+    width: 80%;
+    margin: 6px 11px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    /* font-weight: bold; */
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+#timeBar .action-btn:active {
+    transform: scale(0.98);
+}
+#timeBar .btn-start {
+    background-color: #456;
+    color: #ffffff;
+}
+#timeBar .btn-start:hover {
+    background-color: #2ea043;
+}
+#timeBar .btn-stop {
+    background-color: #ff7e03;
+    color: #ffffff;
+}
+#timeBar .btn-stop {
+    background-color: red; /* Fallback and initial color */
+    color: white;
+    XXXXpadding: 6px 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    /* Animation shorthand: name | duration | timing-function | iteration-count */
+    animation: colorChange 2s ease-in-out infinite;
+}
+@keyframes colorChange {
+  0% {
+    background-color: #456;
+  }
+  50% {
+    background-color: #579;
+  }
+  100% {
+    background-color: #456;
+  }
+}
+#timeBar .btn-stop:hover {
+    background-color: #f85149;
+}
+#timeBar .stats {
+    XXXmargin-top: 11px;
+    padding: 2px 16px 18px 11px;
+    XXXborder-top: 1px solid #444c56;
+    font-size: 14px;
+    color: #9aB;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+#timeBar .stats span {
+    color: #DEF;
+    font-weight: 200;
+    transition: color 0.2s ease;
+}
+@keyframes flashSuccess {
+    0% { background-color: #1c2128; }
+    50% { background-color: #48B; }
+    100% { background-color: #1c2128; }
+}
+#timeBar .flash-active {
+    animation: flashSuccess 0.8s ease-out;
+}
+
+/* ProgressBar * * * * * * * * * * * * */
+#timeBar #progressBarWrap {
+    XXXwidth: 100%;
+    height: 2px;
+    background-color: #456;
+    margin-top: 7px;
+    z-index: 9999;
+}
+#timeBar #progressBarBar {
+    height: 100%;
+    width: 0%; /* Starts at 0% */
+    background-color: #F08;
+    background-color: #05aaf4;
+    transition: width 0.2s ease; /* Smooth transition when updating */
+}
+/* ProgressBar * * * * * * * * * * * * */

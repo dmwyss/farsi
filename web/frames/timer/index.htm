@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interval Timer</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 20px;
+            background-color: #252d36;
+            color: #f0f6fc;
+        }
+        .timer-card {
+            background-color: #1c2128;
+            XXXborder: 1px solid #444c56;
+            border-radius: 8px;
+            max-width: 125px;
+            padding: 10px 15px 15px 15px;
+            position: fixed;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            top: 20px;
+            right: 20px;
+        }
+        .header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0;
+            transition: margin-bottom 0.3s ease;
+        }
+        .timer-card:not(.contracted) .header-row {
+        }
+        .time-left {
+            font-size: 35px;
+            font-weight: 100;
+            color: #5d6a78;
+            line-height: 1;
+            transition: color 0.3s ease;
+        }
+        .running .time-left {
+            color: #03a9f4;
+        }
+        .toggle-btn {
+            background: none;
+            border: 1px solid #444c56;
+            color: #adbac7;
+            border-radius: 4px;
+            cursor: pointer;
+            padding: 4px 8px;
+            font-size: 12px;
+            height: fit-content;
+            transition: all 0.2s ease;
+            position: absolute;
+            top: 5px;
+            right: 5px;
+        }
+        .toggle-btn:hover {
+            background-color: #22272e;
+            color: #f0f6fc;
+            border-color: #58a6ff;
+        }
+        .collapsible-content {
+            max-height: 500px;
+            opacity: 1;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out, opacity 0.25s ease-in-out, margin-top 0.3s ease;
+        }
+        .timer-card.contracted .collapsible-content {
+            max-height: 0;
+            opacity: 0;
+            pointer-events: none;
+        }
+        .inputs-inline {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 15px;
+            margin-top: 10px;
+        }
+        .input-group {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            font-size: 12px;
+            color: #adbac7;
+            margin-bottom: 4px;
+            font-weight: 500;
+        }
+        input[type="text"], input[type="number"] {
+            width: 60px;
+            padding: 6px;
+            background-color: #22272e;
+            border: 1px solid #444c56;
+            color: #9AB;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-family: monospace;
+            text-align: center;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        input:focus {
+            outline: none;
+            border-color: #58a6ff;
+            box-shadow: 0 0 0 2px rgba(88, 166, 255, 0.15);
+        }
+        .action-btn {
+            width: 100%;
+            padding: 6px 10px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            /* font-weight: bold; */
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+        }
+        .action-btn:active {
+            transform: scale(0.98);
+        }
+        .btn-start {
+            background-color: #456;
+            color: #ffffff;
+        }
+        .btn-start:hover {
+            background-color: #2ea043;
+        }
+        .btn-stop {
+            background-color: #ff7e03;
+            color: #ffffff;
+        }
+
+
+
+        .btn-stop {
+            background-color: red; /* Fallback and initial color */
+            color: white;
+            XXXXpadding: 6px 10px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+
+            /* Animation shorthand: name | duration | timing-function | iteration-count */
+            animation: colorChange 2s ease-in-out infinite;
+        }
+
+        @keyframes colorChange {
+          0% {
+            background-color: #456;
+          }
+          50% {
+            background-color: #579;
+          }
+          100% {
+            background-color: #456;
+          }
+        }
+        .btn-stop:hover {
+            background-color: #f85149;
+        }
+        .stats {
+            XXXmargin-top: 11px;
+            padding-top: 11px;
+            XXXborder-top: 1px solid #444c56;
+            font-size: 14px;
+            color: #9aB;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .stats span {
+            color: #DEF;
+            font-weight: 200;
+            transition: color 0.2s ease;
+        }
+        
+        @keyframes flashSuccess {
+            0% { background-color: #1c2128; }
+            50% { background-color: #48B; }
+            100% { background-color: #1c2128; }
+        }
+        .flash-active {
+            animation: flashSuccess 0.8s ease-out;
+        }
+
+        /* ProgressBar * * * * * * * * * * * * */
+        #progressBarWrap {
+            width: 100%;
+            height: 2px;
+            background-color: #456;
+            margin-top: 7px;
+            z-index: 9999;
+        }
+        #progressBarBar {
+            height: 100%;
+            width: 0%; /* Starts at 0% */
+            background-color: #F08;
+            background-color: #05aaf4;
+            transition: width 0.2s ease; /* Smooth transition when updating */
+        }
+        /* ProgressBar * * * * * * * * * * * * */
+    </style>
+</head>
+<body>
+
+<div class="timer-card" id="timerCard">
+    <div class="header-row">
+        <div class="time-left" id="clockDisplay">00:00</div>
+        <button class="toggle-btn" id="toggleBtn" onclick="toggleCardLayout()">--</button>
+    </div>
+    <div id="progressBarWrap">
+        <div id="progressBarBar"></div>
+    </div>
+    <div class="collapsible-content" id="collapsibleArea">
+        <div class="inputs-inline">
+            <div class="input-group">
+                <label for="timeInput">Duration</label>
+                <input type="text" id="timeInput" value="5:00">
+            </div>
+            <div class="input-group">
+                <label for="repeatsInput">Repeats</label>
+                <input type="number" id="repeatsInput" value="1" min="1">
+            </div>
+        </div>
+
+        <button id="actionBtn" class="action-btn btn-start" onclick="handleActionClick()">Start</button>
+
+        <div class="stats">
+            <div><span id="counterDisplay">0</span> completed</div>
+            <div><span id="totalSecondsDisplay">0</span> sec elapsed</div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    let countdownIntervalId = null;
+    let initialDurationInSeconds = 0;
+    let currentSecondsRemaining = 0;
+    
+    let targetRepeatLimit = 1;
+    let successfulIntervalsCount = 0;
+    let cumulativeElapsedSecondsCount = 0;
+
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    function playBeepSound(iFreq=880) {
+        const oscillator = audioCtx.createOscillator();
+        const gainNode = audioCtx.createGain();
+        oscillator.connect(gainNode);
+        gainNode.connect(audioCtx.destination);
+        
+        oscillator.type = 'sine';
+        oscillator.frequency.setValueAtTime(iFreq, audioCtx.currentTime);
+        gainNode.gain.setValueAtTime(0.5, audioCtx.currentTime);
+        
+        oscillator.start();
+        oscillator.stop(audioCtx.currentTime + 0.2);
+    }
+
+    window.addEventListener("DOMContentLoaded", init);
+
+    function init() {
+        const cachedConfig = localStorage.getItem("timerSettings");
+        if (cachedConfig) {
+            try {
+                const parsed = JSON.parse(cachedConfig);
+                if (parsed && parsed.duration) {
+                    document.getElementById("timeInput").value = parsed.duration;
+                    document.getElementById("repeatsInput").value = parsed.repeats;
+                }
+            } catch (e) {
+                console.error("Error parsing stored config data", e);
+            }
+        }
+        resetDisplayToInputs();
+    }
+
+    function resetDisplayToInputs() {
+        const rawTimeValue = document.getElementById("timeInput").value.trim();
+        let seconds = 0;
+        if (rawTimeValue.includes(":")) {
+            const segments = rawTimeValue.split(":");
+            seconds = (parseInt(segments[0], 10) || 0) * 60 + (parseInt(segments[1], 10) || 0);
+        } else {
+            seconds = parseInt(rawTimeValue, 10) || 0;
+        }
+        updateClockDisplay(seconds);
+        document.getElementById("counterDisplay").innerText = "0";
+        document.getElementById("totalSecondsDisplay").innerText = "0";
+    }
+
+    function handleActionClick() {
+        if (countdownIntervalId) {
+            stopTimerEngine();
+        } else {
+            startTimerEngine();
+        }
+    }
+
+    function startTimerEngine() {
+        resetDisplayToInputs();
+
+        const rawTimeValue = document.getElementById("timeInput").value.trim();
+        const rawRepeatsValue = parseInt(document.getElementById("repeatsInput").value, 10);
+
+        targetRepeatLimit = isNaN(rawRepeatsValue) || rawRepeatsValue < 1 ? 1 : rawRepeatsValue;
+        successfulIntervalsCount = 0;
+        cumulativeElapsedSecondsCount = 0;
+
+        localStorage.setItem("timerSettings", JSON.stringify({ duration: rawTimeValue, repeats: rawRepeatsValue }));
+
+        if (rawTimeValue.includes(":")) {
+            const timeSegments = rawTimeValue.split(":");
+            const minutesParsed = parseInt(timeSegments[0], 10) || 0;
+            const secondsParsed = parseInt(timeSegments[1], 10) || 0;
+            initialDurationInSeconds = (minutesParsed * 60) + secondsParsed;
+        } else {
+            initialDurationInSeconds = parseInt(rawTimeValue, 10) || 0;
+        }
+
+        if (initialDurationInSeconds <= 0) {
+            alert("Please enter a valid timeframe duration greater than zero.");
+            return;
+        }
+
+        currentSecondsRemaining = initialDurationInSeconds;
+        
+        const card = document.getElementById("timerCard");
+        card.classList.add("running");
+
+        const actionBtn = document.getElementById("actionBtn");
+        actionBtn.innerText = "Stop";
+        actionBtn.className = "action-btn btn-stop";
+
+        updateGuiDisplays();
+        countdownIntervalId = setInterval(executeTimerTick, 1000);
+    }
+
+    function stopTimerEngine() {
+        if (countdownIntervalId) {
+            clearInterval(countdownIntervalId);
+            countdownIntervalId = null;
+        }
+        
+        const card = document.getElementById("timerCard");
+        card.classList.remove("running");
+
+        const actionBtn = document.getElementById("actionBtn");
+        actionBtn.innerText = "Start";
+        actionBtn.className = "action-btn btn-start";
+        resetDisplayToInputs();
+    }
+
+    function triggerFlashEffect() {
+        const card = document.getElementById("timerCard");
+        card.classList.remove("flash-active");
+        void card.offsetWidth;
+        card.classList.add("flash-active");
+    }
+
+    function executeTimerTick() {
+        if (currentSecondsRemaining > 0) {
+            currentSecondsRemaining--;
+            cumulativeElapsedSecondsCount++;
+            updateGuiDisplays();
+        }
+
+        if (currentSecondsRemaining === 0) {
+            playBeepSound();
+            triggerFlashEffect();
+            successfulIntervalsCount++;
+            document.getElementById("counterDisplay").innerText = successfulIntervalsCount;
+
+            if (successfulIntervalsCount >= targetRepeatLimit) {
+                clearInterval(countdownIntervalId);
+                countdownIntervalId = null;
+                
+                const card = document.getElementById("timerCard");
+                card.classList.remove("running");
+
+                const actionBtn = document.getElementById("actionBtn");
+                actionBtn.innerText = "Start";
+                actionBtn.className = "action-btn btn-start";
+                
+                setTimeout(() => { playBeepSound(1000); }, 400);
+                setTimeout(() => { playBeepSound(1400); }, 800);
+            } else {
+                currentSecondsRemaining = initialDurationInSeconds;
+                updateGuiDisplays();
+            }
+        }
+    }
+
+    function updateGuiDisplays() {
+        updateClockDisplay(currentSecondsRemaining);
+        document.getElementById("totalSecondsDisplay").innerText = cumulativeElapsedSecondsCount;
+        let iTotSec = initialDurationInSeconds * targetRepeatLimit;
+        let iProgPerc = Math.round((cumulativeElapsedSecondsCount / iTotSec) * 100);
+        progressBarUpdate(iProgPerc);
+    }
+
+    function updateClockDisplay(totalSeconds) {
+        const displayMinutes = Math.floor(totalSeconds / 60);
+        const displaySeconds = totalSeconds % 60;
+        document.getElementById("clockDisplay").innerText = 
+            `${displayMinutes.toString().padStart(2, '0')}:${displaySeconds.toString().padStart(2, '0')}`;
+    }
+
+    function toggleCardLayout() {
+        const card = document.getElementById("timerCard");
+        const toggleBtn = document.getElementById("toggleBtn");
+        
+        card.classList.toggle("contracted");
+        
+        if (card.classList.contains("contracted")) {
+            toggleBtn.innerHTML = "+";
+        } else {
+            toggleBtn.innerText = "--";
+        }
+    }
+
+function progressBarUpdate(iProgress) {
+    // Ensure the input stays between 0 and 100
+    const percentage = Math.min(Math.max(iProgress, 0), 100);
+    // Update the width of the progress bar
+    document.getElementById('progressBarBar').style.width = percentage + '%';
+}
+
+
+function floatInWindow() {
+    const url = document.location.href;
+    const windowFeatures = 'width=195,height=265,menubar=no,toolbar=no,location=no,status=no,resizable=yes,scrollbars=yes';
+    window.open(url, '_blank', windowFeatures);
+}
+</script>
+
+
+<button onclick="floatInWindow()" style="background-color:#1c2128;border-radius:8px; border:none;color:#AAA;padding:20px;box-shadow: 0 4px 12px #0008;">Float In Window</button>
+
+</body>
+</html>

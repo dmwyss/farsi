@@ -644,5 +644,6 @@ let sakhtiData = {
 "biyaa berim":{"sakhti":-50},
 "berim":{"sakhti":-60},
 "joje ordake zasht ye ghoo-ye khoshgel shod":{"sakhti":-1},
-"morgh-e hamsaayeh ghaaz-e__1":{"sakhti":-70,"aiStar":[4]}
+"morgh-e hamsaayeh ghaaz-e__1":{"sakhti":-70,"aiStar":[4]},
+"khune-ye lulu":{"sakhti":-60}
 };
