@@ -662,7 +662,11 @@ window.addEventListener('keyup', (event) => {
         sakhtBase.doStarClickFromKeyEvent();
     } else if (event.key === "Enter") {
         event.preventDefault();
-        vocab.testState.next(event.altKey);
+        if (vocab.userSettings.testMode === "test") {
+            vocab.testState.next(event.altKey);
+        } else {
+            vocab.next(1);
+        }
     }
 });
 const utilJson = {

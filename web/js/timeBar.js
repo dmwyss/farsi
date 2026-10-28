@@ -168,8 +168,15 @@ const timeBar = {
                 actionBtn.innerText = "Start";
                 actionBtn.className = "action-btn btn-start";
 
-                setTimeout(() => { this.playBeepSound(1000); }, 400);
-                setTimeout(() => { this.playBeepSound(1400); }, 800);
+                setTimeout(() => {
+                    this.playBeepSound(1000);
+                    document.body.style.backgroundColor = "#456";
+                }, 400);
+                //setTimeout(() => { }, 600);
+                setTimeout(() => {
+                    this.playBeepSound(1400);
+                    document.body.style.backgroundColor = "";
+                }, 800);
             } else {
                 this.currentSecondsRemaining = this.initialDurationInSeconds;
                 this.updateGuiDisplays();

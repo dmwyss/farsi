@@ -513,7 +513,6 @@ nish-e yek aroos-e daryaayi                             sting/bite-of a bride-of
 besyaar dardnaak nabood                                 very painful not-was
 neseraani nabaash                                       nervous not-be
 soorat-e khoshgeli daari                                face beautiful have-you
-to mahboob-e mani                                       you favorite me-are
 pishbiniye havaaye fardaa chiye?                        forecast weather tomorrow how-is?
 biyaa berim sahel                                       come go-we beach
 cheraagh ghermez                                        light red (traffic light)
@@ -750,63 +749,60 @@ una be sinama raftan                                    they to cinema went-they
 be restoraan rafti?                                     to restaurant went-you
 are, be restoraan raftam                                yes, to restaurant went-I
 na, be restoraan naraftam                               no, to restaurant not-went-I
-emruz chikar kardin?                                    today what work do-you
+emruz chikar kardin?                                    today what work do-you-all
 hich kari                                               no work
 kardan                                                  to do
-emruz hich kari nakardam                                today nothing ate-I
+emruz hich kari nakardam                                today none work not-did-I
 chon                                                    because
 chon inja saat shish-e                                  because here it is 06:00
 fahmidam                                                got it / I understood
 bidar shodan                                            to wake up
-saat e chand bidar shodin?                              what time woke became-you?
+saat e chand bidar shodin?                              what time woke became-you-all?
 emruz saat e shish bidar shodam                         today at 6 woke became-I
-sobhane khordin?                                        breakfast ate-you?
-na - sobhane nakhordam                                  no - breakfast not-did-I
+sobhane khordin?                                        breakfast ate-you-all?
+na, sobhane nakhordam                                   no, breakfast not-ate-I
 varzesh kardan                                          exercise / to work out
-varzesh kardin?                                         exercise did-you?
-na, vali diruz varzesh kardam                           no - but yesterday exercise did-I
-diruz - saat e chand varzesh kardin?                    yesterday what time exercised you?
-az saat e chand ta saat e chand?                        from what time until what time?
-tu khunam varzesh kardam                                at home-you exercise did-you
-ba ki varzesh kardin?                                   with whom exercise did-you?
-tanhayi                                                 alone
-tanhayi varzesh kardam                                  alone workout did
+varzesh kardin?                                         exercise did-you-all?
+na, vali diruz varzesh kardam                           no, but yesterday exercise did-I
+diruz, saat e chand varzesh kardin?                     yesterday what time exercised you-all?
+az saat e chand - taa saat e chand?                     from what time - until what time?
+too khunam varzesh kardam                               at home-my exercise did-I
+ba ki varzesh kardin?                                   with whom exercise did-you-all?
+tanhaayi                                                alone
+tanhaayi varzesh kardam                                 alone workout did-I
 nahar                                                   lunch
-diruz koja nahar khordin?                               yesterday where lunch ate-you?
-diruz ba ki nahar khordin?                              yesterday with whom lunch ate-you?
+diruz koja nahar khordin?                               yesterday where lunch ate-you-all?
+diruz ba ki nahar khordin?                              yesterday with whom lunch ate-you-all?
 too restoraan nahar nakhordam                           in restaurant lunch not-ate-I
-koja nahar khordin?                                     where lunch ate-youall
-tu khunam nahar khordam                                 you home-yours lunch ate
+koja nahar khordin?                                     where lunch ate-you-all
+too khunam nahar khordam                                in home-mine lunch ate-I
 mishe dobare begin?                                     can two-time say?
 
 
 
 
+por-kaar mesele zanboor                                 busy like bee
+jedi migi?!?                                            serious speaking?!?
+chegadr jaleb                                           how interesting
+yani chi?                                               meaning what?
+raast mig-i                                             truth tell-you (true that!)
+vaay!                                                   whoa!
 
-
-
+khoshhaal-am az didan-et                                happy-am to see-you
+naghshehaaye setaare-ye marg ro peyda kon               plans star of death (object marker) find do
+kaado vaas-at chi bekhar-am                             gift for-you what buy-I
+baayad beram baashgaah tamrin konam                     must go-I gym practice do-I
+kheyli be lego alaagheh daaram                          very to lego interest have
+man dar edaare-ye baank kaar mikonam                    I in one office of bank work i do
+noore in ataagh kheili kame                             light this room very insufficient
+berim estakhr shenaa kon-im                             go pool swim do-we
+too jiib-ame                                            in pocket-mine
 
 
 `;
 
 /*
 
--am                                                     my
--et                                                     your
--esh                                                    his/hers/its
--emoon                                                  our
--etoon                                                  your
--eshoon                                                 their
-
-Singular Possessive Suffixes
--am     My / Mine           khooneh-am      My house
--et     Your / Yours        khooneh-et      Your house
--esh    His / Her / Its     khooneh-esh     His/Her house
-
-Plural Possessive Suffixes
--emoon   Our / Ours         khooneh-moon    Our house
--etoon   Your / Yours       khooneh-toon    Your house
--eshoon  Their / Theirs     khooneh-shoon   Their house
 
 
 01 kharmoosh
@@ -816,7 +812,7 @@ Plural Possessive Suffixes
 05 morgh-e daryaa-i
 06 chisi
 07 shotor morgh
-08 hamsāyeh
+08 hamsaayeh
 09 begoo
 10 chahaar
 11 boolooberi
@@ -839,6 +835,17 @@ shomaa daar-id baa pedar-etuun sohbat mi-kon-in         you are doing conversati
 oonaa daar-an baa hamsaaye-shuun sohbat mi-kon-an       they are doing conversation with their neighbor
 
 
+Are these important enough to be listed?
+---
+in raah ghalat-e                                        this way wrong-is
+nazar to chi-e?                                         idea you what-is
+jaade bast ast                                          road is closed
+tasmim-et dorost bood                                   decision-your correct was
+pishnehaade behtari nadaaram                            suggestion better i don't have
+--
+jamiat                                                  population
+dolat                                                   government
+--
 
 
 baraaye tooye kuche raqsidan                            for inside alley dancing
