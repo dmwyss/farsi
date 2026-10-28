@@ -28,8 +28,8 @@ const timeBar = {
             <div id="timeBar">
                 <div class="timer-card contracted" id="timerCard">
                     <div class="header-row">
-                        <div class="time-left" id="clockDisplay" onclick="timeBar.handleActionClick()">00:00</div>
-                        <button class="toggle-btn" id="toggleBtn" onclick="timeBar.toggleCardLayout()">+</button>
+                        <div class="time-left" id="clockDisplay" onclick="timeBar.handleActionClick();">00:00</div>
+                        <button class="toggle-btn" id="toggleBtn" onclick="timeBar.toggleCardLayout();">+</button>
                     </div>
                     <div id="progressBarWrap">
                         <div id="progressBarBar"></div>
@@ -45,12 +45,12 @@ const timeBar = {
                                 <input type="number" id="repeatsInput" value="1" min="1">
                             </div>
                         </div>
-                        <button id="actionBtn" class="action-btn btn-start" onclick="timeBar.handleActionClick()">Start</button>
+                        <button id="actionBtn" class="action-btn btn-start" onclick="timeBar.handleActionClick();">Start</button>
                         <div class="stats">
                             <div><span id="counterDisplay">0</span> completed</div>
                             <div><span id="totalSecondsDisplay">0</span> sec elapsed</div>
                         </div>
-                        <button id="floatBtn" class="" onclick="timeBar.floatInWindow()">Float</button>
+                        <button id="floatBtn" class="" onclick="timeBar.floatInWindow();timeBar.toggleCardLayout();">Float</button>
                     </div>
                 </div>
             </div>
@@ -87,6 +87,7 @@ const timeBar = {
             this.stopTimerEngine();
         } else {
             this.startTimerEngine();
+            this.toggleCardLayout();
         }
     },
     startTimerEngine: function() {
@@ -179,8 +180,10 @@ const timeBar = {
         this.updateClockDisplay(this.currentSecondsRemaining);
         document.getElementById("totalSecondsDisplay").innerText = this.cumulativeElapsedSecondsCount;
         let iTotSec = this.initialDurationInSeconds * this.targetRepeatLimit;
-        let iProgPerc = Math.round((this.cumulativeElapsedSecondsCount / iTotSec) * 100);
-        this.progressBarUpdate(iProgPerc);
+        let iPercent = Math.round((this.cumulativeElapsedSecondsCount / iTotSec) * 100);
+        // Ensure the input stays between 0 and 100
+        iPercent = Math.min(Math.max(iPercent, 0), 100);
+        this.progressBarUpdate(iPercent);
     },
     updateClockDisplay: function(totalSeconds) {
         const displayMinutes = Math.floor(totalSeconds / 60);
@@ -197,14 +200,12 @@ const timeBar = {
         if (card.classList.contains("contracted")) {
             toggleBtn.innerHTML = "+";
         } else {
-            toggleBtn.innerText = "--";
+            toggleBtn.innerHTML = "&times;";
         }
     },
-    progressBarUpdate: function(iProgress) {
-        // Ensure the input stays between 0 and 100
-        const percentage = Math.min(Math.max(iProgress, 0), 100);
+    progressBarUpdate: function(iPercent) {
         // Update the width of the progress bar
-        document.getElementById('progressBarBar').style.width = percentage + '%';
+        document.getElementById('progressBarBar').style.width = iPercent + '%';
     },
     floatInWindow: function() {
         //const url = document.location.href;

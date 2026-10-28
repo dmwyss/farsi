@@ -8,7 +8,7 @@
     border: 1px solid var(--color-mainButtonBorder);
     background-color: #1c2128;
     XXXborder: 1px solid #444c56;
-    border-radius: 5px;
+    border-radius: 5px 5px 0 0;
     XXXmax-width: 125px;
     padding: 7px 0px 0px 0px;
     position: absolute;
@@ -45,15 +45,16 @@
     color: #adbac7;
     border-radius: 4px;
     cursor: pointer;
-    padding: 4px 8px;
-    font-size: 12px;
+    padding: 1px 5px;
     height: fit-content;
     transition: all 0.2s ease;
     position: absolute;
-    top: 1px;
-    right: 1px;
+    top: 4px;
+    right: 4px;
     min-width: 20px;
     margin: 0;
+    font-size: 17px;
+    line-height: 17px;
 }
 #buttonRibbon #timeBar .toggle-btn:hover {
     background: #444c56;
@@ -160,7 +161,7 @@
 }
 #timeBar .stats {
     XXXmargin-top: 11px;
-    padding: 2px 16px 18px 11px;
+    padding: 2px 16px 11px 11px;
     XXXborder-top: 1px solid #444c56;
     font-size: 14px;
     color: #9aB;
@@ -197,4 +198,13 @@
     background-color: #05aaf4;
     transition: width 0.2s ease; /* Smooth transition when updating */
 }
+#timeBar #timerCard.running #progressBarBar {
+    min-width: 1px;
+}
 /* ProgressBar * * * * * * * * * * * * */
+#buttonRibbon button#floatBtn {
+    margin: 0 0 10px 10px;
+}
+#buttonRibbon button#floatBtn:hover {
+    background-color: #05aaf4;
+}

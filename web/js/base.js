@@ -132,9 +132,9 @@ const vocab = {
             return null;
         }
         let asLine = sLine
-            .replaceAll(/(,[ \t]{0,}|,? {4,})/gi, ",")
-            .split(",")
-            ;
+            //.replaceAll(/(,[ \t]{0,}|,? {4,})/gi, ",")
+            .replaceAll(/,*[ ]{3,}/gi, "\t")
+            .split("\t");
         return {
             p: this.toMot(asLine[0]),
             e: this.toMot(asLine[1])
