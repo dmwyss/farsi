@@ -547,14 +547,14 @@ maa *dast-emoon* ro mishor-im                           we are washing our hands
 shomaa *dast-etoon* ro mishor-in                        you-all are washing you-all-es hands
 oonaa *dast-eshoon* ro mishor-an                        they are washing their hands
 
-man saat chahaar bidaar mish-am                         I wake up at four
-man saat se bidaar shod-am                              I woke (past) up at three
-tu saat hasht bidaar mish-i                             you wake up at eight
-oon saat noh bidaar shod                                he woke (past) up at nine
-oon saat davaazdah bidaar mish-e                        he wakes up at twelve
-maa saat haft bidaar mish-im                            we wake up at seven
-shomaa saat do bidaar mish-in                           you-all wake up at two
-oonaa saat sheesh bidaar mish-an                        they wake up at six
+man saa'at chahaar bidaar mish-am                       I wake up at four
+man saa'at se bidaar shod-am                            I woke (past) up at three
+tu saa'at hasht bidaar mish-i                           you wake up at eight
+oon saa'at noh bidaar shod                              he woke (past) up at nine
+oon saa'at davaazdah bidaar mish-e                      he wakes up at twelve
+maa saa'at haft bidaar mish-im                          we wake up at seven
+shomaa saa'at do bidaar mish-in                         you-all wake up at two
+oonaa saa'at sheesh bidaar mish-an                      they wake up at six
 
 man *kaar-am* ro mikon-am                               I do my work
 to *kaar-et* ro mikon-i                                 you do your work
@@ -575,13 +575,11 @@ kharam az pol gozasht                                   I got what I wanted (my 
 shaanse kharki                                          extreme luck
 
 
-
 # Barfi Story #######################################################
-norohat                                                 sad / upset / uncomfortable
 norohat bood                                            he/she/it was sad
 raft                                                    he/she/it went
 khobide                                                 he/she/it is asleep
-cherange                                                what color is it?
+che-range                                               what color is it?
 chand                                                   how many / how much
 jalotar                                                 further ahead / earlier
 khoob                                                   good / well / ok
@@ -754,18 +752,18 @@ hich kari                                               no work
 kardan                                                  to do
 emruz hich kari nakardam                                today none work not-did-I
 chon                                                    because
-chon inja saat shish-e                                  because here it is 06:00
+chon inja faqat saa'at shish-e                          because here it is 06:00
 fahmidam                                                got it / I understood
 bidar shodan                                            to wake up
-saat e chand bidar shodin?                              what time woke became-you-all?
-emruz saat e shish bidar shodam                         today at 6 woke became-I
+saa'at e chand bidar shodin?                            what time woke became-you-all?
+emruz saa'at e shish bidar shodam                       today at 6 woke became-I
 sobhane khordin?                                        breakfast ate-you-all?
 na, sobhane nakhordam                                   no, breakfast not-ate-I
 varzesh kardan                                          exercise / to work out
 varzesh kardin?                                         exercise did-you-all?
 na, vali diruz varzesh kardam                           no, but yesterday exercise did-I
-diruz, saat e chand varzesh kardin?                     yesterday what time exercised you-all?
-az saat e chand - taa saat e chand?                     from what time - until what time?
+diruz, saa'at e chand varzesh kardin?                   yesterday what time exercised you-all?
+az saa'at e chand - taa saa'at e chand?                 from what time - until what time?
 too khunam varzesh kardam                               at home-my exercise did-I
 ba ki varzesh kardin?                                   with whom exercise did-you-all?
 tanhaayi                                                alone
@@ -776,105 +774,49 @@ diruz ba ki nahar khordin?                              yesterday with whom lunc
 too restoraan nahar nakhordam                           in restaurant lunch not-ate-I
 koja nahar khordin?                                     where lunch ate-you-all
 too khunam nahar khordam                                in home-mine lunch ate-I
+
 mishe dobare begin?                                     can two-time say?
-
-
-
-
+be khaanevaade salaam beresoon                          to family hello deliver (hi to yr family)
+khehili eshtebaahe badi bood                            very mistake bad was
+tavalodet mobaarak!                                     happy birthday!
 por-kaar mesele zanboor                                 busy like bee
 jedi migi?!?                                            serious speaking?!?
 chegadr jaleb                                           how interesting
 yani chi?                                               meaning what?
 raast mig-i                                             truth tell-you (true that!)
 vaay!                                                   whoa!
-
+shukhi mikoni?                                          joke doing? (are you kidding?)
 khoshhaal-am az didan-et                                happy-am to see-you
-naghshehaaye setaare-ye marg ro peyda kon               plans star of death (object marker) find do
+naghshehaaye setaare-ye marg ro peyda kon               plans star of death /ro/ find do
 kaado vaas-at chi bekhar-am                             gift for-you what buy-I
 baayad beram baashgaah tamrin konam                     must go-I gym practice do-I
 kheyli be lego alaagheh daaram                          very to lego interest have
 man dar edaare-ye baank kaar mikonam                    I in one office of bank work i do
-noore in ataagh kheili kame                             light this room very insufficient
+noore in otagh kheili kame                              light this room very insufficient
 berim estakhr shenaa kon-im                             go pool swim do-we
 too jiib-ame                                            in pocket-mine
+chahaar-om-i                                            four-th-one
+nish-e poosheh-at chetore?                              sting mosquito-your how-is?
+waysaadam taa otoboos oomad                             I waited-I until bus came
+darim rooye sahele khalvat raah mir-im                  have on beach quiet walk go
+khis o khoshk                                           wet and dry
+garm o sard                                             warm and cold
+baroon oomad, golha dar oomadan                         rain came, flowers out-came (sprouted)
+inja beshin-am                                          here sit-I
+savaar-e maasheen shodan                                passenger of car becoming
+dar-e maasheen /ro/ baaz kon                            door of car /ro/ open do
+farmono becharkhoon be raast                            turn the steering wheel.
+esmesh aayene-as                                        its name mirror-is
+ey baabaa, jaade bast ast                               oh no, road is closed
+tasmim-et dorost bood                                   decision-your correct was
+pishnehaade behtari nadaaram                            suggestion better i don't have
+dastmaale kaaghazee daaree lotfan?                      tissue you have please?
+shoorat-am /ro/ too aayene mibeenam                     face-my /ro/ in mirror see-I
+aab daare joosh mikhore                                 water is bubble eating
+
+
+araayeshgaah araayeshgar                                hairdresser-salon hairdresser-person
+
 
 
 `;
-
-/*
-
-
-
-01 kharmoosh
-02 khargoosh
-03 ghoorbaaghe
-04 halazoon
-05 morgh-e daryaa-i
-06 chisi
-07 shotor morgh
-08 hamsaayeh
-09 begoo
-10 chahaar
-11 boolooberi
-12 ezhdehaa
-
-
-morgh-e daryaa-i                                        chicken of the sea
-morgh-e teshne                                          thirst bird - flamingo
-morgh-e kaaftaar                                        hyena bird
-morgh-e toofaan                                         storm bird
-morgh-e aameshgh                                        love bird
-
-
-
-man daar-am baa maadaram sohbat mi-kon-am               I am doing conversation with my mother
-to daar-i baa baraadar-et sohbat mi-kon-i               you are doing conversation with your brother
-oon daar-e baa raiis-esh sohbat mi-kon-e                he/she is doing conversation with his/her boss
-maa daar-im baa duust-emoon sohbat mi-kon-im            we are doing conversation with our friend
-shomaa daar-id baa pedar-etuun sohbat mi-kon-in         you are doing conversation with your father
-oonaa daar-an baa hamsaaye-shuun sohbat mi-kon-an       they are doing conversation with their neighbor
-
-
-Are these important enough to be listed?
----
-in raah ghalat-e                                        this way wrong-is
-nazar to chi-e?                                         idea you what-is
-jaade bast ast                                          road is closed
-tasmim-et dorost bood                                   decision-your correct was
-pishnehaade behtari nadaaram                            suggestion better i don't have
---
-jamiat                                                  population
-dolat                                                   government
---
-
-
-baraaye tooye kuche raqsidan                            for inside alley dancing
-baraaye tarsidan be vaqte boosidan                      for fearing at time of kissing
-baraaye khaaharam khaaharet khaaharaamoon               for my sister your sister our sisters
-baraaye taqir-e maqzhaa ke poosidan                     for change of brains that rotted
-baraaye sharmandegi baraaye bi-pooli                    for shame for without money
-baraaye hasrat-e yek zendegi-e ma’muli                  for regret of one life ordinary
-baraaye kudak-e zobaale-gard o aaruzuhaash              for child of garbage-turner and dreams his
-baraaye in eqtesaad-e dastoori                          for this economy command
-baraaye in havaa-ye aaloode                             for this air polluted
-baraaye valiasr o derakhtaa-ye farsude                  for valiasr and trees worn-out
-baraaye pirooz o ehtemaal-e enqeraazesh                 for pirouz and probability extinction his
-baraaye sag-haa-ye bi gonaah-e mamnoo’e                 for dogs sinless forbidden
-baraaye gerye-haa-ye bi vaqfe                           for cryings without pause
-baraaye tasvir-e tekraar-e in lahze                     for image repetition this moment
-baraaye chehre’i ke mi-khande                           for face that laughs
-baraaye daaneshaamuza baraaye aayande                   for students for future
-baraaye in behesht-e ejbaari                            for this paradise forced
-baraaye nokhbe-haa-ye zendaani                          for elites imprisoned
-baraaye koodakaan-e afghaani                            for children afghan
-baraaye in hame baraaye qeyr-e tekraari                 for this all for non-repetitive
-baraaye in hame sho’aar-haa-ye tukhaali                 for this all slogans empty
-baraaye aavaar-e khoone-haa-ye pooshaali                for collapse houses straw-like
-baraaye ehsaas-e aaraamesh                              for feeling peace
-baraaye khorshid pas az shabaa-ye toolaani              for sun after nights long
-baraaye qors-haa-ye asaab o bi-khaabi                   for pills nerves and sleeplessness
-baraaye mard mihan aabaadi                              for man homeland prosperity
-baraaye dokhtari ke aaruzoo daasht pesar bood           for girl who wish had boy was
-baraaye zan zendegi aazaadi                             for woman life freedom
-
-*/
