@@ -814,9 +814,64 @@ dastmaale kaaghazee daaree lotfan?                      tissue you have please?
 shoorat-am /ro/ too aayene mibeenam                     face-my /ro/ in mirror see-I
 aab daare joosh mikhore                                 water is bubble eating
 
-
 araayeshgaah araayeshgar                                hairdresser-salon hairdresser-person
+Bodo, bodo, bodo be sooye sahel                         run run run to direction (of) beach
 
+
+man baaz-neshaste shodam                                I got retired
+emruz hich kari nakardam                                today none work not-did-I
+chon taze saat shish e                                  because only oclock six is
+diruz chikar kardin?                                    yesterday what-work do-you-all
+tu daftar kar kardam                                    in office work did-I
+koja kar kardin?                                        where work worked-you
+Ba dust dokhtaram tu daftar kar kardam                  with friend girl in office worked
+az saat e chand ta saat e chand kar kardin?             from what time to what time work did?
+diruz koja nahar khordin?                               yesterday where lunch ate-you?
+diruz tanhayi nahar khordam                             yesterday alone lunch ate-I
+shoma laptop darin?                                     you laptop have?
+laptop e shoma chetori-e?                               laptop yours what like?
+dune baarf noghrei                                      flake snow silver
+laptop-am bozorg o noghrei-ye                           laptop-my big and silver-is
+shoma docharkhe darin?                                  you bike have?
+docharkham kheili ghadimi o abi-ye                      bike very old and blue-is
+khunatun chetori e?                                     home-you how is like?
+khunam nazdik-e ye shahr e kuchik e                     home-my near-is a city and small is
+diruz ba chi be sare kar raftin?                        yesterday with what to work went-you-all
+kojaaa neshasti?                                        where you sat?
+man piyaadeh miram saare kaar                           I on foot go work
+az khunatun ta daftar piade chaghadr tul keshid?        from house-you to office on-foot how much length it pulled?
+piade                                                   on foot
+tarjome-ye jomle-haaye ruzmarreh                        translation of everyday sentences
+tul keshidan                                            to take time
+az khunam ta daftar piade bist deyghe tul keshid        from home-my to office walk twenty mins time took
+diruz koja sham khordin?                                yesterday where dinner ate you-all
+diruz too khunam sham khordam                           yesterday at home-my dinner ate-I
+diruz ba dust dokhtar-am sham nakhordam                 yesterday with girfriend dinner not-ate-I
+emruz koja nahar mikhorin?                              today where lunch ate-you-all
+emruz be park mirin?                                    today to park went-you?
+park koja e?                                            park where is?
+az khunatun ta park cheghadr tul mikeshe?               from house-your to park how long takes?
+az khunam ta park panj deyghe tul mikeshe               form house-my to park five mins time takes
+emruz film mibinin?                                     today film watch-you-all?
+emruz film nemibinim                                    today film not-watch-we
+emruz ghaza dorost mikonin?                             today food make do-you-all?
+kay miyaayi khunaa?                                     when you come house?
+emruz tanhayi ghaza dorost mikonin?                     today alone food make?
+emruz ba pesaram ghaza dorost mikonam                   today with son-my food make
+emruz ba pesaretun be park mirin?                       today with son-you-all to park come?
+emruz ba pesaretun chikar mikonin?                      today with son-you-all what do-you-all
+emruz ba pesaram film mibinam                           today with son-my film see
+emruz saat e chand mikhabin?                            today hour-of how much sleep-you-all?
+emruz saat e yazdah mikhabam                            today hour-of eleven sleep-I
+khabidan                                                to sleep
+har-ruz saat e chand bidar mishin?                      each-day hour-of wake become-you-all?
+emruz be sare kar mirin?                                today to work go-you-all
+na nemiram                                              no not-go-I
+farda chetor?                                           tomorrow how?
+ham                                                     also
+farda be sare kar mirin?                                tomorrow to work go-you-all
+na, farda ham be sare kar nemiram                       no, tomorrow also to work not-go-I
+jomalaat-e bishtar darbaare-ye raft o aamad              sentences  more about going and coming
 
 
 `;
