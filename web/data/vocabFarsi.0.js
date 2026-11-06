@@ -251,7 +251,8 @@ vaah                                                    and
 een o oon                                               this and that
 mohandes                                                engineer
 peseshk                                                 doctor
-dafeye dige to *hesaab kon*                             next time you *pay-do*
+dafeye dige to *hesab kon*                              next time you *pay-do*
+in dafe man hesab mikon-am                              this time I account do-I
 
 dafeye ba’ad                                            next time
 dafeye dige                                             another time or next time
@@ -354,7 +355,7 @@ khoshhaalam mikoni                                      you make me happy
 
 shaayad                                                 maybe
 ghati paati                                             kompletes durcheinander (mix shmix)
-emrooz az khoone kar mikoni?                            are you working from home today?
+emrooz az khoone kaar mikoni?                           are you working from home today?
 shomaa faarsi harf mizanid?                             do you speak Farsi?
 eyval                                                   well done
 felan khodaahaafez                                      for now - goodbye
@@ -517,7 +518,6 @@ pishbiniye havaaye fardaa chiye?                        forecast weather tomorro
 biyaa berim sahel                                       come go-we beach
 cheraagh ghermez                                        light red (traffic light)
 istgaah-e ghataah                                       station-of train
-navad-o noh darsad                                      99 percent
 dokhtar-e hayejaan-*zade* ast                           girl excitement-*stricken/hitz* is
 pust-e man aftab-zade shode ast                         skin my sunshine-stricken become ast
 hamey-e *moblemaan* kharaab shode                       all *furniture* broken was
@@ -536,7 +536,7 @@ too bokhorim yaa *biroon*                               inside eat or *outside*
 cheraagh-e ba~adi ro bepich be raast                    the next light turn to right
 
 bist-o se shomaare-ye morede alaaqhe-ye mane            twenty-three is my favorite number
-soorat-hesaaba ro man midam                             i will give the bill
+soorat-hesaba ro man midam                              i will give the bill
 man mehmoon mikonam                                     I make you a guest (my treat)
 daaram kaar mikonam                                     I am working right now
 
@@ -602,11 +602,11 @@ paydaa                                                  found / visible / appare
 khargooshe kaahoo mikhore                               the rabbit eats lettuce
 
 ra'is-e man aazaar dahande ast                          my boss is annoying
-Nazdik-tarin istgah behet kodume?                       nearest station to you which-is?
+nazdik-tarin istgah behet kodume?                       nearest station to you which-is?
 
 
 
-man khoshhaal hast-am                                   I happy -am
+khoshhalam                                              I happy-am
 dirooz mariz bood-am                                    I yesterday sick was
 man vaqti varzesh mikon-am - garm mishav-am             I when exercise I do - hot I become
 man saal - e gozashteh mo'allem shod-am                 I year - of past teacher I bec-ame
@@ -620,7 +620,7 @@ hamchenin man sobh raa kollan motaale'e kardam          also I morning (object m
 man chetor mitavaanam be shomaa komak konam             I how can to you help do
 man emrooz ba'd az zohr baraaye shenaa be estakhr raftam    I today after from noon for swimming to pool went
 va asr be sinamaa raftam                                and evening to cinema went
-vali lotfan ghabl az 5:30 biyaaied                      but please before from 5:30 come
+vali lotfan ghabl az 5                                  30 biyaaied but please before from 5 30 come
 
 pasheh to ro nish zad                                   mosquito you sting hit
 
@@ -747,12 +747,12 @@ una be sinama raftan                                    they to cinema went-they
 be restoraan rafti?                                     to restaurant went-you
 are, be restoraan raftam                                yes, to restaurant went-I
 na, be restoraan naraftam                               no, to restaurant not-went-I
-emruz chikar kardin?                                    today what work do-you-all
-hich kari                                               no work
+emruz chikaar kardin?                                   today what work do-you-all
+hich kaari                                              no work
 kardan                                                  to do
-emruz hich kari nakardam                                today none work not-did-I
+emruz hich kaari nakardam                               today none work not-did-I
 chon                                                    because
-chon inja faqat saa'at shish-e                          because here it is 06:00
+chon inja faqat saa'at shish-e                          because here it is 06 00
 fahmidam                                                got it / I understood
 bidar shodan                                            to wake up
 saa'at e chand bidar shodin?                            what time woke became-you-all?
@@ -802,7 +802,7 @@ darim rooye sahele khalvat raah mir-im                  have on beach quiet walk
 khis o khoshk                                           wet and dry
 garm o sard                                             warm and cold
 baroon oomad, golha dar oomadan                         rain came, flowers out-came (sprouted)
-inja beshin-am                                          here sit-I
+#inja beshin-am                                          here sit-I
 savaar-e maasheen shodan                                passenger of car becoming
 dar-e maasheen /ro/ baaz kon                            door of car /ro/ open do
 farmono becharkhoon be raast                            turn the steering wheel.
@@ -819,27 +819,29 @@ Bodo, bodo, bodo be sooye sahel                         run run run to direction
 
 
 man baaz-neshaste shodam                                I got retired
-emruz hich kari nakardam                                today none work not-did-I
+emruz hich kaari nakardam                               today none work not-did-I
 chon taze saat shish e                                  because only oclock six is
-diruz chikar kardin?                                    yesterday what-work do-you-all
-tu daftar kar kardam                                    in office work did-I
-koja kar kardin?                                        where work worked-you
-Ba dust dokhtaram tu daftar kar kardam                  with friend girl in office worked
-az saat e chand ta saat e chand kar kardin?             from what time to what time work did?
+diruz chikaar kardin?                                   yesterday what-work do-you-all
+tu daftar kaar kardam                                   in office work did-I
+koja kaar kardin?                                       where work worked-you
+ba dust dokhtaram tu daftar kaar kardam                 with friend girl in office worked
+az saat e chand ta saat e chand kaar kardin?            from what time to what time work did?
 diruz koja nahar khordin?                               yesterday where lunch ate-you?
 diruz tanhayi nahar khordam                             yesterday alone lunch ate-I
 shoma laptop darin?                                     you laptop have?
 laptop e shoma chetori-e?                               laptop yours what like?
 dune baarf noghrei                                      flake snow silver
 laptop-am bozorg o noghrei-ye                           laptop-my big and silver-is
-shoma docharkhe darin?                                  you bike have?
+shoma docharkheh daarin?                                you bike have?
 docharkham kheili ghadimi o abi-ye                      bike very old and blue-is
 khunatun chetori e?                                     home-you how is like?
 khunam nazdik-e ye shahr e kuchik e                     home-my near-is a city and small is
-diruz ba chi be sare kar raftin?                        yesterday with what to work went-you-all
-kojaaa neshasti?                                        where you sat?
+diruz ba chi be sare kaar raftin?                       yesterday with what to work went-you-all
+kojaa neshasti?                                         where you sat?
+dam-e panjerehaa neshast-am                             near the windows i am sitting
 man piyaadeh miram saare kaar                           I on foot go work
 az khunatun ta daftar piade chaghadr tul keshid?        from house-you to office on-foot how much length it pulled?
+#kaar-am tool keshid, baraaye hamin dir umadam          work-my duration lasted, therefore late come-I
 piade                                                   on foot
 tarjome-ye jomle-haaye ruzmarreh                        translation of everyday sentences
 tul keshidan                                            to take time
@@ -852,26 +854,36 @@ emruz be park mirin?                                    today to park went-you?
 park koja e?                                            park where is?
 az khunatun ta park cheghadr tul mikeshe?               from house-your to park how long takes?
 az khunam ta park panj deyghe tul mikeshe               form house-my to park five mins time takes
-emruz film mibinin?                                     today film watch-you-all?
-emruz film nemibinim                                    today film not-watch-we
+emruz film mibin-in?                                    today film watch-you-all?
+emruz film nemibin-im                                   today film not-watch-we
 emruz ghaza dorost mikonin?                             today food make do-you-all?
 kay miyaayi khunaa?                                     when you come house?
-emruz tanhayi ghaza dorost mikonin?                     today alone food make?
+emruz tanhayi ghaza dorost mikonin?                     today alone food make-you-all?
 emruz ba pesaram ghaza dorost mikonam                   today with son-my food make
 emruz ba pesaretun be park mirin?                       today with son-you-all to park come?
-emruz ba pesaretun chikar mikonin?                      today with son-you-all what do-you-all
+emruz ba pesaretun chikaar mikonin?                     today with son-you-all what do-you-all
 emruz ba pesaram film mibinam                           today with son-my film see
-emruz saat e chand mikhabin?                            today hour-of how much sleep-you-all?
+emruz saat e chand mikhabin?                            today hour-of sleep-you-all?
 emruz saat e yazdah mikhabam                            today hour-of eleven sleep-I
 khabidan                                                to sleep
 har-ruz saat e chand bidar mishin?                      each-day hour-of wake become-you-all?
-emruz be sare kar mirin?                                today to work go-you-all
+emruz be sare kaar mirin?                               today to work go-you-all
 na nemiram                                              no not-go-I
 farda chetor?                                           tomorrow how?
 ham                                                     also
-farda be sare kar mirin?                                tomorrow to work go-you-all
-na, farda ham be sare kar nemiram                       no, tomorrow also to work not-go-I
-jomalaat-e bishtar darbaare-ye raft o aamad              sentences  more about going and coming
+farda be sare kaar mirin?                               tomorrow to work go-you-all
+na, farda ham be sare kaar nemiram                      no, tomorrow also to work not-go-I
+
+jomalaat-e bishtar darbaare-ye raft o aamad             sentences more about going and coming
+montazer-e cheragh-e sabz baash                         wait lights green become
+saram raft                                              head-my went (too noisy)
+moshkeli nist                                           problem not-is
+
+kheili ham aali                                         very mega great
+
+baayad ye jaaye khalvat baash-e                         must place quiet/calm be
+restoraan baayad shaloogh nabaash-e                      restaurant must busy/noisy not-be
+istgaah-e aakhar                                        station last
 
 
 `;

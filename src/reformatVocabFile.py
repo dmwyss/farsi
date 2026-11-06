@@ -19,9 +19,15 @@ def reformat_lines(in_path):
             else:
                 s_line = s_line \
                     .replace("ā", "aa") \
+                    .replace("â", "aa") \
+                    .replace("û", "oo") \
                     .replace(r"•", "") \
+                    .replace(r"[ ]*\|[ ]*", " | ") \
                     .lstrip(" \t")
+                s_line = re.sub(r"\s*\|\s*", "|", s_line)
                 as_line = re.split(r',*\s{2,}|\||\t|:', s_line)
+                if len(as_line) > 2:
+                    as_line = [as_line[0], " ".join(as_line[1:])]
                 if len(as_line) == 2:
                     as_line[0] = as_line[0].ljust(52) + "    "
                     s_line = as_line[0] + as_line[1].strip() + "\n"

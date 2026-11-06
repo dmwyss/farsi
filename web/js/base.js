@@ -224,15 +224,15 @@ const vocab = {
     },
     renderButtonRibbon: function () {
         this.uiButtonRibbon = document.querySelector("#buttonRibbon");
-        let oOptionBarSettingsGroop = {
-            sOptionBarId: "uiOptBarGroop",
-            aoOptions: this.aoGroops,
-            sFieldToUseAsValue: "iId",
-            //sFieldToUseAsId: "iId",
-            sFieldToUseAsLabel: "sLabel",
-            vValueDefault: vocab.userSettings.iIdStarCurr,
-            sOnClick: "sakhtBase.doClickOptionBarGroop(this);"
-        };
+        //let oOptionBarSettingsGroop = {
+        //    sOptionBarId: "uiOptBarGroop",
+        //    aoOptions: this.aoGroops,
+        //    sFieldToUseAsValue: "iId",
+        //    //sFieldToUseAsId: "iId",
+        //    sFieldToUseAsLabel: "sLabel",
+        //    vValueDefault: vocab.userSettings.iIdStarCurr,
+        //    sOnClick: "sakhtBase.doClickOptionBarGroop(this);"
+        //};
         let oOptionBarSettingsTestMode = {
             sOptionBarId: "uiOptBarTestMode",
             aoOptions: [{sId: "test", sLabel:"Test"}, {sId: "read", sLabel:"Read"}],
@@ -244,9 +244,11 @@ const vocab = {
         };
         let sButtons = ""
             + timeBar.getHtml()
-            + utilCustomGuiElements.generateOptionBar(oOptionBarSettingsGroop)
+            + "<div id=\"menuContainer\" class=\"optionBarRow\"></div>"
+            //+ utilCustomGuiElements.generateOptionBar(oOptionBarSettingsGroop)
             + utilCustomGuiElements.generateOptionBar(oOptionBarSettingsTestMode);
         this.uiButtonRibbon.innerHTML = sButtons;
+
     },
     renderVocabTable: function () {
         this.uiVocab = document.querySelector("#vocabWrapper");
@@ -737,7 +739,7 @@ const topPeepMessage = {
             topPeepMessage.ui.classList.add('onScreen');
             setTimeout(() => {
                 topPeepMessage.ui.classList.remove('onScreen');
-            }, 1500);
+            }, 1000);
             vocab.testState.isEnterKeyMessageAlreadyShown = true;
         }
     }
@@ -746,4 +748,5 @@ document.addEventListener('DOMContentLoaded', function () {
     sakhtBase.init();
     vocab.init();
     topPeepMessage.init();
+    menuMaker.renderMenu('menuContainer', groopData).setValue(vocab.userSettings.iIdStarCurr);
 });

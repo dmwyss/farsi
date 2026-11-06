@@ -11,7 +11,9 @@ var aoTemplates = [
     "literal word for word translation of \"\" in farsi",
     "how do you say \"\" in informal farsi like friends talking in tehran",
     "etymology of the farsi word \"\"",
-    "is \"\" good grammar and natural sounding informal farsi like I would say to my girlfriend?",
+    "is \"\" good grammar and natural informal farsi I would say to my girlfriend?",
+    "difference between \"\" and \"\"",
+    "is is \"\" or \"\"",
     /* "what does \"\" mean in farsi", */
     /* "conjugate the verb \"\" in informal farsi", */
     /* "give me a short, informal, rhyming sentence using the farsi word \"\"", */

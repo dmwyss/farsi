@@ -187,7 +187,6 @@ table#vocab tr.silent td {
     cursor: pointer;
     transition: background-color 0.2s ease;
     user-select: none;
-    font-size: 10pt;
     border: 1px solid var(--color-mainButtonBorder);
     border-left: none;
     min-width: 40px;

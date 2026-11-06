@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<link rel="icon" type="image/x-icon" href="img/favicon.png">
+<link rel="icon" type="image/x-icon" href="img/faviconAudio.png">
 <title>Farsi Vocab</title>
+
 <link rel="stylesheet" type="text/css" href="css/timeBar.css" />
 <link rel="stylesheet" type="text/css" href="css/base.css" />
+<link rel="stylesheet" type="text/css" href="css/menuMaker.css" />
 
+<script type="text/javascript" src="js/util.menuMaker.js"></script>
 <script type="text/javascript" src="js/pywriter5000.js"></script>
 <script type="text/javascript" src="js/pywriterImpl.farsiVocab.js"></script>
 <!-- s cript type="text/javascript" src="data/sakhtiData.js"></script -->
 <script>
 let sVolatileOutNew = "";
-
-
 const urlParams = new URLSearchParams(window.location.search);
 const g_sIxSet = urlParams.get('sIxSet') ?? "0";
 console.log("g_sIxSet::" + g_sIxSet);
@@ -24,8 +25,6 @@ for (let ix = 0; ix < asPages.length; ix++) {
 }
 document.write(sVolatileOutNew);
 </script>
-
-<!-- script type="text/javascript" src="data/vocabFarsi.js"></script -->
 <script type="text/javascript" src="js/util.localStore.js"></script>
 <script type="text/javascript" src="js/util.Cookie.1.1.js"></script>
 <script type="text/javascript" src="js/util.cookieJson.js"></script>
@@ -36,13 +35,14 @@ document.write(sVolatileOutNew);
 
 <a id="headAndLink" style="position: absolute;" href="verbs.htm"><h1><img src="img/textFarsiHeading.png" id="heading" alt="heading image." /></h1></a>
 <div id="mainContentWrapper" style="width: fit-content">
-<div id="buttonRibbon"></div>
-<div id="vocabWrapper"></div>
+  <div id="buttonRibbon"></div>
+  <div id="vocabWrapper"></div>
 </div>
 <br/>
 <br/>
 
 <h3>Informal</h3>
+
 <table class="simpleGrid">
   <thead>
     <tr>
@@ -83,9 +83,6 @@ document.write(sVolatileOutNew);
     </tr>
   </tbody>
 </table>
-
-
-
 
 <aside id="prompt">
   <div>Use enter key to navigate.</div>
