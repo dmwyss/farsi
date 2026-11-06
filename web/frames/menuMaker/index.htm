@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamisches JS Dropdown Menü mit Mouse-Leave</title>
+    <link rel="stylesheet" type="text/css" href="../../css/menuMaker.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/base.css" />
+    <script type="text/javascript" src="../../js/util.menuMaker.js"></script>
+    <script type="text/javascript" src="../../data/groopData.0.js"></script>
+    <style>
+        /*
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        #output {
+            margin-top: 80px; /* Platz für das absolute Dropdown */
+            padding: 10px;
+            background: #e2e2e2;
+            border-left: 5px solid #007BFF;
+            display: none;
+            max-width: 400px;
+        }
+         */
+    </style>
+</head>
+<body>
+    <h2>Mein JavaScript Dropdown Menü</h2>
+    <!-- Der Ziel-Container für das Menü -->
+    <div id="menuContainer"></div>
+    <!-- Anzeige-Box für den Klick-Effekt -->
+    <div id="output"></div>
+    <script>
+        // Initialisierung
+        menuMaker.renderMenu('menuContainer', groopData);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+/* Container für das gesamte Menü-Konstrukt */
+.menuMakerWrapper {
+    max-width: 200px;
+    position: relative;
+    user-select: none;
+}
+/* Das "Groups" Label-Div */
+.menuMakerWrapper .menuMakerLabel {
+    background-color: #1c2128;
+    color: #CCC;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 20px;
+    border-radius: 5px 0 0 5px;
+    border: 1px solid var(--color-mainButtonBorder);
+    width: 150px;
+    /*
+    font-size: 10pt;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    font-weight: bold;
+    */
+}
+/* Kleiner visueller Pfeil-Indikator */
+/* ----------------------------
+.menuMakerWrapper .menuMakerLabel::after {
+    XXXcontent: '▼';
+    content: '+';
+    font-size: 0.8em;
+    font-size: 1.8em;
+    transition: transform 0.2s ease;
+    font-weight: 100;
+    line-height: .6;
+}
+.menuMakerWrapper.open .menuMakerLabel::after {
+    XXXtransform: rotate(180deg);
+    transform: rotate(135deg);
+}
+---------------------------- */
+/* Die Liste mit den Optionen (standardmäßig versteckt) */
+.menuMakerWrapper .customMenuMaker {
+    /*
+    */
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    width: 100%;
+    background: #1f2730;
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 10;
+    /*
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    */
+    border: 1px solid #454e59;
+}
+
+/* Einblenden, wenn der Wrapper die Klasse .open hat */
+.menuMakerWrapper.open .customMenuMaker {
+    display: block;
+}
+.menuMakerWrapper .customMenuMaker li {
+    padding: 6px 20px;
+    cursor: pointer;
+    border-bottom: 1px solid #2f3640;
+    transition: background 0.2s ease;
+    color: #CCC;
+}
+.menuMakerWrapper .customMenuMaker li:last-child {
+    border-bottom: none;
+}
+.menuMakerWrapper .customMenuMaker li:hover {
+    background-color: #1c2128;
+    color: #EEE;
+}

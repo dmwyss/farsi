@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamisches JS Dropdown Menü mit Mouse-Leave</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        /* Container für das gesamte Menü-Konstrukt */
+        .menuMakerWrapper {
+            max-width: 200px;
+            position: relative;
+            user-select: none;
+        }
+        /* Das "Groups" Label-Div */
+        .menuMakerWrapper .menu-label {
+            background-color: #007BFF;
+            color: white;
+            padding: 12px 20px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        /* Kleiner visueller Pfeil-Indikator */
+        .menuMakerWrapper .menu-label::after {
+            XXXcontent: '▼';
+            content: '+';
+            font-size: 0.8em;
+            font-size: 1.8em;
+            transition: transform 0.2s ease;
+            font-weight: 100;
+            line-height: .6;
+        }
+        .menuMakerWrapper.open .menu-label::after {
+            XXXtransform: rotate(180deg);
+            transform: rotate(135deg);
+        }
+        /* Die Liste mit den Optionen (standardmäßig versteckt) */
+        .menuMakerWrapper .custom-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            position: absolute;
+            width: 100%;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            overflow: hidden;
+            z-index: 10;
+            display: none;
+        }
+        /* Einblenden, wenn der Wrapper die Klasse .open hat */
+        .menuMakerWrapper.open .custom-menu {
+            display: block;
+        }
+        .menuMakerWrapper .custom-menu li {
+            padding: 12px 20px;
+            cursor: pointer;
+            border-bottom: 1px solid #eee;
+            transition: background 0.2s ease;
+            color: #333;
+        }
+        .menuMakerWrapper .custom-menu li:last-child {
+            border-bottom: none;
+        }
+        .menuMakerWrapper .custom-menu li:hover {
+            background-color: #f0f4f8;
+            color: #007BFF;
+        }
+        /* Konsolen-Ersatz zur Anzeige der Klicks */
+        #output {
+            margin-top: 80px; /* Platz für das absolute Dropdown */
+            padding: 10px;
+            background: #e2e2e2;
+            border-left: 5px solid #007BFF;
+            display: none;
+            max-width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Mein JavaScript Dropdown Menü</h2>
+    <!-- Der Ziel-Container für das Menü -->
+    <div id="menuContainer"></div>
+    <!-- Anzeige-Box für den Klick-Effekt -->
+    <div id="output"></div>
+    <script>
+        const groopData = [
+            {iId: 1, sLabel: "Focus"},
+            {iId: 3, sLabel: "Barfi"},
+            {iId: 2, sLabel: "Dars 01"},
+            {iId: 5, sLabel: "Dars 03"},
+            {iId: 4, sLabel: "Fun"}
+        ];
+
+        const menuMaker = {
+            dict: {},
+            groopCurr: null,
+            renderMenu: function(targetDivId, menuData) {
+                const targetDiv = document.getElementById(targetDivId);
+                if (!targetDiv) {
+                    console.error(`Element mit ID "${targetDivId}" wurde nicht gefunden.`);
+                    return;
+                }
+
+                // 1. Erstelle ein umschließendes Wrapper-Div
+                const wrapper = document.createElement('div');
+                wrapper.className = 'menuMakerWrapper';
+
+                // **NEU:** Wenn die Maus den gesamten Menübereich verlässt, schließe das Menü
+                wrapper.addEventListener('mouseleave', () => {
+                    wrapper.classList.remove('open');
+                });
+
+                // 2. Erstelle das Label-Div ("Groups")
+                const labelDiv = document.createElement('div');
+                labelDiv.className = 'menu-label';
+                labelDiv.textContent = 'Groups';
+
+                // Klick-Event für das Label
+                labelDiv.addEventListener('click', () => {
+                    wrapper.classList.toggle('open');
+                });
+
+                // 3. Erstelle das Menü (ul)
+                const ul = document.createElement('ul');
+                ul.className = 'custom-menu';
+
+                // Schleife durch die Daten
+                //let ixItem = 0;
+                menuData.forEach(item => {
+                    const li = document.createElement('li');
+                    li.textContent = item.sLabel;
+
+                    li.addEventListener('click', () => {
+                        this.doMenuItemClick(item.iId);
+                        wrapper.classList.remove('open');
+                    });
+                    this.dict[item.iId] = item;
+                    ul.appendChild(li);
+                });
+
+                // Alles im Wrapper zusammenbauen
+                wrapper.appendChild(labelDiv);
+                wrapper.appendChild(ul);
+
+                // In das Ziel-Div einhängen
+                targetDiv.appendChild(wrapper);
+            },
+            setValue: function(iItemId) {
+                this.groopCurr = this.dict[iItemId];
+                let uiLabel = document.querySelector("#menuContainer .menuMakerWrapper .menu-label");
+                uiLabel.innerHTML = this.groopCurr.sLabel;
+            },
+            doMenuItemClick: function(iItemId) {
+                console.log("Menü-ID geklickt:", iItemId);
+                const outputDiv = document.getElementById('output');
+                outputDiv.style.display = 'block';
+                alert(this.dict[iItemId].iId + " == " + this.dict[iItemId].sLabel);
+                outputDiv.innerHTML = `Du hast das Menü-Item mit der <strong>ID: ${iItemId}</strong> angeklickt.`;
+                this.setValue(iItemId);
+            }
+        };
+
+        // Initialisierung
+        menuMaker.renderMenu('menuContainer', groopData);
+    </script>
+
+</body>
+</html>

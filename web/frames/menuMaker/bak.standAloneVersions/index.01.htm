@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamisches JS Menü</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        /* Einfaches Styling für das Menü */
+        .custom-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            max-width: 200px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .custom-menu li {
+            padding: 12px 20px;
+            cursor: pointer;
+            border-bottom: 1px solid #eee;
+            transition: background 0.2s ease;
+        }
+        .custom-menu li:last-child {
+            border-bottom: none;
+        }
+        .custom-menu li:hover {
+            background-color: #007BFF;
+            color: white;
+        }
+        /* Konsolen-Ersatz zur Anzeige der Klicks */
+        #output {
+            margin-top: 20px;
+            padding: 10px;
+            background: #e2e2e2;
+            border-left: 5px solid #007BFF;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Mein JavaScript Menü</h2>
+    
+    <!-- Der Ziel-Container für das Menü -->
+    <div id="menuContainer"></div>
+
+    <!-- Anzeige-Box für den Klick-Effekt -->
+    <div id="output"></div>
+
+    <script>
+        // Die vorgegebenen Daten
+        const groopData = [
+            {iId: 1, sLabel: "Focus"},
+            {iId: 3, sLabel: "Barfi"},
+            {iId: 2, sLabel: "Dars 01"},
+            {iId: 5, sLabel: "Dars 03"},
+            {iId: 4, sLabel: "Fun"}
+        ];
+
+        // Das geforderte menuMaker Objekt
+        const menuMaker = {
+            // Funktion zum Rendern des Menüs
+            renderMenu: function(targetDivId, menuData) {
+                const targetDiv = document.getElementById(targetDivId);
+                if (!targetDiv) {
+                    console.error(`Element mit ID "${targetDivId}" wurde nicht gefunden.`);
+                    return;
+                }
+
+                // Erstelle ein unsortiertes Listen-Element (ul)
+                const ul = document.createElement('ul');
+                ul.className = 'custom-menu';
+
+                // Schleife durch die Daten und erstelle die Listeneinträge (li)
+                menuData.forEach(item => {
+                    const li = document.createElement('li');
+                    li.textContent = item.sLabel;
+                    
+                    // Event-Listener verweist auf die interne Methode doMenuItemClick
+                    // bind(this) sorgt dafür, dass die Funktion im Kontext des Objekts bleibt
+                    li.addEventListener('click', () => {
+                        this.doMenuItemClick(item.iId);
+                    });
+
+                    ul.appendChild(li);
+                });
+
+                // Menü in den Ziel-Div einfügen
+                targetDiv.appendChild(ul);
+            },
+
+            // Die Funktion, die beim Klicken aufgerufen wird
+            doMenuItemClick: function(itemId) {
+                // Interne Logik: Zeigt die ID im Browserfenster und in der Konsole an
+                console.log("Menü-ID geklickt:", itemId);
+                
+                const outputDiv = document.getElementById('output');
+                outputDiv.style.display = 'block';
+                outputDiv.innerHTML = `Du hast das Menü-Item mit der <strong>ID: ${itemId}</strong> angeklickt.`;
+            }
+        };
+
+        // Initialisierung: Funktion ausführen und die ID des Divs übergeben
+        menuMaker.renderMenu('menuContainer', groopData);
+    </script>
+
+</body>
+</html>
