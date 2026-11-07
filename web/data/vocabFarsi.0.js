@@ -233,10 +233,10 @@ to baa ki sohbat mikoni?                                who are you talk-doing t
 
 bah bah                                                 oh wow beautiful
 nush-e jaan                                             en guete
-azizam                                                  my darling.
+azizam                                                  my darling
 mobaarake                                               congratulations
 khaste nabaashin                                        tired dont-be (thanks for effort)
-*moshtaagh*-e didaar                                    i am *eager* to see you.
+*moshtaagh*-e didaar                                    I am *eager* to see you
 *felan*                                                 *for now* (see you soon)
 zibaa                                                   beautiful
 
@@ -251,8 +251,8 @@ vaah                                                    and
 een o oon                                               this and that
 mohandes                                                engineer
 peseshk                                                 doctor
-dafeye dige to *hesab kon*                              next time you *pay-do*
-in dafe man hesab mikon-am                              this time I account do-I
+dafeye dige to *hesaab kon*                             next time you *pay-do*
+in dafe man hesaab mikon-am                             this time I account do-I
 
 dafeye ba’ad                                            next time
 dafeye dige                                             another time or next time
@@ -368,7 +368,7 @@ aafarin! to aasaansor-e A ro gerefti                    bravo! you lift-A got
 ey baba - be ghaataar narasidam                         oh man - to train not-arrive
 narm mesl-e abrisham                                    smooth like silk
 istgaah-e ghaataar-e ba-adi Sandringham-eh              stop/station train next Sandy-is
-forooshgaah-e istgaah ta-atil ast                       shop at station closed is.
+forooshgaah-e istgaah ta-atil ast                       shop at station closed is
 toot farangiaa *ghermez*an                              strawberries are *red*
 doonehaaye koochike *siaah*                             little *black* seeds
 daa-ye-rey-e kalamaate en-gel-is-im bozorge             I have a large english vocabulary
@@ -536,7 +536,6 @@ too bokhorim yaa *biroon*                               inside eat or *outside*
 cheraagh-e ba~adi ro bepich be raast                    the next light turn to right
 
 bist-o se shomaare-ye morede alaaqhe-ye mane            twenty-three is my favorite number
-soorat-hesaba ro man midam                              i will give the bill
 man mehmoon mikonam                                     I make you a guest (my treat)
 daaram kaar mikonam                                     I am working right now
 
@@ -805,7 +804,7 @@ baroon oomad, golha dar oomadan                         rain came, flowers out-c
 #inja beshin-am                                          here sit-I
 savaar-e maasheen shodan                                passenger of car becoming
 dar-e maasheen /ro/ baaz kon                            door of car /ro/ open do
-farmono becharkhoon be raast                            turn the steering wheel.
+farmono becharkhoon be raast                            turn the steering wheel
 esmesh aayene-as                                        its name mirror-is
 ey baabaa, jaade bast ast                               oh no, road is closed
 tasmim-et dorost bood                                   decision-your correct was
@@ -820,12 +819,12 @@ Bodo, bodo, bodo be sooye sahel                         run run run to direction
 
 man baaz-neshaste shodam                                I got retired
 emruz hich kaari nakardam                               today none work not-did-I
-chon taze saat shish e                                  because only oclock six is
+chon taaze saa-at shish e                               because only oclock six is
 diruz chikaar kardin?                                   yesterday what-work do-you-all
 tu daftar kaar kardam                                   in office work did-I
 koja kaar kardin?                                       where work worked-you
 ba dust dokhtaram tu daftar kaar kardam                 with friend girl in office worked
-az saat e chand ta saat e chand kaar kardin?            from what time to what time work did?
+az saa-at-e chand ta saa-at-e chand kaar kardin?        from what time to what time work did?
 diruz koja nahar khordin?                               yesterday where lunch ate-you?
 diruz tanhayi nahar khordam                             yesterday alone lunch ate-I
 shoma laptop darin?                                     you laptop have?
@@ -840,7 +839,7 @@ diruz ba chi be sare kaar raftin?                       yesterday with what to w
 kojaa neshasti?                                         where you sat?
 dam-e panjerehaa neshast-am                             near the windows i am sitting
 man piyaadeh miram saare kaar                           I on foot go work
-az khunatun ta daftar piade chaghadr tul keshid?        from house-you to office on-foot how much length it pulled?
+az khunatun ta daftar piade chaghadr tul keshid?        from house-you-all to office on-foot how much length it pulled?
 #kaar-am tool keshid, baraaye hamin dir umadam          work-my duration lasted, therefore late come-I
 piade                                                   on foot
 tarjome-ye jomle-haaye ruzmarreh                        translation of everyday sentences
@@ -863,12 +862,12 @@ emruz ba pesaram ghaza dorost mikonam                   today with son-my food m
 emruz ba pesaretun be park mirin?                       today with son-you-all to park come?
 emruz ba pesaretun chikaar mikonin?                     today with son-you-all what do-you-all
 emruz ba pesaram film mibinam                           today with son-my film see
-emruz saat e chand mikhabin?                            today hour-of sleep-you-all?
-emruz saat e yazdah mikhabam                            today hour-of eleven sleep-I
+emruz saa-at-e chand mikhabin?                          today hour-of sleep-you-all?
+emruz saa-at-e yazdah mikhabam                          today hour-of eleven sleep-I
 khabidan                                                to sleep
-har-ruz saat e chand bidar mishin?                      each-day hour-of wake become-you-all?
+har-ruz saa-at-e chand bidar mishin?                    each-day hour-of wake become-you-all?
 emruz be sare kaar mirin?                               today to work go-you-all
-na nemiram                                              no not-go-I
+na, nemiram                                             no, not-go-I
 farda chetor?                                           tomorrow how?
 ham                                                     also
 farda be sare kaar mirin?                               tomorrow to work go-you-all
@@ -882,8 +881,17 @@ moshkeli nist                                           problem not-is
 kheili ham aali                                         very mega great
 
 baayad ye jaaye khalvat baash-e                         must place quiet/calm be
-restoraan baayad shaloogh nabaash-e                      restaurant must busy/noisy not-be
+restoraan baayad shaloogh nabaash-e                     restaurant must busy/noisy not-be
 istgaah-e aakhar                                        station last
+
+ye dagheh vaaysaa!                                      wait a minute!
+
+cheghadr tul mikashe?                                   wie viel länge zieht es? wie lange dauert das?
+ziaad tul mikashe                                       es dauert lange
+tul mikashe ta beresim                                  es dauert noch, bis wir ankommen
+karet cheghadr tul keshid?                              wie lange hat deine arbeit / dein termin gedauert?
+kheyli tul keshid!                                      das hat echt lange gedauert!
+tul keshid ta javab bede                                es hat gedauert, bis er/sie geantwortet hat
 
 
 `;

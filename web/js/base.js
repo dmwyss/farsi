@@ -21,6 +21,7 @@ const vocab = {
     iLangGuess: FA,
     iColHiddenForGuess: 2,
     aoGroops: null,
+    dictGroops: null,
     filter: null, // currently only works on star. Later filter like this: {object:"sakhtBase", fieldName: "title", find:"xxx"},
     rowFocus: null,
     userSettings: {
@@ -73,6 +74,10 @@ const vocab = {
     },
     init: function() {
         this.aoGroops = groopData;
+        this.dictGroops = {};
+        for (let ixG = 0; ixG < this.aoGroops.length; ixG++) {
+            this.dictGroops[this.aoGroops[ixG].iId] = this.aoGroops[ixG];
+        }
         this.userSettings = localStorageManager.get("user_settings", this.userSettings);
 
         console.log(this.userSettings);
@@ -105,14 +110,14 @@ const vocab = {
                     iIncrement++;
                 }
             }
-            let oO_ = sakhtBase.getByKeyOo(sForeignKey);
+            let oSakhtiInfo = sakhtBase.getSakhtiByKey(sForeignKey);
             oWord.meta = {
                 ixOrig: ix,
                 sSortIxOrig: "" + (ix / 10000),
                 sSortP: charTamer.plainAlpha(oWord.p.contextText).toLowerCase(),
                 sSortE: charTamer.plainAlpha(oWord.e.contextText).toLowerCase(),
                 sSortStar: (oWord.hasOwnProperty("aiStar") && (oWord.aiStar.includes(vocab.userSettings.iIdStarCurr) ?  1 : 0)),
-                sSortSakhti: ((oO_.sakhti === 0 ? 1 : (oO_.sakhti + 100)) * 10000) + ix
+                sSortSakhti: ((oSakhtiInfo.sakhti === 0 ? 1 : (oSakhtiInfo.sakhti + 100)) * 10000) + ix
             };
             oWord.key = sForeignKey;
             oDictOut[sForeignKey] = oWord;
@@ -171,15 +176,15 @@ const vocab = {
         let sWidestP = "";
         for (let ix = 0; ix < this.list.length; ix++) {
             let oWord = this.list[ix];
-            let oSakht = sakhtBase.getByKeyOo(oWord.key);
+            let oSakht = sakhtBase.getSakhtiByKey(oWord.key);
             /*
             sOutWidth += "<tr class='silent'>" // " + ix + "
                 + "<td class=\"context colNarrow\">" + iShownRows++ + "</td>"
                 + "<td class=\"context\">" + charTamer.toNaughty(oWord.e.contextHtml) + "</td>"
                 + "<td class=\"context\">" + charTamer.toNaughty(oWord.p.contextHtml) + "</td>"
                 + "<td class=\"context colNarrow\">" + sakhtBase.getResearchLink(oWord) + "</td>"
-                + "<td class=\"context colNarrow\">" + sakhtBase.getStarOo(oWord.key, oSakht) + "</td>"
-                + "<td class=\"context\">" + sakhtBase.getIconOo(oSakht) + "</td>"
+                + "<td class=\"context colNarrow\">" + sakhtBase.getStarHtml(oWord.key, oSakht) + "</td>"
+                + "<td class=\"context\">" + sakhtBase.getIcon(oSakht) + "</td>"
                 + "</tr>";
             */
             if (oWord.e.contextText.length > sWidestE.length) {
@@ -198,8 +203,8 @@ const vocab = {
                 + "<td class=\"context\">" + charTamer.toNaughty(oWord.e.contextHtml) + "</td>"
                 + "<td class=\"context\">" + charTamer.toNaughty(oWord.p.contextHtml) + "</td>"
                 + "<td class=\"context colNarrow\">" + sakhtBase.getResearchLink(oWord) + "</td>"
-                + "<td class=\"context colNarrow\">" + sakhtBase.getStarOo(oWord.key, oSakht) + "</td>"
-                + "<td class=\"context\">" + sakhtBase.getIconOo(oSakht) + "</td>"
+                + "<td class=\"context colNarrow\">" + sakhtBase.getStarHtml(oWord.key, oSakht) + "</td>"
+                + "<td class=\"context\">" + sakhtBase.getIcon(oSakht) + "</td>"
                 + "</tr>";
         }
         sOut += "<tr class='silent'><td class=\"context colNarrow\">&nbsp;</td><td>"
@@ -467,7 +472,7 @@ const sakhtBase = {
     callbackMethod: function() {
         // For future use.
     },
-    getByKeyOo: function(sKey, vDefault) {
+    getSakhtiByKey: function(sKey, vDefault) {
         if (!this.dataOo.hasOwnProperty(sKey)) {
             //if (vDefault != null) {
             if (typeof vDefault === "undefined") {
@@ -478,11 +483,12 @@ const sakhtBase = {
         }
         return this.dataOo[sKey];
     },
+    /*
     getStar: function(sKey) {
         return "&star;";
     },
+    */
     getResearchLink: function(oWord) {
-        //let sTerm = oWord.p.contextText.split(" ").join("+");
         let sTerm = charTamer.urlEncode(oWord.p.contextText);
         let sOut = "<a href=\"https://www.google.com/search?q=literal+translation+of+%22" + sTerm + "%22+in+farsi\"";
         sOut += " target=\"farsiResearch\" class=\"tableCellLinkIcon\">";
@@ -490,14 +496,19 @@ const sakhtBase = {
         sOut += "</a>"
         return sOut;
     },
-    getStarOo: function(sKey, oO) {
+    getStarHtml: function(sKey, oSakhtiInfo) {
         let sStar = "&star;";
         let sCss = "off";
-        if (oO.hasOwnProperty("aiStar")) {
-            if (oO.aiStar.includes(vocab.userSettings.iIdStarCurr)) {
+        let iStarCountOver = 0;
+        if (oSakhtiInfo.hasOwnProperty("aiStar")) {
+            iStarCountOver = oSakhtiInfo.aiStar.length;
+            if (oSakhtiInfo.aiStar.includes(vocab.userSettings.iIdStarCurr)) {
                 // In the current list.
                 sStar = "&starf;";
                 sCss = "on";
+                if (iStarCountOver < 2) {
+                    iStarCountOver = 0;
+                }
             } else {
                 // This is in a list, but not the current list.
                 // Fill the star, but greyed out.
@@ -506,6 +517,17 @@ const sakhtBase = {
         }
         let sOut = "<div role=\"star\" onclick=\"sakhtBase.doStarClick(\'" + sKey + "\', this);\" class=\"" + sCss + "\">";
         sOut += sStar + "</div>";
+        if (iStarCountOver != 0) {
+            sOut += "<div class=\"starCount\">" + iStarCountOver;
+            sOut += "<div class=\"starCountList\">";
+            let sSep = "";
+            for (let ixStar = 0; ixStar < oSakhtiInfo.aiStar.length; ixStar++) {
+                sOut += sSep + vocab.dictGroops[oSakhtiInfo.aiStar[ixStar]].sLabel;
+                sSep = "<br/>";
+            }
+            sOut += "</div>";
+            sOut += "</div>";
+        }
         return sOut;
     },
     doStarClickFromKeyEvent: function() {
@@ -518,13 +540,13 @@ const sakhtBase = {
         this.doStarClick(sDataKey, uiStar);
     },
     doStarClick: function(sKey, uiStar) {
-        let oWord = this.getByKeyOo(sKey, null);
+        let oWord = this.getSakhtiByKey(sKey, null);
         if (oWord === null) {
             // Do that again, but get a blank object.
-            oWord = this.getByKeyOo(sKey);
+            oWord = this.getSakhtiByKey(sKey);
             this.dataOo[sKey] = oWord;
             // Get it from the dict.
-            oWord = this.getByKeyOo(sKey);
+            oWord = this.getSakhtiByKey(sKey);
         }
         if ((oWord.hasOwnProperty("aiStar")) && (oWord.aiStar.includes(vocab.userSettings.iIdStarCurr))) {
             // Currently turned on.
@@ -545,8 +567,8 @@ const sakhtBase = {
         }
         this.save();
     },
-    getIconOo: function(oO) {
-        let iStrength = oO.sakhti;
+    getIcon: function(oSakhtiInfo) {
+        let iStrength = oSakhtiInfo.sakhti;
         let sCss = this.getCssForStrength(iStrength);
         let sStrength = this.prettyStrength(iStrength);
         return "<div class=\"sakhti\" style=\"" + sCss + "\">" + sStrength + "</div>";

@@ -17,6 +17,7 @@ def reformat_lines(in_path):
             if s_line == "\n" or s_line.startswith("#") or s_line.startswith("let") or len(s_line) == 0 :
                 s_out += s_line
             else:
+                s_line_without_fixes = s_line
                 s_line = s_line \
                     .replace("ā", "aa") \
                     .replace("â", "aa") \
@@ -25,12 +26,18 @@ def reformat_lines(in_path):
                     .replace(r"[ ]*\|[ ]*", " | ") \
                     .lstrip(" \t")
                 s_line = re.sub(r"\s*\|\s*", "|", s_line)
+                s_line = re.sub(r"\.$", "", s_line)
+                s_line = re.sub(r"\.\s{4,4}", "     ", s_line)
                 as_line = re.split(r',*\s{2,}|\||\t|:', s_line)
                 if len(as_line) > 2:
                     as_line = [as_line[0], " ".join(as_line[1:])]
                 if len(as_line) == 2:
                     as_line[0] = as_line[0].ljust(52) + "    "
                     s_line = as_line[0] + as_line[1].strip() + "\n"
+                if s_line != s_line_without_fixes:
+                    # only lowercase once in case "I" exists.
+                    s_line = s_line.lower()
+                    s_line = re.sub(r"\bi\b", "I", s_line, flags=re.IGNORECASE)
                 s_out += s_line
     with open(in_path, 'w', encoding='utf-8') as file:
         file.write(s_out)

@@ -13,7 +13,7 @@ var aoTemplates = [
     "etymology of the farsi word \"\"",
     "is \"\" good grammar and natural informal farsi I would say to my girlfriend?",
     "difference between \"\" and \"\"",
-    "is is \"\" or \"\"",
+    "is it \"\" or \"\"",
     /* "what does \"\" mean in farsi", */
     /* "conjugate the verb \"\" in informal farsi", */
     /* "give me a short, informal, rhyming sentence using the farsi word \"\"", */

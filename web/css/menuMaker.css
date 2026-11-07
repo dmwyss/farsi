@@ -50,13 +50,11 @@
     margin: 0;
     position: absolute;
     width: 100%;
-    background: #1f2730;
+    background: #272f39;
     border-radius: 5px;
     overflow: hidden;
     z-index: 10;
-    /*
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
     border: 1px solid #454e59;
 }
 

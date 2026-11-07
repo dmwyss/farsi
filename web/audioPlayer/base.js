@@ -113,10 +113,13 @@ function formatTime(seconds) {
 function togglePlay() {
     if (customAudio.paused) {
         customAudio.loop = userPrefs.data.iLoopMode === LOOP_ONCE;
+        let iSecsReal = Math.round(customAudio.duration);
+        if (trackCurr.secs != iSecsReal) {
+            console.log(trackCurr.name + " is " + iSecsReal + " secs in length not " + trackCurr.secs);
+        }
         customAudio.play();
         playIcon.innerHTML = '<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>';
         playPauseBtn.classList.add('stop-main');
-        console.log("seconds: " + Math.round(customAudio.duration));
         timeline.style.backgroundColor = "var(--color-accent)";
     } else {
         customAudio.pause();
@@ -173,7 +176,9 @@ const trackList = {
         for (let ixAF = 0; ixAF < this.data.length; ixAF++) {
             let oAF = this.data[ixAF];
             oAF.id = oAF.file.split(".").join("_")
-            oAF.name = oAF.file.substring(0, oAF.file.lastIndexOf(".")).replace(/[_\-\.]/g, ' ');
+            oAF.name = oAF.file.substring(0, oAF.file.lastIndexOf("."))
+                .replace(/[_\-\.]/g, ' ')
+                .replace(/[ ]{2,}/g, ' ');
             oAF.ix = ixAF;
             this.dict[oAF.id] = oAF;
         }

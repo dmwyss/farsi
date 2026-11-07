@@ -76,7 +76,32 @@ td.colNarrow {
     padding-right: 5px;
     min-width: 35px;
     color: #778088;
+    position: relative;
 }
+.starCount {
+    position: absolute;
+    top: 8px;
+    left: 24px;
+    font-size: 9pt;
+    color: #85898d;
+}
+.starCountList {
+    display: none;
+    font-size: 16px;
+    background-color: #272f39;
+    color: #CCCCCC;
+    padding: 8px 30px 8px 30px;
+    position: absolute;
+    bottom: 0;
+    z-index: 100;
+    border-radius: 5px;
+    white-space: nowrap;
+    border: 1px solid #454e59;
+}
+.starCount:hover .starCountList {
+    display: block;
+}
+
 tr.silent {
     visibility: collapse;
 }
