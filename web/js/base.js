@@ -491,7 +491,7 @@ const sakhtBase = {
     getResearchLink: function(oWord) {
         let sTerm = charTamer.urlEncode(oWord.p.contextText);
         let sOut = "<a href=\"https://www.google.com/search?q=literal+translation+of+%22" + sTerm + "%22+in+farsi\"";
-        sOut += " target=\"farsiResearch\" class=\"tableCellLinkIcon\">";
+        sOut += " target=\"farsiResearch\" class=\"tableCellLinkIcon\" onclick=\"this.blur()\">";
         sOut += "<img src=\"img/icnLupe.svg\" style=\"width:17px;\">";
         sOut += "</a>"
         return sOut;

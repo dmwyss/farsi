@@ -80,10 +80,11 @@ td.colNarrow {
 }
 .starCount {
     position: absolute;
-    top: 8px;
-    left: 24px;
+    top: 0px;
+    left: 26px;
     font-size: 9pt;
     color: #85898d;
+    padding: 8px 11px 8px 2px;
 }
 .starCountList {
     display: none;

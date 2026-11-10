@@ -46,7 +46,7 @@ shomaa mikonin                                          you (plur) do
 man *na-kardam*                                         i *did-not-do* (past)
 man *ne-mikonam*                                        i *do-not-do* (imperf)
 
-Man dar Tehran zendegi mikonam                          I live in Tehran
+man dar Tehran zendegi mikonam                          I live in Tehran
 oon be ayande fekr mikonad                              she thinks about the future
 Ma dar yek daftar kaar mikonim                          We work in an office
 oona ba moallem sohbat mikonan                          They talk with the teacher
@@ -89,7 +89,7 @@ morgh-e daryaaee                                        chicken-of sea
 *pedar*-et kojaast                                      *father*-yours whereis
 koja *madar*-am                                         where *mother*-mine
 risheh-ye kalameh                                       root-of word
-ajale nakon - vaght darim                               rush not-do - time have-we
+ajale nakon - vaght daarim                              rush not-do - time have-we
 ajale kon - vaght nadaarim                              rush do - time not-have-we
 oon *khaanoom* raeise mane                              that *lady* manager me-is
 bebakschid *aaghaa*                                     excuse-me *sir*
@@ -195,7 +195,7 @@ toofan                                                  storm
 *laazem* nist                                           *necessary* is-not
 raast-i                                                 by the way
 *mo*-haye kheyli khoshgel-i dari                        *hair* very beautiful have-you
-khasteh nabaashee                                       dont be tired
+khasteh nabaashi                                        dont be tired (much appreciated)
 *hichi*                                                 nothing
 chizi                                                   something
 baasheh - in kaar ro mikonam                            sure - that job will-do-I
@@ -224,7 +224,7 @@ oonhaa mikonan                                          they do
 # Compound verbs based on Kardan:
 man inja zendegi mikonam                                I here live-do
 to koja zendegi mikoni?                                 where you live-do?
-man daram fekr mikonam                                  I am think-doing
+man daaram fekr mikonam                                 I am think-doing
 to chi fekr mikoni?                                     what you think-do?
 man emruz kaar mikonam                                  I work-do today
 to koja kaar mikoni?                                    where you work-do?
@@ -448,7 +448,7 @@ khabare marg-eshun                                      news death-of-them
 tahdig nazdeeg-e tah-e dig-e                            crispy-rice near bottom-of pot-is
 khodamo boridam vaghte reeshamo mizadam                 i cut myself shaving
 natije chi shod?                                        what was the result?
-natije nadare                                           result has not (it is useless)
+natije nadaare                                          result has not (it is useless)
 moosh bokhortet                                         mouse eat-you
 sholoogh poloogh                                        busy mixed-up cray-cray
 morgh-e hamsaayeh ghaaz-e                               chicken neighbour's goose-is (grass greener)
@@ -643,7 +643,7 @@ ghataar key mirese?                                     when does the train arri
 havaapeyma boland shod                                  the airplane took off
 neveshtam roo kaaghaz                                   I wrote on the paper
 khodnevis ro gom kardam                                 I lost the fountain pen
-medaad nadari?                                          don't you have a pencil?
+medaad nadaari?                                         don't you have a pencil?
 goushi-t roo miz-e                                      your phone is on the table
 pool nadaaram                                           I don't have money
 lebaas-e jadid kharid-am                                I bought new clothes
@@ -797,7 +797,7 @@ too jiib-ame                                            in pocket-mine
 chahaar-om-i                                            four-th-one
 nish-e poosheh-at chetore?                              sting mosquito-your how-is?
 waysaadam taa otoboos oomad                             I waited-I until bus came
-darim rooye sahele khalvat raah mir-im                  have on beach quiet walk go
+daarim rooye sahele khalvat raah mir-im                 have on beach quiet walk go
 khis o khoshk                                           wet and dry
 garm o sard                                             warm and cold
 baroon oomad, golha dar oomadan                         rain came, flowers out-came (sprouted)
@@ -822,20 +822,20 @@ emruz hich kaari nakardam                               today none work not-did-
 chon taaze saa-at shish e                               because only oclock six is
 diruz chikaar kardin?                                   yesterday what-work do-you-all
 tu daftar kaar kardam                                   in office work did-I
-koja kaar kardin?                                       where work worked-you
+koja kaar kardin?                                       where work did-you-all
 ba dust dokhtaram tu daftar kaar kardam                 with friend girl in office worked
-az saa-at-e chand ta saa-at-e chand kaar kardin?        from what time to what time work did?
+az saa-at-e chand ta saa-at-e chand kaar kardin?        from what time to what time work did-you-all?
 diruz koja nahar khordin?                               yesterday where lunch ate-you?
 diruz tanhayi nahar khordam                             yesterday alone lunch ate-I
-shoma laptop darin?                                     you laptop have?
+shoma laptop daar-in?                                   you-all laptop have?
 laptop e shoma chetori-e?                               laptop yours what like?
 dune baarf noghrei                                      flake snow silver
 laptop-am bozorg o noghrei-ye                           laptop-my big and silver-is
-shoma docharkheh daarin?                                you bike have?
-docharkham kheili ghadimi o abi-ye                      bike very old and blue-is
-khunatun chetori e?                                     home-you how is like?
+shoma docharkheh daarin?                                you-all bike have?
+docharkham kheili ghadimi o abi-ye                      bike-my very old and blue-is
+khunatun chetori e?                                     home-you-all how is like?
 khunam nazdik-e ye shahr e kuchik e                     home-my near-is a city and small is
-diruz ba chi be sare kaar raftin?                       yesterday with what to work went-you-all
+diruz ba chi be sare kaar raftin?                       yesterday with what to work went-you-all (past)
 kojaa neshasti?                                         where you sat?
 dam-e panjerehaa neshast-am                             near the windows i am sitting
 man piyaadeh miram saare kaar                           I on foot go work
@@ -847,9 +847,9 @@ tul keshidan                                            to take time
 az khunam ta daftar piade bist deyghe tul keshid        from home-my to office walk twenty mins time took
 diruz koja sham khordin?                                yesterday where dinner ate you-all
 diruz too khunam sham khordam                           yesterday at home-my dinner ate-I
-diruz ba dust dokhtar-am sham nakhordam                 yesterday with girfriend dinner not-ate-I
-emruz koja nahar mikhorin?                              today where lunch ate-you-all
-emruz be park mirin?                                    today to park went-you?
+diruz ba dust dokhtar-am sham nakhordam                 yesterday with girfriend-my dinner not-ate-I
+emruz koja nahar mikhorin?                              today where lunch eat-you-all
+emruz be park mirin?                                    today to park go-you-all?
 park koja e?                                            park where is?
 az khunatun ta park cheghadr tul mikeshe?               from house-your to park how long takes?
 az khunam ta park panj deyghe tul mikeshe               form house-my to park five mins time takes
@@ -866,12 +866,12 @@ emruz saa-at-e chand mikhabin?                          today hour-of sleep-you-
 emruz saa-at-e yazdah mikhabam                          today hour-of eleven sleep-I
 khabidan                                                to sleep
 har-ruz saa-at-e chand bidar mishin?                    each-day hour-of wake become-you-all?
-emruz be sare kaar mirin?                               today to work go-you-all
+emruz be sare kaar mirin?                               today to workplace go-you-all?
 na, nemiram                                             no, not-go-I
-farda chetor?                                           tomorrow how?
+fardaa chetor?                                          tomorrow how?
 ham                                                     also
-farda be sare kaar mirin?                               tomorrow to work go-you-all
-na, farda ham be sare kaar nemiram                      no, tomorrow also to work not-go-I
+fardaa be sare kaar mirin?                              tomorrow to work go-you-all
+na, fardaa ham be sare kaar nemiram                     no, tomorrow also to work not-go-I
 
 jomalaat-e bishtar darbaare-ye raft o aamad             sentences more about going and coming
 montazer-e cheragh-e sabz baash                         wait lights green become
@@ -892,6 +892,62 @@ tul mikashe ta beresim                                  es dauert noch, bis wir 
 karet cheghadr tul keshid?                              wie lange hat deine arbeit / dein termin gedauert?
 kheyli tul keshid!                                      das hat echt lange gedauert!
 tul keshid ta javab bede                                es hat gedauert, bis er/sie geantwortet hat
+
+
+ki oomad?                                               who came?
+chi shod?                                               what happened?
+key berim?                                              when should we go?
+
+# Lesson 3
+in hafte baaz neshasteh shodam                          this week retired I became
+shanbe-ye pish shast saal-am shod                       saturday (of) previous sixty year-my it became
+chikar kardin?                                          what work you-all did?
+jashn gereftan                                          celebration they took (they celebrated)
+baa khaanevaadam vo doost dokhtar-am                    with family-my and friend girl-my
+baraam deril kaado gereftan                             for-me drill gift they took (they bought)
+ye deril kaado gereftam                                 a drill gift I took (I received)
+ye naghaashi-ye faarsi az dust dokhtaram gereftam       a painting (of) persian from friend girl-my I took (I received)
+az sa-aat-e do taa sa-aat-e dah jashn gereftim          from hour (of) two until hour (of) ten celebration we took (we celebrated)
+emruz chikar mikonin?                                   today what work you-all do?
+emruz hich kaari nemikonam                              today no work-a I do not do
+film mibinin?                                           movie you-all see (watch)?
+dust daaram film bebinam                                I would like movie that I see (watch)
+dust daaram har ruz varzesh bokonam                     wanting have-I every day exercise that I do
+emruz dust daarin be sinama berin?                      today wanting have-you-all to cinema that you-all go?
+emruz dust daaram tu khunam film bebinam                today wanting have-I in house-my movie that I see (watch)
+dust nadaaram tu sinamaa film bebinam                   wanting not-have-I in cinema movie that I see (watch)
+dust daarin birun ghazaa bokhorin?                      wanting have-you-all outside food that you-all eat?
+resturaan-e fazaa-ye baaz                               restaurant of space of open
+tu melborn kheili resturaan-e fazaa-ye baaz hast        in melbourne very (many) restaurant (of) space (of) open there is
+emruz havaa kheili khub-e                               today weather very good-is
+emruz dust daaram baa dust dokhtaram be resturan beram    today wanting have-I with friend girl-my to restaurant go-I
+resturan fazaa-ye baz                                   restaurant space of open
+resturan nazdik e rudkhune e                            the restaurant near river is
+emruz dust daarin chi bokhorin?                         today wanting have-you-all what that you-all eat?
+dust daaram hamberger bokhoram                          wanting have-I hamburger that I eat
+emruz chetori be resturan mirin?                        today how to restaurant you-all go?
+resturaan kojaast?                                      restaurant where-is?
+resturaane chetorie?                                    the restaurant how-is?
+aadamhaayi ke tu resturaan kaar mikonan kheili mehrabunan    people-who that in restaurant work they do very kind-they are
+filmi ke mikhaayn bebinin chetorie?                     movie-a that you-all want to watch how-is?
+esm-e filmi ke dust daaram bebinam tuner-e              name of movie-a that wanting have-I that I see Tuner-is
+khunei ke tu un zendegi mikonin chetorie?               house that in live-you-all how-is?
+khunei ke tu un zendegi mikonam kuchik o nazdike shahre    house-a that in-it life I do small and near (of) city-is
+shomaa docharkhe daarin?                                you-all bicycle you-all have?
+docharkhe-ye shomaa chetorie?                           bicycle (of) you-all how-is?
+docharkhe-I ke daaram kheili ghadimi o aabi-e           bicycle-a that I have very old and blue-is
+emruz ghazaa dorost mikonin?                            today food right you-all make?
+emshab miram ye resturaan                               tonight i go a restaurant
+ghaza-yi ke dorost mikonin chetorie?                    food-a that right you-all make how-is?
+ghazaayi ke dorost mikonam kheili sabzijaat daare       food-a that right I make much vegetables it has
+laptopi ke daaram bozorg o noghrei-e                    laptop that I have big and silver-is
+shomaa tavalod-etun deril gereftin?                     you-all birthday-your drill you-all received (took)?
+dereyli ke gereftam sabz o bisim e                      drill that I received (took) green and wireless-is
+dereyli ke be man dadan sabz o bisim e                  drill that to-me they gave green and wireless-is
+gereftan                                                to get
+dadan                                                   to give
+resturaane nazdik-e rudkhune-ast                        the restaurant is near the river
+piyaade miram resturaan                                 I walk to the restaurant
 
 
 `;
