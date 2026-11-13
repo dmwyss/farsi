@@ -102,7 +102,10 @@ td.colNarrow {
 .starCount:hover .starCountList {
     display: block;
 }
-
+.menuMakerWrapper .customMenuMaker li:first-child ,
+.flagged {
+    color: #00bbdd;
+}
 tr.silent {
     visibility: collapse;
 }

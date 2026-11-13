@@ -514,6 +514,9 @@ const sakhtBase = {
                 // Fill the star, but greyed out.
                 sStar = "&starf;";
             }
+            if (oSakhtiInfo.aiStar.includes(0)) {
+                sCss += " flagged";
+            }
         }
         let sOut = "<div role=\"star\" onclick=\"sakhtBase.doStarClick(\'" + sKey + "\', this);\" class=\"" + sCss + "\">";
         sOut += sStar + "</div>";

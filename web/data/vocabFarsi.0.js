@@ -492,8 +492,15 @@ meeshe jaaroo-barghiro rooshan koni                     can you turn on the vacu
 injaaroo-barghiro kheyli bi-sedaa ast                   this broom-electric very not-noisy is
 em-saal khoshk-saalie                                   this year is a drought
 
-dah beest see chel panjaah                              count 10 to 50
+dah bist si chel panjaah                                count 10 to 50
 shast haftaad hashtaad navad sad                        count 60 to 100
+
+
+
+
+
+
+
 jaayi ke dood hast aatash ham hast                      place that smoke is - fire also is
 nish-e yek aroos-e daryaayi                             sting/bite-of a bride-of sea
 besyaar dardnaak nabood                                 very painful not-was
@@ -507,8 +514,6 @@ khoneh mesl-e maah shode                                house like moon has-beco
 cheraaghaaye shargh bargh mizanan                       lamps-of-the east shine
 harf-e aakhar                                           the last word
 
-dah beest see chel panjaah                              count 10 to 50
-shast haftaad hashtaad navad sad                        count 60 to 100
 jaayi ke dood hast aatash ham hast                      where there is smoke there is fire
 nish-e yek aroos-e daryaayi                             sting/bite-of a bride-of sea
 besyaar dardnaak nabood                                 very painful not-was
@@ -903,51 +908,64 @@ in hafte baaz neshasteh shodam                          this week retired I beca
 shanbe-ye pish shast saal-am shod                       saturday (of) previous sixty year-my it became
 chikar kardin?                                          what work you-all did?
 jashn gereftan                                          celebration they took (they celebrated)
-baa khaanevaadam vo doost dokhtar-am                    with family-my and friend girl-my
+baa khaanevaadam o doost dokhtar-am                     with family-my and friend girl-my
 baraam deril kaado gereftan                             for-me drill gift they took (they bought)
 ye deril kaado gereftam                                 a drill gift I took (I received)
 ye naghaashi-ye faarsi az dust dokhtaram gereftam       a painting (of) persian from friend girl-my I took (I received)
 az sa-aat-e do taa sa-aat-e dah jashn gereftim          from hour (of) two until hour (of) ten celebration we took (we celebrated)
 emruz chikar mikonin?                                   today what work you-all do?
 emruz hich kaari nemikonam                              today no work-a I do not do
-film mibinin?                                           movie you-all see (watch)?
+film mibinin?                                           movie see-you-all (watch)?
 dust daaram film bebinam                                I would like movie that I see (watch)
 dust daaram har ruz varzesh bokonam                     wanting have-I every day exercise that I do
 emruz dust daarin be sinama berin?                      today wanting have-you-all to cinema that you-all go?
 emruz dust daaram tu khunam film bebinam                today wanting have-I in house-my movie that I see (watch)
 dust nadaaram tu sinamaa film bebinam                   wanting not-have-I in cinema movie that I see (watch)
-dust daarin birun ghazaa bokhorin?                      wanting have-you-all outside food that you-all eat?
+dust daarin birun ghazaa bokhorin?                      wanting have-you-all outside food you-all eat?
 resturaan-e fazaa-ye baaz                               restaurant of space of open
 tu melborn kheili resturaan-e fazaa-ye baaz hast        in melbourne very (many) restaurant (of) space (of) open there is
 emruz havaa kheili khub-e                               today weather very good-is
 emruz dust daaram baa dust dokhtaram be resturan beram    today wanting have-I with friend girl-my to restaurant go-I
-resturan fazaa-ye baz                                   restaurant space of open
+resturan fazaa-ye baaz                                   restaurant space of open
 resturan nazdik e rudkhune e                            the restaurant near river is
-emruz dust daarin chi bokhorin?                         today wanting have-you-all what that you-all eat?
+emruz dust daarin chi *bokhorin*?                       today wanting have-you-all what that you-all eat?
 dust daaram hamberger bokhoram                          wanting have-I hamburger that I eat
 emruz chetori be resturan mirin?                        today how to restaurant you-all go?
-resturaan kojaast?                                      restaurant where-is?
+resturaan kojaa-e?                                      restaurant where-is?
 resturaane chetorie?                                    the restaurant how-is?
 aadamhaayi ke tu resturaan kaar mikonan kheili mehrabunan    people-who that in restaurant work they do very kind-they are
-filmi ke mikhaayn bebinin chetorie?                     movie-a that you-all want to watch how-is?
-esm-e filmi ke dust daaram bebinam tuner-e              name of movie-a that wanting have-I that I see Tuner-is
-khunei ke tu un zendegi mikonin chetorie?               house that in live-you-all how-is?
-khunei ke tu un zendegi mikonam kuchik o nazdike shahre    house-a that in-it life I do small and near (of) city-is
+filmi ke mikhaayn bebinin chetori-e?                    movie-a that you-all want to watch how-is?
+esm-e filmi ke dust daaram bebinam tuner-e              name of movie-a that wanting have-I see-I Tuner-is
+khunei ke tu un zendegi mikonin chetori-e?              house that in live-you-all how-is?
+khunei ke tu un zendegi mikonam kuchik o nazdike shahr-e    house-a that in-it life I do small and near (of) city-is
 shomaa docharkhe daarin?                                you-all bicycle you-all have?
 docharkhe-ye shomaa chetorie?                           bicycle (of) you-all how-is?
-docharkhe-I ke daaram kheili ghadimi o aabi-e           bicycle-a that I have very old and blue-is
+docharkhe-i ke daaram kheili ghadimi o aabi-e           bicycle-a that I have very old and blue-is
 emruz ghazaa dorost mikonin?                            today food right you-all make?
 emshab miram ye resturaan                               tonight i go a restaurant
-ghaza-yi ke dorost mikonin chetorie?                    food-a that right you-all make how-is?
+ghaza-yi ke dorost mikonin chetori-e?                   food-a that right you-all make how-is?
 ghazaayi ke dorost mikonam kheili sabzijaat daare       food-a that right I make much vegetables it has
 laptopi ke daaram bozorg o noghrei-e                    laptop that I have big and silver-is
-shomaa tavalod-etun deril gereftin?                     you-all birthday-your drill you-all received (took)?
-dereyli ke gereftam sabz o bisim e                      drill that I received (took) green and wireless-is
-dereyli ke be man dadan sabz o bisim e                  drill that to-me they gave green and wireless-is
+shomaa tavalod-etun deril gereftin?                     you-all birthday-your drill received-you-all (took)?
+dereyl-i ke gereftam, sabz o bisim e                    drill that I received (took) green and wireless-is
+dereyl-i ke be man dadan sabz o bisim e                 drill that to-me they gave green and wireless-is
 gereftan                                                to get
 dadan                                                   to give
 resturaane nazdik-e rudkhune-ast                        the restaurant is near the river
 piyaade miram resturaan                                 I walk to the restaurant
+
+gomshode dar fazaa                                      lost in space
+
+yaz-dah                                                 eleven
+bist-o-do                                               twenty two
+siy-o-seh                                               thirty three
+che-hel-o-char                                          fourty four
+pan-jah-o-panj                                          fifty five
+shast-o-shish                                           sixt six
+haftad-o-haft                                           seventy seven
+hashtad-o-hasht                                         eighty eight
+navad-o-noh darsad                                      niney nine
+
 
 
 `;
