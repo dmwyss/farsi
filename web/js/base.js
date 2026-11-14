@@ -104,16 +104,20 @@ const vocab = {
             if (!oWord) {
                 continue;
             }
-            let sForeignKey = oWord.p.key.toLowerCase().split("?").join("").split("\"").join("&quot;");
+            oWord.key = oWord.p.key.toLowerCase().split("?").join("").split("\"").join("&quot;");
             if (oDictOut.hasOwnProperty(oWord.p.key)) {
                 let iIncrement = 1;
-                while (oDictOut.hasOwnProperty(sForeignKey)) {
+                while (oDictOut.hasOwnProperty(oWord.key)) {
+                    // Look for the key already in the list.
+                    // Keep trying new keys until it is not already there.
                     //c onsole.error("trying to set " + oWord.p.key + " again.");
-                    sForeignKey = (oWord.p.key + "__" + iIncrement).toLowerCase();
+                    oWord.key = (oWord.p.key + "__" + iIncrement).toLowerCase();
                     iIncrement++;
                 }
             }
-            let oSakhtiInfo = sakhtBase.getSakhtiByKey(sForeignKey);
+            //oWord.sForeignKey = sForeignKey
+            //let oSakhtiInfo = sakhtBase.getSakhtiByKey(sForeignKey);
+            /*
             oWord.meta = {
                 ixOrig: ix,
                 sSortIxOrig: "" + (ix / 10000),
@@ -122,10 +126,27 @@ const vocab = {
                 sSortStar: (oWord.hasOwnProperty("aiStar") && (oWord.aiStar.includes(vocab.userSettings.iIdStarCurr) ?  1 : 0)),
                 sSortSakhti: ((oSakhtiInfo.sakhti === 0 ? 1 : (oSakhtiInfo.sakhti + 100)) * 10000) + ix
             };
-            oWord.key = sForeignKey;
-            oDictOut[sForeignKey] = oWord;
+            */
+            oWord.meta = this.generateMetaData(oWord, ix);
+            //oWord.key = sForeignKey;
+            oDictOut[oWord.key] = oWord;
         }
         return oDictOut;
+    },
+    generateMetaData: function(oWord, ix=null) {
+        let oSakhtiInfo = sakhtBase.getSakhtiByKey(oWord.key);
+        if (ix === null) {
+            // ix can only be missing if refreshing metadata.
+            ix = oWord.meta.ixOrig;
+        }
+        return {
+            ixOrig: ix,
+            sSortIxOrig: "" + (ix / 10000),
+            sSortP: charTamer.plainAlpha(oWord.p.contextText).toLowerCase(),
+            sSortE: charTamer.plainAlpha(oWord.e.contextText).toLowerCase(),
+            sSortStar: (oWord.hasOwnProperty("aiStar") && (oWord.aiStar.includes(vocab.userSettings.iIdStarCurr) ?  1 : 0)),
+            sSortSakhti: ((oSakhtiInfo.sakhti === 0 ? 1 : (oSakhtiInfo.sakhti + 100)) * 10000) + ix
+        };
     },
     initList: function() {
         this.list = [];
@@ -263,7 +284,12 @@ const vocab = {
     },
     getRefreshAllHtml: function () {
         let sOut = "<div id=\"refreshAllWrapper\" class=\"buttonRibbonElement\" onclick=\"vocab.refreshVocabTable();\">";
-        sOut += "<div id=\"studyTimerElapsedDisplay\" class=\"value\">R</div>";
+        sOut += "<div id=\"studyTimerElapsedDisplay\" class=\"value\">";
+        sOut += "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"1,8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-label=\"Refresh\">";
+        sOut += "<path d=\"M21 12a9 9 0 1 1-2.64-6.36\" />";
+        sOut += "<polyline points=\"21 3 21 9 15 9\" />";
+        sOut += "</svg>";
+        sOut += "</div>";
         sOut += "</div>";
         return sOut;
     },
@@ -280,7 +306,7 @@ const vocab = {
     refreshVocabTable: function () {
         const sSortField = this.sLastSortField;
         this.sLastSortField = "fakeToForceSort";
-        this.renderVocabTable(sSortField);
+        this.clickColSort(sSortField);
     },
     doRowClick: function(oRow) {
         studyTimer.bump();
@@ -391,13 +417,16 @@ const vocab = {
             sakhtBase.dataOo[sKey].sakhti += iSakht;
             iSakht = sakhtBase.dataOo[sKey].sakhti;
         }
+        // Update the meta
+        let oWord = vocab.dict[sKey];
+        oWord.meta = this.generateMetaData(oWord); // ix not neeeded if refreshing.
         sakhtBase.save();
         trCurrent.querySelector("div.sakhti").style = sakhtBase.getCssForStrength(iSakht);
         trCurrent.querySelector("div.sakhti").innerHTML = sakhtBase.prettyStrength(iSakht);
         trCurrent.querySelector("div.sakhti").style.outlineWidth = "3px";
         setTimeout(() => {
             trCurrent.querySelector("div.sakhti").style.outlineWidth = "0px";
-        }, 100)
+        }, 100);
     },
     setTestMode: function(uiSrc) {
         let sValueNew = uiSrc.getAttribute("data-value");
