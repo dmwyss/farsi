@@ -59,8 +59,11 @@ const vocab = {
             return this;
         },
         showHideAnswer: function() {
+            studyTimer.bump();
+            /*
             console.log("vocab.testState.showHideAnswer(" + (this.phase === "ask" ? "true" : "false") + ")");
             console.log("vocab.ixVis = " + vocab.ixVis + ")");
+            */
             let uiTrTd = vocab.uiVocab.querySelector("#tr" + vocab.ixVis + " td:nth-child(3)");
             if (uiTrTd) {
                 uiTrTd.style.opacity = this.phase === "ask" ? "0.0" : "1.0";
@@ -248,18 +251,39 @@ const vocab = {
             sOnClick: "vocab.setTestMode(this);"
         };
         let sButtons = ""
+            + this.getStudyTimerDisplayHtml()
             + timeBar.getHtml()
             + "<div id=\"menuContainer\" class=\"optionBarRow\"></div>"
             //+ utilCustomGuiElements.generateOptionBar(oOptionBarSettingsGroop)
-            + utilCustomGuiElements.generateOptionBar(oOptionBarSettingsTestMode);
+            + utilCustomGuiElements.generateOptionBar(oOptionBarSettingsTestMode)
+            + this.getRefreshAllHtml()
+            ;
         this.uiButtonRibbon.innerHTML = sButtons;
 
+    },
+    getRefreshAllHtml: function () {
+        let sOut = "<div id=\"refreshAllWrapper\" class=\"buttonRibbonElement\" onclick=\"vocab.refreshVocabTable();\">";
+        sOut += "<div id=\"studyTimerElapsedDisplay\" class=\"value\">R</div>";
+        sOut += "</div>";
+        return sOut;
+    },
+    getStudyTimerDisplayHtml: function () {
+        let sOut = "<div id=\"studyTimerWrapper\" class=\"buttonRibbonElement\">";
+        sOut += "<div id=\"studyTimerElapsedDisplay\" class=\"value\">0</div>";
+        sOut += "</div>";
+        return sOut;
     },
     renderVocabTable: function () {
         this.uiVocab = document.querySelector("#vocabWrapper");
         this.uiVocab.innerHTML = this.vocabToHtml();
     },
+    refreshVocabTable: function () {
+        const sSortField = this.sLastSortField;
+        this.sLastSortField = "fakeToForceSort";
+        this.renderVocabTable(sSortField);
+    },
     doRowClick: function(oRow) {
+        studyTimer.bump();
         let tbl = document.querySelector("table#vocab");
         let atr = tbl.querySelectorAll("tr");
         let isFound = false;
@@ -411,6 +435,7 @@ const vocab = {
         }
         this.updateUserSetting("oFilter", vocab.filter);
         vocab.renderVocabTable();
+        studyTimer.bump();
     },
     /*
     generateOptionBarOLD: function() {
@@ -666,6 +691,12 @@ const charTamer = {
         return sIn.replace(/[^a-zA-Z0-9]/g, '').trim();
     }
 }
+/*
+// Works perfectly but is scrolling enough to say studying?
+window.addEventListener('scroll', (event) => {
+    studyTimer.bump();
+});
+*/
 window.addEventListener('keydown', (event) => {
     if (keyToDistance(event.key) != 0) {
         event.preventDefault();
@@ -774,4 +805,5 @@ document.addEventListener('DOMContentLoaded', function () {
     vocab.init();
     topPeepMessage.init();
     menuMaker.renderMenu('menuContainer', groopData).setValue(vocab.userSettings.iIdStarCurr);
+    studyTimer.init();
 });

@@ -926,15 +926,15 @@ resturaan-e fazaa-ye baaz                               restaurant of space of o
 tu melborn kheili resturaan-e fazaa-ye baaz hast        in melbourne very (many) restaurant (of) space (of) open there is
 emruz havaa kheili khub-e                               today weather very good-is
 emruz dust daaram baa dust dokhtaram be resturan beram    today wanting have-I with friend girl-my to restaurant go-I
-resturan fazaa-ye baaz                                   restaurant space of open
-resturan nazdik e rudkhune e                            the restaurant near river is
+resturan fazaa-ye baaz                                  restaurant space of open
+resturan nazdik e rudkhaane e                           the restaurant near river is
 emruz dust daarin chi *bokhorin*?                       today wanting have-you-all what that you-all eat?
 dust daaram hamberger bokhoram                          wanting have-I hamburger that I eat
 emruz chetori be resturan mirin?                        today how to restaurant you-all go?
 resturaan kojaa-e?                                      restaurant where-is?
 resturaane chetorie?                                    the restaurant how-is?
 aadamhaayi ke tu resturaan kaar mikonan kheili mehrabunan    people-who that in restaurant work they do very kind-they are
-filmi ke mikhaayn bebinin chetori-e?                    movie-a that you-all want to watch how-is?
+filmi ke mikhaay-in bebinin chetori-e?                  movie-a that you-all want to watch how-is?
 esm-e filmi ke dust daaram bebinam tuner-e              name of movie-a that wanting have-I see-I Tuner-is
 khunei ke tu un zendegi mikonin chetori-e?              house that in live-you-all how-is?
 khunei ke tu un zendegi mikonam kuchik o nazdike shahr-e    house-a that in-it life I do small and near (of) city-is
@@ -966,6 +966,21 @@ haftad-o-haft                                           seventy seven
 hashtad-o-hasht                                         eighty eight
 navad-o-noh darsad                                      niney nine
 
-
+naghaashi                                               painting
+shast                                                   sixty
+fazaa                                                   space
+aadamhaayi                                              people
+rudkhaane                                               river
+bisim                                                   cordless
+baaz                                                    open
+bebinam                                                 I see
+kaado                                                   present
+khaanevaadam                                            family-my
+bokhoram                                                eat-I! (command)
+sabzijaat                                               veggies
+baaz-neshasteh shodan                                   to retire
+noghrei                                                 silver
+tavalod                                                 birthday
+ye boos bede!                                           give me a kiss!
 
 `;

@@ -5,7 +5,7 @@ const studyTimer = {
     saveDebounceTimer: null,
     iTodayAbs: 0,
     sTodayYMD: "",
-    iIdleLimitMilli: (1 * 60 * 1000),
+    iIdleLimitMilli: (60 * 1000),
     iOneDayMilli: 86400000,
     dtZero: new Date("2026-01-01T00:00:00Z"),
 
@@ -108,6 +108,11 @@ const studyTimer = {
     _save_debounced_: function() {
         console.log("save to disk");
         console.log(JSON.stringify(studyTimerData, null, 2));
+        let sFileName = "data/studyTimerData.js"
+        let sBody = JSON.stringify(studyTimerData, null, 1);
+        sBody = "const studyTimerData = " + sBody;
+        sBody += ";";
+        pywriter.save("farsiVocab", sFileName, sBody, sakhtBase.callbackMethod());
     },
 
     reset: function() {

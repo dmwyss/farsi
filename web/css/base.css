@@ -8,7 +8,7 @@
     color: #CCC;
     font-family: sans-serif;
     font-weight: 100;
-    font-size: 13pt
+    font-size: 13pt;
     outline: none;
 }
 a {
@@ -286,6 +286,35 @@ aside#prompt.onScreen {
     opacity: 1;
     visibility: visible;
 }
+div.buttonRibbonElement {
+    position: relative;
+    top: 10px;
+    background-color: #1c2128;
+    color: #CCC;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 6px 20px;
+    border: 1px solid var(--color-mainButtonBorder);
+    width: 50px;
+    height: 20px;
+}
+div#refreshAllWrapper.buttonRibbonElement {
+    padding-left: 0;
+    padding-right: 0;
+}
+div#refreshAllWrapper.buttonRibbonElement div {
+    color: #CCC;
+}
+div#studyTimerElapsedDisplay {
+    width: 100%;
+    text-align: center;
+    color: #5d6a78;
+}
+div#studyTimerElapsedDisplay.active {
+    color: #CCC;
+}
+
 
 @media print {
     body {
