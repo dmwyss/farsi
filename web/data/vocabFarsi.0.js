@@ -524,7 +524,7 @@ hamey-e *moblemaan* kharaab shode                       all *furniture* broken w
 baayad ashghaal ro *biroon bordan*                      must rubbish *take out*
 *pishbini-e havaa* ro begoo                             *forecast of weather* tell
 in ghazaaye *morede alagheye* mane                      this meal *favourite* mine-is
-*navad o noh* darsad ghaate-am                          *ninety nine* percent sure
+*navad o noh* darsad motma'en-am                          *ninety nine* percent sure
 baraaye hamishe dastam ro negah daar                    hold my hand forever
 maa haamisheh baa ham farsi haraf mizaneem              we always speak farsi together
 chaaghoo - changaal rooye boshghaaban                   knife - fork are on the plate
@@ -971,7 +971,7 @@ ye boos bede!                                           give me a kiss!
 man sib-am ro mikhor-am                                 I apple-my /ro/ eat-I
 to naan-et ro mikhor-i                                  you bread-your /ro/ eat-you
 un berenj-esh ro mikhor-e                               he/she rice-his/her /ro/ eats-he/she
-maa ghazaam-un ro mikhor-im                             we food-our /ro/ eat-we
+maa ghazaa-mun ro mikhor-im                             we food-our /ro/ eat-we
 shomaa kabaae-tun ro mikhor-in                          you-all kebab-your /ro/ eat-you
 unaa aash-eshun ro mikhor-an                            they soup-their /ro/ eat-they
 man sib-am ro khord-am                                  I apple-my /ro/ ate-I (past)
