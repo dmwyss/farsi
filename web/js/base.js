@@ -92,7 +92,7 @@ const vocab = {
         this.initList();
         this.renderButtonRibbon();
         this.renderVocabTable();
-        this.clickColSort(this.userSettings.lastSort);
+        this.sortAndRenderTable(this.userSettings.lastSort);
         sakhtBase.collectGarbage();
     },
     parseRaw: function() {
@@ -187,12 +187,12 @@ const vocab = {
         let sOut = "<table id=\"vocab\">";
         let sStarIcon = (this.filter === null) ? "&star;" : "&starf;";
         sOut += "<tr>"
-            + "<td id=\"sSortIxOrig\" class=\"colSorter colNarrow\" onclick=\"vocab.clickColSort(this);\">#</td>"
-            + "<td id=\"sSortE\" class=\"colSorter\" onclick=\"vocab.clickColSort(this);\">engelisi</td>"
-            + "<td id=\"sSortP\" class=\"colSorter\" onclick=\"vocab.clickColSort(this);\">farsi</td>"
+            + "<td id=\"sSortIxOrig\" class=\"colSorter colNarrow\" onclick=\"vocab.sortAndRenderTable(this);\">#</td>"
+            + "<td id=\"sSortE\" class=\"colSorter\" onclick=\"vocab.sortAndRenderTable(this);\">engelisi</td>"
+            + "<td id=\"sSortP\" class=\"colSorter\" onclick=\"vocab.sortAndRenderTable(this);\">farsi</td>"
             + "<td id=\"sSortResearch\" class=\"colSorter colNarrow\">&nbsp;</td>"
             + "<td id=\"sSortStar\" class=\"colSorter colNarrow\" onclick=\"vocab.toggleStarFilter(this);\">" + sStarIcon + "</td>"
-            + "<td id=\"sSortSakhti\" class=\"colSorter\" onclick=\"vocab.clickColSort(this);\">sakhti</td>"
+            + "<td id=\"sSortSakhti\" class=\"colSorter\" onclick=\"vocab.sortAndRenderTable(this);\">sakhti</td>"
             + "</tr>";
         let iShownRows = 1;
         //let sOutWidth = "";
@@ -237,7 +237,7 @@ const vocab = {
         sOut += "</table>";
         return sOut;
     },
-    clickColSort: function (uiSrcOrStringId) {
+    sortAndRenderTable function (uiSrcOrStringId) {
         let sSortField = uiSrcOrStringId;
         if (typeof uiSrcOrStringId !== "string") {
             sSortField = uiSrcOrStringId.id;
@@ -306,7 +306,7 @@ const vocab = {
     refreshVocabTable: function () {
         const sSortField = this.sLastSortField;
         this.sLastSortField = "fakeToForceSort";
-        this.clickColSort(sSortField);
+        this.sortAndRenderTable(sSortField);
     },
     doRowClick: function(oRow) {
         studyTimer.bump();
