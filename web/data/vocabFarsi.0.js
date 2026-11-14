@@ -325,7 +325,6 @@ estefaade mikardan                                      they used
 kalameh-ye ghadimi-ye Faarsi                            an old Farsi word
 ke az raah-e abrisham taa torkiyeh raft                 that on the silk road travelled to Turkie
 
-
 tooye torkiye in kalame shod "tuelbent"                 in turkie the word became "tülbent"
 tooye aalmaan in kalame shod "tuelpe"                   in germany the word became "tülpe"
 pas be engelisi mishe "tulip"                           then in English became "tulip"
@@ -413,7 +412,6 @@ rooze khoobi daashti?                                   day good-one had?
 kelid-am ro peydaa nemikonam                            I cant find my keys
 *istgaa*he ba'di piaade misham                          I get off at the next *stop/station*
 
-
 aftab az *khorshid* miad                                sunshine comes from the sun
 too-ye *maah* chahaar hafte hast                        there are 4 weeks in a month
 har saal davaazdah maah-e                               each year twelve months-is
@@ -495,12 +493,6 @@ em-saal khoshk-saalie                                   this year is a drought
 dah bist si chel panjaah                                count 10 to 50
 shast haftaad hashtaad navad sad                        count 60 to 100
 
-
-
-
-
-
-
 jaayi ke dood hast aatash ham hast                      place that smoke is - fire also is
 nish-e yek aroos-e daryaayi                             sting/bite-of a bride-of sea
 besyaar dardnaak nabood                                 very painful not-was
@@ -578,7 +570,6 @@ kharkhune                                               nerd (donkey studying)
 kharam az pol gozasht                                   I got what I wanted (my donkey crossed the bridge)
 shaanse kharki                                          extreme luck
 
-
 # Barfi Story #######################################################
 norohat bood                                            he/she/it was sad
 raft                                                    he/she/it went
@@ -608,15 +599,12 @@ khargooshe kaahoo mikhore                               the rabbit eats lettuce
 ra'is-e man aazaar dahande ast                          my boss is annoying
 nazdik-tarin istgah behet kodume?                       nearest station to you which-is?
 
-
-
 khoshhalam                                              I happy-am
 dirooz mariz bood-am                                    I yesterday sick was
 man vaqti varzesh mikon-am - garm mishav-am             I when exercise I do - hot I become
 man saal - e gozashteh mo'allem shod-am                 I year - of past teacher I bec-ame
 man har rooz varzesh mikon-am                           I every day exercise I do
 man dishab takaaliif-am raa kard-am                     I last night homework my I did
-
 
 # 2 Hours of Daily Persian Conversations - Persian Practice for ALL Learners
 # https://www.youtube.com/watch?v=eEckaODaFqs
@@ -737,8 +725,6 @@ khoone-ye jenni                                         house of ghosts
 morgh-e hamsaayeh ghaaz-e                               the neighbor's chicken is a goose
 khune-ye lulu                                           house-of monsters
 
-
-
 # Dars 20261028
 
 raftan                                                  to go
@@ -821,7 +807,6 @@ aab daare joosh mikhore                                 water is bubble eating
 araayeshgaah araayeshgar                                hairdresser-salon hairdresser-person
 Bodo, bodo, bodo be sooye sahel                         run run run to direction (of) beach
 
-
 man baaz-neshaste shodam                                I got retired
 emruz hich kaari nakardam                               today none work not-did-I
 chon taaze saa-at shish e                               because only oclock six is
@@ -897,7 +882,6 @@ tul mikashe ta beresim                                  es dauert noch, bis wir 
 karet cheghadr tul keshid?                              wie lange hat deine arbeit / dein termin gedauert?
 kheyli tul keshid!                                      das hat echt lange gedauert!
 tul keshid ta javab bede                                es hat gedauert, bis er/sie geantwortet hat
-
 
 ki oomad?                                               who came?
 chi shod?                                               what happened?
@@ -983,7 +967,6 @@ baaz-neshasteh shodan                                   to retire
 noghrei                                                 silver
 tavalod                                                 birthday
 ye boos bede!                                           give me a kiss!
-
 
 man sib-am ro mikhor-am                                 I apple-my /ro/ eat-I
 to naan-et ro mikhor-i                                  you bread-your /ro/ eat-you
