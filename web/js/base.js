@@ -237,7 +237,7 @@ const vocab = {
         sOut += "</table>";
         return sOut;
     },
-    sortAndRenderTable function (uiSrcOrStringId) {
+    sortAndRenderTable: function (uiSrcOrStringId) {
         let sSortField = uiSrcOrStringId;
         if (typeof uiSrcOrStringId !== "string") {
             sSortField = uiSrcOrStringId.id;
@@ -253,20 +253,10 @@ const vocab = {
     },
     renderButtonRibbon: function () {
         this.uiButtonRibbon = document.querySelector("#buttonRibbon");
-        //let oOptionBarSettingsGroop = {
-        //    sOptionBarId: "uiOptBarGroop",
-        //    aoOptions: this.aoGroops,
-        //    sFieldToUseAsValue: "iId",
-        //    //sFieldToUseAsId: "iId",
-        //    sFieldToUseAsLabel: "sLabel",
-        //    vValueDefault: vocab.userSettings.iIdStarCurr,
-        //    sOnClick: "sakhtBase.doClickOptionBarGroop(this);"
-        //};
         let oOptionBarSettingsTestMode = {
             sOptionBarId: "uiOptBarTestMode",
             aoOptions: [{sId: "test", sLabel:"Test"}, {sId: "read", sLabel:"Read"}],
             sFieldToUseAsValue: "sId",
-            //sFieldToUseAsId: "sId",
             sFieldToUseAsLabel: "sLabel",
             vValueDefault: vocab.userSettings.testMode,
             sOnClick: "vocab.setTestMode(this);"
@@ -275,7 +265,6 @@ const vocab = {
             + this.getStudyTimerDisplayHtml()
             + timeBar.getHtml()
             + "<div id=\"menuContainer\" class=\"optionBarRow\"></div>"
-            //+ utilCustomGuiElements.generateOptionBar(oOptionBarSettingsGroop)
             + utilCustomGuiElements.generateOptionBar(oOptionBarSettingsTestMode)
             + this.getRefreshAllHtml()
             ;
@@ -320,15 +309,10 @@ const vocab = {
         for (let ixTr = 0; ixTr < atr.length; ixTr++) {
             let atd = atr[ixTr].querySelectorAll("td");
             atd[this.iColHiddenForGuess].style.opacity = sOpacity;
-            //atd[2].style.opacity = sOpacity;
-
-
             if (this.userSettings.testMode === "test") {
                 this.testState.showHideAnswer();
                 this.testState.reset();
             }
-
-
             if (!isFound) {
                 if (atr[ixTr] === oRow) {
                     if (this.rowFocus != null) {
@@ -338,13 +322,6 @@ const vocab = {
                     this.rowFocus = oRow;
                     isFound = true;
                     sOpacity = sOpacityAfterCurrent;
-
-
-
-
-
-
-
                 }
             }
         }
@@ -442,20 +419,6 @@ const vocab = {
             this.testState.reset();
         }
     },
-    /*
-    toggleTestMode: function() {
-        *//*
-        this.userSettings.testMode = (this.userSettings.testMode === "test") ? "read" : "test";
-        this.testModeButton.innerHTML = "mode:" + this.userSettings.testMode;
-        localStorageManager.set("user_settings", this.userSettings);
-        *//*
-        let sValueNew = (this.userSettings.testMode === "test") ? "read" : "test";
-        this.updateUserSetting("testMode", sValueNew);
-        this.testModeButton.innerHTML = "mode:" + sValueNew;
-        console.log("wwddsfdfk to " + sValueNew);
-        this.next(0); // Just triggers refresh. No navigation because val is 0.
-    },
-    */
     toggleStarFilter: function(uiSrc) {
         if (vocab.filter === null) {
             vocab.filter = {};
@@ -465,18 +428,7 @@ const vocab = {
         this.updateUserSetting("oFilter", vocab.filter);
         vocab.renderVocabTable();
         studyTimer.bump();
-    },
-    /*
-    generateOptionBarOLD: function() {
-        // 1. Generiere die einzelnen optionBarTile HTML-Elemente
-        const optionBarDivs = this.aoGroops.map(oGroop => {
-            let sActive = (oGroop.iId === vocab.userSettings.iIdStarCurr) ? " active" : "";
-            return `<div class="optionBarTile${sActive}" data-id="${oGroop.iId}" onclick="sakhtBase.doClickOptionBarGroop(this);">${oGroop.sLabel}</div>`;
-        }).join('');
-        // 2. Erzeuge den Container für die horizontale Reihe
-        return `<div class="optionBarRow">${optionBarDivs}</div>`;
     }
-    */
 }
 const sakhtBase = {
     debounceTimeoutId: null,
@@ -491,13 +443,6 @@ const sakhtBase = {
         }
     },
     doClickOptionBarGroop: function(uiSrc) {
-        /*
-        const row = uiSrc.parentElement;
-        row.querySelectorAll('.optionBarTile').forEach(optionBar => {
-            optionBar.classList.remove('active');
-        });
-        uiSrc.classList.add('active');
-        */
         console.log(uiSrc.getAttribute("data-id"));
         vocab.updateUserSetting("iIdStarCurr", parseInt(uiSrc.getAttribute("data-id")));
         vocab.renderVocabTable();
@@ -537,11 +482,6 @@ const sakhtBase = {
         }
         return this.dataOo[sKey];
     },
-    /*
-    getStar: function(sKey) {
-        return "&star;";
-    },
-    */
     getResearchLink: function(oWord) {
         let sTerm = charTamer.urlEncode(oWord.p.contextText);
         let sOut = "<a href=\"https://www.google.com/search?q=literal+translation+of+%22" + sTerm + "%22+in+farsi\"";
@@ -658,19 +598,6 @@ const sakhtBase = {
         }
     }
 }
-/*
-const starControl = {
-    init:  function() {
-        return this;
-    },
-    getColHeaderStar: function() {
-        return (vocab.filter === null) ? "&star;" : "&starf;"
-    },
-    getStarIcon: function() {
-        return "&starf;";
-    }
-}
-*/
 function keyToSakhti(sEventKey) {
     let ix = asArrowKeys.indexOf(sEventKey);
     if (ix === -1) {
@@ -696,7 +623,7 @@ function keyToDistance(sEventKey) {
 }
 const charTamer = {
     data: [
-    /* naughty, nice */
+        /* naughty, nice */
         ["\"",  "^"],
         ["\'",  "~"],
     ],
@@ -805,15 +732,6 @@ const utilCustomGuiElements = {
         uiSrc.classList.add('active');
     }
 }
-/*
-const utilDom = {
-    getUiElementWidth: function(sXPath) {
-        const table = document.querySelector(sXPath);
-        // Returns the exact layout width in pixels (e.g., 450.75)
-        return Math.round(table.getBoundingClientRect().width);
-    }
-}
-*/
 const topPeepMessage = {
     ui: null,
     init: function() {

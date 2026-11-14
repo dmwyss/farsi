@@ -976,11 +976,28 @@ baaz                                                    open
 bebinam                                                 I see
 kaado                                                   present
 khaanevaadam                                            family-my
-bokhoram                                                eat-I! (command)
+khaanevaadeh hameh chizeh                               family is everything
+bokhor                                                  eat! (command)
 sabzijaat                                               veggies
 baaz-neshasteh shodan                                   to retire
 noghrei                                                 silver
 tavalod                                                 birthday
 ye boos bede!                                           give me a kiss!
+
+
+man sib-am ro mikhor-am                                 I apple-my /ro/ eat-I
+to naan-et ro mikhor-i                                  you bread-your /ro/ eat-you
+un berenj-esh ro mikhor-e                               he/she rice-his/her /ro/ eats-he/she
+maa ghazaam-un ro mikhor-im                             we food-our /ro/ eat-we
+shomaa kabaae-tun ro mikhor-in                          you-all kebab-your /ro/ eat-you
+unaa aash-eshun ro mikhor-an                            they soup-their /ro/ eat-they
+man sib-am ro khord-am                                  I apple-my /ro/ ate-I (past)
+to naan-et ro khord-i                                   you bread-your /ro/ ate-you (past)
+un berenj-esh ro khord                                  he/she rice-his/her /ro/ ate-he/she (past)
+maa ghazaa-mun ro khord-im                              we food-our /ro/ ate-we (past)
+shomaa kabaab-etun ro khord-in                          you-all kebab-your /ro/ ate-you (past)
+unaa aash-eshun ro khord-an                             they soup-their /ro/ ate-they (past)
+
+
 
 `;
