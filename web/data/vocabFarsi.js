@@ -983,15 +983,14 @@ unaa aash-eshun ro khord-an                             they soup-their /ro/ ate
 az in khiaabun, be raast berin, taa meydoon, baa taaksi    from this street, turn right to go to the square by taxi
 
 
-
-
-baa ye club ghaayegh savari raftam                      I went boating with a club
+baa ye club ghaayegh savari raftam                      I went (past) boating with a club
+Baa ye club ghaayegh savari miram                       I go (present) boating with a club
 melbourne nazdike ye khalije                            melbourne is near a bay
 chand saat ghaayegh savari kardin?                      how many hours did you go boating?
 kheili khosh gozasht                                    it was a lot of fun
 havaa chetor bood?                                      how was the weather?
 ghaayegh-i ke savar shodin chetori bood?                how was the boat that you rode?
-ghaayeghe sefid-e hodood-e bisto do metri                        the boat is white
+ghaayeghe sefid-e hodood-e bisto do metri               the boat is white
 baa chi raftin oon khalije?                             how did you get to that bay?
 dirooz piade raftam khalij                              I walked to the bay yesterday
 dirooz baa club raftin khalij?                          did you go to the bay with the club yesterday?
@@ -1001,10 +1000,10 @@ hafteye pish baad kheili shadid bood                    last week the wind was s
 toofaane kheili shadid                                  severe storm
 club-i ke toosh hastin chetoriye?                       club that you-in are how-is?
 too club hodood-e shast nafar hastan                    there are about sixty people in the club
-club-i ke miram dame aabe                               the club that I go to is by the water
+club-i ke miram dame aab-e                              the club that I go to is by the water
 saakhtemoone panjerehaaye bozorg daare                  the building has big windows
 baayad bokhoram                                         I have to eat
-baayad bekhoonam                                        I have to read / I have to study
+baayad bekhoonam                                        I have to read/study
 baayad bekhaabam                                        I have to sleep
 baayad dorost konam                                     I have to fix/make it
 

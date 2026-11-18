@@ -881,7 +881,6 @@ let sakhtiData = {
 "kheili khosh gozasht":{"sakhti":-30,"aiStar":[11]},
 "havaa chetor bood":{"sakhti":-30,"aiStar":[11]},
 "ghaayegh-i ke savar shodin chetori bood":{"sakhti":-30,"aiStar":[11]},
-"ghaayeghe sefid-e bisto do metri":{"sakhti":-30,"aiStar":[11]},
 "baa chi raftin oon khalije":{"sakhti":-30,"aiStar":[11]},
 "dirooz piade raftam khalij":{"sakhti":-30,"aiStar":[11]},
 "dirooz baa club raftin khalij":{"sakhti":-30,"aiStar":[11]},
@@ -890,11 +889,13 @@ let sakhtiData = {
 "hafteye pish baad kheili shadid bood":{"sakhti":-30,"aiStar":[11]},
 "toofaane kheili shadid":{"sakhti":-30,"aiStar":[11]},
 "club-i ke toosh hastin chetoriye":{"sakhti":-30,"aiStar":[11]},
-"too club shast nafar hastan":{"sakhti":-30,"aiStar":[11]},
-"club-i ke miram dame aabe":{"sakhti":-30,"aiStar":[11]},
+"club-i ke miram dame aab-e":{"sakhti":-30,"aiStar":[11]},
 "saakhtemoone panjerehaaye bozorg daare":{"sakhti":-30,"aiStar":[11]},
 "baayad bokhoram":{"sakhti":-30,"aiStar":[11]},
 "baayad bekhoonam":{"sakhti":-30,"aiStar":[11]},
 "baayad bekhaabam":{"sakhti":-30,"aiStar":[11]},
-"baayad dorost konam":{"sakhti":-30,"aiStar":[11]}
+"baayad dorost konam":{"sakhti":-30,"aiStar":[11]},
+"too club hodood-e shast nafar hastan":{"sakhti":-30,"aiStar":[11]},
+"baa ye club ghaayegh savari miram":{"sakhti":-30,"aiStar":[11]},
+"ghaayeghe sefid-e hodood-e bisto do metri":{"sakhti":-30,"aiStar":[11]}
 };
