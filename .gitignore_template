@@ -1,5 +1,11 @@
 .gitignore
 .bak/**
 **/*.bak.*
+/web/data/bak/**
 .idea/**
-web/bak
+/tmp/
+/bookFarsiSpoken_AudioFiles/**
+/web/harryPotter/**
+/web/data/choppingBlock.txt
+/web/img/Peydaa-shun_kon.png
+/web/listen/01_LivingAlone*
