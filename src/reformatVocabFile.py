@@ -38,6 +38,7 @@ def reformat_lines(in_path):
                     # only lowercase once in case "I" exists.
                     s_line = s_line.lower()
                     s_line = re.sub(r"\bi\b", "I", s_line, flags=re.IGNORECASE)
+                    s_line = re.sub(r"-I", "-i", s_line)
                 s_out += s_line
     with open(in_path, 'w', encoding='utf-8') as file:
         file.write(s_out)
@@ -46,8 +47,8 @@ def reformat_lines(in_path):
 if __name__ == "__main__":
     # variables for the file name and path
     as_file_in_path = [
-        "web/data/vocabFarsi.0.js",
-        "web/data/vocabFarsi.1.js"
+        "web/data/vocabFarsi.js"
+        # "web/data/vocabFarsi.1.js"
     ]
     for ix in range(len(as_file_in_path)):
         s_file_in_path = as_file_in_path[ix]

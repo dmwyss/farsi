@@ -524,7 +524,7 @@ hamey-e *moblemaan* kharaab shode                       all *furniture* broken w
 baayad ashghaal ro *biroon bordan*                      must rubbish *take out*
 *pishbini-e havaa* ro begoo                             *forecast of weather* tell
 in ghazaaye *morede alagheye* mane                      this meal *favourite* mine-is
-*navad o noh* darsad motma'en-am                          *ninety nine* percent sure
+*navad o noh* darsad motma'en-am                        *ninety nine* percent sure
 baraaye hamishe dastam ro negah daar                    hold my hand forever
 maa haamisheh baa ham farsi haraf mizaneem              we always speak farsi together
 chaaghoo - changaal rooye boshghaaban                   knife - fork are on the plate
@@ -936,7 +936,7 @@ dereyl-i ke be man dadan sabz o bisim e                 drill that to-me they ga
 gereftan                                                to get
 dadan                                                   to give
 resturaane nazdik-e rudkhune-ast                        the restaurant is near the river
-piyaade miram resturaan                                 I walk to the restaurant
+piyaade miram resturaan                                 walk go-I restaurant
 
 gomshode dar fazaa                                      lost in space
 
@@ -980,6 +980,33 @@ un berenj-esh ro khord                                  he/she rice-his/her /ro/
 maa ghazaa-mun ro khord-im                              we food-our /ro/ ate-we (past)
 shomaa kabaab-etun ro khord-in                          you-all kebab-your /ro/ ate-you (past)
 unaa aash-eshun ro khord-an                             they soup-their /ro/ ate-they (past)
+az in khiaabun, be raast berin, taa meydoon, baa taaksi    from this street, turn right to go to the square by taxi
+
+
+
+
+baa ye club ghaayegh savari raftam                      I went boating with a club
+melbourne nazdike ye khalije                            melbourne is near a bay
+chand saat ghaayegh savari kardin?                      how many hours did you go boating?
+kheili khosh gozasht                                    it was a lot of fun
+havaa chetor bood?                                      how was the weather?
+ghaayegh-i ke savar shodin chetori bood?                how was the boat that you rode?
+ghaayeghe sefid-e hodood-e bisto do metri                        the boat is white
+baa chi raftin oon khalije?                             how did you get to that bay?
+dirooz piade raftam khalij                              I walked to the bay yesterday
+dirooz baa club raftin khalij?                          did you go to the bay with the club yesterday?
+faghat baa oona ghaayegh savari kardam                  I only went boating with them
+tooye oghyanoos ghaayegh savari kardim                  we went boating in the ocean
+hafteye pish baad kheili shadid bood                    last week the wind was strong
+toofaane kheili shadid                                  severe storm
+club-i ke toosh hastin chetoriye?                       club that you-in are how-is?
+too club hodood-e shast nafar hastan                    there are about sixty people in the club
+club-i ke miram dame aabe                               the club that I go to is by the water
+saakhtemoone panjerehaaye bozorg daare                  the building has big windows
+baayad bokhoram                                         I have to eat
+baayad bekhoonam                                        I have to read / I have to study
+baayad bekhaabam                                        I have to sleep
+baayad dorost konam                                     I have to fix/make it
 
 
 

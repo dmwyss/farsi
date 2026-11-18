@@ -9,5 +9,13 @@ const groopData = [
     {iId:  5, sLabel: "Dars 03"},
     {iId:  7, sLabel: "Dars 04"},
     {iId:  9, sLabel: "Dars 05"},
+    {iId: 11, sLabel: "Dars 06"},
     {iId: 10, sLabel: "Liste Hadaf"}
 ];
+const groopClassData = [
+    {iId: 0, sLabel: "None", sIcon: "icnNone.svg"},
+    {iId: 1, sLabel: "Flagged", sIcon: "icnFocus.svg"},
+    {iId: 2, sLabel: "Flagged", sIcon: "icnFlag.svg"},
+    {iId: 3, sLabel: "Dars", sIcon: "icnDars.svg"},
+    {iId: 4, sLabel: "Hadaf", sIcon: "icnDars.svg"}
+]

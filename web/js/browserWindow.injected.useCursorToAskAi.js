@@ -23,12 +23,9 @@ var aoTemplates = [
         + " for word translation. Each time I give you a new word give me all the"
         + " previous words listed above in alphabetical order.",
     "Always give me farsi translations in informal tehran farsi as if "
-        + " friends were talking with the \'ā\' \'â\' or alef character written as aa."
-        + " Write the farsi letter ayn as an apostrophe, for example"
-        + " baadi must be written as ba'adi."
-        + " Give me the farsi transliterated into latin script,"
-        + " then a pipe character then on the same line the literal"
-        + " english translation. Write everything in lowercase except for proper nouns."
+        + " friends were talking. Write \'ā\' \'â\' or alef character as aa."
+        + " Write the ayn character as \'-a\'."
+        + " Write everything in lowercase except for proper nouns."
 ]
 function selectQuoteContent(myField) {
     myField.focus();
@@ -58,6 +55,9 @@ window.addEventListener('keydown', function(event) {
         if (event.key === 'ArrowUp') {
             if (!g_isMuted) {
                 g_ixCursor--;
+            }
+            if ((g_ixCursor < 0) && (g_asSearches.length === 0)) {
+            	g_ixCursor = 0;
             }
             isArrow = true;
         } else if (event.key === 'ArrowDown') {
@@ -103,6 +103,21 @@ window.addEventListener('keydown', function(event) {
             }
             myField.value = sQueryText;
             selectQuoteContent(myField);
+        } else if (/^[a-zA-Z0-9]$/.test(event.key)) {
+        	console.log("alpha " + event.key);
+        	flashField();
+        	/*
+        	document.querySelector("[data-active]").querySelector("[role='presentation']").style.backgroundColor = "#4565";
+        	//document.activeElement.style.backgroundColor = "#345"; // Redundant, in case fancy one above fails.
+			setTimeout(
+				() => {
+					document.querySelector("[data-active]").querySelector("[role='presentation']").style.backgroundColor = "transparent";
+					//document.activeElement.style.backgroundColor = "transparent"; // Redundant, in case fancy one above fails.
+					mute();
+				},
+				400
+			);
+			*/
         } else {
             setTimeout(
                 function() { g_sSearchLast = myField.value; },
@@ -112,9 +127,9 @@ window.addEventListener('keydown', function(event) {
     } else if (event.key === 'Escape') {
         event.preventDefault();
         event.stopPropagation();
-        g_isMuted = !g_isMuted;
-        document.title = g_isMuted ? "#MUTED#" : "berim!";
-        console.log("mute swwitched");
+		toggleMute();
+        myField.focus();
+        myField.select();
     } else {
         // Check if the pressed key is the slash key
         if (event.key === '/') {
@@ -129,7 +144,30 @@ window.addEventListener('keydown', function(event) {
         console.log("" + g_ixCursor + "");
         g_asSearches.push(g_sSearchLast);
         g_ixCursor = 0;
+        mute(false);
     }
 });
+function toggleMute() {
+    mute(!g_isMuted);
+}
+function mute(isMute=true) {
+    g_isMuted = isMute;
+    document.title = g_isMuted ? "#MUTED#" : "berim!";
+    console.log("mute swwitched");
+}
+let __uiFlashField__ = null;
+function flashField() {
+	if (__uiFlashField__ === null) {
+		__uiFlashField__ = document.querySelector("[data-active]").querySelector("[role='presentation']")
+	}
+	__uiFlashField__.style.backgroundColor = "#4565";
+	setTimeout(
+		() => {
+			__uiFlashField__.style.backgroundColor = "transparent";
+			mute();
+		},
+		400
+	);
+}
 document.title = "berim!";
 console.log("User_JS_CSS :: user script loaded. V0.1");

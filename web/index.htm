@@ -16,11 +16,8 @@
 <script>
 let sVolatileOutNew = "";
 const urlParams = new URLSearchParams(window.location.search);
-const g_sIxSet = urlParams.get('sIxSet') ?? "0";
-console.log("g_sIxSet::" + g_sIxSet);
-let asPages = ["data/sakhtiData.0", "data/groopData.0", "data/vocabFarsi.0", "data/studyTimerData"];
+let asPages = ["data/sakhtiData", "data/groopData", "data/vocabFarsi", "data/studyTimerData"];
 for (let ix = 0; ix < asPages.length; ix++) {
-    //sVolatileOutNew += "<" + "script type=\'text/javascript\' src=\'" + asPages[ix] + "." + g_sIxSet + ".js?refresh=";
     sVolatileOutNew += "<" + "script type=\'text/javascript\' src=\'" + asPages[ix] + ".js?refresh=";
     sVolatileOutNew += (Math.round(Math.random() * 10000)) + "\'>" + "<" + "/" + "script>\n";
 }

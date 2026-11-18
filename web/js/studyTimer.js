@@ -1,3 +1,4 @@
+
 const studyTimer = {
     studySec: 0,
     startTime: 0,
@@ -17,14 +18,22 @@ const studyTimer = {
 
         if (!studyTimerData.hasOwnProperty(this.iTodayAbs)) {
             // No entry for today yet. Add it.
-            studyTimerData[this.iTodayAbs] = {
-                sDate: this.sTodayYMD,
-                iDuration: 0
-            }
+//            studyTimerData[this.iTodayAbs] = {
+//                sDate: this.sTodayYMD,
+//                iDuration: 0
+//            }
+            this.createNewStudyTimerDataForToday(this.iTodayAbs, this.sTodayYMD);
         }
         this.resetColdTimer();
         this.bump();
         this.updateUI();
+    },
+
+    createNewStudyTimerDataForToday(iTodayAbs, sTodayYMD) {
+        studyTimerData[iTodayAbs] = {
+            sDate: sTodayYMD,
+            iDuration: 0
+        }
     },
 
     bump() {
@@ -96,7 +105,23 @@ const studyTimer = {
     },
 
     save: function() {
-        studyTimerData[this.iTodayAbs].iDuration += this.studySec; // Add to total.
+
+        /*
+        // This reacts when the accrued time goes over the 1hr mark.
+        const iHourOneSeconds = 3600;
+        let oTimerDataToday = studyTimerData[this.iTodayAbs]; // Add to total.
+        let iDurationOld = oTimerDataToday.iDuration;
+        oTimerDataToday.iDuration += this.studySec; // Add to total.
+        if ((iDurationOld < iHourOneSeconds) && (oTimerDataToday.iDuration > iHourOneSeconds)) {
+            // Just crossed the hour threshold.
+            // Play ping sound;
+        }
+        */
+        if (studyTimerData[this.iTodayAbs]) {
+            studyTimerData[this.iTodayAbs].iDuration += this.studySec; // Add to total.
+        } else {
+            this.createNewStudyTimerDataForToday(this.iTodayAbs, this.sTodayYMD);
+        }
         this.reset();
         console.log("save (bounced prepare disk action)");
         clearTimeout(this.saveDebounceTimer);
@@ -118,6 +143,7 @@ const studyTimer = {
     reset: function() {
         this.studySec = 0; // Reset
         this.startTime = Date.now(); // Reset
+        this.iTodayAbs = this.getAbsDay();
     },
 
     resetColdTimer() {

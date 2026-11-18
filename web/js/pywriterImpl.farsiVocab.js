@@ -21,16 +21,16 @@ let pywriterImpl = {
         let sFileName = "data/";
         let sPre = "let ";
         let sPost = ";";
-//        let aaReplace = [];
+        //let aaReplace = [];
         let sBody = "";
 
         sBody = JSON.stringify(oData, null, 4); // Plain stringify, use replaces to format.
-//        aaReplace.push(this.replacers.nlAfterFirstCurlyBracket);
-//        aaReplace.push(this.replacers.nlBetweenNamedElements);
-//        aaReplace.push(this.replacers.nlBetweenKeyValueElements);
-//        aaReplace.push(this.replacers.nlBeforeLastCurlyBracket);
+        //aaReplace.push(this.replacers.nlAfterFirstCurlyBracket);
+        //aaReplace.push(this.replacers.nlBetweenNamedElements);
+        //aaReplace.push(this.replacers.nlBetweenKeyValueElements);
+        //aaReplace.push(this.replacers.nlBeforeLastCurlyBracket);
         if (iObjType == this.CLICK_DATA) {
-            sFileName += "sakhtiData." + g_sIxSet + ".js"
+            sFileName += "sakhtiData.js"
             sPre = sPre + "sakhtiData = ";
         } else if (iObjType == this.VOTE_DATA) {
             sFileName += "voteData.js"

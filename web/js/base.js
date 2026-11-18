@@ -456,7 +456,7 @@ const sakhtBase = {
         }, 800);
     },
     save_debounced: function() {
-        let sFileName = "data/sakhtiData." + g_sIxSet + ".js"
+        let sFileName = "data/sakhtiData.js"
         let sBody = JSON.stringify(this.dataOo); //, null, 1);
         sBody = sBody
             .split("},\"").join("},\n\"")
