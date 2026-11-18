@@ -2,11 +2,6 @@
 
 
 
-Got to here: https://youtu.be/rORYk3eLBIM?t=7283
-
-
-
-
 Not learned
 shomaare                                number
 donyaa                                  world
@@ -80,3 +75,15 @@ https://www.google.com/search?q=always+give+me+farsi+translations+in+informal+fa
 always+give+me+farsi+translations+in+informal+farsi+in+lower+case+with+the+alef+character+written+as+aa
 
 always give me farsi translations in informal farsi in lower case with the alef character written as aa
+
+
+translate words from farsi for me. Correct the spelling of the farsi word and write it in finglish., then the english translation each time you translate a word, give me all the previous words listed alphabetically above
+
+aali mishe | it will be awesome
+ajeeb | it is strange - odd
+bishtar | more
+haridam | I bought
+inham | this too
+moft | it is free - cheap
+rayegan | it was free
+ziad bood | it was too much
