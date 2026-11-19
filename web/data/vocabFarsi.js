@@ -529,7 +529,7 @@ baraaye hamishe dastam ro negah daar                    hold my hand forever
 maa haamisheh baa ham farsi haraf mizaneem              we always speak farsi together
 chaaghoo - changaal rooye boshghaaban                   knife - fork are on the plate
 ghaashogh too-ye *kaase* ast                            the spoon is in the *bowl*
-too bokhorim yaa *biroon*                               inside eat or *outside*
+too bokhorim yaa *biroon*                               inside eat-we or *outside*
 cheraagh-e ba~adi ro bepich be raast                    the next light turn to right
 
 bist-o se shomaare-ye morede alaaqhe-ye mane            twenty-three is my favorite number
@@ -938,17 +938,17 @@ dadan                                                   to give
 resturaane nazdik-e rudkhune-ast                        the restaurant is near the river
 piyaade miram resturaan                                 walk go-I restaurant
 
-gomshode dar fazaa                                      lost in space
+gom-shode dar fazaa                                     lost in space
 
 yaz-dah                                                 eleven
 bist-o-do                                               twenty two
 siy-o-seh                                               thirty three
-che-hel-o-char                                          fourty four
-pan-jah-o-panj                                          fifty five
+chehel-o-char                                           fourty four
+panj-ah-o-panj                                          fifty five
 shast-o-shish                                           sixt six
 haftad-o-haft                                           seventy seven
 hashtad-o-hasht                                         eighty eight
-navad-o-noh darsad                                      niney nine
+navad-o-noh darsad                                      niney nine percent
 
 naghaashi                                               painting
 shast                                                   sixty
@@ -1007,6 +1007,8 @@ baayad bekhoonam                                        I have to read/study
 baayad bekhaabam                                        I have to sleep
 baayad dorost konam                                     I have to fix/make it
 
-
+vaase maamaan-et gol gereftam                           for-you flowers got-i
+vaasat ye daste gol gereftam                            for-you one bunch flowers got-i
+in vaase to-e                                           this for-is you
 
 `;

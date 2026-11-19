@@ -29,6 +29,10 @@ const studyTimerData = {
  },
  "321": {
   "sDate": "2026-11-18",
-  "iDuration": 395
+  "iDuration": 1567
+ },
+ "322": {
+  "sDate": "2026-11-19",
+  "iDuration": 25
  }
 };

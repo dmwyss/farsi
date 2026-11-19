@@ -226,7 +226,7 @@ const vocab = {
                 + "<td class=\"context colNarrow\">" + iShownRows++ + "</td>"
                 + "<td class=\"context\">" + charTamer.toNaughty(oWord.e.contextHtml) + "</td>"
                 + "<td class=\"context\">" + charTamer.toNaughty(oWord.p.contextHtml) + "</td>"
-                + "<td class=\"context colNarrow\">" + sakhtBase.getResearchLink(oWord) + "</td>"
+                + "<td class=\"context colNarrow microMenu\">" + sakhtBase.getResearchLink(oWord) + "</td>"
                 + "<td class=\"context colNarrow\">" + sakhtBase.getStarHtml(oWord.key, oSakht) + "</td>"
                 + "<td class=\"context\">" + sakhtBase.getIcon(oSakht) + "</td>"
                 + "</tr>";
@@ -484,10 +484,11 @@ const sakhtBase = {
     },
     getResearchLink: function(oWord) {
         let sTerm = charTamer.urlEncode(oWord.p.contextText);
-        let sOut = "<a href=\"https://www.google.com/search?q=literal+translation+of+%22" + sTerm + "%22+in+farsi\"";
-        sOut += " target=\"farsiResearch\" class=\"tableCellLinkIcon\" onclick=\"this.blur()\">";
-        sOut += "<img src=\"img/icnLupe.svg\" style=\"width:17px;\">";
-        sOut += "</a>"
+        let sOut = "";
+//        sOut += "<a href=\"https://www.google.com/search?q=literal+translation+of+%22" + sTerm + "%22+in+farsi\"";
+//        sOut += " target=\"farsiResearch\" class=\"tableCellLinkIcon\" onclick=\"this.blur()\">";
+        sOut += "<img src=\"img/icnLupe.svg\" style=\"width:17px;\" onclick=\"microMenuManager.open(this);\">";
+//        sOut += "</a>"
         return sOut;
     },
     getStarHtml: function(sKey, oSakhtiInfo) {
@@ -535,6 +536,18 @@ const sakhtBase = {
         let sDataKey = trCurr.getAttribute("data-key");
         let uiStar = trCurr.querySelector("[role=star]");
         this.doStarClick(sDataKey, uiStar);
+    },
+    toggleFlag: function(sKey, uiStar) {
+        let iStarReal = vocab.userSettings.iIdStarCurr;
+        vocab.userSettings.iIdStarCurr = 0; // 0 === Flag
+        this.doStarClick(sKey, uiStar);
+        vocab.userSettings.iIdStarCurr = iStarReal;
+        this.redrawStarIcon(sKey, uiStar);
+    },
+    redrawStarIcon: function(sKey, uiStar) {
+        let oSakht = this.getSakhtiByKey(sKey);
+        let sHtm = sakhtBase.getStarHtml(sKey, oSakht)
+        uiStar.parentElement.innerHTML = sHtm
     },
     doStarClick: function(sKey, uiStar) {
         let oWord = this.getSakhtiByKey(sKey, null);
@@ -753,4 +766,5 @@ document.addEventListener('DOMContentLoaded', function () {
     topPeepMessage.init();
     menuMaker.renderMenu('menuContainer', groopData).setValue(vocab.userSettings.iIdStarCurr);
     studyTimer.init();
+    microMenuManager.init(oMicroMenuData); // Initialize tiny menus for each row.
 });
