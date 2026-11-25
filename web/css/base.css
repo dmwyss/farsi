@@ -341,6 +341,21 @@ div#studyTimerElapsedDisplay.active {
     background-color: #000;
     color: #CCC;
 }
+.vocabKeyword {
+    color: white;
+    font-weight: 500;
+}
+/*
+Don't delete.
+As soon as update from file definitely
+works, make the update from UI work,
+which will need this code...
+#txaBulkImport {
+    width: 590px;
+    background-color: #222932;
+    border: 1px solid #1c2128;
+}
+*/
 
 /* Media ************************************** */
 

@@ -57,7 +57,7 @@ window.addEventListener('keydown', function(event) {
                 g_ixCursor--;
             }
             if ((g_ixCursor < 0) && (g_asSearches.length === 0)) {
-            	g_ixCursor = 0;
+                g_ixCursor = 0;
             }
             isArrow = true;
         } else if (event.key === 'ArrowDown') {
@@ -104,30 +104,20 @@ window.addEventListener('keydown', function(event) {
             myField.value = sQueryText;
             selectQuoteContent(myField);
         } else if (/^[a-zA-Z0-9]$/.test(event.key)) {
-        	console.log("alpha " + event.key);
-        	flashField();
-        	/*
-        	document.querySelector("[data-active]").querySelector("[role='presentation']").style.backgroundColor = "#4565";
-        	//document.activeElement.style.backgroundColor = "#345"; // Redundant, in case fancy one above fails.
-			setTimeout(
-				() => {
-					document.querySelector("[data-active]").querySelector("[role='presentation']").style.backgroundColor = "transparent";
-					//document.activeElement.style.backgroundColor = "transparent"; // Redundant, in case fancy one above fails.
-					mute();
-				},
-				400
-			);
-			*/
+            console.log("alpha " + event.key);
+            flashField();
         } else {
-            setTimeout(
-                function() { g_sSearchLast = myField.value; },
-                100
-            )
+            if (false) {
+                setTimeout(
+                    function() { g_sSearchLast = myField.value; },
+                    100
+                )
+            }
         }
     } else if (event.key === 'Escape') {
         event.preventDefault();
         event.stopPropagation();
-		toggleMute();
+        toggleMute();
         myField.focus();
         myField.select();
     } else {
@@ -135,13 +125,16 @@ window.addEventListener('keydown', function(event) {
         if (event.key === '/') {
             // Prevent the default behavior (like opening browser search or typing "/")
             event.preventDefault();
+            mute(false);
             myField.focus();
             myField.select();
         }
     }
     if (event.key === 'Enter') {
         // If a search is run, reset the index to first.
-        console.log("" + g_ixCursor + "");
+        console.log("ENTER KEY PRESSED ##############");
+        console.log("g_ixCursor" + g_ixCursor + "");
+        console.log("g_sSearchLast :: \"" + g_sSearchLast + "\"");
         g_asSearches.push(g_sSearchLast);
         g_ixCursor = 0;
         mute(false);
@@ -157,17 +150,17 @@ function mute(isMute=true) {
 }
 let __uiFlashField__ = null;
 function flashField() {
-	if (__uiFlashField__ === null) {
-		__uiFlashField__ = document.querySelector("[data-active]").querySelector("[role='presentation']")
-	}
-	__uiFlashField__.style.backgroundColor = "#4565";
-	setTimeout(
-		() => {
-			__uiFlashField__.style.backgroundColor = "transparent";
-			mute();
-		},
-		400
-	);
+    if (__uiFlashField__ === null) {
+        __uiFlashField__ = document.querySelector("[data-active]").querySelector("[role='presentation']")
+    }
+    __uiFlashField__.style.backgroundColor = "#4565";
+    setTimeout(
+        () => {
+            __uiFlashField__.style.backgroundColor = "transparent";
+            mute();
+        },
+        400
+    );
 }
 document.title = "berim!";
 console.log("User_JS_CSS :: user script loaded. V0.1");

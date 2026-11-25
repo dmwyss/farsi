@@ -40,7 +40,7 @@ const studyTimer = {
         // Update studySec to integer seconds elapsed since page opened
         this.heatOrFreezeUI(true);
         if (this.startTime === null) {
-            console.log("timer was blank, set up and returned");
+            //console.log("timer was blank, set up and returned");
             this.startTime = Date.now();
             return;
         }
@@ -132,7 +132,7 @@ const studyTimer = {
             this.createNewStudyTimerDataForToday(this.iTodayAbs, this.sTodayYMD);
         }
         this.reset();
-        console.log("save (bounced prepare disk action)");
+        //console.log("save (bounced prepare disk action)");
         clearTimeout(this.saveDebounceTimer);
         this.saveDebounceTimer = setTimeout(() => {
             this._save_debounced_();
@@ -140,8 +140,8 @@ const studyTimer = {
     },
 
     _save_debounced_: function() {
-        console.log("save to disk");
-        console.log(JSON.stringify(studyTimerData, null, 2));
+        //console.log("save to disk");
+        //console.log(JSON.stringify(studyTimerData, null, 2));
         let sFileName = "data/studyTimerData.js"
         let sBody = JSON.stringify(studyTimerData, null, 1);
         sBody = "const studyTimerData = " + sBody;

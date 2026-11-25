@@ -1,7 +1,8 @@
 const oMicroMenuData = [
     { id: "researchLiteral", sLabel: "Literal Translation" },
     { id: "researchInformal", sLabel: "Check Formality" },
-    { id: "flag", sLabel: "Toggle Flag" }
+    { id: "flag", sLabel: "Toggle Flag" },
+    { id: "info", sLabel: "Info..." }
 ];
 
 const microMenuManager = {
@@ -63,7 +64,7 @@ const microMenuManager = {
 
     clickOption(id, sLabel) {
         console.log(`Clicked option -> ID: ${id}, Label: ${sLabel}, for object: ${microMenuManager.sTrFocusDataKey}`);
-        let sContextText = vocab.dict[microMenuManager.sTrFocusDataKey].p.contextText;
+        let sContextText = vocab.dict[microMenuManager.sTrFocusDataKey].sP;
         let sContextTextQS = this.stripForQueryString(sContextText);
         if (id === "researchLiteral") {
             let sUrl = "https://www.google.com/search?q=literal+translation+of+%22" + sContextTextQS + "%22+in+farsi";
@@ -75,6 +76,8 @@ const microMenuManager = {
             console.log("flag: " + microMenuManager.sTrFocusDataKey);
             let uiStar = document.querySelector("[data-key=\"" + microMenuManager.sTrFocusDataKey + "\"] div[role=\"star\"]");
             sakhtBase.toggleFlag(microMenuManager.sTrFocusDataKey, uiStar);
+        } else if (id === "info") {
+            alert("Vocab Entry\n\nID: " + microMenuManager.sTrFocusDataKey)
         }
     },
     stripForQueryString: function(sIn) {

@@ -24,6 +24,7 @@ const vocab = {
     dictGroops: null,
     filter: null, // currently only works on star. Later filter like this: {object:"sakhtBase", fieldName: "title", find:"xxx"},
     rowFocus: null,
+    iMaxIdFound: -1,
     userSettings: {
         lastSort: "sSortSakhti",
         testMode: "read",
@@ -88,13 +89,137 @@ const vocab = {
             // Set filter on load of the page, originally from localStore.
             this.filter = this.userSettings.oFilter;
         }
-        this.dict = this.parseRaw();
+//        this.dict = this.parseRaw(); // reads text file.
+        this.dict = this.parseJson(); // reads text file.
+        bulkImport.init();
+        if (bulkImport.isImportRunAndDataMigrated) {
+            this.save_debounced();
+            bulkImport.resetImport();
+        }
         this.initList();
         this.renderButtonRibbon();
         this.renderVocabTable();
         this.sortAndRenderTable(this.userSettings.lastSort);
         sakhtBase.collectGarbage();
     },
+    migrate_one_time: function(oIn) {
+        let oCopy = JSON.parse(JSON.stringify(oIn));
+        let oOut = {};
+        let iIdCursor = 0;
+        for (sKey in oCopy) {
+            iIdCursor++;
+            let oCursor = oCopy[sKey];
+            oCursor.sP = oCursor.p.contextText;
+            oCursor.sE = oCursor.e.contextText;
+            this.dict[sKey].vNewId = iIdCursor;
+            /*
+            delete oCursor.key; // = iIdCursor
+            delete oCursor.p.key;
+            delete oCursor.p.contextText;
+            delete oCursor.p.contextHtml;
+            delete oCursor.e.key;
+            oCursor.e.s = oCursor.e.contextText;
+            delete oCursor.e.contextText;
+            delete oCursor.e.contextHtml;
+            delete oCursor.meta;
+            */
+            delete oCursor.key; // = iIdCursor
+            delete oCursor.p;
+            delete oCursor.e;
+            delete oCursor.meta;
+            oOut[iIdCursor] = oCursor;
+        }
+        return oOut;
+    },
+    save: function() {
+        this.save_debounced();
+    },
+    stripForSave: function(oIn) {
+        // Only core data gets saved.
+        // Metadata is worked out on the fly.
+        // Ranking, groops etc are held separately.
+        let oCopy = JSON.parse(JSON.stringify(oIn));
+        for (sKey in oCopy) {
+            let oCursor = oCopy[sKey];
+            delete oCursor.meta;
+        }
+        return oCopy;
+    },
+    save_debounced: function() {
+        let sFileNameVocab = "data/oVocab.js";
+        let oBodyVocab = this.stripForSave(this.dict);
+        let sBodyVocab = JSON.stringify(oBodyVocab); //, null, 1);
+        sBodyVocab = sBodyVocab.replaceAll("\"},\"", "\"},\n\"")
+        sBodyVocab = "let oVocab = " + sBodyVocab + ";";
+        sBodyVocab = sBodyVocab.split("}};").join("}\n};\n");
+        sBodySakhti = sBodyVocab.split("oVocab = {").join("oVocab = {\n");
+        pywriter.save("farsiVocab", sFileNameVocab, sBodyVocab, this.saveCallbackMethod());
+    },
+    do_data_migration_one_time_vocab_and_sakhti: function() {
+        let sFileNameVocab = "data/oVocab.js";
+        let oBodyVocab = this.migrate_one_time(this.dict);
+        // Main data
+        let sBodyVocab = JSON.stringify(oBodyVocab); //, null, 1);
+        sBodyVocab = sBodyVocab.replaceAll("\"},\"", "\"},\n\"")
+        sBodyVocab = "let oVocab = " + sBodyVocab + ";";
+        sBodyVocab = sBodyVocab.split("}};").join("}\n};\n");
+        sBodySakhti = sBodyVocab.split("oVocab = {").join("oVocab = {\n");
+        pywriter.save("farsiVocab", sFileNameVocab, sBodyVocab, this.saveCallbackMethod());
+        // Sakhti data
+        let sFileNameSakhti = "data/oSakhti.bak.js";
+        let oBodySakhti = this.migrateSakhti_one_time_then_throw_this_away();
+        let sBodySakhti = JSON.stringify(oBodySakhti); //, null, 1);
+        sBodySakhti = sBodySakhti.replaceAll("},\"", "},\n\"")
+        sBodySakhti = "let oSakhti = " + sBodySakhti + ";";
+        sBodySakhti = sBodySakhti.split("}};").join("}\n};\n");
+        sBodySakhti = sBodySakhti.split("oSakhti = {").join("oSakhti = {\n");
+        pywriter.save("farsiVocab", sFileNameSakhti, sBodySakhti, this.saveCallbackMethod());
+    },
+    migrateSakhti_one_time_then_throw_this_away: function() {
+        let oSakhtiNew = {};
+        for (sVocabKey in this.dict) {
+            let oS = sakhtBase.dataOo[sVocabKey];
+            let oWord = this.dict[sVocabKey];
+            oSakhtiNew[oWord.vNewId] = oS;
+        }
+        return oSakhtiNew;
+    },
+    saveCallbackMethod: function() {
+        console.log("saved data/oVocab.js")
+    },
+    parseJson: function() {
+        let oOut = {};
+        let iMaxIdFound = -1;
+        for (vKey in oVocab) {
+            let oLine = oVocab[vKey];
+            this.updateMeta(oLine, vKey);
+            oOut[vKey] = oLine;
+            let iKey = parseInt(vKey);
+            iMaxIdFound = Math.max(iKey, iMaxIdFound);
+        }
+        this.iMaxIdFound = iMaxIdFound;
+        return oOut;
+    },
+    updateMeta: function(oWord, vKey=null) {
+        if (vKey === null) {
+            // ix can only be missing if refreshing metadata.
+            vKey = oWord.meta.iForeignKey;
+        }
+        let oSakhtiInfo = sakhtBase.getSakhtiByKey("" + vKey);
+        let iKey = parseInt(vKey);
+        oWord.meta = {
+            iForeignKey: iKey, // Was ixOrig
+            sSortForeignKey: "" + (iKey / 10000),
+            sSortP: charTamer.plainAlpha(oWord.sP).toLowerCase(),
+            sSortE: charTamer.plainAlpha(oWord.sE).toLowerCase(),
+            sHtmlP: this.starsAndMarkupToHtml(oWord.sP),
+            sHtmlE: this.starsAndMarkupToHtml(oWord.sE),
+            // Give it a high ranking, so it shows at the top.
+            sSortStar: (oWord.hasOwnProperty("aiStar") && (oWord.aiStar.includes(vocab.userSettings.iIdStarCurr) ?  1 : 0)),
+            sSortSakhti: ((oSakhtiInfo.sakhti === 0 ? 1 : (oSakhtiInfo.sakhti + 100)) * 10000) + iKey
+        };
+    },
+    /*
     parseRaw: function() {
         let oDictOut = {};
         let asLines = vocabFarsiRaw.split("\n");
@@ -117,6 +242,7 @@ const vocab = {
             }
             //oWord.sForeignKey = sForeignKey
             //let oSakhtiInfo = sakhtBase.getSakhtiByKey(sForeignKey);
+            */
             /*
             oWord.meta = {
                 ixOrig: ix,
@@ -127,18 +253,21 @@ const vocab = {
                 sSortSakhti: ((oSakhtiInfo.sakhti === 0 ? 1 : (oSakhtiInfo.sakhti + 100)) * 10000) + ix
             };
             */
+            /*
             oWord.meta = this.generateMetaData(oWord, ix);
             //oWord.key = sForeignKey;
             oDictOut[oWord.key] = oWord;
         }
         return oDictOut;
     },
-    generateMetaData: function(oWord, ix=null) {
-        let oSakhtiInfo = sakhtBase.getSakhtiByKey(oWord.key);
-        if (ix === null) {
-            // ix can only be missing if refreshing metadata.
-            ix = oWord.meta.ixOrig;
-        }
+    */
+    /*
+    generateMetaData: function(oWord) {
+        let oSakhtiInfo = sakhtBase.getSakhtiByKey(oWord.meta.ixOrig);
+//        if (ix === null) {
+//            // ix can only be missing if refreshing metadata.
+//            ix = oWord.meta.ixOrig;
+//        }
         return {
             ixOrig: ix,
             sSortIxOrig: "" + (ix / 10000),
@@ -148,6 +277,7 @@ const vocab = {
             sSortSakhti: ((oSakhtiInfo.sakhti === 0 ? 1 : (oSakhtiInfo.sakhti + 100)) * 10000) + ix
         };
     },
+    */
     initList: function() {
         this.list = [];
         for (let sKey in this.dict) {
@@ -155,6 +285,7 @@ const vocab = {
             this.list.push(this.dict[sKey]);
         }
     },
+    /*
     toWord: function(sLine) {
         sLine = charTamer.toNice(sLine); // sLine.trim().split("'").join("~").split("\"").join("#");
         if ((sLine == "") || (sLine.startsWith("#"))) {
@@ -169,6 +300,16 @@ const vocab = {
             e: this.toMot(asLine[1])
         }
     },
+    */
+    starsAndMarkupToHtml: function(sRaw) {
+        sRaw = sRaw.trim();
+        let as = sRaw.split("*");
+        if (as.length < 3) {
+            return sRaw;
+        }
+        return as[0] + "<span class=\"vocabKeyword\">" + as[1] + "</span>" + as[2] + "";
+    },
+    /*
     toMot: function(sMotRaw="") {
         let oOut = {};
         oOut.contextText = sMotRaw;
@@ -183,11 +324,12 @@ const vocab = {
         }
         return oOut;
     },
+    */
     vocabToHtml: function() {
         let sOut = "<table id=\"vocab\">";
         let sStarIcon = (this.filter === null) ? "&star;" : "&starf;";
         sOut += "<tr>"
-            + "<td id=\"sSortIxOrig\" class=\"colSorter colNarrow\" onclick=\"vocab.sortAndRenderTable(this);\">#</td>"
+            + "<td id=\"sSortForeignKey\" class=\"colSorter colNarrow\" onclick=\"vocab.sortAndRenderTable(this);\">#</td>"
             + "<td id=\"sSortE\" class=\"colSorter\" onclick=\"vocab.sortAndRenderTable(this);\">engelisi</td>"
             + "<td id=\"sSortP\" class=\"colSorter\" onclick=\"vocab.sortAndRenderTable(this);\">farsi</td>"
             + "<td id=\"sSortResearch\" class=\"colSorter colNarrow\">&nbsp;</td>"
@@ -200,7 +342,7 @@ const vocab = {
         let sWidestP = "";
         for (let ix = 0; ix < this.list.length; ix++) {
             let oWord = this.list[ix];
-            let oSakht = sakhtBase.getSakhtiByKey(oWord.key);
+            let oSakht = sakhtBase.getSakhtiByKey(oWord.meta.iForeignKey);
             /*
             sOutWidth += "<tr class='silent'>" // " + ix + "
                 + "<td class=\"context colNarrow\">" + iShownRows++ + "</td>"
@@ -211,23 +353,23 @@ const vocab = {
                 + "<td class=\"context\">" + sakhtBase.getIcon(oSakht) + "</td>"
                 + "</tr>";
             */
-            if (oWord.e.contextText.length > sWidestE.length) {
-                sWidestE = oWord.e.contextText;
+            if (oWord.sE.length > sWidestE.length) {
+                sWidestE = oWord.sE;
             }
-            if (oWord.p.contextText.length > sWidestP.length) {
-                sWidestP = oWord.p.contextText;
+            if (oWord.sP.length > sWidestP.length) {
+                sWidestP = oWord.sP;
             }
             if (this.filter !== null) {
                 if (!oSakht.hasOwnProperty("aiStar") || (!oSakht.aiStar.includes(vocab.userSettings.iIdStarCurr))) {
                     continue;
                 }
             }
-            sOut += "<tr onclick='vocab.doRowClick(this);' id='tr" + ix + "' data-key='" + oWord.key + "'>" // " + ix + "
+            sOut += "<tr onclick='vocab.doRowClick(this);' id='tr" + ix + "' data-key='" + oWord.meta.iForeignKey + "'>" // " + ix + "
                 + "<td class=\"context colNarrow\">" + iShownRows++ + "</td>"
-                + "<td class=\"context\">" + charTamer.toNaughty(oWord.e.contextHtml) + "</td>"
-                + "<td class=\"context\">" + charTamer.toNaughty(oWord.p.contextHtml) + "</td>"
+                + "<td class=\"context\">" + oWord.meta.sHtmlP + "</td>"
+                + "<td class=\"context\">" + oWord.meta.sHtmlE + "</td>"
                 + "<td class=\"context colNarrow microMenu\">" + sakhtBase.getResearchLink(oWord) + "</td>"
-                + "<td class=\"context colNarrow\">" + sakhtBase.getStarHtml(oWord.key, oSakht) + "</td>"
+                + "<td class=\"context colNarrow\">" + sakhtBase.getStarHtml(oWord.meta.iForeignKey, oSakht) + "</td>"
                 + "<td class=\"context\">" + sakhtBase.getIcon(oSakht) + "</td>"
                 + "</tr>";
         }
@@ -396,7 +538,7 @@ const vocab = {
         }
         // Update the meta
         let oWord = vocab.dict[sKey];
-        oWord.meta = this.generateMetaData(oWord); // ix not neeeded if refreshing.
+        this.updateMeta(oWord);
         sakhtBase.save();
         trCurrent.querySelector("div.sakhti").style = sakhtBase.getCssForStrength(iSakht);
         trCurrent.querySelector("div.sakhti").innerHTML = sakhtBase.prettyStrength(iSakht);
@@ -434,7 +576,7 @@ const sakhtBase = {
     debounceTimeoutId: null,
     dataOo: {},
     init: function() {
-        this.dataOo = sakhtiData;
+        this.dataOo = oSakhti;
         for (let sKey in this.dataOo) {
             if (this.dataOo[sKey].hasOwnProperty("star")) {
                 this.dataOo[sKey].aiStar = [this.dataOo[sKey].star];
@@ -456,13 +598,13 @@ const sakhtBase = {
         }, 800);
     },
     save_debounced: function() {
-        let sFileName = "data/sakhtiData.js"
+        let sFileName = "data/oSakhti.js"
         let sBody = JSON.stringify(this.dataOo); //, null, 1);
         sBody = sBody
             .split("},\"").join("},\n\"")
             .split(" = {").join(" = {\n")
             ;
-        sBody = "let sakhtiData = " + sBody;
+        sBody = "let oSakhti = " + sBody;
         sBody += ";";
         sBody = sBody.split(" = {").join(" = {\n")
         sBody = sBody.split("}};").join("}\n};\n")
@@ -483,7 +625,7 @@ const sakhtBase = {
         return this.dataOo[sKey];
     },
     getResearchLink: function(oWord) {
-        let sTerm = charTamer.urlEncode(oWord.p.contextText);
+        let sTerm = charTamer.urlEncode(oWord.sP);
         let sOut = "";
 //        sOut += "<a href=\"https://www.google.com/search?q=literal+translation+of+%22" + sTerm + "%22+in+farsi\"";
 //        sOut += " target=\"farsiResearch\" class=\"tableCellLinkIcon\" onclick=\"this.blur()\">";
@@ -744,6 +886,48 @@ const utilCustomGuiElements = {
         // Den angeklickten OptionBar visuell hervorheben
         uiSrc.classList.add('active');
     }
+}
+const bulkImport = {
+    isImportRunAndDataMigrated: false,
+    init: function() {
+        if (oBulkImport.trim() === "") {
+            return this;
+        }
+        oBulkImport = charTamer.toNice(oBulkImport);
+        let asLinesAll = oBulkImport.split("\n");
+        for (let ix = 0; ix < asLinesAll.length; ix++) {
+            let sLine = asLinesAll[ix].trim();
+            if (sLine.length === 0) {
+                continue;
+            }
+            let asLine = [];
+            if (sLine.indexOf("|") != -1) {
+                asLine = sLine.split("|");
+            } else {
+                sLine = sLine.replaceAll(/[ ]{3,}/g, "|");
+                asLine = sLine.split("|");
+            }
+            asLine[0] = asLine[0].trim();
+            asLine[1] = asLine[1].trim();
+            let oNew = {
+                sP: asLine[0],
+                sE: asLine[1]
+            }
+            vocab.iMaxIdFound++;
+            let iNewId = vocab.iMaxIdFound;
+            vocab.updateMeta(oNew, iNewId);
+            vocab.dict[iNewId] = oNew;
+            this.isImportRunAndDataMigrated = true;
+        }
+        return this;
+    },
+    resetImport: function() {
+        let sFileName = "data/oBulkImport.js";
+        let sBody = "let oBulkImport = `\n\n\n`;";
+        pywriter.save("farsiVocab", sFileName, sBody, this.saveCallbackMethod());
+        this.isImportRunAndDataMigrated = false;
+    },
+    saveCallbackMethod: function(){}
 }
 const topPeepMessage = {
     ui: null,

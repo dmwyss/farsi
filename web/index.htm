@@ -17,7 +17,7 @@
 <script>
 let sVolatileOutNew = "";
 const urlParams = new URLSearchParams(window.location.search);
-let asPages = ["data/sakhtiData", "data/groopData", "data/vocabFarsi", "data/studyTimerData"];
+let asPages = ["data/oSakhti", "data/groopData", "data/oVocab", "data/studyTimerData", "data/oBulkImport"];
 for (let ix = 0; ix < asPages.length; ix++) {
     sVolatileOutNew += "<" + "script type=\'text/javascript\' src=\'" + asPages[ix] + ".js?refresh=";
     sVolatileOutNew += (Math.round(Math.random() * 10000)) + "\'>" + "<" + "/" + "script>\n";
@@ -83,6 +83,12 @@ document.write(sVolatileOutNew);
     </tr>
   </tbody>
 </table>
+<br/>
+
+<!--
+Bulk Import<br/>
+<textarea id="txaBulkImport"></textarea>
+-->
 
 <aside id="prompt">
   <div>Use enter key to navigate.</div>
