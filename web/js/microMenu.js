@@ -1,5 +1,6 @@
 const oMicroMenuData = [
     { id: "researchLiteral", sLabel: "Literal Translation" },
+    { id: "researchInformal", sLabel: "Check Formality" },
     { id: "flag", sLabel: "Toggle Flag" }
 ];
 
@@ -62,17 +63,21 @@ const microMenuManager = {
 
     clickOption(id, sLabel) {
         console.log(`Clicked option -> ID: ${id}, Label: ${sLabel}, for object: ${microMenuManager.sTrFocusDataKey}`);
-        //alert(`Selected: ${sLabel} (ID: ${id}) object: ${microMenuManager.sTrFocusDataKey}`);
+        let sContextText = vocab.dict[microMenuManager.sTrFocusDataKey].p.contextText;
+        let sContextTextQS = this.stripForQueryString(sContextText);
         if (id === "researchLiteral") {
-            let sUrl = "https://www.google.com/search?q=literal+translation+of+%22" + microMenuManager.sTrFocusDataKey + "%22+in+farsi";
+            let sUrl = "https://www.google.com/search?q=literal+translation+of+%22" + sContextTextQS + "%22+in+farsi";
+            window.open(sUrl, '_berim', 'noopener,noreferrer');
+        } else if (id === "researchInformal") {
+            let sUrl = "https://www.google.com/search?q=is+this+grammatically+correct+natural+sounding+informal+farsi+%20" + microMenuManager.sTrFocusDataKey + "%22";
             window.open(sUrl, '_berim', 'noopener,noreferrer');
         } else if (id === "flag") {
             console.log("flag: " + microMenuManager.sTrFocusDataKey);
-debugger;
-
             let uiStar = document.querySelector("[data-key=\"" + microMenuManager.sTrFocusDataKey + "\"] div[role=\"star\"]");
             sakhtBase.toggleFlag(microMenuManager.sTrFocusDataKey, uiStar);
         }
+    },
+    stripForQueryString: function(sIn) {
+        return encodeURIComponent(sIn.replaceAll(/[*~]/g, ""));
     }
 };
-

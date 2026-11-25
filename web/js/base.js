@@ -263,7 +263,7 @@ const vocab = {
         };
         let sButtons = ""
             + this.getStudyTimerDisplayHtml()
-            + timeBar.getHtml()
+            // + timeBar.getHtml() nothing wrong with this, but was not being used.
             + "<div id=\"menuContainer\" class=\"optionBarRow\"></div>"
             + utilCustomGuiElements.generateOptionBar(oOptionBarSettingsTestMode)
             + this.getRefreshAllHtml()

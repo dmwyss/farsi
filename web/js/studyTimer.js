@@ -75,18 +75,18 @@ const studyTimer = {
         return String(iIn).padStart(2, '0');
     },
 
-    formatDate: function(date = new Date(), includeTime = false) {
-        const year = date.getFullYear();
-        const month = this.pad(date.getMonth() + 1); // Monate sind 0-basiert
-        const day = this.pad(date.getDate());
-        const datePart = `${year}-${month}-${day}`;
-        if (!includeTime) {
-            return datePart;
+    formatDate: function(date = new Date(), isIncludeTime = false) {
+        const iYear = date.getFullYear();
+        const sMonth = this.pad(date.getMonth() + 1); // Monate sind 0-basiert
+        const sDay = this.pad(date.getDate());
+        const sDatePart = `${iYear}-${sMonth}-${sDay}`;
+        if (!isIncludeTime) {
+            return sDatePart;
         }
-        const hours = this.pad(date.getHours());
-        const minutes = this.pad(date.getMinutes());
-        const seconds = this.pad(date.getSeconds());
-        return `${datePart} ${hours}-${minutes}-${seconds}`;
+        const sHours = this.pad(date.getHours());
+        const sMinutes = this.pad(date.getMinutes());
+        const sSeconds = this.pad(date.getSeconds());
+        return `${sDatePart} ${sHours}-${sMinutes}-${sSeconds}`;
     },
 
     formatTime: function(iSecsAll) {
@@ -96,12 +96,21 @@ const studyTimer = {
     },
 
     getAbsDay() {
+        /*
+        // This version is wrong in the morning.
         // Get today's date normalized to UTC midnight
         const dtNow = new Date();
         const dtToday = new Date(Date.UTC(dtNow.getFullYear(), dtNow.getMonth(), dtNow.getDate()));
         // Calculate difference in milliseconds and convert to days
         const daysElapsed = Math.floor((dtToday - this.dtZero) / this.iOneDayMilli);
         return daysElapsed;
+        */
+
+        var now = new Date();
+        var start = new Date(2026, 0, 0);
+        var diff = now - start;
+        var day = Math.floor(diff / this.iOneDayMilli);
+        return day;
     },
 
     save: function() {

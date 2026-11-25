@@ -2,21 +2,19 @@ let vocabFarsiRaw = `
 
 *anjeer*-aa khordam o shodam seer                       *fig*s eaten and became full
 behtarine *khormah*a az shiraz miyan                    the best dates come from shiraz
-kargara ye *sachtemoon* sakhtan                         builders built the building (past tense)
 pol-e *tabiaat* ro mohandesaa saakhtan                  nature bridge was made by engineers
 movaazeb baash                                          careful be
 shaam khoshmaze bood                                    dinner yummy was
 komaket konam?                                          help do-I? (can I help)
-kaar mikonam                                            work at-the-moment-doing-I
 kelidam ro gom kardam                                   keys-my the lost did (past)
 
 in hafteh - kodoom rooza sherkati?                      this week - which days office-you?
 In hafte seshanbe o chaharshanbe miam sherkat           this week Tuesday and Wednesday going office
-doshanbehaa ro doost nadaaram                           mondays them not like
+doshanbe-haa ro doost nadaaram                          mondays them not like
 
 harchi zoodtar behtar                                   everywhat sooner better
 che behtar                                              even better
-dahanam aab oftaad                                      my mouth is watering
+dahan-am aab oftaad                                     my mouth is watering
 
 vaght daarim                                            time have-we
 raahnamaayi-t mofid bood                                your advice useful was
@@ -38,7 +36,7 @@ baa kamaal-e meyl                                       with completeness desire
 eshkaal-i nadaare                                       defect-any not-have (no problem)
 
 man maachin raa tamiz mikonam                           i car clean do
-to chi kaar mikoni?                                     what you (single) doing?
+to chi-kaar mikoni?                                     what you (single) doing?
 u mikone                                                he/she/it does
 maa mikonim                                             we do
 shomaa mikonin                                          you (plur) do
@@ -77,7 +75,7 @@ har chizi bekhay daaram                                 I have anything you want
 hich pooli nadaaram                                     I have no money
 hich kasi ro nadidam                                    I saw nobody
 kasi dar zad?                                           did anyone knock on the door?
-har kasi injaast                                        everyone is here
+har kasi hanooz injaast                                 everyone is still here
 *ba~ziyaa* raftan peeyadeh-ravee                        some people went for a walk
 
 *meghdari* aab mikham lotfan                            I want *some* water please
@@ -168,7 +166,7 @@ zan-e man *mishi*                                       wife-of me you *become*
 man yeki do taa kalameh dar faarsi mifahmam             I understand one or two words in Farsi (fahmidan present)
 dooneh barf                                             flake-of snow
 too *raahi*                                             on *path*-you
-man *raaham*                                            on *path*-me
+man *raah-am*                                           on *path*-me
 piad mir-i ye *baa* tram                                walk go-you or *with* tram
 kojaa *mir-i*                                           where *go-you*
 *key* mi-ris-i                                          *when* will-arrive-you
@@ -185,8 +183,7 @@ hatman                                                  sure
 *sare kaar* chetor bud emrooz?                          *at work* how was today?
 
 *movafagh* beshi                                        *success*ful be-you
-#yavash tar harf bezan                                  speak more slowly
-*yavash-tar* begoo lotfan                               speak *slower* please
+*yavaash-tar* begoo lotfan                              speak *slower* please
 *sir* shodam                                            *full* became-I
 kheili *mohem* nist                                     it is not very *important*
 Sholeh kheili *zerang*e                                 Sholeh is very *hardworking*
@@ -323,7 +320,7 @@ ke in gol shabihe ye ammameye koocholooe                that the flower resemble
 estefaade mikardan                                      they used
 
 kalameh-ye ghadimi-ye Faarsi                            an old Farsi word
-ke az raah-e abrisham taa torkiyeh raft                 that on the silk road travelled to Turkie
+ke az raah-e abrishaam taa torkiyeh raft                that on the silk road travelled to turkie
 
 tooye torkiye in kalame shod "tuelbent"                 in turkie the word became "tülbent"
 tooye aalmaan in kalame shod "tuelpe"                   in germany the word became "tülpe"
@@ -349,7 +346,7 @@ sanieh daghigheh sa-at ruz mah sal                      second minute hour day m
 
 khar to khar                                            donkey in donkey
 boosam kon                                              kiss me
-ozaagh kheyli *khar to khare*                           this situation is a *shamozzle*
+ozaagh kheyli *khar to khare*                           this situation is a *shaamozzle*
 khoshhaalam mikoni                                      you make me happy
 
 shaayad                                                 maybe
@@ -363,9 +360,9 @@ del be del raah daare                                   heart to heart path has
 *shaa-zdeh* khaanom Sholeh                              *princess* Sholeh (king-child lady)
 daastaanesh deraaze                                     story long
 dam-e aasaansor vaas-mistaam                            I will wait near the lift
-aafarin! to aasaansor-e A ro gerefti                    bravo! you lift-A got
+aafarin! to aasaansor-e a ro gerefti                    bravo! you lift-A got
 ey baba - be ghaataar narasidam                         oh man - to train not-arrive
-narm mesl-e abrisham                                    smooth like silk
+narm mesl-e abrishaam                                   smooth like silk
 istgaah-e ghaataar-e ba-adi Sandringham-eh              stop/station train next Sandy-is
 forooshgaah-e istgaah ta-atil ast                       shop at station closed is
 toot farangiaa *ghermez*an                              strawberries are *red*
@@ -409,8 +406,8 @@ yekkam bolandtar *sobhat kon*                           little-bit louder *speak
 har rooz ye chize jadid yaad migiri                     each day one thing new thought take
 rooze khoobi daashti?                                   day good-one had?
 *jashn* chetor bood?                                    *party* how was?
-kelid-am ro peydaa nemikonam                            I cant find my keys
-*istgaa*he ba'di piaade misham                          I get off at the next *stop/station*
+hanooz kelid-am ro peydaa nemikonam                     I still cant find my keys
+*istgaa*he ba'di piaade mishaam                         I get off at the next *stop/station*
 
 aftab az *khorshid* miad                                sunshine comes from the sun
 too-ye *maah* chahaar hafte hast                        there are 4 weeks in a month
@@ -443,8 +440,7 @@ soaal saal saa~at saadeh saak                           question year time easy 
 sar sad sag sabz sard                                   head/end hundred dog green cold
 shir pir zir dir gir tir                                milk/tap/lion old under late blockade/get/stuck arrow/bullet
 khabare marg-eshun                                      news death-of-them
-tahdig nazdeeg-e tah-e dig-e                            crispy-rice near bottom-of pot-is
-khodamo boridam vaghte reeshamo mizadam                 i cut myself shaving
+tahdig nazdeek-e tah-e dig-e                            crispy-rice near bottom-of pot-is
 natije chi shod?                                        what was the result?
 natije nadaare                                          result has not (it is useless)
 moosh bokhortet                                         mouse eat-you
@@ -527,14 +523,14 @@ in ghazaaye *morede alagheye* mane                      this meal *favourite* mi
 *navad o noh* darsad motma'en-am                        *ninety nine* percent sure
 baraaye hamishe dastam ro negah daar                    hold my hand forever
 maa haamisheh baa ham farsi haraf mizaneem              we always speak farsi together
-chaaghoo - changaal rooye boshghaaban                   knife - fork are on the plate
+chaaghoo o changaal rooye boshghaaban                   knife - fork are on the plate
 ghaashogh too-ye *kaase* ast                            the spoon is in the *bowl*
 too bokhorim yaa *biroon*                               inside eat-we or *outside*
 cheraagh-e ba~adi ro bepich be raast                    the next light turn to right
 
 bist-o se shomaare-ye morede alaaqhe-ye mane            twenty-three is my favorite number
 man mehmoon mikonam                                     I make you a guest (my treat)
-daaram kaar mikonam                                     I am working right now
+hanooz daaram kaar mikonam                              I am working right now
 
 man *dast-am* ro mishor-am                              I am washing my hands
 tu *dast-et* ro mishor-i                                you are washing your hands
@@ -758,14 +754,14 @@ too khunam varzesh kardam                               at home-my exercise did-
 ba ki varzesh kardin?                                   with whom exercise did-you-all?
 tanhaayi                                                alone
 tanhaayi varzesh kardam                                 alone workout did-I
-nahar                                                   lunch
-diruz koja nahar khordin?                               yesterday where lunch ate-you-all?
-diruz ba ki nahar khordin?                              yesterday with whom lunch ate-you-all?
-too restoraan nahar nakhordam                           in restaurant lunch not-ate-I
-koja nahar khordin?                                     where lunch ate-you-all
-too khunam nahar khordam                                in home-mine lunch ate-I
+naahaar                                                 lunch
+diruz koja naahaar khordin?                             yesterday where lunch ate-you-all?
+diruz ba ki naahaar khordin?                            yesterday with whom lunch ate-you-all?
+too restoraan naahaar nakhordam                         in restaurant lunch not-ate-i
+koja naahaar khordin?                                   where lunch ate-you-all
+too khunam naahaar khordam                              in home-mine lunch ate-i
 
-mishe dobare begin?                                     can two-time say?
+mishe dobaare begin?                                    can two-time say?
 be khaanevaade salaam beresoon                          to family hello deliver (hi to yr family)
 khehili eshtebaahe badi bood                            very mistake bad was
 tavalodet mobaarak!                                     happy birthday!
@@ -815,8 +811,8 @@ tu daftar kaar kardam                                   in office work did-I
 koja kaar kardin?                                       where work did-you-all
 ba dust dokhtaram tu daftar kaar kardam                 with friend girl in office worked
 az saa-at-e chand ta saa-at-e chand kaar kardin?        from what time to what time work did-you-all?
-diruz koja nahar khordin?                               yesterday where lunch ate-you?
-diruz tanhayi nahar khordam                             yesterday alone lunch ate-I
+diruz koja naahaar khordin?                             yesterday where lunch ate-you?
+diruz tanhayi naahaar khordam                           yesterday alone lunch ate-i
 shoma laptop daar-in?                                   you-all laptop have?
 laptop e shoma chetori-e?                               laptop yours what like?
 dune baarf noghrei                                      flake snow silver
@@ -824,7 +820,7 @@ laptop-am bozorg o noghrei-ye                           laptop-my big and silver
 shoma docharkheh daarin?                                you-all bike have?
 docharkham kheili ghadimi o abi-ye                      bike-my very old and blue-is
 khunatun chetori e?                                     home-you-all how is like?
-khunam nazdik-e ye shahr e kuchik e                     home-my near-is a city and small is
+khunam nazdik-e ye shahr o kuchik-e                     home-my near-is a city and small is
 diruz ba chi be sare kaar raftin?                       yesterday with what to work went-you-all (past)
 kojaa neshasti?                                         where you sat?
 dam-e panjerehaa neshast-am                             near the windows i am sitting
@@ -835,10 +831,10 @@ piade                                                   on foot
 tarjome-ye jomle-haaye ruzmarreh                        translation of everyday sentences
 tul keshidan                                            to take time
 az khunam ta daftar piade bist deyghe tul keshid        from home-my to office walk twenty mins time took
-diruz koja sham khordin?                                yesterday where dinner ate you-all
-diruz too khunam sham khordam                           yesterday at home-my dinner ate-I
-diruz ba dust dokhtar-am sham nakhordam                 yesterday with girfriend-my dinner not-ate-I
-emruz koja nahar mikhorin?                              today where lunch eat-you-all
+diruz koja shaam khordin?                               yesterday where dinner ate you-all
+diruz too khunam shaam khordam                          yesterday at home-my dinner ate-i
+diruz ba dust dokhtar-am shaam nakhordam                yesterday with girfriend-my dinner not-ate-i
+emruz koja naahaar mikhorin?                            today where lunch eat-you-all
 emruz be park mirin?                                    today to park go-you-all?
 park koja e?                                            park where is?
 az khunatun ta park cheghadr tul mikeshe?               from house-your to park how long takes?
@@ -960,7 +956,7 @@ baaz                                                    open
 bebinam                                                 I see
 kaado                                                   present
 khaanevaadam                                            family-my
-khaanevaadeh hameh chizeh                               family is everything
+khaanevaadeh hameh chiz-e                               family is everything
 bokhor                                                  eat! (command)
 sabzijaat                                               veggies
 baaz-neshasteh shodan                                   to retire
@@ -1002,13 +998,50 @@ club-i ke toosh hastin chetoriye?                       club that you-in are how
 too club hodood-e shast nafar hastan                    there are about sixty people in the club
 club-i ke miram dame aab-e                              the club that I go to is by the water
 saakhtemoone panjerehaaye bozorg daare                  the building has big windows
-baayad bokhoram                                         I have to eat
+goshname, baayad bokhoram                               hungry-am, must eat-I
 baayad bekhoonam                                        I have to read/study
-baayad bekhaabam                                        I have to sleep
-baayad dorost konam                                     I have to fix/make it
+khastam, baayad bekhaabam                               tired-am must sleep-I
+kharaabe, baayad dorost konam                           broken-is, must fix/make I
 
 vaase maamaan-et gol gereftam                           for-you flowers got-i
 vaasat ye daste gol gereftam                            for-you one bunch flowers got-i
 in vaase to-e                                           this for-is you
+in vaase maamaan-et-e                                   this for-is mum-yours
+in maale to-e                                           this belongs you-is
+tu raah-am                                              in path-am (on my way)
+
+behet payaam midam                                      I will message you
+
+emrooz chikaar kard-i?                                  today what-activity did-you? (past)
+ba'zi roozaa baaroon miyaad                             some days rain comes
+
+sa'at se o nim-e asr-e                                  hour three and half afternoon is
+sa'at dah o rob-e shab-e                                hour ten and quarter evening-is
+ye rob be hasht-e sobh-e                                one quarter to eight morning
+al'aan sa'at chand-e                                    now time what-is
+se o nim                                                half past 3
+se o panj                                               three o five
+se o rob                                                three fifteen
+dah daghighe be chahar                                  ten minutest to three
+ye rob monde be chahar                                  one quarter remaining to four
+saa'at chand?                                           at what time?
+saa'at chahar                                           four oclock
+saa'at hasht                                            at eight oclock
+
+
+jang-e setaaregaan                                      star wars
+setaare-ye marg                                         death star
+niroo posht-o panaahat baashad                          may the force be with you
+say-yaareh                                              planet
+safineye fazaayi                                        space ship
+man pedaret hastam                                      I am your father
+az niroo estefaade kon!                                 use the force
+shamshir-e noori                                        light sabre
+gaard-e zarbat                                          storm trooper
+seh gaane                                               trilogy
+hes-s-e badi nesbat beh in mozoo' daaram                I get a bad feeling about this
+shaahin-e hezaareh                                      Milenium Falcon
+
 
 `;
+

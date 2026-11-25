@@ -33,6 +33,30 @@ const studyTimerData = {
  },
  "322": {
   "sDate": "2026-11-19",
-  "iDuration": 25
+  "iDuration": 77
+ },
+ "323": {
+  "sDate": "2026-11-19",
+  "iDuration": 1080
+ },
+ "324": {
+  "sDate": "2026-11-20",
+  "iDuration": 317
+ },
+ "325": {
+  "sDate": "2026-11-21",
+  "iDuration": 1530
+ },
+ "326": {
+  "sDate": "2026-11-21",
+  "iDuration": 1822
+ },
+ "328": {
+  "sDate": "2026-11-22",
+  "iDuration": 578
+ },
+ "329": {
+  "sDate": "2026-11-25",
+  "iDuration": 491
  }
 };
