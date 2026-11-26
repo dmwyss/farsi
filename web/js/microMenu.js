@@ -66,11 +66,12 @@ const microMenuManager = {
         console.log(`Clicked option -> ID: ${id}, Label: ${sLabel}, for object: ${microMenuManager.sTrFocusDataKey}`);
         let sContextText = vocab.dict[microMenuManager.sTrFocusDataKey].sP;
         let sContextTextQS = this.stripForQueryString(sContextText);
+        // This makes error message appear: udm=50&
         if (id === "researchLiteral") {
-            let sUrl = "https://www.google.com/search?q=literal+translation+of+%22" + sContextTextQS + "%22+in+farsi";
+            let sUrl = "https://www.google.com/search?q=farsi+(persian)+literal+translation+of+" + sContextTextQS + "";
             window.open(sUrl, '_berim', 'noopener,noreferrer');
         } else if (id === "researchInformal") {
-            let sUrl = "https://www.google.com/search?q=is+this+grammatically+correct+natural+sounding+informal+farsi+%20" + microMenuManager.sTrFocusDataKey + "%22";
+            let sUrl = "https://www.google.com/search?q=is+this+grammatically+correct+natural+sounding+informal+farsi+%22" + sContextTextQS + "%22";
             window.open(sUrl, '_berim', 'noopener,noreferrer');
         } else if (id === "flag") {
             console.log("flag: " + microMenuManager.sTrFocusDataKey);

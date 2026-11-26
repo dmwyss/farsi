@@ -302,7 +302,7 @@ const vocab = {
     },
     */
     starsAndMarkupToHtml: function(sRaw) {
-        sRaw = sRaw.trim();
+        sRaw = charTamer.toNaughty(sRaw.trim());
         let as = sRaw.split("*");
         if (as.length < 3) {
             return sRaw;
@@ -366,8 +366,8 @@ const vocab = {
             }
             sOut += "<tr onclick='vocab.doRowClick(this);' id='tr" + ix + "' data-key='" + oWord.meta.iForeignKey + "'>" // " + ix + "
                 + "<td class=\"context colNarrow\">" + iShownRows++ + "</td>"
-                + "<td class=\"context\">" + oWord.meta.sHtmlP + "</td>"
                 + "<td class=\"context\">" + oWord.meta.sHtmlE + "</td>"
+                + "<td class=\"context\">" + oWord.meta.sHtmlP + "</td>"
                 + "<td class=\"context colNarrow microMenu\">" + sakhtBase.getResearchLink(oWord) + "</td>"
                 + "<td class=\"context colNarrow\">" + sakhtBase.getStarHtml(oWord.meta.iForeignKey, oSakht) + "</td>"
                 + "<td class=\"context\">" + sakhtBase.getIcon(oSakht) + "</td>"
@@ -907,8 +907,8 @@ const bulkImport = {
                 sLine = sLine.replaceAll(/[ ]{3,}/g, "|");
                 asLine = sLine.split("|");
             }
-            asLine[0] = asLine[0].trim();
-            asLine[1] = asLine[1].trim();
+            asLine[0] = asLine[0].trim().toLowerCase();
+            asLine[1] = asLine[1].trim().toLowerCase().replace(/\bi\b/g, 'I');
             let oNew = {
                 sP: asLine[0],
                 sE: asLine[1]
@@ -923,7 +923,7 @@ const bulkImport = {
     },
     resetImport: function() {
         let sFileName = "data/oBulkImport.js";
-        let sBody = "let oBulkImport = `\n\n\n`;";
+        let sBody = "let oBulkImport = `\n\n`;";
         pywriter.save("farsiVocab", sFileName, sBody, this.saveCallbackMethod());
         this.isImportRunAndDataMigrated = false;
     },

@@ -13,6 +13,7 @@ const groopData = [
     {iId: 12, sLabel: "Vaght / Adad-haa"},
     {iId: 13, sLabel: "StarWars"},
     {iId: 10, sLabel: "Liste Hadaf"},
+    {iId: 14, sLabel: "Texting Zadan/Daadan"},
 ];
 const groopClassData = [
     {iId: 0, sLabel: "None", sIcon: "icnNone.svg"},
